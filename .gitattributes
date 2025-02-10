@@ -1,0 +1,133 @@
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+# Git metadata files should always be LF
+.git* text eol=lf
+
+# Force batch scripts to always use CRLF line endings so that if a repo is accessed
+# in Windows via a file share from Linux, the scripts will work.
+*.[cC][mM][dD] text eol=crlf
+*.[bB][aA][tT] text eol=crlf
+*.ps[1m] text eol=crlf
+*.psm1 text eol=crlf
+*.bas text eol=crlf
+*.vbs text eol=crlf
+*.reg text eol=crlf
+
+# Force bash scripts to always use LF line endings so that if a repo is accessed
+# in Unix via a file share from Windows, the scripts will work. Similar for known
+# language files like Groovy which we know are agnostic.
+*.[kc]sh text eol=lf
+*.bash text eol=lf
+*.sh text eol=lf
+# Capture dot files too
+*.*bash* text eol=lf
+*.groovy text eol=lf
+*.java text eol=lf
+*.php text eol=lf
+*.php? text eol=lf
+*.rb text eol=lf
+*.erb text eol=lf
+*.rake text eol=lf
+*.py text eol=lf
+*.pyc text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+*.css text eol=lf
+*.ts text eol=lf
+*.sql text eol=lf
+
+# For platform agnostic formatted files, force them to LF. Includes app-specific manifest
+# conventions like Containerfil, Jenkinsfile, etc. and templates, like j2.
+*.json text eol=lf
+# In very old, pre-2007 versions of Excel this might cause issues in interpreting CSV but ought to be safe
+*.csv text eol=lf
+*.tsv text eol=lf
+*.xml text eol=lf
+*.xsl text eol=lf
+*.xslt text eol=lf
+*.xsd text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.templ text eol=lf
+*.tpl text eol=lf
+*.j2 text eol=lf
+*.jelly text eol=lf
+*.jsp text eol=lf
+*file text eol=lf
+*.md text eol=lf
+*ctl text eol=lf
+*[mM]akefile* text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.cnf text eol=lf
+*config text eol=lf
+*[lL][iI][cC][eE][nN][cCsS][eE] text eol=lf
+*.log text eol=lf
+*.properties text eol=lf
+*.props text eol=lf
+*.xtend text eol=lf
+*.xtext text eol=lf
+
+# Denote all files that are truly binary and should not be modified.
+*.[pP][nN][gG] binary
+*.[jJ][pP][gG] binary
+*.[jJ][pP][eE][gG] binary
+*.[bB][mM][pP] binary
+*.[gG][iI][fF] binary
+*.[tT][iI][fF][fF] binary
+*.[pP][sS][dD] binary
+*.[sS][vV][gG] binary
+*.[wW][eE][bB][pP] binary
+*.[iI][cC][oO] binary
+*.mov binary
+*.mp4 binary
+*.wav binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.flac binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.gzip binary
+*.xz binary
+*.7z binary
+*.gpg binary
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.pyc binary
+*.pdf binary
+*.exe binary
+*.bin binary
+*.dll binary
+*.ini binary
+*.sys binary
+*.jar binary
+*.war binary
+*.jmx binary
+*.jws binary
+*.pack binary
+# Affinity docs
+*.af* binary
+*.[xX][lL][sSxX]* binary
+*.[dD][oO][cC]* binary
+*.[pP][pP][tT]* binary
+*.od[st] binary
+
+# Files that for now we want to leave untouched even if they're not necessarily binary, without relying on default
+*.cpp binary
+*.h binary
+*.dat binary
+*.[cv]*proj binary
+*.[dD][tT][dD] binary
+*.launch binary
+*.lock binary
+*.manifest binary
+*.ovpn binary
+*.patch binary
+*.rtf binary
+*.w32 binary
+

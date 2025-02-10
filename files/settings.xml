@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <interactiveMode>false</interactiveMode>
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <name>IBB Nexus Internal Mirror</name>
+      <url>https://repo.internal.ibboost.com/repository/mirror</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <id>repositories</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <!-- NOTE: These ARE required. Without these, the maven-dependency-plugin:copy goal will not go to the mirror to resolve dependencies, creating build-agent-state dependent builds -->
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+            <id>thirdparty-private</id>
+            <url>https://repo.ibboost.com/content/repositories/thirdparty-private/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+      </repositories>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+
+      <properties>
+        <base-repository>https://repo.internal.ibboost.com/repository/</base-repository>
+        <downloadSources>true</downloadSources>
+        <downloadJavadocs>true</downloadJavadocs>
+      </properties>
+    </profile>
+  </profiles>
+  <servers>
+    <server>
+      <id>thirdparty-private</id>
+      <username>ibb.tech.thirdpartyuploader</username>
+      <password>THIRDPARTY_UPLOADER_PASSWORD</password>
+    </server>
+    <server>
+      <id>nexus</id>
+      <username>ibb.tech.thirdpartyuploader</username>
+      <password>THIRDPARTY_UPLOADER_PASSWORD</password>
+    </server>
+  </servers>
+</settings>

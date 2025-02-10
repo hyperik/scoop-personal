@@ -1,0 +1,28 @@
+{
+    "version": "3.11.3",
+    "description": "The package manager for Kubernetes",
+    "homepage": "https://helm.sh",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://get.helm.sh/helm-v3.11.3-windows-amd64.zip",
+            "hash": "ae146d2a90600c6958bc801213daef467237cf475e26ab3f476dfb8e0d9549b7",
+            "extract_dir": "windows-amd64"
+        }
+    },
+    "bin": "helm.exe",
+    "checkver": {
+        "url": "https://github.com/kubernetes/helm/releases",
+        "regex": "/tag/v(3\\.[\\d.]+)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://get.helm.sh/helm-v$version-windows-amd64.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
