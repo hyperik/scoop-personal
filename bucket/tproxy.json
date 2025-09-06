@@ -30,5 +30,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\tproxy.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/tproxy.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/tproxy.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

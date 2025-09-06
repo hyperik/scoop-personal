@@ -43,5 +43,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\powertoys-np.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/raw/master/bucket/powertoys-np.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/powertoys-np.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

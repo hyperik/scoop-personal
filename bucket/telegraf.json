@@ -38,5 +38,7 @@
     "extract_dir": "telegraf-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\telegraf.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/telegraf.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/telegraf.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

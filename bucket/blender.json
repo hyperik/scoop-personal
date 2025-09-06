@@ -36,5 +36,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\blender.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/blender.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/blender.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

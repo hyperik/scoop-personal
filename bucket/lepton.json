@@ -31,5 +31,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\lepton.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/lepton.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/lepton.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -67,5 +67,7 @@
   ],
   "version": "135.0",
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\thunderbird.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/thunderbird.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/thunderbird.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

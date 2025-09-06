@@ -46,5 +46,7 @@
     "url": "https://download.mobatek.net/$matchRandom/MobaXterm_Portable_v$version.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\mobaxterm.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/mobaxterm.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/mobaxterm.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

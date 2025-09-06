@@ -16,5 +16,7 @@
     "extract_dir": "weasel-pageant-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weasel-pageant.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/weasel-pageant.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/weasel-pageant.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

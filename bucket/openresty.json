@@ -54,5 +54,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\openresty.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/openresty.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/openresty.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

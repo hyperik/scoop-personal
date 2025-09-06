@@ -84,5 +84,7 @@
     "extract_dir": "terminal-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windows-terminal.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/windows-terminal.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windows-terminal.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

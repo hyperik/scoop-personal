@@ -29,5 +29,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winchecksec.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/winchecksec.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winchecksec.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

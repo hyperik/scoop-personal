@@ -49,5 +49,7 @@
     "extract_dir": "vlc-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vlc.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/vlc.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vlc.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

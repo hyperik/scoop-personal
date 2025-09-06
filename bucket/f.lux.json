@@ -25,5 +25,7 @@
     "url": "https://justgetflux.com/flux-setup$dashVersion.exe#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\f.lux.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/f.lux.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/f.lux.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

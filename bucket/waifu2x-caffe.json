@@ -26,5 +26,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waifu2x-caffe.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/waifu2x-caffe.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/waifu2x-caffe.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

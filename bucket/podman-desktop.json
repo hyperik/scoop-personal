@@ -28,5 +28,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\podman-desktop.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/podman-desktop.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/podman-desktop.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

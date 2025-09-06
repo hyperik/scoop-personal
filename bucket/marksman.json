@@ -22,5 +22,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\marksman.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/marksman.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/marksman.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

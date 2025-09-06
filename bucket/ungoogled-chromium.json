@@ -53,5 +53,7 @@
     "extract_dir": "ungoogled-chromium_$version_windows"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ungoogled-chromium.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/ungoogled-chromium.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ungoogled-chromium.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

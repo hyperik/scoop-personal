@@ -30,5 +30,7 @@
     "extract_dir": "rancher-compose-v$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\rancher-compose.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/rancher-compose.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rancher-compose.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

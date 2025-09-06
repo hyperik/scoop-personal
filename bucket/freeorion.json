@@ -23,5 +23,7 @@
     "url": "https://github.com/freeorion/freeorion/releases/download/v$version/FreeOrion_v$version_Win32_Setup.exe#/dl.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\freeorion.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/raw/master/bucket/freeorion.json"
+  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/freeorion.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

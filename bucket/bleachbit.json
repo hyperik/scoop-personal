@@ -32,5 +32,7 @@
     "url": "https://download.bleachbit.org/BleachBit-$version-portable.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bleachbit.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/bleachbit.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/bleachbit.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

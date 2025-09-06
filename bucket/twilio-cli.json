@@ -44,5 +44,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\twilio-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/twilio-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/twilio-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -27,5 +27,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\jdtls.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/jdtls.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jdtls.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

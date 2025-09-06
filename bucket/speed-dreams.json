@@ -57,5 +57,7 @@
   },
   "notes": "To save the data in persist folder, run from the Start menu or CLI",
   "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\speed-dreams.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/raw/master/bucket/speed-dreams.json"
+  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/speed-dreams.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

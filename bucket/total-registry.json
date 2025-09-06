@@ -27,5 +27,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\total-registry.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/total-registry.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/total-registry.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

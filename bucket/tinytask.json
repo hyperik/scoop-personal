@@ -18,5 +18,7 @@
   "pre_install": "if (!(Test-Path \"$persist_dir\\TinyTask.ini\")) { New-Item \"$dir\\TinyTask.ini\" -ItemType File | Out-Null }",
   "persist": "TinyTask.ini",
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tinytask.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/tinytask.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tinytask.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

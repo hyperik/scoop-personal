@@ -26,5 +26,7 @@
     "url": "http://www.almico.com/speedfan$cleanVersion.exe"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\speedfan.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/speedfan.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/speedfan.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

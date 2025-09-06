@@ -19,5 +19,7 @@
     "url": "https://www.alex-is.de/progs/AS%20SSD%20Benchmark.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\as-ssd.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/as-ssd.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/as-ssd.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

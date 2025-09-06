@@ -22,5 +22,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\jenkins.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/jenkins.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jenkins.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -22,5 +22,7 @@
     "extract_dir": "xmlstarlet-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\xmlstarlet.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/xmlstarlet.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/xmlstarlet.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

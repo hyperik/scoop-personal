@@ -34,5 +34,7 @@
     "url": "https://github.com/wixtoolset/wix3/releases/download/wix$cleanVersionrtm/wix$majorVersion$minorVersion-binaries.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\wixtoolset.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/wixtoolset.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wixtoolset.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -55,5 +55,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\scummvm.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/raw/master/bucket/scummvm.json"
+  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/scummvm.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

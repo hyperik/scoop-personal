@@ -24,5 +24,7 @@
     "extract_dir": "SiriKali-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sirikali.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/sirikali.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sirikali.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

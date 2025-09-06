@@ -31,5 +31,7 @@
     "extract_dir": "Apache$majorVersion$minorVersion"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ab.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/ab.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ab.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

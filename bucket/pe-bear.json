@@ -37,5 +37,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pe-bear.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/pe-bear.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pe-bear.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

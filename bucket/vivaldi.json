@@ -43,5 +43,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vivaldi.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/vivaldi.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vivaldi.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -44,5 +44,7 @@
     "url": "https://nmap.org/dist/nmap-$version-setup.exe#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nmap.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/nmap.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nmap.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

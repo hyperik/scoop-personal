@@ -16,5 +16,7 @@
     "url": "https://leomoon.com/static/?file=leomoon-cpu-v_win.zip#/dl.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\cpu-v.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/cpu-v.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/cpu-v.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

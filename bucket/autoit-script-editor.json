@@ -26,5 +26,7 @@
     "url": "https://www.autoitscript.com/autoit3/scite/download/SciTE4AutoIt3_Portable.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\autoit-script-editor.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/autoit-script-editor.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/autoit-script-editor.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

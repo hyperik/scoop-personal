@@ -32,5 +32,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\eclipse-rcp.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/eclipse-rcp.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/eclipse-rcp.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

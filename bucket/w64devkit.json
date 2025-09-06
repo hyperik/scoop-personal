@@ -23,5 +23,7 @@
     "url": "https://github.com/skeeto/w64devkit/releases/download/v$version/w64devkit-$version.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\w64devkit.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/w64devkit.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/w64devkit.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

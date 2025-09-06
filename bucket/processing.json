@@ -43,5 +43,7 @@
     "extract_dir": "processing-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\processing.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/processing.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/processing.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -25,5 +25,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\saml2aws.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/saml2aws.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/saml2aws.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

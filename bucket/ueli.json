@@ -19,5 +19,7 @@
     "url": "https://github.com/oliverschwendener/ueli/releases/download/v$version/ueli-$version-win.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ueli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/ueli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ueli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

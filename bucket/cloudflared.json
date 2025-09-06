@@ -26,5 +26,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\cloudflared.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/cloudflared.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cloudflared.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

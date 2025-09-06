@@ -69,5 +69,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ghostscript.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/ghostscript.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ghostscript.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

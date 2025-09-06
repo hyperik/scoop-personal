@@ -26,5 +26,7 @@
     "url": "https://downloads.sourceforge.net/project/ijbswa/Win32/$version%20%28stable%29/privoxy_setup_$version.exe#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\privoxy.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/privoxy.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/privoxy.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

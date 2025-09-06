@@ -58,5 +58,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\anaconda3.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/anaconda3.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/anaconda3.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

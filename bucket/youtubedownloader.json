@@ -44,5 +44,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\youtubedownloader.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/youtubedownloader.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/youtubedownloader.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -41,5 +41,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\exiftool.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/exiftool.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/exiftool.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

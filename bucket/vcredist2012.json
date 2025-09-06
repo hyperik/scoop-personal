@@ -25,5 +25,7 @@
     "Invoke-ExternalCommand -FilePath \"$dir\\vcredist_x86.exe\" -ArgumentList '/fo', '/quiet', '/norestart' -ContinueExitCodes $ec -RunAs | Out-Null"
   ],
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2012.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/vcredist2012.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist2012.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

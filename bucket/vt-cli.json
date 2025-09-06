@@ -26,5 +26,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\vt-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/vt-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/vt-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

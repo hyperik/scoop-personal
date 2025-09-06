@@ -41,5 +41,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ipinfo-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/ipinfo-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ipinfo-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

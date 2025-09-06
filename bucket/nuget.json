@@ -14,5 +14,7 @@
     "url": "https://dist.nuget.org/win-x86-commandline/v$version/NuGet.exe"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nuget.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/nuget.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nuget.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

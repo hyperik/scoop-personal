@@ -33,5 +33,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\gnupg.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/gnupg.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gnupg.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

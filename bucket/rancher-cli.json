@@ -31,5 +31,7 @@
     "extract_dir": "rancher-v$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\rancher-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/rancher-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rancher-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

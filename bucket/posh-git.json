@@ -17,5 +17,7 @@
     "url": "https://psg-prod-eastus.azureedge.net/packages/posh-git.$version.nupkg"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\posh-git.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/posh-git.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/posh-git.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

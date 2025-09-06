@@ -33,5 +33,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\kubectl.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/kubectl.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kubectl.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

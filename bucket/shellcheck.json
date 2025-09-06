@@ -14,5 +14,7 @@
     "url": "https://github.com/koalaman/shellcheck/releases/download/v$version/shellcheck-v$version.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\shellcheck.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/shellcheck.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shellcheck.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

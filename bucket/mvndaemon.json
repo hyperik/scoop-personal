@@ -36,5 +36,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\mvndaemon.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/mvndaemon.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/mvndaemon.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

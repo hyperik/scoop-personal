@@ -30,5 +30,7 @@
     "wsl-ssh-pageant-gui.exe"
   ],
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsl-ssh-pageant.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/wsl-ssh-pageant.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wsl-ssh-pageant.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

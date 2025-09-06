@@ -36,5 +36,7 @@
     "extract_dir": "sonarqube-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\sonarqube.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/sonarqube.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sonarqube.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

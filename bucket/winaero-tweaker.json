@@ -34,5 +34,7 @@
     "url": "https://winaerotweaker.com/download/winaerotweaker.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winaero-tweaker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/winaero-tweaker.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winaero-tweaker.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

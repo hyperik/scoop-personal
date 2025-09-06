@@ -29,5 +29,7 @@
     "extract_dir": "zeppelin-$version-bin-all"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zeppelin.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/zeppelin.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zeppelin.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

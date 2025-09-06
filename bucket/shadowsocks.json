@@ -39,5 +39,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\shadowsocks.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/shadowsocks.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/shadowsocks.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

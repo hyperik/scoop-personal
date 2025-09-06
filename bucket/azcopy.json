@@ -35,5 +35,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\azcopy.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/azcopy.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/azcopy.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

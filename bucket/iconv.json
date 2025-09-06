@@ -23,5 +23,7 @@
   ],
   "bin": "bin\\iconv.exe",
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\iconv.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/iconv.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/iconv.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

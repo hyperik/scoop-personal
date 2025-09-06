@@ -45,5 +45,7 @@
     "extract_dir": "testdisk-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\testdisk.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/testdisk.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/testdisk.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

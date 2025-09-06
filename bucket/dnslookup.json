@@ -28,5 +28,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\dnslookup.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/dnslookup.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/dnslookup.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

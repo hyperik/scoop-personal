@@ -53,5 +53,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\veyon-np.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/raw/master/bucket/veyon-np.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/veyon-np.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -38,5 +38,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\asciidocfx.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/asciidocfx.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/asciidocfx.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -30,5 +30,7 @@
     "url": "https://downloads.scratch.mit.edu/desktop/Scratch%20$version%20Setup.exe#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scratch.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/scratch.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scratch.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

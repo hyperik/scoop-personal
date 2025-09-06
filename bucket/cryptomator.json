@@ -41,5 +41,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\cryptomator.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/cryptomator.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/cryptomator.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

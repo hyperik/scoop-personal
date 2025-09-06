@@ -30,5 +30,7 @@
     "extract_dir": "d2-v$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\d2.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/d2.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/d2.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

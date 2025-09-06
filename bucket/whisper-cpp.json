@@ -41,5 +41,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/whisper-cpp.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -17,5 +17,7 @@
   "bin": "scw.exe",
   "checkver": "github",
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\scaleway-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/scaleway-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/scaleway-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

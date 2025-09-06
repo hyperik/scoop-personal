@@ -28,5 +28,7 @@
     "url": "https://downloads.jam-software.de/treesize_free/TreeSizeFree-Portable.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\treesize-free.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/treesize-free.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/treesize-free.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

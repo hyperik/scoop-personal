@@ -16,5 +16,7 @@
     "extract_dir": "signal-cli-$version"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\signal-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/signal-cli.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/signal-cli.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

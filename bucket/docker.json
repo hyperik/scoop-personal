@@ -31,5 +31,7 @@
     "Similarly, to unregister, run `dockerd --unregister-service`"
   ],
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/docker.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -120,5 +120,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tortoisesvn.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/tortoisesvn.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tortoisesvn.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

@@ -22,5 +22,7 @@
   ],
   "persist": "SyncToy.config",
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\synctoy.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/synctoy.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/synctoy.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

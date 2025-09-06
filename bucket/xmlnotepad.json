@@ -25,5 +25,7 @@
     "url": "https://github.com/microsoft/XmlNotepad/releases/download/$version/XmlNotepadPackage_$version_AnyCPU.msixbundle#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xmlnotepad.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/xmlnotepad.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xmlnotepad.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

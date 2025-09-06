@@ -15,5 +15,7 @@
     "url": "https://raw.githubusercontent.com/lukesampson/psutils/$matchSha/sudo.ps1"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\sudo.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/sudo.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sudo.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

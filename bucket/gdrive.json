@@ -19,5 +19,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\gdrive.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/gdrive.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gdrive.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

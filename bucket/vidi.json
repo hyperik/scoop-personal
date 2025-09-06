@@ -29,5 +29,7 @@
     "regex": "download/([\\d.]+)/"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vidi.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/vidi.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vidi.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

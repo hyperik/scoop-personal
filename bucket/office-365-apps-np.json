@@ -50,5 +50,7 @@
     "url": "https://download.microsoft.com/download/$matchPath$matchFilename#/dl.7z_"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\office-365-apps-np.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/raw/master/bucket/office-365-apps-np.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

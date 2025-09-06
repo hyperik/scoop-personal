@@ -55,5 +55,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\screentogif.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/screentogif.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/screentogif.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

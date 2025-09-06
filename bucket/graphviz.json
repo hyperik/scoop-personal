@@ -51,5 +51,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\graphviz.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/graphviz.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/graphviz.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

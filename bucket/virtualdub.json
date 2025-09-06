@@ -35,5 +35,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\virtualdub.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/virtualdub.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/virtualdub.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

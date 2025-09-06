@@ -26,5 +26,7 @@
     "url": "https://github.com/JetBrains/kotlin/releases/download/v$version/kotlin-compiler-$version.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\kotlin.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/kotlin.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kotlin.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

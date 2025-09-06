@@ -52,5 +52,7 @@
     "url": "https://sourceforge.net/projects/crystaldiskmark/files/$version/CrystalDiskMark$underscoreVersion.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\crystaldiskmark.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/crystaldiskmark.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/crystaldiskmark.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

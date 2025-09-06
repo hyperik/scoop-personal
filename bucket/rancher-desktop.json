@@ -38,5 +38,7 @@
     }
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\rancher-desktop.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/rancher-desktop.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/rancher-desktop.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

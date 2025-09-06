@@ -30,5 +30,7 @@
     "url": "https://sourceforge.net/project/eraser/Eraser%20$majorVersion/$majorVersion.$minorVersion/Eraser%20$version.exe#/dl.7z"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\eraser.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/eraser.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/eraser.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }

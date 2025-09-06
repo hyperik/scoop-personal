@@ -28,5 +28,7 @@
     "url": "https://onecommander.com/OneCommander$version.zip"
   },
   "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\onecommander.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/onecommander.json"
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/onecommander.json",
+  "sourceLastUpdated": "",
+  "sourceLastChangeFound": ""
 }
