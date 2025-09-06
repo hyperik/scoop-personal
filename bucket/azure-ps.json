@@ -1,34 +1,36 @@
 {
-    "version": "9.7.1.37189",
-    "description": "PowerShell cmdlets for developers and administrators to develop, deploy and manage Microsoft Azure applications.",
-    "homepage": "https://aka.ms/azpsdocs",
-    "license": "Apache-2.0",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/Azure/azure-powershell/releases/download/v9.7.1-May2023/Az-Cmdlets-9.7.1.37189-x64.msi",
-            "hash": "4b2273325878476269696f7e5ab16bb8789d1b384a3e7f7270a72479b1242613"
-        },
-        "32bit": {
-            "url": "https://github.com/Azure/azure-powershell/releases/download/v9.7.1-May2023/Az-Cmdlets-9.7.1.37189-x86.msi",
-            "hash": "dafbfd95752b8a942fd3b81e06df9df3c7f031fc9adf0996da5a37f69626eea6"
-        }
+  "version": "9.7.1.37189",
+  "description": "PowerShell cmdlets for developers and administrators to develop, deploy and manage Microsoft Azure applications.",
+  "homepage": "https://aka.ms/azpsdocs",
+  "license": "Apache-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/Azure/azure-powershell/releases/download/v9.7.1-May2023/Az-Cmdlets-9.7.1.37189-x64.msi",
+      "hash": "4b2273325878476269696f7e5ab16bb8789d1b384a3e7f7270a72479b1242613"
     },
-    "extract_dir": "WindowsPowerShell\\Modules",
-    "psmodule": {
-        "name": "AzureRM"
-    },
-    "checkver": {
-        "url": "https://api.github.com/repos/Azure/azure-powershell/releases",
-        "regex": "download/v(?<release>[^/]+)/Az-Cmdlets-([0-9.]+)-x64[.]msi"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/Azure/azure-powershell/releases/download/v$matchRelease/Az-Cmdlets-$version-x64.msi"
-            },
-            "32bit": {
-                "url": "https://github.com/Azure/azure-powershell/releases/download/v$matchRelease/Az-Cmdlets-$version-x86.msi"
-            }
-        }
+    "32bit": {
+      "url": "https://github.com/Azure/azure-powershell/releases/download/v9.7.1-May2023/Az-Cmdlets-9.7.1.37189-x86.msi",
+      "hash": "dafbfd95752b8a942fd3b81e06df9df3c7f031fc9adf0996da5a37f69626eea6"
     }
+  },
+  "extract_dir": "WindowsPowerShell\\Modules",
+  "psmodule": {
+    "name": "AzureRM"
+  },
+  "checkver": {
+    "url": "https://api.github.com/repos/Azure/azure-powershell/releases",
+    "regex": "download/v(?<release>[^/]+)/Az-Cmdlets-([0-9.]+)-x64[.]msi"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/Azure/azure-powershell/releases/download/v$matchRelease/Az-Cmdlets-$version-x64.msi"
+      },
+      "32bit": {
+        "url": "https://github.com/Azure/azure-powershell/releases/download/v$matchRelease/Az-Cmdlets-$version-x86.msi"
+      }
+    }
+  },
+  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\azure-ps.json",
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/raw/master/bucket/azure-ps.json"
 }

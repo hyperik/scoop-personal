@@ -1,35 +1,37 @@
 {
-    "version": "2024.7.2",
-    "homepage": "https://portswigger.net/burp",
-    "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://portswigger.net/legal"
-    },
-    "architecture": {
-        "64bit": {
-            "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.7.2&type=WindowsX64#/setup.exe",
-            "hash": "391ba6b6ce3e50c350cd42e3cba6b9fa895d41ae0eb4580f2361e95e0b85012a"
-        }
-    },
-    "post_install": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\setup.exe\""
-    ],
-    "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q'; Start-Sleep -Seconds 4"
-    ],
-    "checkver": {
-        "url": "https://portswigger.net/burp/releases/data",
-        "jsonpath": "$.ResultSet.Results..version",
-        "regex": "([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=$version&type=WindowsX64#/setup.exe"
-            }
-        }
+  "version": "2024.7.2",
+  "homepage": "https://portswigger.net/burp",
+  "description": "An application that comes with set of tools used for penetration and security testing of web applications.",
+  "license": {
+    "identifier": "Freeware",
+    "url": "https://portswigger.net/legal"
+  },
+  "architecture": {
+    "64bit": {
+      "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.7.2&type=WindowsX64#/setup.exe",
+      "hash": "391ba6b6ce3e50c350cd42e3cba6b9fa895d41ae0eb4580f2361e95e0b85012a"
     }
+  },
+  "post_install": [
+    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+    "Start-Process \"$dir\\setup.exe\" -Wait -Verb 'RunAs' -ArgumentList @('-q', '-dir', \"$dir\"); Remove-Item \"$dir\\setup.exe\""
+  ],
+  "pre_uninstall": [
+    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+    "Start-Process \"$dir\\uninstall.exe\" -Wait -Verb 'RunAs' -ArgumentList '-q'; Start-Sleep -Seconds 4"
+  ],
+  "checkver": {
+    "url": "https://portswigger.net/burp/releases/data",
+    "jsonpath": "$.ResultSet.Results..version",
+    "regex": "([\\d.]+)"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://portswigger-cdn.net/burp/releases/download?product=community&version=$version&type=WindowsX64#/setup.exe"
+      }
+    }
+  },
+  "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\burp-suite-community-np.json",
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/raw/master/bucket/burp-suite-community-np.json"
 }

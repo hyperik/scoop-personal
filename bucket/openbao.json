@@ -1,31 +1,33 @@
 {
-    "version": "2.0.0",
-    "description": "An open source, community-driven fork of Vault managed by the Linux Foundation.",
-    "homepage": "https://openbao.org",
-    "license": "MPL-2.0",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/openbao/openbao/releases/download/v2.0.0/bao_2.0.0_Windows_x86_64.zip",
-            "hash": "da9607efbb1f7afc73b5851da465e79145159ecea0f09937982093ddc3bebb69"
-        },
-        "arm64": {
-            "url": "https://github.com/openbao/openbao/releases/download/v2.0.0/bao_2.0.0_Windows_arm64.zip",
-            "hash": "74ec73e772de17c0e417cac6e7bf597396b4a0b10f9bd12189cc74eab849aa7c"
-        }
+  "version": "2.0.0",
+  "description": "An open source, community-driven fork of Vault managed by the Linux Foundation.",
+  "homepage": "https://openbao.org",
+  "license": "MPL-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/openbao/openbao/releases/download/v2.0.0/bao_2.0.0_Windows_x86_64.zip",
+      "hash": "da9607efbb1f7afc73b5851da465e79145159ecea0f09937982093ddc3bebb69"
     },
-    "bin": "bao.exe",
-    "checkver": {
-        "url": "https://github.com/openbao/openbao/releases.atom",
-        "regex": "Repository/\\d+/v([\\d.]+.*?)<"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/openbao/openbao/releases/download/v$version/bao_$version_Windows_x86_64.zip"
-            },
-            "arm64": {
-                "url": "https://github.com/openbao/openbao/releases/download/v$version/bao_$version_Windows_arm64.zip"
-            }
-        }
+    "arm64": {
+      "url": "https://github.com/openbao/openbao/releases/download/v2.0.0/bao_2.0.0_Windows_arm64.zip",
+      "hash": "74ec73e772de17c0e417cac6e7bf597396b4a0b10f9bd12189cc74eab849aa7c"
     }
+  },
+  "bin": "bao.exe",
+  "checkver": {
+    "url": "https://github.com/openbao/openbao/releases.atom",
+    "regex": "Repository/\\d+/v([\\d.]+.*?)<"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/openbao/openbao/releases/download/v$version/bao_$version_Windows_x86_64.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/openbao/openbao/releases/download/v$version/bao_$version_Windows_arm64.zip"
+      }
+    }
+  },
+  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\openbao.json",
+  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/raw/master/bucket/openbao.json"
 }

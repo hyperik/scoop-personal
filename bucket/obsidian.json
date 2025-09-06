@@ -31,5 +31,7 @@
     "github": "https://github.com/obsidianmd/obsidian-releases"
   },
   "url": "https://repo.ibboost.com/repository/thirdparty-private/scoop/obsidian/1.6.7/obsidian-1.6.7-any.7z",
-  "hash": "a5f647be9200c9cd82fd0bdd8b86fa6a8ed958fbc7e1651ea7e921c282a17f1f"
+  "hash": "a5f647be9200c9cd82fd0bdd8b86fa6a8ed958fbc7e1651ea7e921c282a17f1f",
+  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\obsidian.json",
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/obsidian.json"
 }

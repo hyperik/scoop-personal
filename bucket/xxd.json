@@ -1,24 +1,26 @@
 {
-    "version": "10331587152",
-    "description": "A hexdump utility by Juergen Weigert",
-    "homepage": "https://github.com/ckormanyos/xxd",
-    "license": "Vim,GPL-2.0-only",
-    "architecture": {
-        "64bit": {
-            "url": "https://nightly.link/ckormanyos/xxd/workflows/xxd/main/xxd-win64-msvc.zip",
-            "hash": "b9cfa1c50eb2d7e62327869cd1ba9cf21354555a6321112054a144fc22c11031"
-        }
-    },
-    "bin": "xxd.exe",
-    "checkver": {
-        "url": "https://api.github.com/repositories/475011866/actions/workflows/xxd.yml/runs?branch=main&status=success",
-        "jsonpath": "$.workflow_runs[0].id"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://nightly.link/ckormanyos/xxd/workflows/xxd/main/xxd-win64-msvc.zip"
-            }
-        }
+  "version": "10331587152",
+  "description": "A hexdump utility by Juergen Weigert",
+  "homepage": "https://github.com/ckormanyos/xxd",
+  "license": "Vim,GPL-2.0-only",
+  "architecture": {
+    "64bit": {
+      "url": "https://nightly.link/ckormanyos/xxd/workflows/xxd/main/xxd-win64-msvc.zip",
+      "hash": "b9cfa1c50eb2d7e62327869cd1ba9cf21354555a6321112054a144fc22c11031"
     }
+  },
+  "bin": "xxd.exe",
+  "checkver": {
+    "url": "https://api.github.com/repositories/475011866/actions/workflows/xxd.yml/runs?branch=main&status=success",
+    "jsonpath": "$.workflow_runs[0].id"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://nightly.link/ckormanyos/xxd/workflows/xxd/main/xxd-win64-msvc.zip"
+      }
+    }
+  },
+  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\xxd.json",
+  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/raw/master/bucket/xxd.json"
 }

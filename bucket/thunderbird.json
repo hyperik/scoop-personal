@@ -1,69 +1,71 @@
 {
+  "architecture": {
+    "32bit": {
+      "hash": "sha512:19336024195712d1c5a81c15487bc7d6af6dad17a22dc7f7f1dca6b1bada4128ca805b258dbb8326fe6117aabf0676b11fdb87f4ade2f9261f74abfe4d578374",
+      "url": "https://archive.mozilla.org/pub/thunderbird/releases/135.0/win32/en-US/Thunderbird%20Setup%20135.0.exe#/dl.7z"
+    },
+    "64bit": {
+      "hash": "sha512:1e697097fb479317d346da40a5ee80aada4f5dd6e33d783b9e8eb004bfc15053c792dfbb0a8895159443c284946d2c657b5cd0601dcfb9ab83fa677759801c43",
+      "url": "https://archive.mozilla.org/pub/thunderbird/releases/135.0/win64/en-US/Thunderbird%20Setup%20135.0.exe#/dl.7z"
+    }
+  },
+  "autoupdate": {
     "architecture": {
-        "32bit": {
-            "hash": "sha512:19336024195712d1c5a81c15487bc7d6af6dad17a22dc7f7f1dca6b1bada4128ca805b258dbb8326fe6117aabf0676b11fdb87f4ade2f9261f74abfe4d578374",
-            "url": "https://archive.mozilla.org/pub/thunderbird/releases/135.0/win32/en-US/Thunderbird%20Setup%20135.0.exe#/dl.7z"
+      "32bit": {
+        "hash": {
+          "regex": "$sha512\\s+win32/en-US/$basename",
+          "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS"
         },
-        "64bit": {
-            "hash": "sha512:1e697097fb479317d346da40a5ee80aada4f5dd6e33d783b9e8eb004bfc15053c792dfbb0a8895159443c284946d2c657b5cd0601dcfb9ab83fa677759801c43",
-            "url": "https://archive.mozilla.org/pub/thunderbird/releases/135.0/win64/en-US/Thunderbird%20Setup%20135.0.exe#/dl.7z"
-        }
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "hash": {
-                    "regex": "$sha512\\s+win32/en-US/$basename",
-                    "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS"
-                },
-                "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win32/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z"
-            },
-            "64bit": {
-                "hash": {
-                    "regex": "$sha512\\s+win64/en-US/$basename",
-                    "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS"
-                },
-                "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win64/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z"
-            }
-        }
-    },
-    "bin": "thunderbird.exe",
-    "checkver": {
-        "jsonpath": "$.LATEST_THUNDERBIRD_VERSION",
-        "url": "https://product-details.mozilla.org/1.0/thunderbird_versions.json"
-    },
-    "description": "A free email application that’s easy to set up and customize.",
-    "extract_dir": "core",
-    "homepage": "https://www.thunderbird.net",
-    "license": "MPL-2.0",
-    "notes": [
-        "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
-        "  - Run 'Thunderbird Profile Manager', choose 'Scoop' then click 'Start Thunderbird'.",
-        "  - Visit 'about:profiles' page in Thunderbird to check *DEFAULT* profile.",
-        "For details: https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-thunderbird-profiles"
+        "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win32/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z"
+      },
+      "64bit": {
+        "hash": {
+          "regex": "$sha512\\s+win64/en-US/$basename",
+          "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/SHA512SUMS"
+        },
+        "url": "https://archive.mozilla.org/pub/thunderbird/releases/$version/win64/en-US/Thunderbird%20Setup%20$version.exe#/dl.7z"
+      }
+    }
+  },
+  "bin": "thunderbird.exe",
+  "checkver": {
+    "jsonpath": "$.LATEST_THUNDERBIRD_VERSION",
+    "url": "https://product-details.mozilla.org/1.0/thunderbird_versions.json"
+  },
+  "description": "A free email application that’s easy to set up and customize.",
+  "extract_dir": "core",
+  "homepage": "https://www.thunderbird.net",
+  "license": "MPL-2.0",
+  "notes": [
+    "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
+    "  - Run 'Thunderbird Profile Manager', choose 'Scoop' then click 'Start Thunderbird'.",
+    "  - Visit 'about:profiles' page in Thunderbird to check *DEFAULT* profile.",
+    "For details: https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-thunderbird-profiles"
+  ],
+  "persist": [
+    "distribution",
+    "profile"
+  ],
+  "post_install": [
+    "thunderbird -CreateProfile \"Scoop $persist_dir\\profile\"",
+    "$Addition = \"$persist_dir\\addition\"",
+    "if (Test-Path $Addition) {",
+    "  info 'Copying additional items...'",
+    "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
+    "}"
+  ],
+  "shortcuts": [
+    [
+      "thunderbird.exe",
+      "Thunderbird"
     ],
-    "persist": [
-        "distribution",
-        "profile"
-    ],
-    "post_install": [
-        "thunderbird -CreateProfile \"Scoop $persist_dir\\profile\"",
-        "$Addition = \"$persist_dir\\addition\"",
-        "if (Test-Path $Addition) {",
-        "  info 'Copying additional items...'",
-        "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
-        "}"
-    ],
-    "shortcuts": [
-        [
-            "thunderbird.exe",
-            "Thunderbird"
-        ],
-        [
-            "thunderbird.exe",
-            "Thunderbird Profile Manager",
-            "-P"
-        ]
-    ],
-    "version": "135.0"
+    [
+      "thunderbird.exe",
+      "Thunderbird Profile Manager",
+      "-P"
+    ]
+  ],
+  "version": "135.0",
+  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\thunderbird.json",
+  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/raw/master/bucket/thunderbird.json"
 }
