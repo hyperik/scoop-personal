@@ -1,14 +1,17 @@
 <#
 .SYNOPSIS
-  Seeds Scoop manifests with source info and initializes timestamp fields.
+  Seeds Scoop manifests with source info and initializes tracking fields.
 
 .DESCRIPTION
   This script inspects 'local-repos.cfg' and finds the source for each manifest in your personal bucket.
-  It adds 'source' (local path) and 'sourceUrl' (remote URL) fields.
+  It adds 'source' (the local file path) and 'sourceUrl' (the remote URL) fields.
   It also initializes 'sourceLastUpdated' and 'sourceLastChangeFound' with empty strings, to be populated by the update script.
 
+  The path to the 'bucket' directory defaults to a 'bucket' folder in the script's directory, falling back to a hard-coded path if not found.
+  Paths within 'local-repos.cfg' can be relative to the script's directory.
+
 .PARAMETER PersonalBucketPath
-  The full path to the 'bucket' directory of your personal Scoop repository.
+  The full path to the 'bucket' directory of your personal Scoop repository. Overrides the default behavior.
 
 .PARAMETER Force
   Forces recalculation for ALL manifests, ignoring their current state.
@@ -21,7 +24,7 @@
 #>
 param(
     [Parameter(Mandatory = $false)]
-    [string]$PersonalBucketPath = "D:\dev\src\hyperik\scoop-personal\bucket",
+    [string]$PersonalBucketPath = $null,
 
     [Parameter(Mandatory = $false)]
     [switch]$Force,
@@ -34,8 +37,18 @@ param(
 )
 
 # --- Initial Setup ---
+$scriptDir = $PSScriptRoot
+if ([string]::IsNullOrEmpty($PersonalBucketPath)) {
+    $localBucketPath = Join-Path -Path $scriptDir -ChildPath 'bucket'
+    if (Test-Path -Path $localBucketPath) {
+        $PersonalBucketPath = $localBucketPath
+    } else {
+        $PersonalBucketPath = 'D:\dev\src\hyperik\scoop-personal\bucket' # Fallback default
+    }
+}
+
 $ConfigFile = "local-repos.cfg"
-if (-not (Test-Path $PersonalBucketPath)) { Write-Error "Invalid PersonalBucketPath: $PersonalBucketPath"; return }
+if (-not (Test-Path $PersonalBucketPath)) { Write-Error "Personal bucket path not found: $PersonalBucketPath"; return }
 $personalManifests = Get-ChildItem -Path $PersonalBucketPath -Filter *.json
 if ($null -eq $personalManifests) { Write-Warning "No manifest files found in '$PersonalBucketPath'."; return }
 
@@ -62,21 +75,29 @@ if ($ListManual) {
 # =================================================================================
 
 # --- Step 1: Read, Inspect, and Update local-repos.cfg ---
-if (-not (Test-Path $ConfigFile)) { Write-Error "Config file not found: $ConfigFile"; return }
-Write-Host "🔍 Reading and verifying repository configuration from '$ConfigFile'..."
-$repos = Import-Csv -Path $ConfigFile -Delimiter ';' -Header 'Path', 'Url'
+$configFilePath = Join-Path -Path $scriptDir -ChildPath $ConfigFile
+if (-not (Test-Path $configFilePath)) { Write-Error "Config file not found: $configFilePath"; return }
+Write-Host "🔍 Reading and verifying repository configuration from '$configFilePath'..."
+$repos = Import-Csv -Path $configFilePath -Delimiter ';' -Header 'Path', 'Url'
+
+# Resolve relative paths in the config file
+foreach ($repo in $repos) {
+    if (-not ([System.IO.Path]::IsPathRooted($repo.Path))) {
+        $repo.Path = Resolve-Path -Path (Join-Path -Path $scriptDir -ChildPath $repo.Path) -ErrorAction SilentlyContinue
+    }
+}
+
 $configUpdated = $false
 foreach ($repo in $repos) {
     if ([string]::IsNullOrWhiteSpace($repo.Url)) {
         Write-Host "  - URL is missing for path '$($repo.Path)'. Attempting to detect..." -ForegroundColor Yellow
         $gitConfigPath = Join-Path $repo.Path ".git\config"
         if (Test-Path $gitConfigPath) {
-            # ... Git parsing logic ...
             $originUrl = $null; try { $configFileContent = Get-Content $gitConfigPath; $inRemoteOrigin = $false; foreach ($line in $configFileContent) { if ($line.Trim() -eq '[remote "origin"]') { $inRemoteOrigin = $true; continue }; if ($inRemoteOrigin) { if ($line.Trim().StartsWith('[')) { break }; if ($line.Trim().StartsWith('url')) { $originUrl = ($line.Split('=', 2))[1].Trim(); break } } } } catch {}; if ($originUrl) { $repo.Url = $originUrl; $configUpdated = $true; Write-Host "    ✅ Success! Found remote URL: $($repo.Url)" -ForegroundColor Green } else { Write-Warning "    ⚠️ Failed to parse the remote URL from '$gitConfigPath'."}
         } else { Write-Warning "    ⚠️ Could not find .git/config at '$($repo.Path)'. Please verify the path."}
     }
 }
-if ($configUpdated) { Write-Host "💾 Saving updated URLs back to '$ConfigFile'..." -ForegroundColor Cyan; ($repos | ForEach-Object { "$($_.Path);$($_.Url)" }) | Set-Content -Path $ConfigFile }
+if ($configUpdated) { Write-Host "💾 Saving updated URLs back to '$configFilePath'..." -ForegroundColor Cyan; ($repos | ForEach-Object { "$($_.Path);$($_.Url)" }) | Set-Content -Path $configFilePath }
 Write-Host "  - Repository configuration is ready."
 
 # --- Step 2: Process Manifests ---
@@ -95,13 +116,13 @@ foreach ($manifestFile in $personalManifests) {
 
     # Pass 1: Search in 'bucket' folders
     foreach ($repo in $repos) {
+        if ([string]::IsNullOrEmpty($repo.Path)) { continue }
         $sourceManifestPath = Join-Path $repo.Path "bucket\$($manifestFile.Name)"
         if ((Test-Path $sourceManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
             $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", "")
             $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/bucket/$($manifestFile.Name)"
             $json | Add-Member -MemberType NoteProperty -Name 'source' -Value $sourceManifestPath -Force
             $json | Add-Member -MemberType NoteProperty -Name 'sourceUrl' -Value $rawUrl -Force
-            # MODIFIED: Initialize timestamp fields with empty strings
             $json | Add-Member -MemberType NoteProperty -Name 'sourceLastUpdated' -Value '' -Force
             $json | Add-Member -MemberType NoteProperty -Name 'sourceLastChangeFound' -Value '' -Force
             $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
@@ -112,13 +133,13 @@ foreach ($manifestFile in $personalManifests) {
     # Pass 2: If not found, search in 'deprecated' folders
     if (-not $sourceFound) {
         foreach ($repo in $repos) {
+            if ([string]::IsNullOrEmpty($repo.Path)) { continue }
             $deprecatedManifestPath = Join-Path $repo.Path "deprecated\$($manifestFile.Name)"
             if ((Test-Path $deprecatedManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
                 $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", "")
                 $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/deprecated/$($manifestFile.Name)"
                 $json | Add-Member -MemberType NoteProperty -Name 'source' -Value 'DEPRECATED' -Force
                 $json | Add-Member -MemberType NoteProperty -Name 'sourceUrl' -Value $rawUrl -Force
-                # MODIFIED: Initialize timestamp fields with empty strings
                 $json | Add-Member -MemberType NoteProperty -Name 'sourceLastUpdated' -Value '' -Force
                 $json | Add-Member -MemberType NoteProperty -Name 'sourceLastChangeFound' -Value '' -Force
                 $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
