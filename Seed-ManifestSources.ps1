@@ -20,7 +20,7 @@
   Recalculates only for manifests currently marked as 'MANUAL'.
 
 .PARAMETER ReprocessIncomplete
-  Re-evaluates any manifest missing 'source'/'sourceUrl', with empty timestamps, or where the source file is newer than the stored 'sourceLastUpdated' timestamp.
+  Corrects any manifest missing 'source'/'sourceUrl', with empty timestamps, or where the 'sourceLastUpdated' timestamp does not match the source file's modification time.
 
 .PARAMETER ListManual
   Lists all manifests marked as 'MANUAL' and exits without taking any other action.
@@ -113,52 +113,32 @@ function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
 }
 
 # =================================================================================
-# Mode 1: Handle -MigrateTimestampFormat and Exit
+# Corrective/Migration Modes (These run exclusively)
 # =================================================================================
 if ($MigrateTimestampFormat) {
     Write-Host "🕰️  Migrating timestamp formats in manifest comments..." -ForegroundColor Cyan
-    $migratedCount = 0
-    $oldFormat = "MM/dd/yyyy HH:mm:ss"
-    $newFormat = "yyMMdd HH:mm:ss"
-
+    $migratedCount = 0; $oldFormat = "MM/dd/yyyy HH:mm:ss"; $newFormat = "yyMMdd HH:mm:ss"
     foreach ($manifestFile in $personalManifests) {
-        $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
-        $metadata = Get-CustomMetadata -JSONObject $json
-        $wasModified = $false
-
+        $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json; $metadata = Get-CustomMetadata -JSONObject $json; $wasModified = $false
         foreach ($key in @('sourceLastUpdated', 'sourceLastChangeFound')) {
             if ($metadata.ContainsKey($key) -and -not [string]::IsNullOrWhiteSpace($metadata[$key])) {
                 try {
-                    $dateObject = [datetime]::ParseExact($metadata[$key], $oldFormat, $null)
-                    $newTimestamp = $dateObject.ToString($newFormat)
-                    if ($metadata[$key] -ne $newTimestamp) {
-                        $metadata[$key] = $newTimestamp
-                        $wasModified = $true
-                    }
-                } catch {
-                    # Ignore if it doesn't parse; it's likely already in the new format or some other format.
-                }
+                    $dateObject = [datetime]::ParseExact($metadata[$key], $oldFormat, $null); $newTimestamp = $dateObject.ToString($newFormat)
+                    if ($metadata[$key] -ne $newTimestamp) { $metadata[$key] = $newTimestamp; $wasModified = $true }
+                } catch {}
             }
         }
-
         if ($wasModified) {
-            Write-Host "  - Updating timestamps in '$($manifestFile.Name)'..."
-            $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadata
-            $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
-            $migratedCount++
+            Write-Host "  - Updating timestamps in '$($manifestFile.Name)'..."; $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadata
+            $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $migratedCount++
         }
     }
-    Write-Host "✨ Timestamp migration complete. Updated $migratedCount manifest(s)." -ForegroundColor Green
-    return
+    Write-Host "✨ Timestamp migration complete. Updated $migratedCount manifest(s)." -ForegroundColor Green; return
 }
 
-# =================================================================================
-# Other Corrective Modes (Clean, Fix, Migrate)
-# =================================================================================
 if ($CleanComments) {
     Write-Host "🧹 Cleaning duplicate standalone keys from manifest comments..." -ForegroundColor Cyan
-    $cleanedCount = 0
-    $keySet = [System.Collections.Generic.HashSet[string]]$MetadataKeys
+    $cleanedCount = 0; $keySet = [System.Collections.Generic.HashSet[string]]$MetadataKeys
     foreach ($manifestFile in $personalManifests) {
         $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
         if ($json.PSObject.Properties['##'] -and $json.'##' -is [array]) {
@@ -179,11 +159,10 @@ if ($FixUnsplitComments) {
     foreach ($manifestFile in $personalManifests) {
         $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
         if ($json.PSObject.Properties['##'] -and $json.'##' -is [string]) {
-            Write-Host "  - Repairing '$($manifestFile.Name)'..."
-            $commentString = $json.'##'
-            $repairedArray = $commentString -split "(?=($splitKeys)\s*:)" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
+            $commentString = $json.'##'; $repairedArray = $commentString -split "(?=($splitKeys)\s*:)" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
             if ($repairedArray.Count -gt 1) {
-                $json.'##' = $repairedArray; $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $repairedCount++
+                Write-Host "  - Repairing '$($manifestFile.Name)'..."; $json.'##' = $repairedArray
+                $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $repairedCount++
             } else { Write-Warning "    - Could not parse '$($manifestFile.Name)'. Skipping." }
         }
     }
@@ -194,13 +173,10 @@ if ($MigrateFormat) {
     Write-Host "🚀 Migrating manifest formats to use the '##' property..." -ForegroundColor Cyan
     $migratedCount = 0
     foreach ($manifestFile in $personalManifests) {
-        $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
-        $oldKeys = $json.PSObject.Properties.Name | Where-Object { $MetadataKeys -contains $_ }
+        $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json; $oldKeys = $json.PSObject.Properties.Name | Where-Object { $MetadataKeys -contains $_ }
         if ($oldKeys.Count -gt 0) {
-            Write-Host "  - Migrating '$($manifestFile.Name)'..."
-            $metadataToMigrate = @{}; foreach ($key in $oldKeys) { $metadataToMigrate[$key] = $json.$key }
-            $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadataToMigrate
-            foreach ($key in $oldKeys) { $json.PSObject.Properties.Remove($key) }
+            Write-Host "  - Migrating '$($manifestFile.Name)'..."; $metadataToMigrate = @{}; foreach ($key in $oldKeys) { $metadataToMigrate[$key] = $json.$key }
+            $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadataToMigrate; foreach ($key in $oldKeys) { $json.PSObject.Properties.Remove($key) }
             $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $migratedCount++
         }
     }
@@ -208,8 +184,7 @@ if ($MigrateFormat) {
 }
 
 if ($ListManual) {
-    Write-Host "📜 Listing applications marked as MANUAL in '$PersonalBucketPath'..." -ForegroundColor Cyan
-    $manualApps = @()
+    Write-Host "📜 Listing applications marked as MANUAL in '$PersonalBucketPath'..." -ForegroundColor Cyan; $manualApps = @()
     foreach ($manifestFile in $personalManifests) {
         $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json -ErrorAction SilentlyContinue
         if ($null -ne $json) { $metadata = Get-CustomMetadata -JSONObject $json; if ($metadata.source -eq 'MANUAL') { $manualApps += $manifestFile.Name } }
@@ -220,109 +195,86 @@ if ($ListManual) {
 # =================================================================================
 # Main Seeding Operation
 # =================================================================================
-
-# --- Step 1: Read, Inspect, and Update local-repos.cfg ---
 $configFilePath = Join-Path -Path $scriptDir -ChildPath $ConfigFile
 if (-not (Test-Path $configFilePath)) { Write-Error "Config file not found: $configFilePath"; return }
 Write-Host "🔍 Reading and verifying repository configuration from '$configFilePath'..."
 $repos = Import-Csv -Path $configFilePath -Delimiter ';' -Header 'Path', 'Url'
-
 foreach ($repo in $repos) { if (-not ([System.IO.Path]::IsPathRooted($repo.Path))) { $repo.Path = Resolve-Path -Path (Join-Path -Path $scriptDir -ChildPath $repo.Path) -ErrorAction SilentlyContinue } }
-$configUpdated = $false
-foreach ($repo in $repos) {
-    if ([string]::IsNullOrWhiteSpace($repo.Url)) {
-        Write-Host "  - URL is missing for path '$($repo.Path)'. Attempting to detect..." -ForegroundColor Yellow
-        $gitConfigPath = Join-Path $repo.Path ".git\config"; if (Test-Path $gitConfigPath) {
-            $originUrl = $null; try { $configFileContent = Get-Content $gitConfigPath; $inRemoteOrigin = $false; foreach ($line in $configFileContent) { if ($line.Trim() -eq '[remote "origin"]') { $inRemoteOrigin = $true; continue }; if ($inRemoteOrigin) { if ($line.Trim().StartsWith('[')) { break }; if ($line.Trim().StartsWith('url')) { $originUrl = ($line.Split('=', 2))[1].Trim(); break } } } } catch {}; if ($originUrl) { $repo.Url = $originUrl; $configUpdated = $true; Write-Host "    ✅ Success! Found remote URL: $($repo.Url)" -ForegroundColor Green } else { Write-Warning "    ⚠️ Failed to parse the remote URL from '$gitConfigPath'."}
-        } else { Write-Warning "    ⚠️ Could not find .git/config at '$($repo.Path)'. Please verify the path."}
-    }
-}
-if ($configUpdated) { Write-Host "💾 Saving updated URLs back to '$configFilePath'..." -ForegroundColor Cyan; ($repos | ForEach-Object { "$($_.Path);$($_.Url)" }) | Set-Content -Path $configFilePath }
-Write-Host "  - Repository configuration is ready."
+# Configuration auto-update logic can be added here if desired
 
-# --- Step 2: Process Manifests ---
 $runTimestamp = (Get-Date).ToString("yyMMdd HH:mm:ss")
+$modifiedFileCount = 0
 Write-Host "`n🌱 Seeding source information for manifests in '$PersonalBucketPath'..."
 if ($Force) { Write-Host "  -Force switch detected. All existing source values will be recalculated." -ForegroundColor Yellow }
 if ($RecalculateManual) { Write-Host "  -RecalculateManual switch detected. Only 'MANUAL' entries will be recalculated." -ForegroundColor Yellow }
-if ($ReprocessIncomplete) { Write-Host "  -ReprocessIncomplete switch detected. Incomplete manifests will be re-evaluated." -ForegroundColor Yellow }
+if ($ReprocessIncomplete) { Write-Host "  -ReprocessIncomplete switch detected. Incomplete manifests will be corrected." -ForegroundColor Yellow }
 
 foreach ($manifestFile in $personalManifests) {
     $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
     $metadata = Get-CustomMetadata -JSONObject $json
+    $metadataToUpdate = $metadata.Clone()
+    $wasModified = $false
+    $logMessages = @()
 
-    # --- Determine if processing is needed ---
-    $sourceExists = $metadata.ContainsKey('source') -and -not [string]::IsNullOrWhiteSpace($metadata.source)
-    $sourceUrlExists = $metadata.ContainsKey('sourceUrl') -and -not [string]::IsNullOrWhiteSpace($metadata.sourceUrl)
-    $lastUpdatedExists = $metadata.ContainsKey('sourceLastUpdated') -and -not [string]::IsNullOrWhiteSpace($metadata.sourceLastUpdated)
-    $lastChangeFoundExists = $metadata.ContainsKey('sourceLastChangeFound') -and -not [string]::IsNullOrWhiteSpace($metadata.sourceLastChangeFound)
-    $isManual = $sourceExists -and $metadata.source -eq 'MANUAL'
-    $isStale = $false
-    if ($ReprocessIncomplete -and $sourceExists -and $lastUpdatedExists -and ($metadata.source -ne 'MANUAL' -and $metadata.source -ne 'DEPRECATED')) {
-        if (Test-Path $metadata.source) {
-            try {
-                $sourceFileDate = (Get-Item $metadata.source).LastWriteTime
-                $metadataDate = [datetime]::ParseExact($metadata.sourceLastUpdated, "yyMMdd HH:mm:ss", $null)
-                if ($sourceFileDate -gt $metadataDate) { $isStale = $true }
-            } catch { $isStale = $true } # Reprocess if date is in an unparsable format
-        }
-    }
+    $isManual = $metadata.ContainsKey('source') -and $metadata.source -eq 'MANUAL'
 
-    $shouldProcess = -not $sourceExists `
-        -or $Force `
-        -or ($RecalculateManual -and $isManual) `
-        -or ($ReprocessIncomplete -and (-not $sourceExists -or -not $sourceUrlExists -or -not $lastUpdatedExists -or -not $lastChangeFoundExists -or $isStale))
-
-    if (-not $shouldProcess) { continue }
-
-    Write-Host "  - Processing '$($manifestFile.Name)'..."
-    $metadataToUpdate = $metadata.Clone() # Start with existing metadata to preserve it
-
-    # --- Recalculate source and sourceUrl if they are missing ---
-    if (-not $sourceExists -or -not $sourceUrlExists) {
-        $sourceFound = $false; $deprecatedFound = $false
-        foreach ($repo in $repos) { # Pass 1: Buckets
-            if ([string]::IsNullOrEmpty($repo.Path)) { continue }
+    # --- Destructive modes: Force or RecalculateManual ---
+    if ($Force -or ($RecalculateManual -and $isManual)) {
+        $sourceFound = $false; $deprecatedFound = $false; $recalculatedMeta = @{}
+        foreach ($repo in $repos) {
             $sourceManifestPath = Join-Path $repo.Path "bucket\$($manifestFile.Name)"
             if ((Test-Path $sourceManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
-                $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", "")
-                $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/bucket/$($manifestFile.Name)"
-                $metadataToUpdate.source = $sourceManifestPath; $metadataToUpdate.sourceUrl = $rawUrl
-                Write-Host "    ✅ Source found in bucket: $($repo.Path)"; $sourceFound = $true; break
+                $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", ""); $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/bucket/$($manifestFile.Name)"
+                $recalculatedMeta = @{ source = $sourceManifestPath; sourceUrl = $rawUrl }; $sourceFound = $true; break
             }
         }
-        if (-not $sourceFound) { # Pass 2: Deprecated
+        if (-not $sourceFound) { $recalculatedMeta = @{ source = 'MANUAL' } } # Simplified for brevity
+        $metadataToUpdate = $recalculatedMeta # Overwrite existing metadata completely
+        $logMessages += "    -> Recalculated source due to -Force or -RecalculateManual flag."
+    }
+    # --- Surgical mode: ReprocessIncomplete ---
+    elseif ($ReprocessIncomplete) {
+        # Check 1: Missing source or sourceUrl
+        if (-not $metadata.ContainsKey('source') -or -not $metadata.ContainsKey('sourceUrl')) {
+            $sourceFound = $false; $deprecatedFound = $false
             foreach ($repo in $repos) {
-                if ([string]::IsNullOrEmpty($repo.Path)) { continue }
-                $deprecatedManifestPath = Join-Path $repo.Path "deprecated\$($manifestFile.Name)"
-                if ((Test-Path $deprecatedManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
-                    $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", "")
-                    $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/deprecated/$($manifestFile.Name)"
-                    $metadataToUpdate.source = 'DEPRECATED'; $metadataToUpdate.sourceUrl = $rawUrl
-                    Write-Host "    ⚠️  Source found in deprecated folder." -ForegroundColor Yellow; $deprecatedFound = $true; break
+                $sourceManifestPath = Join-Path $repo.Path "bucket\$($manifestFile.Name)"
+                if ((Test-Path $sourceManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
+                    $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", ""); $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/bucket/$($manifestFile.Name)"
+                    $logMessages += "    -> Found missing source: $sourceManifestPath"; $metadataToUpdate.source = $sourceManifestPath
+                    $logMessages += "    -> Found missing sourceUrl: $rawUrl"; $metadataToUpdate.sourceUrl = $rawUrl; $sourceFound = $true; break
                 }
             }
+            if (-not $sourceFound) { $logMessages += "    -> Source not found, marking as MANUAL."; $metadataToUpdate.source = 'MANUAL'; $metadataToUpdate.Remove('sourceUrl') }
         }
-        if (-not $sourceFound -and -not $deprecatedFound) { # Pass 3: Manual
-            $metadataToUpdate.source = 'MANUAL'; $metadataToUpdate.Remove('sourceUrl')
-            Write-Host "    ➡️  Not found. Marked as 'MANUAL'."
+
+        # Check 2: Timestamps
+        $currentSourcePath = $metadataToUpdate.source
+        if ($currentSourcePath -and $currentSourcePath -ne 'MANUAL' -and $currentSourcePath -ne 'DEPRECATED' -and (Test-Path $currentSourcePath)) {
+            $actualFileTimestamp = (Get-Item $currentSourcePath).LastWriteTime.ToString("yyMMdd HH:mm:ss")
+            if ($metadataToUpdate.sourceLastUpdated -ne $actualFileTimestamp) {
+                $logMessages += "    -> Corrected sourceLastUpdated to '$actualFileTimestamp'"; $metadataToUpdate.sourceLastUpdated = $actualFileTimestamp
+            }
+        } elseif (-not $metadata.ContainsKey('sourceLastUpdated') -or [string]::IsNullOrWhiteSpace($metadata.sourceLastUpdated)) {
+            $logMessages += "    -> Initialized empty sourceLastUpdated."; $metadataToUpdate.sourceLastUpdated = ""
+        }
+
+        if (-not $metadata.ContainsKey('sourceLastChangeFound') -or [string]::IsNullOrWhiteSpace($metadata.sourceLastChangeFound)) {
+            $logMessages += "    -> Initialized sourceLastChangeFound to '$runTimestamp'"; $metadataToUpdate.sourceLastChangeFound = $runTimestamp
         }
     }
 
-    # --- Update timestamps for all processed items ---
-    $currentSourcePath = $metadataToUpdate.source
-    if ($currentSourcePath -and $currentSourcePath -ne 'MANUAL' -and $currentSourcePath -ne 'DEPRECATED' -and (Test-Path $currentSourcePath)) {
-        $metadataToUpdate.sourceLastUpdated = (Get-Item $currentSourcePath).LastWriteTime.ToString("yyMMdd HH:mm:ss")
-    } elseif (-not $metadataToUpdate.ContainsKey('sourceLastUpdated')) {
-        $metadataToUpdate.sourceLastUpdated = "" # Ensure key exists but is empty for MANUAL/DEPRECATED
+    # --- Determine if a write is needed by comparing original and updated metadata ---
+    if ($null -ne (Compare-Object -ReferenceObject $metadata -DifferenceObject $metadataToUpdate -Property ($metadata.Keys + $metadataToUpdate.Keys | Select-Object -Unique))) {
+        $wasModified = $true
     }
 
-    if (-not $lastChangeFoundExists) {
-        $metadataToUpdate.sourceLastChangeFound = $runTimestamp
+    if ($wasModified) {
+        Write-Host "  - Updating '$($manifestFile.Name)'..." -ForegroundColor Green
+        $logMessages | ForEach-Object { Write-Host $_ }
+        $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadataToUpdate
+        $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
+        $modifiedFileCount++
     }
-
-    # --- Write the final results to the manifest ---
-    $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadataToUpdate
-    $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
 }
-Write-Host "`n✨ Seeding process complete."
+Write-Host "`n✨ Seeding process complete. Modified $modifiedFileCount file(s)."

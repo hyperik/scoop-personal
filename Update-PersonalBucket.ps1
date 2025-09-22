@@ -3,7 +3,7 @@
   Checks for and applies updates for Scoop manifests, with advanced change tracking and an interactive mode.
 
 .DESCRIPTION
-  This script tracks changes using 'sourceLastUpdated' and 'sourceLastChangeFound' timestamps stored within the schema-conformant "##" property. It prevents downgrades by performing a semantic version check before applying updates.
+  This script tracks changes using 'sourceLastUpdated' and 'sourceLastChangeFound' timestamps stored within the schema-conformant "##" property. It expects timestamps to be in "yyMMdd HH:mm:ss" format.
 
   The script can run in three modes:
   1. Default (Automatic): Auto-applies simple updates and flags complex changes.
@@ -81,11 +81,9 @@ function Compare-ManifestObjects {
     $localNorm = $ReferenceObject | ConvertTo-Json -Depth 10 | ConvertFrom-Json
     $remoteNorm = $DifferenceObject | ConvertTo-Json -Depth 10 | ConvertFrom-Json
 
-    # Clean source metadata from the "##" array for a pure comparison
     $localNorm = Set-CustomMetadata -JSONObject $localNorm -MetadataToWrite @{}
     $remoteNorm = Set-CustomMetadata -JSONObject $remoteNorm -MetadataToWrite @{}
 
-    # Normalize the objects, ignoring fields that are expected to change with a version update
     $topLevelIgnorable = @('version', 'url', 'hash')
     foreach ($key in $topLevelIgnorable) { if ($localNorm.PSObject.Properties[$key]) { $localNorm.PSObject.Properties.Remove($key) }; if ($remoteNorm.PSObject.Properties[$key]) { $remoteNorm.PSObject.Properties.Remove($key) } }
     if ($localNorm.PSObject.Properties['architecture']) { foreach ($arch in $localNorm.architecture.PSObject.Properties) { if ($arch.Value.PSObject.Properties['url']) { $arch.Value.PSObject.Properties.Remove('url') }; if ($arch.Value.PSObject.Properties['hash']) { $arch.Value.PSObject.Properties.Remove('hash') } } }
@@ -101,7 +99,6 @@ function Show-ManifestDiff {
     $localCopy = $LocalJson | ConvertTo-Json -Depth 10 | ConvertFrom-Json
     $remoteCopy = $RemoteJson | ConvertTo-Json -Depth 10 | ConvertFrom-Json
 
-    # Clean source metadata from the "##" array before showing the diff
     $localCopy = Set-CustomMetadata -JSONObject $localCopy -MetadataToWrite @{}
 
     $localString = $localCopy | ConvertTo-Json -Depth 10
@@ -119,7 +116,7 @@ function Show-ManifestDiff {
 # =================================================================================
 # Main Script Logic
 # =================================================================================
-$runTimestamp = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+$runTimestamp = (Get-Date).ToString("yyMMdd HH:mm:ss") # Use the new, consistent timestamp format
 $manifests = Get-ChildItem -Path $PersonalBucketPath -Filter *.json
 $allManifestData = @()
 
@@ -155,7 +152,7 @@ if ($Interactive) {
     foreach ($data in $pendingFiles) {
         Write-Host "`n--- Reviewing '$($data.File.Name)' ---" -ForegroundColor Yellow
         try { $remoteJson = Invoke-WebRequest -Uri $data.Metadata.sourceUrl -UseBasicParsing | ConvertFrom-Json } catch { Write-Warning "Could not fetch remote for '$($data.File.Name)'. Skipping."; continue }
-        if (-not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { Write-Host "    Remote version ($($remoteJson.version)) is older than local version ($($data.Local.version)). Skipping interactive prompt." -ForegroundColor Magenta; continue }
+        if (-not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { Write-Host "    Remote version ($($remoteJson.version)) is older than local version ($($data.Local.version)). Skipping." -ForegroundColor Magenta; continue }
 
         Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
         $choice = Read-Host "Apply this change? (A)ccept / (S)kip / (Q)uit"
@@ -165,6 +162,7 @@ if ($Interactive) {
                 $newMetadata.sourceLastUpdated = $runTimestamp
                 $newMetadata.sourceLastChangeFound = $runTimestamp
                 $newJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
+                Write-Host "    -> Writing accepted changes to '$($data.File.Name)'..." -ForegroundColor DarkGray
                 $newJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
                 Write-Host "  ✅ Accepted. Manifest '$($data.File.Name)' has been updated." -ForegroundColor Green
             }
@@ -199,6 +197,8 @@ foreach ($data in $allManifestData) {
         $newMetadata.sourceLastUpdated = $runTimestamp
         $newMetadata.sourceLastChangeFound = $runTimestamp
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+
+        Write-Host "      -> Writing updated version and timestamps to '$($data.File.Name)'." -ForegroundColor DarkGray
         $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
     } else {
         Write-Warning "    ⚠️ Manifest has complex changes. Flagging for manual review."
@@ -207,6 +207,8 @@ foreach ($data in $allManifestData) {
         $newMetadata = $data.Metadata.Clone()
         $newMetadata.sourceLastChangeFound = $runTimestamp
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+
+        Write-Host "      -> Updating 'sourceLastChangeFound' timestamp in '$($data.File.Name)'." -ForegroundColor DarkGray
         $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
     }
 }
