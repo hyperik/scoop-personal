@@ -22,6 +22,9 @@
 .PARAMETER ReprocessIncomplete
   Corrects any manifest missing 'source'/'sourceUrl', with empty timestamps, or where the 'sourceLastUpdated' timestamp does not match the source file's modification time.
 
+.PARAMETER RefreshAllFoundChangeTimestamps
+  Updates the 'sourceLastChangeFound' timestamp to the current time for all non-manual manifests.
+
 .PARAMETER ListManual
   Lists all manifests marked as 'MANUAL' and exits without taking any other action.
 
@@ -49,6 +52,9 @@ param(
 
     [Parameter(Mandatory = $false)]
     [switch]$ReprocessIncomplete,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$RefreshAllFoundChangeTimestamps,
 
     [Parameter(Mandatory = $false)]
     [switch]$ListManual,
@@ -115,6 +121,24 @@ function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
 # =================================================================================
 # Corrective/Migration Modes (These run exclusively)
 # =================================================================================
+if ($RefreshAllFoundChangeTimestamps) {
+    Write-Host "🔄 Refreshing all 'sourceLastChangeFound' timestamps..." -ForegroundColor Cyan
+    $runTimestamp = (Get-Date).ToString("yyMMdd HH:mm:ss")
+    $refreshedCount = 0
+    foreach ($manifestFile in $personalManifests) {
+        $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
+        $metadata = Get-CustomMetadata -JSONObject $json
+        if ($metadata.source -ne 'MANUAL') {
+            $metadata.sourceLastChangeFound = $runTimestamp
+            $json = Set-CustomMetadata -JSONObject $json -MetadataToWrite $metadata
+            $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8
+            $refreshedCount++
+        }
+    }
+    Write-Host "✨ Refresh complete. Updated $refreshedCount manifest(s)." -ForegroundColor Green
+    return
+}
+
 if ($MigrateTimestampFormat) {
     Write-Host "🕰️  Migrating timestamp formats in manifest comments..." -ForegroundColor Cyan
     $migratedCount = 0; $oldFormat = "MM/dd/yyyy HH:mm:ss"; $newFormat = "yyMMdd HH:mm:ss"
@@ -228,15 +252,23 @@ foreach ($manifestFile in $personalManifests) {
                 $recalculatedMeta = @{ source = $sourceManifestPath; sourceUrl = $rawUrl }; $sourceFound = $true; break
             }
         }
-        if (-not $sourceFound) { $recalculatedMeta = @{ source = 'MANUAL' } } # Simplified for brevity
-        $metadataToUpdate = $recalculatedMeta # Overwrite existing metadata completely
+        if (-not $sourceFound) {
+            foreach ($repo in $repos) {
+                $deprecatedManifestPath = Join-Path $repo.Path "deprecated\$($manifestFile.Name)"
+                if ((Test-Path $deprecatedManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
+                    $repoBase = $repo.Url.Replace(".git", "").Replace("git@github.com:", "https://github.com/"); $userRepo = $repoBase.Replace("https://github.com/", ""); $rawUrl = "https://raw.githubusercontent.com/$userRepo/master/deprecated/$($manifestFile.Name)"
+                    $recalculatedMeta = @{ source = 'DEPRECATED'; sourceUrl = $rawUrl }; $deprecatedFound = $true; break
+                }
+            }
+        }
+        if (-not $sourceFound -and -not $deprecatedFound) { $recalculatedMeta = @{ source = 'MANUAL' } }
+        $metadataToUpdate = $recalculatedMeta
         $logMessages += "    -> Recalculated source due to -Force or -RecalculateManual flag."
     }
     # --- Surgical mode: ReprocessIncomplete ---
     elseif ($ReprocessIncomplete) {
-        # Check 1: Missing source or sourceUrl
         if (-not $metadata.ContainsKey('source') -or -not $metadata.ContainsKey('sourceUrl')) {
-            $sourceFound = $false; $deprecatedFound = $false
+            $sourceFound = $false
             foreach ($repo in $repos) {
                 $sourceManifestPath = Join-Path $repo.Path "bucket\$($manifestFile.Name)"
                 if ((Test-Path $sourceManifestPath) -and (-not [string]::IsNullOrWhiteSpace($repo.Url))) {
@@ -248,7 +280,6 @@ foreach ($manifestFile in $personalManifests) {
             if (-not $sourceFound) { $logMessages += "    -> Source not found, marking as MANUAL."; $metadataToUpdate.source = 'MANUAL'; $metadataToUpdate.Remove('sourceUrl') }
         }
 
-        # Check 2: Timestamps
         $currentSourcePath = $metadataToUpdate.source
         if ($currentSourcePath -and $currentSourcePath -ne 'MANUAL' -and $currentSourcePath -ne 'DEPRECATED' -and (Test-Path $currentSourcePath)) {
             $actualFileTimestamp = (Get-Item $currentSourcePath).LastWriteTime.ToString("yyMMdd HH:mm:ss")
@@ -264,7 +295,6 @@ foreach ($manifestFile in $personalManifests) {
         }
     }
 
-    # --- Determine if a write is needed by comparing original and updated metadata ---
     if ($null -ne (Compare-Object -ReferenceObject $metadata -DifferenceObject $metadataToUpdate -Property ($metadata.Keys + $metadataToUpdate.Keys | Select-Object -Unique))) {
         $wasModified = $true
     }
