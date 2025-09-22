@@ -25,6 +25,24 @@ For manifests that contain an `autoupdate` section, there's a GitHub Actions wor
 
 For manifests that don't contain an `autoupdate` section, you can also [add an `autoupdate` section to the manifest](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate) to ensure the application always remains up-to-date in the future.
 
+## Maintaining the versions
+
+Since we don't want these to become very out of date, but don't want to actively manage this, we have a need to create a self-defined meta-structure in the manifests which we will use to maintain these effectively.
+
+These are supported by two scripts `Seed-ManifestSources.ps1` which we can use to initially seed the enriched manifests from the local locations where they may be found. And `Update-PersonalBucket.ps1` which uses this structure and keeps them up to date to ensure we can periodically update all references en masse, keeping it usable.
+
+These should provide a simplified surface to allow regular automated invocation if we desire.
+
+### Using Seed-ManifestSources
+
+This script builds up the initial data structures from local repos. It has several helper features as the exact schema extension I added went through a few evolutions and I used this with AI assistance to the script to keep it maintained. It can also be used to cleanup certain problems like duplicate empty nodes under comments.
+
+Ideally after running the first time in a repo it's not needed again unless we're changing format.
+
+### Using Update-PersonalBucket.ps1
+
+This is what ought to be run periodically and shouldn't need arugments by default. However if it's the first time running for a while, the `-Interactive` option allows a little more surety in the validity of the changes to make.
+
 ## License
 
 Files in this repository are licensed under CC0 1.0 Universal, see [LICENSE.md](LICENSE.md) for more information.
