@@ -28,8 +28,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\qtemu.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/qtemu.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\qtemu.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/qtemu.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

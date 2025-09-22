@@ -1,26 +1,23 @@
 {
-  "version": "1.17.1",
+  "version": "1.23.1",
   "description": "A validating, recursive, caching DNS resolver",
   "homepage": "https://nlnetlabs.nl/projects/unbound/about/",
   "license": "BSD-3-Clause",
   "suggest": {
     "openssl": [
       "openssl",
-      "openssl-mingw",
-      "versions/openssl10",
-      "versions/openssl-light",
-      "versions/openssl10-light"
+      "openssl-light"
     ],
     "wget": "wget"
   },
   "architecture": {
     "64bit": {
-      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.17.1.exe#/dl.7z",
-      "hash": "e6b86efe52364e0f55d81f2ffb22d078f50a938ad05208a0259776e362a364a4"
+      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.23.1.exe#/dl.7z",
+      "hash": "1ffd24b2f10bc78c67dee8a23ad1fea0479d4d9b5b224d76dd003484e84b521e"
     },
     "32bit": {
-      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.17.1-w32.exe#/dl.7z",
-      "hash": "4a5a6027617fcab39625d03001f9f6d284636d6067a072bc9ca6716e19ac5d89"
+      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.23.1-w32.exe#/dl.7z",
+      "hash": "7006cddf5ddacc6f0e2d0bfc09c6f57118d880d4c1aba8028e6faa3923bd8ab2"
     }
   },
   "pre_install": [
@@ -75,8 +72,9 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\unbound.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/unbound.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\unbound.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

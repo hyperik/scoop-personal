@@ -1,5 +1,5 @@
 {
-  "version": "1.13.0",
+  "version": "1.17.1",
   "description": "Multi-platform transparent client-side encryption of files in the cloud",
   "homepage": "https://cryptomator.org",
   "license": "GPL-3.0-only",
@@ -8,11 +8,11 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/cryptomator/cryptomator/releases/download/1.13.0/Cryptomator-1.13.0-x64.msi",
-      "hash": "e077c0b0e08cc9bec27ca6990281efc9f361f11b88f80ccf73201dded6af6c98"
+      "url": "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.msi",
+      "hash": "794435f090232a8af2d0e9fb770e02ce2d99326323433a46f4125cefb3e6713b"
     }
   },
-  "extract_dir": "Cryptomator",
+  "extract_dir": "PFiles64/Cryptomator",
   "post_install": [
     "    # Change appdata settings folder",
     "(Get-Content \"$dir\\app\\Cryptomator.cfg\" -Encoding ASCII).replace('~/AppData/Roaming/Cryptomator', './data') | Set-Content \"$dir\\app\\Cryptomator.cfg\" -Encoding ASCII"
@@ -40,8 +40,9 @@
       "regex": "$sha256\\s*\\./$basename"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\cryptomator.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/cryptomator.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\cryptomator.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

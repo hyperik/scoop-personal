@@ -21,8 +21,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslgit.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wslgit.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslgit.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wslgit.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.70.0",
+  "version": "1.86.2",
   "description": "Tailscale a WireGuard based mesh VPN, used to connect your computers and other devices together securely without proxies.",
   "homepage": "https://tailscale.com",
   "license": "BSD-3-Clause",
@@ -9,25 +9,28 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.70.0-amd64.msi",
-      "hash": "040b0c462976c2897fa75ae2a5966fb4be1f0a5493d8868f14184dca7825a044"
+      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.86.2-amd64.msi",
+      "hash": "a6a8c0d376280e1e2864ab2453d6ce94262f1a6a0b64dd716018c4787d58cf19",
+      "extract_dir": "PFiles64\\Tailscale"
     },
     "32bit": {
-      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.70.0-x86.msi",
-      "hash": "1685793a95b19d57f79b87d007837d308b66fd2d5e89dd049f9f76f94378245d"
+      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.86.2-x86.msi",
+      "hash": "fbcda6ef77132b92c5795e8d0f93366f3b5204cf8228db2411931f1c3d123211",
+      "extract_dir": "PFiles\\Tailscale"
     },
     "arm64": {
-      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.70.0-arm64.msi",
-      "hash": "f36a4e19cb7c2ab74fc5ca0f98f24b6841a4c185e7d1aeb4a2ec62abc7692cd5"
+      "url": "https://pkgs.tailscale.com/stable/tailscale-setup-1.86.2-arm64.msi",
+      "hash": "4f2d9d7b07c9d56558dc0c5ee84be9440f08799713fe699c01b3b26bf0aa10b1",
+      "extract_dir": "PFiles64\\Tailscale"
     }
   },
   "pre_install": "if (!(is_admin)) {error 'This package requires admin rights to install'; break}",
   "post_install": [
-    "tailscale-ipn.exe /install",
+    "tailscaled.exe install-system-daemon",
     "$dirpath = $dir.Replace('\\', '\\\\')",
     "'add-startup.reg', 'remove-startup.reg' | ForEach-Object {",
-    "    if (Test-Path \"$bucketsdir\\$bucket\\scripts\\$app\\$_\") {",
-    "        $content = Get-Content \"$bucketsdir\\$bucket\\scripts\\$app\\$_\"",
+    "    if (Test-Path \"$bucketsdir\\extras\\scripts\\$app\\$_\") {",
+    "        $content = Get-Content \"$bucketsdir\\extras\\scripts\\$app\\$_\"",
     "        $content = $content.Replace('$dir', $dirpath)",
     "        if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
     "        $content | Set-Content -Path \"$dir\\$_\"",
@@ -41,11 +44,10 @@
   ],
   "uninstaller": {
     "script": [
-      "tailscale-ipn.exe /uninstall",
+      "tailscaled.exe uninstall-system-daemon",
       "if ($cmd -eq 'uninstall') { reg import \"$dir\\remove-startup.reg\" }"
     ]
   },
-  "extract_dir": "Tailscale",
   "bin": [
     "tailscale.exe",
     "tailscale-ipn.exe",
@@ -77,8 +79,9 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tailscale.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tailscale.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tailscale.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

@@ -1,12 +1,12 @@
 {
-  "version": "2.13.3",
+  "version": "2.15.0",
   "description": "Windows graphical interface for yt-dlp, designed as a simple YouTube downloader",
   "homepage": "https://github.com/ErrorFlynn/ytdlp-interface",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v2.13.3/ytdlp-interface.7z",
-      "hash": "67fa3ed518d48f7f460332d86942badc5a0fecf2e4c6c4ab40a3f39057d9b772",
+      "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v2.15.0/ytdlp-interface.7z",
+      "hash": "4129f7ceda749a6d9c4a57e4eb5c37ba40bdd77e4907b956a0d0e8b71eff7ced",
       "pre_install": "if (!(Test-Path \"$persist_dir\\ytdlp-interface.json\")) { Set-Content \"$dir\\ytdlp-interface.json\" '{}' -Encoding Ascii }",
       "shortcuts": [
         [
@@ -25,8 +25,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ytdlp-interface.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ytdlp-interface.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ytdlp-interface.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ytdlp-interface.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

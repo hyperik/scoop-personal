@@ -1,5 +1,5 @@
 {
-  "version": "2.36.6",
+  "version": "2.36.19",
   "description": "Login and retrieve Amazon Web Services / AWS temporary credentials using a SAML IDP.",
   "homepage": "https://github.com/Versent/saml2aws",
   "license": "MIT",
@@ -8,8 +8,8 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Versent/saml2aws/releases/download/v2.36.6/saml2aws_2.36.6_windows_amd64.zip",
-      "hash": "45385fc294b95e6fb04d2a4323c9a1ac26f8d5b81d562112420b5d966c3b3043"
+      "url": "https://github.com/Versent/saml2aws/releases/download/v2.36.19/saml2aws_2.36.19_windows_amd64.zip",
+      "hash": "739bd99db011825521cf7adb15c205e7aac6570f8b74cd0afc5bedbb0804a0eb"
     }
   },
   "bin": "saml2aws.exe",
@@ -24,8 +24,10 @@
       "url": "$baseurl/saml2aws_$version_checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\saml2aws.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/saml2aws.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\saml2aws.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/saml2aws.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2.7.1",
+  "version": "2.12.0",
   "description": "Command-line interface for WordPress",
   "homepage": "https://wp-cli.org",
   "license": "MIT",
@@ -10,8 +10,8 @@
       "php-nts"
     ]
   },
-  "url": "https://github.com/wp-cli/wp-cli/releases/download/v2.7.1/wp-cli-2.7.1.phar#/wp-cli.phar",
-  "hash": "sha512:956b5e3e1a076bd5441c082ee754e3ff4517ec965b93c621f455c2bf5719358c36e67d52f676492700b59d42cacb34a50d382535c035f19da7a0b98bc41860de",
+  "url": "https://github.com/wp-cli/wp-cli/releases/download/v2.12.0/wp-cli-2.12.0.phar#/wp-cli.phar",
+  "hash": "sha512:be928f6b8ca1e8dfb9d2f4b75a13aa4aee0896f8a9a0a1c45cd5d2c98605e6172e6d014dda2e27f88c98befc16c040cbb2bd1bfa121510ea5cdf5f6a30fe8832",
   "pre_install": [
     "echo 'if($args.length -eq 2 -and ($args[0] -eq \"cli\" -and $args[1] -eq \"update\")) { & scoop update wp-cli }' | out-file \"$dir\\wp.ps1\"",
     "echo 'else { & php (join-path $PSScriptRoot \"wp-cli.phar\") @args }' | out-file \"$dir\\wp.ps1\" -append"
@@ -26,8 +26,10 @@
       "url": "$url.sha512"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\wp-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wp-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wp-cli.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wp-cli.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

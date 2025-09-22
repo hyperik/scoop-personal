@@ -617,8 +617,10 @@
       ]
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sysinternals.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sysinternals.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sysinternals.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sysinternals.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

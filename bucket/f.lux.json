@@ -1,5 +1,11 @@
 {
-  "##": "Duplicate of 'extras/flux'. Related: https://github.com/ScoopInstaller/Scoop/issues/5405",
+  "##": [
+    "Duplicate of 'extras/flux'. Related: https://github.com/ScoopInstaller/Scoop/issues/5405",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\f.lux.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/f.lux.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ],
   "version": "4.134",
   "description": "Makes the color of your computer's display adapt to the time of day, warm at night and like sunlight during the day.",
   "homepage": "https://justgetflux.com",
@@ -23,9 +29,5 @@
   },
   "autoupdate": {
     "url": "https://justgetflux.com/flux-setup$dashVersion.exe#/dl.7z"
-  },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\f.lux.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/f.lux.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  }
 }

@@ -40,8 +40,10 @@
     "url": "https://www.sordum.org/files/easy-context-menu/ec_menu.zip",
     "extract_dir": "EcMenu_v$version"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/easy-context-menu.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/easy-context-menu.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

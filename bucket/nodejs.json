@@ -1,23 +1,18 @@
 {
-  "version": "20.1.0",
+  "version": "24.7.0",
   "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications.",
   "homepage": "https://nodejs.org",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://nodejs.org/dist/v20.1.0/node-v20.1.0-win-x64.7z",
-      "hash": "528c140b32c95bdaf8a44e4d8f2c856601ae9ea19ee3f5e2e88ea7376154d0e0",
-      "extract_dir": "node-v20.1.0-win-x64"
-    },
-    "32bit": {
-      "url": "https://nodejs.org/dist/v20.1.0/node-v20.1.0-win-x86.7z",
-      "hash": "8949e01dd83d264d63bec75bc5e12d8cc710379288e478c9998af2d8b7f9d0eb",
-      "extract_dir": "node-v20.1.0-win-x86"
+      "url": "https://nodejs.org/dist/v24.7.0/node-v24.7.0-win-x64.7z",
+      "hash": "45d46dc687a2d1ae5c8ba940f9140deeb420da56e0c79a051e8847528e355782",
+      "extract_dir": "node-v24.7.0-win-x64"
     },
     "arm64": {
-      "url": "https://nodejs.org/dist/v20.1.0/node-v20.1.0-win-arm64.7z",
-      "hash": "95fd2e4aca8417a22135841757dfc2fccaf0bbd7e0cd5ca7d9078650afabbed5",
-      "extract_dir": "node-v20.1.0-win-arm64"
+      "url": "https://nodejs.org/dist/v24.7.0/node-v24.7.0-win-arm64.7z",
+      "hash": "0fc23dfe5406002c046d65ea344b466f1bd6495e2c1f1a43e35aedd2e236be18",
+      "extract_dir": "node-v24.7.0-win-arm64"
     }
   },
   "persist": [
@@ -33,18 +28,15 @@
     "Set-Content -Value \"prefix=$persist_dir\\bin`ncache=$persist_dir\\cache\" -Path \"$dir\\node_modules\\npm\\npmrc\""
   ],
   "checkver": {
-    "url": "https://nodejs.org/dist/latest/",
-    "regex": "node-v([\\d.]+)-win-x64\\.7z"
+    "url": "https://nodejs.org/dist/index.json",
+    "jsonpath": "$[0].version",
+    "regex": "v([\\d.]+)"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
         "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
         "extract_dir": "node-v$version-win-x64"
-      },
-      "32bit": {
-        "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
-        "extract_dir": "node-v$version-win-x86"
       },
       "arm64": {
         "url": "https://nodejs.org/dist/v$version/node-v$version-win-arm64.7z",
@@ -55,8 +47,9 @@
       "url": "$baseurl/SHASUMS256.txt.asc"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nodejs.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nodejs.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nodejs.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

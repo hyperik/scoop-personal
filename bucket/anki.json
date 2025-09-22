@@ -1,15 +1,12 @@
 {
-  "version": "24.06.3",
+  "version": "25.02.7",
   "description": "Powerful and intelligent flash cards",
   "homepage": "https://apps.ankiweb.net",
   "license": "AGPL-3.0-only",
-  "suggest": {
-    "vcredist": "extras/vcredist2008"
-  },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ankitects/anki/releases/download/24.06.3/anki-24.06.3-windows-qt6.exe#/dl.7z",
-      "hash": "e11ade8b94dbb5374102669ea589bc1072ea07b93897f3b36fa045f5192ef0ba"
+      "url": "https://github.com/ankitects/anki/releases/download/25.02.7/anki-25.02.7-windows-qt6.exe#/dl.7z",
+      "hash": "1e8d1f3291bd5e473b36766f2dec2a931658cf788499a85125458ac9f3237a57"
     }
   },
   "pre_install": [
@@ -47,8 +44,9 @@
       "url": "$baseurl/anki-$version-checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\anki.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/anki.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\anki.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

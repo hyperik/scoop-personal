@@ -24,8 +24,10 @@
       "regex": "(?s)$basename.*?$sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yumi.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yumi.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

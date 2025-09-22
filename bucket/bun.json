@@ -1,5 +1,5 @@
 {
-  "version": "1.1.22",
+  "version": "1.2.21",
   "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.",
   "homepage": "https://bun.sh/",
   "license": "MIT",
@@ -9,12 +9,12 @@
   "architecture": {
     "64bit": {
       "url": [
-        "https://github.com/oven-sh/bun/releases/download/bun-v1.1.22/bun-windows-x64.zip",
-        "https://github.com/oven-sh/bun/releases/download/bun-v1.1.22/bun-windows-x64-baseline.zip"
+        "https://github.com/oven-sh/bun/releases/download/bun-v1.2.21/bun-windows-x64.zip",
+        "https://github.com/oven-sh/bun/releases/download/bun-v1.2.21/bun-windows-x64-baseline.zip"
       ],
       "hash": [
-        "249261608dcf98eade87cefd105dd304594412574e547c86e15c57c53c5f0e04",
-        "09aa7a960342030c21e31e3575828c35b040a4f070490fbd545a6e042e44f2fa"
+        "e157aa52de88d4652a03a9df26fd4a3e96ca8229c5af0ed6f64eb22b1fd20b33",
+        "23f2df1f40d963e5b6104e1a565df992aab8968da5004f460617073843b8b8be"
       ]
     }
   },
@@ -55,8 +55,10 @@
       "url": "$baseurl/SHASUMS256.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\bun.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/bun.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\bun.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/bun.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

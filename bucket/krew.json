@@ -1,5 +1,5 @@
 {
-  "version": "0.4.3",
+  "version": "0.4.5",
   "description": "Krew is the package manager for kubectl plugins.",
   "homepage": "https://krew.sigs.k8s.io/",
   "license": "Apache-2.0",
@@ -9,14 +9,14 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew.exe",
-      "hash": "317d64ba05d6cfcd153418c62d9251cc18ca05dcf35ddc5162fb00315e9f456c"
+      "url": "https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe",
+      "hash": "dbcf078bff6fa55b8a279384770b7a0d9f3d739a4c3a683ea74571f635db2571"
     }
   },
   "installer": {
     "script": [
       "[Environment]::SetEnvironmentVariable('KREW_ROOT', \"$persist_dir\\.krew\", 'Process')",
-      "Invoke-ExternalCommand -Path \"$dir\\krew.exe\" -Args 'install krew' | Out-Null"
+      "Start-Process \"$dir\\krew.exe\" -Args 'install krew' -Wait -WindowStyle Hidden"
     ]
   },
   "env_add_path": ".krew\\bin",
@@ -37,8 +37,9 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\krew.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/krew.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\krew.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

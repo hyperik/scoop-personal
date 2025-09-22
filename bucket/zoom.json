@@ -1,5 +1,5 @@
 {
-  "version": "6.1.6.43767",
+  "version": "6.5.12.14128",
   "description": "Video and audio conferencing, chat, and webinars",
   "homepage": "https://zoom.us",
   "license": {
@@ -8,19 +8,19 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://cdn.zoom.us/prod/6.1.6.43767/x64/ZoomInstallerFull.exe#/dl.7z",
-      "hash": "89768937fc7d743992e6f67c598f4e9ab9bfdf73e93e9676eeb72022e842be85",
-      "pre_install": "Expand-7zipArchive \"$dir\\ZoomFull_Sip.cab\" -Removal"
+      "url": "https://cdn.zoom.us/prod/6.5.12.14128/x64/ZoomInstallerFull.exe#/dl.7z",
+      "hash": "71c2950685325073d2a4183daa28e1ff18fc599aa344cccf8f54e870f521951f",
+      "pre_install": "Expand-7zipArchive \"$dir\\ZoomFull.cab\" -Removal"
     },
     "32bit": {
-      "url": "https://cdn.zoom.us/prod/6.1.6.43767/ZoomInstaller.exe#/dl.7z",
-      "hash": "949ede9549e686d9f68728ec3d0841613a5cd52da3a4e28e932a8aa1fac138ed",
+      "url": "https://cdn.zoom.us/prod/6.5.12.14128/ZoomInstaller.exe#/dl.7z",
+      "hash": "81fc1925221e04e846d90a770a0b535ea923ccf81d7f4bd65e7e93dd7ba1537a",
       "pre_install": "Expand-7zipArchive \"$dir\\Zoom.msi\" -Removal"
     },
     "arm64": {
-      "url": "https://cdn.zoom.us/prod/6.1.6.43767/arm64/ZoomInstallerFull.exe#/dl.7z",
-      "hash": "ce5fcdaf10d6f218d129ae38055516ea5ff3775e0f839b6a6d6e290106f2c3bf",
-      "pre_install": "Expand-7zipArchive \"$dir\\ZoomFull_Sip.cab\" -Removal"
+      "url": "https://cdn.zoom.us/prod/6.5.12.14128/arm64/ZoomInstallerFull.exe#/dl.7z",
+      "hash": "a626123ea1d922fea1eef4093f9ac0d529007bd3582fa629c0981640a4b49732",
+      "pre_install": "Expand-7zipArchive \"$dir\\ZoomFull.cab\" -Removal"
     }
   },
   "post_install": [
@@ -62,8 +62,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zoom.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zoom.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zoom.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

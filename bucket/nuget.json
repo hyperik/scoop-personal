@@ -1,10 +1,10 @@
 {
-  "version": "6.5.0",
+  "version": "6.14.0",
   "description": "The package manager for .NET.",
   "homepage": "https://www.nuget.org/",
   "license": "Apache-2.0",
-  "url": "https://dist.nuget.org/win-x86-commandline/v6.5.0/NuGet.exe",
-  "hash": "d5fce5185de92b7356ea9264b997a620e35c6f6c3c061e471e0dc3a84b3d74fd",
+  "url": "https://dist.nuget.org/win-x86-commandline/v6.14.0/NuGet.exe",
+  "hash": "92dbed160ddee0f64b901e907439e021211b428e57c089ecc12fc38dcc4bd9a5",
   "bin": "NuGet.exe",
   "checkver": {
     "url": "https://dist.nuget.org/index.json",
@@ -13,8 +13,10 @@
   "autoupdate": {
     "url": "https://dist.nuget.org/win-x86-commandline/v$version/NuGet.exe"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nuget.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nuget.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nuget.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nuget.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

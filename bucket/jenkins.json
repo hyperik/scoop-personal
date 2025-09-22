@@ -1,14 +1,14 @@
 {
-  "version": "2.403",
+  "version": "2.526",
   "description": "An automation server which enables developers around the world to reliably build, test, and deploy their software.",
   "homepage": "https://www.jenkins.io",
   "license": "MIT",
   "suggest": {
-    "Java 8": "java/oraclejre8",
-    "Java 11": "java/openjdk11"
+    "Java 11": "java/openjdk11",
+    "Java 17": "java/openjdk17"
   },
-  "url": "https://get.jenkins.io/war/2.403/jenkins.war#/jenkins.jar",
-  "hash": "30df8e6c5f04e89e31d53a48cb9df340c22fd3c54c0f14efc494da95c083ffc7",
+  "url": "https://get.jenkins.io/war/2.526/jenkins.war#/jenkins.jar",
+  "hash": "e1bd436678abb631d5d30c719240c2753369eeb925ade3a35faf5dfbdecb27b0",
   "bin": "jenkins.jar",
   "checkver": {
     "url": "https://www.jenkins.io/changelog/rss.xml",
@@ -21,8 +21,9 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\jenkins.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jenkins.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jenkins.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

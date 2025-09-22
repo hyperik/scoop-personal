@@ -24,8 +24,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weylus.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/weylus.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weylus.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/weylus.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

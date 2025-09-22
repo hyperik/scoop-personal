@@ -1,15 +1,16 @@
 {
-  "version": "1.8.21",
+  "version": "2.2.10",
   "description": "A cross-platform, statically typed, general-purpose programming language with type inference.",
   "homepage": "https://kotlinlang.org/",
   "license": "Apache-2.0",
   "suggest": {
     "JDK": "java/openjdk"
   },
-  "url": "https://github.com/JetBrains/kotlin/releases/download/v1.8.21/kotlin-compiler-1.8.21.zip",
-  "hash": "6e43c5569ad067492d04d92c28cdf8095673699d81ce460bd7270443297e8fd7",
+  "url": "https://github.com/JetBrains/kotlin/releases/download/v2.2.10/kotlin-compiler-2.2.10.zip",
+  "hash": "302d1d8e671e5c3207e6ed62ff11fb555462a628e22a1158254dcaaf7e7394bc",
   "extract_dir": "kotlinc",
   "bin": [
+    "bin\\kapt.bat",
     "bin\\kotlin.bat",
     "bin\\kotlinc.bat",
     "bin\\kotlinc-js.bat",
@@ -25,8 +26,9 @@
   "autoupdate": {
     "url": "https://github.com/JetBrains/kotlin/releases/download/v$version/kotlin-compiler-$version.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\kotlin.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kotlin.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\kotlin.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

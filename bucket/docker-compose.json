@@ -1,12 +1,12 @@
 {
-  "version": "2.29.1",
+  "version": "2.39.2",
   "description": "Define and run multi-container applications with Docker",
   "homepage": "https://docs.docker.com/compose/",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-windows-x86_64.exe#/docker-compose.exe",
-      "hash": "c80155bfd2669bcdc7482ae7ccf7ccaf6b5da2149b690d806c7a4d9200abc54e"
+      "url": "https://github.com/docker/compose/releases/download/v2.39.2/docker-compose-windows-x86_64.exe#/docker-compose.exe",
+      "hash": "6580793b1f612150646a9f8d02148c8d226a0033ed6e2e3273c0229b25e2f158"
     }
   },
   "bin": "docker-compose.exe",
@@ -27,8 +27,10 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-compose.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker-compose.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-compose.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker-compose.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

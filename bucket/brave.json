@@ -1,5 +1,5 @@
 {
-  "version": "1.68.137",
+  "version": "1.82.161",
   "description": "Secure, Fast & Private Web Browser with Adblocker",
   "homepage": "https://brave.com",
   "license": {
@@ -8,12 +8,16 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/brave/brave-browser/releases/download/v1.68.137/brave-v1.68.137-win32-x64.zip",
-      "hash": "7482e61bf2f4cd8cbfbed7cd45718a1458fc24590eb3b5bc2a4e1b864edd8830"
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.161/brave-v1.82.161-win32-x64.zip",
+      "hash": "98886a22a358d3c5f19af7fdef8bdf714b2b0a645f81208a04847c3a88984d10"
     },
     "32bit": {
-      "url": "https://github.com/brave/brave-browser/releases/download/v1.68.137/brave-v1.68.137-win32-ia32.zip",
-      "hash": "5aa8c80c0ea614ef212ec749a5f6763376a063f33cfffa93fd171f5675e84ec5"
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.161/brave-v1.82.161-win32-ia32.zip",
+      "hash": "2e7e0ff2aa70299742b5dee479cdc3924d18166d5238fd9c2325f4545369227b"
+    },
+    "arm64": {
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.161/brave-v1.82.161-win32-arm64.zip",
+      "hash": "fa6ed4d5fd2d9319489c3172baed551c4ac34efda542183a79196a827a56182c"
     }
   },
   "bin": [
@@ -52,14 +56,18 @@
       },
       "32bit": {
         "url": "https://github.com/brave/brave-browser/releases/download/v$version/brave-v$version-win32-ia32.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/brave/brave-browser/releases/download/v$version/brave-v$version-win32-arm64.zip"
       }
     },
     "hash": {
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\brave.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/brave.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\brave.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

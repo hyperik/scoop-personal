@@ -11,8 +11,10 @@
   "autoupdate": {
     "url": "https://github.com/stbrenner/SilentCMD/releases/download/v$version/SilentCMD.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\silentcmd.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/silentcmd.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\silentcmd.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/silentcmd.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

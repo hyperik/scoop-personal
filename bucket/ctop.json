@@ -21,8 +21,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ctop.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ctop.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ctop.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ctop.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

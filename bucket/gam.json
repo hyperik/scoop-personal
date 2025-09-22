@@ -1,5 +1,11 @@
 {
-  "##": "TODO: Possibly should change the checkver to be github: https://github.com/GAM-team/GAM,regex: gam-([\\d.]+)-windows-x86_64\\.zip",
+  "##": [
+    "TODO: Possibly should change the checkver to be github: https://github.com/GAM-team/GAM,regex: gam-([\\d.]+)-windows-x86_64\\.zip",
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\gam.json",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/gam.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ],
   "architecture": {
     "32bit": {
       "hash": "9db37461f62cdb5d77995c232ad79b3c25bce03df8d210bb5356416dd010b822",
@@ -26,9 +32,5 @@
   "extract_dir": "gam",
   "homepage": "https://github.com/GAM-team/GAM",
   "license": "Apache-2.0",
-  "version": "6.58",
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\gam.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/gam.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "version": "6.58"
 }

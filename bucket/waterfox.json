@@ -1,5 +1,5 @@
 {
-  "version": "6.0.18",
+  "version": "6.6.2",
   "description": "The 100% fresh, free-range, ethical browser",
   "homepage": "https://www.waterfox.net",
   "license": "MPL-2.0",
@@ -12,8 +12,8 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://cdn1.waterfox.net/waterfox/releases/G6.0.18/WINNT_x86_64/Waterfox%20Setup%20G6.0.18.exe#/dl.7z",
-      "hash": "sha512:74a6fadf1ce794eabb60ae8054a17115963f31ce9d82b5dc6d89350101c1300cfa026a8662929d6f10576b514ac6ad55d8a6d71ddd823eef8446eedf5a25d666"
+      "url": "https://cdn1.waterfox.net/waterfox/releases/6.6.2/WINNT_x86_64/Waterfox%20Setup%206.6.2.exe#/dl.7z",
+      "hash": "sha512:3df62321de6cbf64b9cbc810b6615e4e964dd2e8976806c9a1eaa94c4d91843455646718e3c1a44a7f8108c60076d056963f80d012d3f8fc4769df2ce88dca6c"
     }
   },
   "extract_dir": "core",
@@ -42,21 +42,21 @@
     "profile"
   ],
   "checkver": {
-    "github": "https://github.com/WaterfoxCo/Waterfox",
-    "regex": "G([\\d.]+)"
+    "github": "https://github.com/BrowserWorks/Waterfox"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://cdn1.waterfox.net/waterfox/releases/G$version/WINNT_x86_64/Waterfox%20Setup%20G$version.exe#/dl.7z",
+        "url": "https://cdn1.waterfox.net/waterfox/releases/$version/WINNT_x86_64/Waterfox%20Setup%20$version.exe#/dl.7z",
         "hash": {
           "url": "$url.sha512"
         }
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waterfox.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/waterfox.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waterfox.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

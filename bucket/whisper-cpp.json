@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.7.6",
   "description": "High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model",
   "homepage": "https://github.com/ggerganov/whisper.cpp",
   "license": "MIT",
@@ -8,25 +8,25 @@
     "https://huggingface.co/ggerganov/whisper.cpp/tree/main"
   ],
   "bin": [
-    "bench.exe",
-    "command.exe",
-    [
-      "main.exe",
-      "whisper"
-    ],
-    "stream.exe",
-    "talk.exe"
+    "whisper-bench.exe",
+    "whisper-command.exe",
+    "whisper-cli.exe",
+    "whisper-server.exe",
+    "whisper-stream.exe",
+    "whisper-talk-llama.exe",
+    "quantize.exe"
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.4.0/whisper-bin-x64.zip",
-      "hash": "c3bfdee95f7bf9e5e7f0383587d7933fc4f98635bb03f8a7d9c14fe20c45f08a"
+      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.7.6/whisper-bin-x64.zip",
+      "hash": "0d2eca299c248f965bd0341bcb219db4b433c7f0c0ce2200d4df85765e8156a9"
     },
     "32bit": {
-      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.4.0/whisper-bin-Win32.zip",
-      "hash": "aacd640e4e7af48102e18aae6ed3b9d4a68b9f0069b3a6906f5daa976cde6987"
+      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.7.6/whisper-bin-Win32.zip",
+      "hash": "49b0ed3416303d0e786e78ea80ae6b678e4db988356e419812ebc9b5dab7d76f"
     }
   },
+  "extract_dir": "Release",
   "checkver": {
     "github": "https://github.com/ggerganov/whisper.cpp"
   },
@@ -40,8 +40,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

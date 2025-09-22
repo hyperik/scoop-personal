@@ -1,12 +1,12 @@
 {
-  "version": "1.39",
+  "version": "1.49",
   "description": "A small encryption tool with a focus on security, simplicity, and reliability.",
   "homepage": "https://github.com/Picocrypt/Picocrypt",
   "license": "GPL-3.0-or-later",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Picocrypt/Picocrypt/releases/download/1.39/Picocrypt.exe",
-      "hash": "e18c0d1e327cb4681c2d16a9dbc89c188013dd653fe3b20e7300879e29af90e3"
+      "url": "https://github.com/Picocrypt/Picocrypt/releases/download/1.49/Picocrypt.exe",
+      "hash": "81bbdffb92181a11692ec6651cc1831483ec6041266eb12eba9c71200248a8c4"
     }
   },
   "shortcuts": [
@@ -21,10 +21,15 @@
       "64bit": {
         "url": "https://github.com/Picocrypt/Picocrypt/releases/download/$version/Picocrypt.exe"
       }
+    },
+    "hash": {
+      "url": "https://github.com/Picocrypt/Picocrypt/releases/tag/$version",
+      "regex": "sha256\\($basename\\)\\s+($sha256)"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\picocrypt.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/picocrypt.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\picocrypt.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

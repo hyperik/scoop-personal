@@ -1,31 +1,40 @@
 {
-  "version": "5.0.1",
+  "version": "5.7.1",
   "description": "Customize raw, template-free YAML files for multiple purposes, leaving the original YAML untouched and usable as is.",
   "homepage": "https://github.com/kubernetes-sigs/kustomize",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.0.1/kustomize_v5.0.1_windows_amd64.tar.gz",
-      "hash": "d9053411276df9fff3abc082fdb6dae4b2901d5b6c6c65d0e27f241dddbb9cb4"
+      "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.7.1/kustomize_v5.7.1_windows_amd64.zip",
+      "hash": "4704f8b47582c1c52bf76a50b37178f7f7de17f892713794a8bf44b01b50e0ce"
+    },
+    "arm64": {
+      "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v5.7.1/kustomize_v5.7.1_windows_arm64.zip",
+      "hash": "d838872ffd5efcd240e6b308a7899b2bb537352b2eb99a6b3fbb023df9ca7c0d"
     }
   },
   "bin": "kustomize.exe",
   "checkver": {
-    "url": "https://github.com/kubernetes-sigs/kustomize/releases",
+    "url": "https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest",
+    "jsonpath": "$..name",
     "regex": "kustomize/v([\\d.]+)"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v$version/kustomize_v$version_windows_amd64.tar.gz"
+        "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v$version/kustomize_v$version_windows_amd64.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v$version/kustomize_v$version_windows_arm64.zip"
       }
     },
     "hash": {
       "url": "$baseurl/checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\kustomize.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kustomize.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\kustomize.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

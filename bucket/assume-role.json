@@ -10,8 +10,10 @@
   "autoupdate": {
     "url": "https://github.com/remind101/assume-role/releases/download/$version/assume-role-Windows.exe#/assume-role.exe"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\assume-role.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/assume-role.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\assume-role.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/assume-role.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

@@ -35,8 +35,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\jp.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jp.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jp.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jp.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

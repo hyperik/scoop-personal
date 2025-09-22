@@ -1,13 +1,13 @@
 {
-  "version": "8.125.0.201",
+  "version": "8.128.0.207",
   "description": "Communication tool for free calls and chat.",
   "homepage": "https://www.skype.com/",
   "license": {
     "identifier": "Freeware",
     "url": "https://www.microsoft.com/en-us/servicesagreement/"
   },
-  "url": "http://download.skype.com/s4l/download/win/Skype-8.125.0.201.exe",
-  "hash": "266a750cf44f56b9670e43ea75e1a86555685e6cf4a6a184ecd1fa0ff2ee977a",
+  "url": "http://download.skype.com/s4l/download/win/Skype-8.128.0.207.exe",
+  "hash": "293ef5378c274f3a1aa06290c739da664a2f8da2b45f5d57cc1a3d669bbfe4bc",
   "innosetup": true,
   "shortcuts": [
     [
@@ -25,8 +25,10 @@
   "autoupdate": {
     "url": "http://download.skype.com/s4l/download/win/Skype-$version.exe"
   },
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\skype.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/skype.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\skype.json",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/skype.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

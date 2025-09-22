@@ -1,5 +1,5 @@
 {
-  "version": "7.93",
+  "version": "7.98",
   "description": "Network exploration and security auditing utility.",
   "homepage": "https://nmap.org",
   "license": {
@@ -16,8 +16,8 @@
   "suggest": {
     "vcredist": "extras/vcredist2008"
   },
-  "url": "https://nmap.org/dist/nmap-7.93-setup.exe#/dl.7z",
-  "hash": "f1160a33fb79c764cdc4c023fa700054ae2945ed91880e37348a17c010ca716f",
+  "url": "https://nmap.org/dist/nmap-7.98-setup.exe#/dl.7z",
+  "hash": "5a52826b45600c34662012cc70f35df8dde590b83c14d0f3c7be04bbb4087d32",
   "pre_install": [
     "Get-ChildItem \"$dir\\`$PLUGINSDIR\\npcap-*.exe\" | Select-Object -First 1 | Rename-Item -NewName 'npcap.exe'",
     "Move-Item \"$dir\\`$PLUGINSDIR\\npcap.exe\" \"$dir\"",
@@ -26,14 +26,15 @@
   "bin": [
     "nmap.exe",
     "ncat.exe",
-    "ndiff.exe",
-    "zenmap.exe",
+    "ndiff.bat",
     "nping.exe"
   ],
   "shortcuts": [
     [
-      "zenmap.exe",
-      "Zenmap - Nmap GUI"
+      "zenmap/bin/pythonw.exe",
+      "Zenmap - Nmap GUI",
+      "-c \"from zenmapGUI.App import run;run()\"",
+      "nmap.exe"
     ]
   ],
   "checkver": {
@@ -43,8 +44,9 @@
   "autoupdate": {
     "url": "https://nmap.org/dist/nmap-$version-setup.exe#/dl.7z"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nmap.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nmap.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nmap.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

@@ -29,8 +29,10 @@
       "url": "$baseurl/SHA2-256SUMS"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslinternals.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wslinternals.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslinternals.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wslinternals.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

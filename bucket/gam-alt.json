@@ -23,5 +23,7 @@
       }
     }
   },
-  "source": "MANUAL"
+  "##": [
+    "source: MANUAL"
+  ]
 }

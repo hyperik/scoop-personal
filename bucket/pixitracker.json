@@ -26,8 +26,10 @@
   "autoupdate": {
     "url": "https://warmplace.ru/soft/pixitracker/pixitracker-$version.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pixitracker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pixitracker.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pixitracker.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pixitracker.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

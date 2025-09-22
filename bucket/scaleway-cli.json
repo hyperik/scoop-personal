@@ -1,23 +1,36 @@
 {
-  "version": "2.32.1",
+  "version": "2.42.0",
   "description": "Manage BareMetal Servers from Command Line (as easily as with Docker).",
   "homepage": "https://github.com/scaleway/scaleway-cli",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://repo.ibboost.com/repository/thirdparty-private/scoop/scaleway-cli/2.32.1/scaleway-cli-2.32.1-64bit.exe",
-      "hash": "7271f228bf51faf6a7c0ec2dcde9ed9501298bdf311fd78e29e56e9f3c993ee8"
+      "url": "https://github.com/scaleway/scaleway-cli/releases/download/v2.42.0/scaleway-cli_2.42.0_windows_amd64.exe#/scw.exe",
+      "hash": "f7307fbaef13ba1864dfb7e1907212f552762389d88bd6b516b1dd8f89ca87b4"
     },
     "32bit": {
-      "url": "https://repo.ibboost.com/repository/thirdparty-private/scoop/scaleway-cli/2.32.1/scaleway-cli-2.32.1-32bit.exe",
-      "hash": "98dbbc818a8d86df0b5ed0d945fe5e08c910bd1aaa961a1a79d967dd1f00bfe0"
+      "url": "https://github.com/scaleway/scaleway-cli/releases/download/v2.42.0/scaleway-cli_2.42.0_windows_386.exe#/scw.exe",
+      "hash": "65f485afacf644339c2e570241ae3073a6dac2c38bbd2abfefd4c5da9d98f1a3"
     }
   },
-  "pre_install": "Rename-Item \"$dir\\$app-$version-$architecture.exe\" scw.exe",
   "bin": "scw.exe",
   "checkver": "github",
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\scaleway-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/scaleway-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/scaleway/scaleway-cli/releases/download/v$version/scaleway-cli_$version_windows_amd64.exe#/scw.exe"
+      },
+      "32bit": {
+        "url": "https://github.com/scaleway/scaleway-cli/releases/download/v$version/scaleway-cli_$version_windows_386.exe#/scw.exe"
+      }
+    },
+    "hash": {
+      "url": "$baseurl/SHA256SUMS"
+    }
+  },
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\scaleway-cli.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

@@ -1,16 +1,16 @@
 {
-  "version": "4.8.3.0",
+  "version": "4.9.7.0",
   "description": "Computer monitoring and classroom management software.",
   "homepage": "https://veyon.io/",
   "license": "GPL-2.0-or-later",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/veyon/veyon/releases/download/v4.8.3/veyon-4.8.3.0-win64-setup.exe#/installer.exe",
-      "hash": "4a8e0696447d85600fde1c034e56db1d4b49e49d49e10c1e90c3aa7ecc8e6351"
+      "url": "https://github.com/veyon/veyon/releases/download/v4.9.7/veyon-4.9.7.0-win64-setup.exe#/installer.exe",
+      "hash": "1fe07a2a411338c534683dd4518bd9556649c27c28d9b1910960d10778a1e4c3"
     },
     "32bit": {
-      "url": "https://github.com/veyon/veyon/releases/download/v4.8.3/veyon-4.8.3.0-win32-setup.exe#/installer.exe",
-      "hash": "f9f839bd3b733266bb8ee477a0f00122a0d992046e07567edc7bda116bae09ce"
+      "url": "https://github.com/veyon/veyon/releases/download/v4.9.7/veyon-4.9.7.0-win32-setup.exe#/installer.exe",
+      "hash": "b1462dcf6c7e691a54cbd3c09ef0e9c9289bea261d156b4ef33dc802cb3c2308"
     }
   },
   "installer": {
@@ -52,8 +52,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\veyon-np.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/veyon-np.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\veyon-np.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/veyon-np.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

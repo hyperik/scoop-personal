@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0.3480",
+  "version": "0.9.0.3850",
   "description": "Switch keyboard layouts using Caps Lock (or other keys)",
   "homepage": "https://recaps.sourceforge.io/",
   "license": "GPL-3.0-or-later",
@@ -20,8 +20,8 @@
   "post_install": [
     "$dirpath = $dir.Replace('\\', '\\\\')",
     "'add-startup.reg', 'remove-startup.reg' | ForEach-Object {",
-    "    if (Test-Path \"$bucketsdir\\$bucket\\scripts\\recaps\\$_\") {",
-    "        $content = Get-Content \"$bucketsdir\\$bucket\\scripts\\recaps\\$_\"",
+    "    if (Test-Path \"$bucketsdir\\extras\\scripts\\recaps\\$_\") {",
+    "        $content = Get-Content \"$bucketsdir\\extras\\scripts\\recaps\\$_\"",
     "        $content = $content.Replace('$dir', $dirpath)",
     "        if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
     "        $content | Set-Content -Path \"$dir\\$_\"",
@@ -44,8 +44,9 @@
   "autoupdate": {
     "url": "https://downloads.sourceforge.net/project/recaps/0.9.0.3480/ReCaps_V0.9.0.3480.exe#/dl.exe"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recaps.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/recaps.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recaps.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

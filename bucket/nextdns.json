@@ -1,16 +1,16 @@
 {
-  "version": "1.39.4",
+  "version": "1.46.0",
   "description": "DNS53 to DNS-over-HTTPS (DoH) proxy with advanced capabilities to get the most out of the NextDNS service.",
   "homepage": "https://nextdns.io/cli",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/nextdns/nextdns/releases/download/v1.39.4/nextdns_1.39.4_windows_amd64.zip",
-      "hash": "46039bb53a8c42f3b89bf8d1339ae5641b197629d177f9ff4f19919f5fd6cda3"
+      "url": "https://github.com/nextdns/nextdns/releases/download/v1.46.0/nextdns_1.46.0_windows_amd64.zip",
+      "hash": "5fbb39f6f88dac77d7227475f185b212d4b92b13c3b025954950e57c413c60f3"
     },
     "32bit": {
-      "url": "https://github.com/nextdns/nextdns/releases/download/v1.39.4/nextdns_1.39.4_windows_386.zip",
-      "hash": "381c717b09d5b02c045a10513ac62692d2f581115912d479c5508f8d578beeaf"
+      "url": "https://github.com/nextdns/nextdns/releases/download/v1.46.0/nextdns_1.46.0_windows_386.zip",
+      "hash": "04633cb0e8af86969e1d19b1b5a6ea1b58bccebe9d2f898afc00088c74fcbede"
     }
   },
   "bin": "nextdns.exe",
@@ -30,8 +30,10 @@
       "url": "$baseurl/checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\nextdns.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nextdns.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nextdns.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nextdns.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

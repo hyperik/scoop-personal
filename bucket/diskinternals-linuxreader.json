@@ -1,5 +1,8 @@
 {
-  "##": "Untested copying download location from site verbatim",
+  "##": [
+    "Untested copying download location from site verbatim",
+    "source: MANUAL"
+  ],
   "version": "4.2.1",
   "description": "DiskInternals Linux Reader",
   "homepage": "https://www.diskinternals.com/linux-reader/",
@@ -15,6 +18,5 @@
       "Linux_Reader.exe",
       "DiskInternals Linux Reader"
     ]
-  ],
-  "source": "MANUAL"
+  ]
 }

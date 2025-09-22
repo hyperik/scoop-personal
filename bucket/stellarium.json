@@ -1,16 +1,16 @@
 {
-  "version": "24.2",
+  "version": "25.2",
   "description": "Real time realistic skies generator",
   "homepage": "https://stellarium.org",
   "license": "GPL-2.0-only",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Stellarium/stellarium/releases/download/v24.2/stellarium-24.2-qt6-win64.exe",
-      "hash": "73b1e6e73a167260d5d95dd02556274cdb66f43ead2b00d02f35024adb436e32"
+      "url": "https://github.com/Stellarium/stellarium/releases/download/v25.2/stellarium-25.2-qt6-win64.exe",
+      "hash": "8dc272150c2ae630e6d889af3a33571050199f0a12d99a56cb073985cd7620b2"
     },
-    "32bit": {
-      "url": "https://github.com/Stellarium/stellarium/releases/download/v24.2/stellarium-24.2-qt5-win32.exe",
-      "hash": "0f7963b69f0acb8192b91ab12e15f2ccda953ed39c0c3c47e34bfd53f6ce02a8"
+    "arm64": {
+      "url": "https://github.com/Stellarium/stellarium/releases/download/v25.2/stellarium-25.2-qt6-arm64.exe",
+      "hash": "b8daca4802904706fa4876a187d30c866ee38d1dfd7751c8fd1d63e75a594d69"
     }
   },
   "innosetup": true,
@@ -30,8 +30,8 @@
       "64bit": {
         "url": "https://github.com/Stellarium/stellarium/releases/download/v$version/stellarium-$matchLong-qt6-win64.exe"
       },
-      "32bit": {
-        "url": "https://github.com/Stellarium/stellarium/releases/download/v$version/stellarium-$matchLong-qt5-win32.exe"
+      "arm64": {
+        "url": "https://github.com/Stellarium/stellarium/releases/download/v$version/stellarium-$matchLong-qt6-arm64.exe"
       }
     },
     "hash": {
@@ -39,8 +39,9 @@
       "regex": "(?sm)$basename</.*?SHA256</strong>:\\s+$sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\stellarium.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/stellarium.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\stellarium.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

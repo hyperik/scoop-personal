@@ -1,12 +1,16 @@
 {
-  "version": "0.16.1",
+  "version": "0.24.1",
   "description": "A privacy-focussed, local-first, open-source, and ready-to-use alternative for Notion & Miro.",
   "homepage": "https://affine.pro/",
   "license": "MPL-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/toeverything/AFFiNE/releases/download/v0.16.1/affine-0.16.1-stable-windows-x64.exe#/dl.7z",
-      "hash": "sha512:13313bfb276470fe4f516d84d23dbbcce338d3806fe6470e7caf8d853013c323c94913fb97c3e665d355cb3bef8adf1c4fa7864bb9f32fa3949df54858824dfa"
+      "url": "https://github.com/toeverything/AFFiNE/releases/download/v0.24.1/affine-0.24.1-stable-windows-x64.exe#/dl.7z",
+      "hash": "sha512:35a23090258c9b800dc5045512b0b6d740472f5f9a9716ad0f04a70604bf69dcd5b4d3b8fea14c8c7616c13e77ddf5e7d7918ad411b6f5a05262f27095ce9047"
+    },
+    "arm64": {
+      "url": "https://github.com/toeverything/AFFiNE/releases/download/v0.24.1/affine-0.24.1-stable-windows-arm64.exe#/dl.7z",
+      "hash": "sha512:a8aa3da93f519836d970ed744e4bb5c1dae06e2561f09338265ac57c370df2116da532e5a02f840f337fe2db1525f6e6be86e1b68c7bf11f0cf21fc7fe6e8359"
     }
   },
   "pre_install": [
@@ -25,16 +29,20 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/toeverything/AFFiNE/releases/download/v$version/affine-$version-stable-windows-x64.exe#/dl.7z",
-        "hash": {
-          "url": "$baseurl/latest.yml",
-          "regex": "sha512:\\s+$base64"
-        }
+        "url": "https://github.com/toeverything/AFFiNE/releases/download/v$version/affine-$version-stable-windows-x64.exe#/dl.7z"
+      },
+      "arm64": {
+        "url": "https://github.com/toeverything/AFFiNE/releases/download/v$version/affine-$version-stable-windows-arm64.exe#/dl.7z"
       }
+    },
+    "hash": {
+      "url": "$baseurl/latest.yml",
+      "regex": "$basename\\s+sha512:\\s+$base64"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\affine.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/affine.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\affine.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

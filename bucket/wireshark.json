@@ -1,6 +1,6 @@
 {
-  "version": "4.2.6",
-  "description": "A network protocol analyzer that lets you see what’s happening on your network at a microscopic level.",
+  "version": "4.4.9",
+  "description": "A network protocol analyzer that lets you see what???s happening on your network at a microscopic level.",
   "homepage": "https://www.wireshark.org/",
   "license": "GPL-2.0-or-later",
   "notes": [
@@ -14,8 +14,8 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://www.wireshark.org/download/win64/Wireshark-4.2.6-x64.exe#/dl.7z",
-      "hash": "ba679117304718a009092a5327abfdbc559031d9216512fc7540cb03d30a5545"
+      "url": "https://www.wireshark.org/download/win64/Wireshark-4.4.9-x64.exe#/dl.7z",
+      "hash": "66a42718a940af6cce058ddbb2c529c65d5157b889e9a17ad9d9a89814de080e"
     }
   },
   "installer": {
@@ -26,7 +26,7 @@
     ]
   },
   "post_install": [
-    "Get-ChildItem \"$bucketsdir\\$bucket\\scripts\\wireshark\" | Copy-Item -Force -Destination \"$dir\"",
+    "Get-ChildItem \"$bucketsdir\\extras\\scripts\\wireshark\" | Copy-Item -Force -Destination \"$dir\"",
     "& \"$dir\\enable-usbpcap.ps1\" 2>$null   # Attempt try to enable USBPcap if already installed"
   ],
   "bin": [
@@ -67,8 +67,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wireshark.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wireshark.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wireshark.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

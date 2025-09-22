@@ -27,8 +27,10 @@
   "autoupdate": {
     "url": "https://github.com/absalomedia/vagrant-manager/releases/download/$version/vagrant-manager.exe#/dl.7z"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vagrant-manager.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vagrant-manager.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vagrant-manager.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vagrant-manager.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

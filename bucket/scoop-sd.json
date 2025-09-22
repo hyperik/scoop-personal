@@ -14,8 +14,10 @@
   "autoupdate": {
     "url": "https://github.com/grisha765/scoop-search-directory/releases/download/$matchPrefixv$version/scoop-sd.exe"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scoop-sd.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scoop-sd.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scoop-sd.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scoop-sd.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

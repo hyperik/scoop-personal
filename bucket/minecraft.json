@@ -26,8 +26,10 @@
       "Copy-Item -ErrorAction Ignore -Recurse -Force \"$dir\\runtime\" -Destination $persist_dir"
     ]
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\minecraft.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/minecraft.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\minecraft.json",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/minecraft.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

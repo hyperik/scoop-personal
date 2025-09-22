@@ -1,17 +1,17 @@
 {
-  "version": "1.0.1",
+  "version": "1.1.5",
   "description": "2D sprite editor designed for pixel art",
   "homepage": "https://orama-interactive.itch.io/pixelorama",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.0.1/Pixelorama-Windows-64bit.zip",
-      "hash": "43f6ec95f41c3f46af9815f876dff3271eb9e78fd207346e58251246c8e1e8a3",
+      "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.5/Pixelorama-Windows-64bit.zip",
+      "hash": "3c49894d9adb4bfba0ad69d05432f61d262a3c69e7f42b9732befe8cc5674205",
       "extract_dir": "Pixelorama-Windows-64bit"
     },
     "32bit": {
-      "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.0.1/Pixelorama-Windows-32bit.zip",
-      "hash": "b332be77461f43b5be5fabd50c59be5f6cc5fc3366301d6748d0f5cae98b3b94",
+      "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.5/Pixelorama-Windows-32bit.zip",
+      "hash": "1e4276020b59d92e9d8df40f3519dea1ec8577f8f2a5e6e2baf56f482293145c",
       "extract_dir": "Pixelorama-Windows-32bit"
     }
   },
@@ -35,8 +35,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pixelorama.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pixelorama.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pixelorama.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pixelorama.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

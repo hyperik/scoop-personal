@@ -33,8 +33,10 @@
     },
     "extract_dir": "gbt-$version"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\gbt.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gbt.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gbt.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gbt.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

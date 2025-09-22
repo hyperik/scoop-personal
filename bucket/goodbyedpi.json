@@ -32,8 +32,10 @@
     "url": "https://github.com/ValdikSS/GoodbyeDPI/releases/download/$version/goodbyedpi-$version.zip",
     "extract_dir": "goodbyedpi-$version"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\goodbyedpi.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/goodbyedpi.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\goodbyedpi.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/goodbyedpi.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

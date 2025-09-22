@@ -1,5 +1,5 @@
 {
-  "version": "1.4.10173",
+  "version": "1.11.430",
   "description": "Windows Package Manager CLI (aka winget)",
   "homepage": "https://github.com/microsoft/winget-cli",
   "license": "MIT",
@@ -8,10 +8,10 @@
     "For documentation on settings, see: https://aka.ms/winget-settings."
   ],
   "suggest": {
-    "vcredist": "extras/vcredist"
+    "vcredist": "extras/vcredist2022"
   },
-  "url": "https://github.com/microsoft/winget-cli/releases/download/v1.4.10173/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle#/dl.7z",
-  "hash": "091899dff6a9b4d7ff364e03e408cfc1efac382ddfd945e69e952bb364e2b208",
+  "url": "https://github.com/microsoft/winget-cli/releases/download/v1.11.430/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle#/dl.7z",
+  "hash": "db76671a4e8f5fac9c96c2861907b04fd041b28235267c2e5626a2cef7468e19",
   "architecture": {
     "64bit": {
       "pre_install": "Get-ChildItem \"$dir\" -Exclude '*x64.msix' | Remove-Item -Force -Recurse"
@@ -34,8 +34,9 @@
       "url": "https://github.com/microsoft/winget-cli/releases/download/v$version/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\winget.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/winget.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\winget.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

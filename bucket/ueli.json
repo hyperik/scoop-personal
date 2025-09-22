@@ -1,10 +1,10 @@
 {
-  "version": "9.3.0",
+  "version": "9.25.1",
   "description": "A keystroke launcher",
   "homepage": "https://ueli.app/",
   "license": "MIT",
-  "url": "https://github.com/oliverschwendener/ueli/releases/download/v9.3.0/ueli-9.3.0-win.zip",
-  "hash": "d92970b73ebb413b13e57d4460732ea1671182bae5694caa1a606347fc9f1b2e",
+  "url": "https://github.com/oliverschwendener/ueli/releases/download/v9.25.1/ueli-9.25.1-win.zip",
+  "hash": "b03db4ec502ed8af321093ae4c07a2c17b0eda581c7f688be04157e65a9d60d1",
   "bin": "ueli.exe",
   "shortcuts": [
     [
@@ -18,8 +18,10 @@
   "autoupdate": {
     "url": "https://github.com/oliverschwendener/ueli/releases/download/v$version/ueli-$version-win.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ueli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ueli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ueli.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ueli.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

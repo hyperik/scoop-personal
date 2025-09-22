@@ -1,25 +1,23 @@
 {
-  "version": "4.2.0",
+  "version": "4.5.1",
   "description": "3D creation suite",
   "homepage": "https://www.blender.org",
   "license": "GPL-3.0-or-later",
   "architecture": {
     "64bit": {
-      "url": "https://download.blender.org/release/Blender4.2/blender-4.2.0-windows-x64.zip",
-      "hash": "b6e72874f8cb5c4ed77f9b03d7f1fde851b9455a7ff02a1e1119c876318ebc65",
-      "extract_dir": "blender-4.2.0-windows-x64"
+      "url": "https://download.blender.org/release/Blender4.5/blender-4.5.1-windows-x64.zip",
+      "hash": "ae2eadb2656d710ffd6ca74a899519fccb800c7a18e6c05b6f39627e48d17aed",
+      "extract_dir": "blender-4.5.1-windows-x64"
     }
   },
-  "bin": "blender.exe",
+  "bin": "blender-launcher.exe",
   "shortcuts": [
     [
-      "blender.exe",
+      "blender-launcher.exe",
       "Blender"
     ]
   ],
-  "persist": [
-    "portable"
-  ],
+  "persist": "portable",
   "checkver": {
     "url": "https://www.blender.org/download/",
     "regex": "blender-([\\w.]+)-windows-x64\\.zip"
@@ -35,8 +33,9 @@
       "url": "$baseurl/blender-$version.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\blender.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/blender.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\blender.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

@@ -21,8 +21,10 @@
   "autoupdate": {
     "url": "https://www.den4b.com/download/resizer/portable/$version?token=scoop#/dl.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\resizer.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/resizer.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\resizer.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/resizer.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

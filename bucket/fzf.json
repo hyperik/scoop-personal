@@ -1,16 +1,16 @@
 {
-  "version": "0.54.3",
+  "version": "0.65.2",
   "description": "A general-purpose command-line fuzzy finder",
   "homepage": "https://github.com/junegunn/fzf",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/junegunn/fzf/releases/download/v0.54.3/fzf-0.54.3-windows_amd64.zip",
-      "hash": "604d11b1c36d03675de80d598dfe8a3eba4f8607e0d8bbcc63734effde209bb6"
+      "url": "https://github.com/junegunn/fzf/releases/download/v0.65.2/fzf-0.65.2-windows_amd64.zip",
+      "hash": "ad77a1e4b6ea6b790b02bfad333eb3e2a802e5e5423271733b324794eda31b9e"
     },
     "arm64": {
-      "url": "https://github.com/junegunn/fzf/releases/download/v0.54.3/fzf-0.54.3-windows_arm64.zip",
-      "hash": "c702c652417adcb8ee045a2f6d6bd8e54b2bfdacff9ae66e658b840e2a46519b"
+      "url": "https://github.com/junegunn/fzf/releases/download/v0.65.2/fzf-0.65.2-windows_arm64.zip",
+      "hash": "fa15b9da97c1babcab7d6e2992045f9237aaa06a13498cd78fa0367558f003a3"
     }
   },
   "bin": "fzf.exe",
@@ -25,8 +25,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\fzf.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fzf.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fzf.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fzf.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

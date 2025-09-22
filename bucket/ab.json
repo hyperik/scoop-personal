@@ -1,12 +1,12 @@
 {
-  "version": "2.4.57",
+  "version": "2.4.64",
   "description": "Apache HTTP server benchmarking tool ('ab')",
   "homepage": "https://www.apachelounge.com",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://fossies.org/windows/www/httpd-2.4.57-win64-VS16.zip",
-      "hash": "f74e3ef944d3d8fe5db4ad353304cbaf3c038d28307697e0d12cd8f8201dbbb4"
+      "url": "https://fossies.org/windows/www/httpd-2.4.64-250710-win64-VS17.zip",
+      "hash": "a0c71dad7938f02495c300fc326a74e261c8870f417630d110ad347705a9c58c"
     }
   },
   "extract_dir": "Apache24",
@@ -17,12 +17,12 @@
   ],
   "checkver": {
     "url": "https://fossies.org/windows/www/",
-    "regex": "httpd-([\\d.]+)-win64-VS16\\.zip"
+    "regex": "httpd-([\\d.]+)-(?<date>[\\d]+)-win64-VS17\\.zip"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://fossies.org/windows/www/httpd-$version-win64-VS16.zip"
+        "url": "https://fossies.org/windows/www/httpd-$version-$matchDate-win64-VS17.zip"
       }
     },
     "hash": {
@@ -30,8 +30,9 @@
     },
     "extract_dir": "Apache$majorVersion$minorVersion"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ab.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ab.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ab.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

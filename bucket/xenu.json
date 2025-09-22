@@ -17,8 +17,10 @@
       "Xenu"
     ]
   ],
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xenu.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xenu.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xenu.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xenu.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

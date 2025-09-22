@@ -1,8 +1,12 @@
 {
-  "version": "5.7.0",
+  "version": "6.2.0",
   "description": "Twilio CLI. Unleash the power of Twilio from your command prompt.",
   "homepage": "https://github.com/twilio/twilio-cli",
   "license": "MIT",
+  "notes": [
+    "* Known issue:",
+    "  - Extration requires Developer mode to be enabled, or admin rights: https://github.com/ScoopInstaller/Main/issues/4975"
+  ],
   "suggest": {
     "Node.js": [
       "main/nodejs",
@@ -11,12 +15,12 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://twilio-cli-prod.s3.amazonaws.com/twilio-v5.7.0/twilio-v5.7.0-win32-x64.tar.xz",
-      "hash": "95db3be507710e9d3389e12d74ef3e06cc11bc0cfd9673487c850f57e07ba931"
+      "url": "https://twilio-cli-prod.s3.amazonaws.com/twilio-v6.2.0/twilio-v6.2.0-win32-x64.tar.xz",
+      "hash": "0f48b2b96070303869db8cd27f8843a48f86daf4279964654573500d9f30a6bb"
     },
     "32bit": {
-      "url": "https://twilio-cli-prod.s3.amazonaws.com/twilio-v5.7.0/twilio-v5.7.0-win32-x86.tar.xz",
-      "hash": "46ef697415a47f1274aed9223b2d3acb9c01b89684264eefce135ea132db8ed5"
+      "url": "https://twilio-cli-prod.s3.amazonaws.com/twilio-v6.2.0/twilio-v6.2.0-win32-x86.tar.xz",
+      "hash": "afa4b44b1045f3c8631f3129b023934d19cf457f22d809ea5f961ca8e53fcd27"
     }
   },
   "extract_dir": "twilio",
@@ -43,8 +47,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\twilio-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/twilio-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\twilio-cli.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

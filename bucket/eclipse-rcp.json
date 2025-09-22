@@ -1,12 +1,12 @@
 {
-  "version": "2024-06",
+  "version": "2025-06",
   "description": "Eclipse IDE for RCP and RAP Developers",
   "homepage": "https://www.eclipse.org",
   "license": "EPL-1.0",
   "architecture": {
     "64bit": {
-      "url": "http://download.eclipse.org/technology/epp/downloads/release/2024-06/R/eclipse-rcp-2024-06-R-win32-x86_64.zip",
-      "hash": "sha512:637b8d8a7141a12fffabdaf8841d49cc6806a819eeaf7822feba1f46a8ec0dc98a1e5a956bb5632ed48b9c25d102a936c89ec17996686ac5b2e0dc73ad7f86c1"
+      "url": "http://download.eclipse.org/technology/epp/downloads/release/2025-06/R/eclipse-rcp-2025-06-R-win32-x86_64.zip",
+      "hash": "sha512:ea8dc748e5f4e1f06632118de459c8184cfdb04e490650b352492de7776e28080d4e89eedb132deec06d3e6b2c662f1593a0e848b05ef392cbfe08e90d58721c"
     }
   },
   "extract_dir": "eclipse",
@@ -31,8 +31,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\eclipse-rcp.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/eclipse-rcp.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\eclipse-rcp.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/eclipse-rcp.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

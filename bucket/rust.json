@@ -1,5 +1,5 @@
 {
-  "version": "1.69.0",
+  "version": "1.89.0",
   "description": "A language empowering everyone to build reliable and efficient software. (MSVC toolchain)",
   "homepage": "https://www.rust-lang.org",
   "license": "MIT|Apache-2.0",
@@ -13,16 +13,16 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://static.rust-lang.org/dist/rust-1.69.0-x86_64-pc-windows-msvc.msi",
-      "hash": "64c268761ec269cf1b4baef3126d659dcab281b4c124f7801fec2b4fdefa6ec0"
+      "url": "https://static.rust-lang.org/dist/rust-1.89.0-x86_64-pc-windows-msvc.msi",
+      "hash": "ec885bc7e8a04f48a9f26969ab4a3954ad43b52768e4ff0f483931b51fd65f26"
     },
     "32bit": {
-      "url": "https://static.rust-lang.org/dist/rust-1.69.0-i686-pc-windows-msvc.msi",
-      "hash": "c3af61b2a47703d58fb99c1dd3ee3bcdba3d1285dba75c7aa391fdecc6871932"
+      "url": "https://static.rust-lang.org/dist/rust-1.89.0-i686-pc-windows-msvc.msi",
+      "hash": "02f3789b9379257488c450c2489ed29f9bca74458d8169a8c745a8739b55459b"
     },
     "arm64": {
-      "url": "https://static.rust-lang.org/dist/rust-1.69.0-aarch64-pc-windows-msvc.msi",
-      "hash": "41b7d9d86c9086058f9c90716883464783f37c64585765543d723bb9f0137ff6"
+      "url": "https://static.rust-lang.org/dist/rust-1.89.0-aarch64-pc-windows-msvc.msi",
+      "hash": "17ca1e9a6faf43e65ad03d9d98b633e253231cb693a56bad1bf9441284ed01fb"
     }
   },
   "extract_dir": "Rust",
@@ -31,10 +31,7 @@
     "bin\\rustdoc.exe",
     "bin\\cargo.exe"
   ],
-  "checkver": {
-    "url": "https://www.rust-lang.org/",
-    "regex": "Version ([\\d.]+)"
-  },
+  "checkver": "Version ([\\d.]+)",
   "autoupdate": {
     "architecture": {
       "64bit": {
@@ -51,8 +48,9 @@
       "url": "$url.sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\rust.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rust.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rust.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

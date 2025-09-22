@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.10.0",
   "homepage": "https://github.com/charmbracelet/vhs",
   "description": "A cli application that allows you to create terminal GIFs as code for integration testing and demoing your CLI tools (ex. neofetch/winfetch).",
   "license": "MIT",
@@ -9,12 +9,14 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/charmbracelet/vhs/releases/download/v0.4.0/vhs_0.4.0_Windows_x86_64.zip",
-      "hash": "0f2a4f4a5b3596f43895257e81067f9c7998c3f04856e4fc9f165c5d06f735bd"
+      "url": "https://github.com/charmbracelet/vhs/releases/download/v0.10.0/vhs_0.10.0_Windows_x86_64.zip",
+      "hash": "7f5cffbbd01fe4229af0540856ddc0da933af0c16c05b1fbe62e0ef2097038a8",
+      "extract_dir": "vhs_0.10.0_Windows_x86_64"
     },
     "32bit": {
-      "url": "https://github.com/charmbracelet/vhs/releases/download/v0.4.0/vhs_0.4.0_Windows_i386.zip",
-      "hash": "bb8256de18be69f68ed84b4323eecc03ae4bd3e753128d1254306a7ca4e15811"
+      "url": "https://github.com/charmbracelet/vhs/releases/download/v0.10.0/vhs_0.10.0_Windows_i386.zip",
+      "hash": "3877df84e95a0a48e2ed611bf5b68f69d7905f39e6cd5345f1244dbc4bf2a5e7",
+      "extract_dir": "vhs_0.10.0_Windows_i386"
     }
   },
   "bin": "vhs.exe",
@@ -22,10 +24,12 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_x86_64.zip"
+        "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_x86_64.zip",
+        "extract_dir": "vhs_$version_Windows_x86_64"
       },
       "32bit": {
-        "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_i386.zip"
+        "url": "https://github.com/charmbracelet/vhs/releases/download/v$version/vhs_$version_Windows_i386.zip",
+        "extract_dir": "vhs_$version_Windows_i386"
       }
     },
     "hash": {
@@ -33,8 +37,9 @@
       "regex": "(?m)^$sha256.*?$basename$"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\vhs.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/vhs.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\vhs.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

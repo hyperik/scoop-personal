@@ -1,5 +1,5 @@
 {
-  "version": "3.6.1",
+  "version": "3.7.5",
   "description": "An easy-to-use, multi-track audio editor and recorder",
   "homepage": "https://www.audacityteam.org",
   "license": {
@@ -8,14 +8,19 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/audacity/audacity/releases/download/Audacity-3.6.1/audacity-win-3.6.1-64bit.zip",
-      "hash": "de4040893e02f37f90907bc3a0fff5b82c3f92b0d96efc021e3da7ee11944ce7",
-      "extract_dir": "audacity-win-3.6.1-64bit"
+      "url": "https://github.com/audacity/audacity/releases/download/Audacity-3.7.5/audacity-win-3.7.5-64bit.zip",
+      "hash": "0bc382a89cd44ee2df80f9b725fa22a697163572a8aa04899ee8544dc2932926",
+      "extract_dir": "audacity-win-3.7.5-64bit"
     },
     "32bit": {
-      "url": "https://github.com/audacity/audacity/releases/download/Audacity-3.6.1/audacity-win-3.6.1-32bit.zip",
-      "hash": "e95756e92068d4daa99d8b0bd99cbc8f0f76d308de8e518b33d87be947a8d8a4",
-      "extract_dir": "audacity-win-3.6.1-32bit"
+      "url": "https://github.com/audacity/audacity/releases/download/Audacity-3.7.5/audacity-win-3.7.5-32bit.zip",
+      "hash": "c80c0767cbb4b74eabf0c206a2c9c4ab9c6996a3fcf14713f542c8660882893f",
+      "extract_dir": "audacity-win-3.7.5-32bit"
+    },
+    "arm64": {
+      "url": "https://github.com/audacity/audacity/releases/download/Audacity-3.7.5/audacity-win-3.7.5-arm64.zip",
+      "hash": "996c68cdc97ca85f84777a557b3991a5dfa49727bad4086dba474b1525abfbc9",
+      "extract_dir": "audacity-win-3.7.5-arm64"
     }
   },
   "pre_install": [
@@ -45,6 +50,10 @@
       "32bit": {
         "url": "https://github.com/audacity/audacity/releases/download/Audacity-$version/audacity-win-$version-32bit.zip",
         "extract_dir": "audacity-win-$version-32bit"
+      },
+      "arm64": {
+        "url": "https://github.com/audacity/audacity/releases/download/Audacity-$version/audacity-win-$version-arm64.zip",
+        "extract_dir": "audacity-win-$version-arm64"
       }
     },
     "hash": {
@@ -52,8 +61,9 @@
       "regex": "$basename.*?$sha256"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\audacity.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/audacity.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\audacity.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

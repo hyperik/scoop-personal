@@ -1,10 +1,10 @@
 {
-  "version": "4.17.1.4",
+  "version": "4.19.1.16",
   "description": "Team radio engineer compatible with iRacing, Assetto Corsa, Project Cars, and other racing games",
   "homepage": "https://mr_belowski.gitlab.io/CrewChiefV4/index.html",
   "license": "MIT",
   "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi",
-  "hash": "741f85c3cd977468d53700a62394c13279cdfbbc85487a24b9906abde079dc2b",
+  "hash": "9f82fb6e164931802d261d46e358874d9293d323ca9c3604425822745d6dd4a5",
   "extract_dir": "Britton IT Ltd/CrewChiefV4",
   "bin": "CrewChiefV4.exe",
   "shortcuts": [
@@ -20,8 +20,10 @@
   "autoupdate": {
     "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\crewchief.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/crewchief.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\crewchief.json",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/crewchief.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

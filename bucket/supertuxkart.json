@@ -33,8 +33,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\supertuxkart.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\supertuxkart.json",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

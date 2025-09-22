@@ -1,5 +1,8 @@
 {
-  "##": "Untested copying download location from site verbatim",
+  "##": [
+    "Untested copying download location from site verbatim",
+    "source: MANUAL"
+  ],
   "version": "0.1",
   "description": "Amazon Games client",
   "homepage": "https://www.amazongames.com/",
@@ -15,6 +18,5 @@
       "AmazonGamesSetup.exe",
       "Amazon Games"
     ]
-  ],
-  "source": "MANUAL"
+  ]
 }

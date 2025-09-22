@@ -1,13 +1,13 @@
 {
-  "version": "9.0.0.15",
+  "version": "9.1.1.35",
   "description": "A build of JDK Mission Control, an open source Java runtime profiling and monitoring utility",
   "homepage": "https://www.azul.com/products/components/azul-mission-control/",
   "license": "UPL-1.0",
   "architecture": {
     "64bit": {
-      "url": "http://static.azul.com/zmc/bin/zmc9.0.0.15-ca-win_x64.zip",
-      "hash": "a0f96d7bad24949ff846a3702ee18b69c0e084e6f55fc87b9f95c6a954db6dc4",
-      "extract_dir": "zmc9.0.0.15-ca-win_x64\\Azul Mission Control"
+      "url": "http://static.azul.com/zmc/bin/zmc9.1.1.35-ca-win_x64.zip",
+      "hash": "04143b91f0450c52c39b0a72dffb89284668568401dd45661f9f0024dbb9099a",
+      "extract_dir": "zmc9.1.1.35-ca-win_x64\\Azul Mission Control"
     }
   },
   "bin": "zmc.exe",
@@ -30,8 +30,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zmc.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zmc.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zmc.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

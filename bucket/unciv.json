@@ -1,13 +1,13 @@
 {
-  "version": "4.12.18",
+  "version": "4.17.19",
   "homepage": "https://github.com/yairm210/UnCiv",
   "description": "Open source, mod-friendly Android + Desktop remake of Civ V, made with LibGDX",
   "license": "MPL-2.0",
   "suggest": {
     "Java Runtime Environment": "java/temurin-jre"
   },
-  "url": "https://github.com/yairm210/Unciv/releases/download/4.12.18/Unciv-Windows64.zip",
-  "hash": "2be2f1d921904067857fe0057c0795cffb22563db887a390ecce9444f7eb04be",
+  "url": "https://github.com/yairm210/Unciv/releases/download/4.17.19/Unciv-Windows64.zip",
+  "hash": "932cc882ff7d1bcc7fb3f5984ed5917df432cb33d3599185faabe2861c921b62",
   "pre_install": [
     "if (!(Test-Path \"$persist_dir\\GameSettings.json\")) {",
     "New-Item \"$dir\\GameSettings.json\" -Value '{resolution:1200x800,windowState:{width:1920,height:1080},isFreshlyCreated:true,multiplayer:{userId:},version:1}' | Out-Null",
@@ -25,13 +25,15 @@
     "SaveFiles"
   ],
   "checkver": {
-    "github": "https://github.com/yairm210/UnCiv"
+    "url": "https://api.github.com/repos/yairm210/UnCiv/releases",
+    "jsonpath": "$[?(@.prerelease == false && @.assets[?(@.name == 'Unciv-Windows64.zip')])].tag_name"
   },
   "autoupdate": {
     "url": "https://github.com/yairm210/Unciv/releases/download/$version/Unciv-Windows64.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\unciv.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/unciv.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\unciv.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

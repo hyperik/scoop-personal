@@ -21,8 +21,10 @@
     "url": "https://downloads.sourceforge.net/project/xmlstar/xmlstarlet/$version/xmlstarlet-$version-win32.zip",
     "extract_dir": "xmlstarlet-$version"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\xmlstarlet.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/xmlstarlet.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\xmlstarlet.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/xmlstarlet.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

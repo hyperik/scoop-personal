@@ -34,8 +34,10 @@
     }
   },
   "bin": "bin\\xmllint.exe",
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xmllint.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xmllint.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xmllint.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xmllint.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

@@ -1,16 +1,16 @@
 {
-  "version": "3.6.0",
+  "version": "3.12.0",
   "description": "A shell parser, formatter and interpreter. Supports POSIX Shell, Bash and mksh.",
   "homepage": "https://github.com/mvdan/sh",
   "license": "BSD-3-Clause",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/mvdan/sh/releases/download/v3.6.0/shfmt_v3.6.0_windows_amd64.exe#/shfmt.exe",
-      "hash": "18122d910ba434be366588f37c302c309cde4ca5403f93285254a3cf96839d01"
+      "url": "https://github.com/mvdan/sh/releases/download/v3.12.0/shfmt_v3.12.0_windows_amd64.exe#/shfmt.exe",
+      "hash": "c8bda517ba1c640ce4a715c0fa665439ddbe4357ba5e9b77b0e51e70e2b9c94b"
     },
     "32bit": {
-      "url": "https://github.com/mvdan/sh/releases/download/v3.6.0/shfmt_v3.6.0_windows_386.exe#/shfmt.exe",
-      "hash": "3753abfaca1beaf80a81e084c7947e60e2a08076270950d76197f4997fc122d0"
+      "url": "https://github.com/mvdan/sh/releases/download/v3.12.0/shfmt_v3.12.0_windows_386.exe#/shfmt.exe",
+      "hash": "92c1ef0af344a10f2cefe3ce4bc6793ae8b3719ac08fc01802bbd8eae105e534"
     }
   },
   "bin": "shfmt.exe",
@@ -25,8 +25,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\shfmt.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shfmt.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shfmt.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shfmt.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

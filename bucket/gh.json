@@ -1,20 +1,20 @@
 {
-  "version": "2.54.0",
+  "version": "2.78.0",
   "description": "Official GitHub CLI",
   "homepage": "https://cli.github.com",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/cli/cli/releases/download/v2.54.0/gh_2.54.0_windows_amd64.zip",
-      "hash": "d3400b7e5c5a7f3912e8da606a2daf3376981d49f0ba0dea0337725eae25351d"
+      "url": "https://github.com/cli/cli/releases/download/v2.78.0/gh_2.78.0_windows_amd64.zip",
+      "hash": "6eac4787b332656aecdecd0b35a674385e185121cdf603ad71a0ef6355d36502"
     },
     "32bit": {
-      "url": "https://github.com/cli/cli/releases/download/v2.54.0/gh_2.54.0_windows_386.zip",
-      "hash": "fc3ff826788d4b6bd0562fa2f3672487319f3b81b46f854364a90c968066679c"
+      "url": "https://github.com/cli/cli/releases/download/v2.78.0/gh_2.78.0_windows_386.zip",
+      "hash": "41469560ff48852e9eef9e635587e465fcf6e18501e2bac263828b06e4cb3627"
     },
     "arm64": {
-      "url": "https://github.com/cli/cli/releases/download/v2.54.0/gh_2.54.0_windows_arm64.zip",
-      "hash": "976effaaf05b33427358c241531b034df315d4fff87a67fe4c7745180006c77f"
+      "url": "https://github.com/cli/cli/releases/download/v2.78.0/gh_2.78.0_windows_arm64.zip",
+      "hash": "7b792c42cc364c1d7a28d432877c3251ec676bf9575b06e95e71ac6f8da27807"
     }
   },
   "bin": "bin\\gh.exe",
@@ -37,8 +37,10 @@
       "url": "$baseurl/gh_$version_checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\gh.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gh.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gh.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gh.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

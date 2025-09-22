@@ -1,5 +1,5 @@
 {
-  "version": "6.7.0.0",
+  "version": "7.1.0.0",
   "description": "cnc-ddraw can fix compatibility issues with older games, such as black screen, bad performance, crashes, or defective Alt+Tab. It does this by wrapping DirectDraw to renderers like GDI, OpenGL, or Direct3D 9",
   "homepage": "https://github.com/CnCNet/cnc-ddraw",
   "license": "MIT",
@@ -10,14 +10,16 @@
     "If you want to customize the rendering, use 'cnc-ddraw config.exe'",
     ""
   ],
-  "url": "https://github.com/CnCNet/cnc-ddraw/releases/download/v6.7.0.0/cnc-ddraw.zip",
-  "hash": "d0b9c2ca5a30894ae8015bde20f561c56b0adc8826c5b8e0e4fc021e21303db7",
+  "url": "https://github.com/CnCNet/cnc-ddraw/releases/download/v7.1.0.0/cnc-ddraw.zip",
+  "hash": "0b13ab89a64c9918189b1dadd449ef6ed3cb3b7b19cabd96d8adbd95505bb908",
   "checkver": "github",
   "autoupdate": {
     "url": "https://github.com/CnCNet/cnc-ddraw/releases/download/v$version/cnc-ddraw.zip"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-games\\bucket\\cnc-ddraw.json",
-  "sourceUrl": "https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/cnc-ddraw.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\cnc-ddraw.json",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/cnc-ddraw.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

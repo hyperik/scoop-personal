@@ -1,16 +1,16 @@
 {
-  "version": "0.13.0",
+  "version": "1.1.1",
   "description": "Tool for interacting with VirusTotal",
   "homepage": "https://github.com/VirusTotal/vt-cli",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/VirusTotal/vt-cli/releases/download/0.13.0/Windows64.zip",
-      "hash": "157f19d284858013c6c05c8de2dee2390755c07293e514220536906ccaa444e9"
+      "url": "https://github.com/VirusTotal/vt-cli/releases/download/1.1.1/Windows64.zip",
+      "hash": "469b7e7f4d5ccfce12a0576a82822ecd431e852052517af28acf67d93609fd14"
     },
     "32bit": {
-      "url": "https://github.com/VirusTotal/vt-cli/releases/download/0.13.0/Windows32.zip",
-      "hash": "4a710121965feecd82c6579f73af07c887198364c4371435a98d5b01163d0677"
+      "url": "https://github.com/VirusTotal/vt-cli/releases/download/1.1.1/Windows32.zip",
+      "hash": "5bcd4e85e9925f80bd1e02e7eaab50ed37c1999cfe59d144ab7c5b5a1a534b4e"
     }
   },
   "bin": "vt.exe",
@@ -25,8 +25,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\vt-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/vt-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\vt-cli.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/vt-cli.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

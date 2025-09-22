@@ -16,8 +16,10 @@
   "autoupdate": {
     "url": "https://github.com/randyrants/sharpkeys/releases/download/v$version/sharpkeys$cleanVersion.msi"
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sharpkeys.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sharpkeys.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sharpkeys.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sharpkeys.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

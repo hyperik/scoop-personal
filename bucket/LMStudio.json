@@ -4,9 +4,9 @@
   "license": {
     "url": "https://lmstudio.ai/terms"
   },
-  "version": "0.2.27",
-  "url": "https://releases.lmstudio.ai/windows/0.2.27/latest/LM-Studio-0.2.27-Setup.exe#/dl.7z",
-  "hash": "ad6d4216c0a8914e8d988aa2279c061141fb74c1bd223be06cda84a611f854e2",
+  "version": "0.3.2",
+  "url": "https://releases.lmstudio.ai/win32/x64/0.3.2/2/LM-Studio-0.3.2-Setup.exe#/dl.7z",
+  "hash": "",
   "installer": {
     "script": [
       "$pkgfile = (Get-ChildItem \"$dir\" '*.nupkg' | Select-Object -First 1).FullName",
@@ -25,10 +25,11 @@
     "regex": "LM-Studio-([\\d.]+)-Setup.exe"
   },
   "autoupdate": {
-    "url": "https://releases.lmstudio.ai/windows/$version/latest/LM-Studio-$version-Setup.exe#/dl.7z"
+    "url": "https://releases.lmstudio.ai/win32/x64/$version/2/LM-Studio-$version-Setup.exe#/dl.7z"
   },
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\LMStudio.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/LMStudio.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\LMStudio.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

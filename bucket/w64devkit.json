@@ -1,12 +1,16 @@
 {
-  "version": "1.23.0",
+  "version": "2.4.0",
   "description": "Portable C and C++ Development Kit for x64 Windows",
   "homepage": "https://github.com/skeeto/w64devkit",
   "license": "Unlicense",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/skeeto/w64devkit/releases/download/v1.23.0/w64devkit-1.23.0.zip",
-      "hash": "5c7dce6762be3e0dba648a9317790444c0e2f1ef3e677315c115727d7a549539"
+      "url": "https://github.com/skeeto/w64devkit/releases/download/v2.4.0/w64devkit-x64-2.4.0.7z.exe#/dl.7z",
+      "hash": "80678c29a56982d7d3b342f12a0060157df5654c38d82d4adc40704070d6aafb"
+    },
+    "32bit": {
+      "url": "https://github.com/skeeto/w64devkit/releases/download/v2.4.0/w64devkit-x86-2.4.0.7z.exe#/dl.7z",
+      "hash": "5d9b4c022bd76fc68728f7c5138da22098b6557d266d1377f2431aa00385bc64"
     }
   },
   "extract_dir": "w64devkit",
@@ -20,10 +24,18 @@
   "env_add_path": "bin",
   "checkver": "github",
   "autoupdate": {
-    "url": "https://github.com/skeeto/w64devkit/releases/download/v$version/w64devkit-$version.zip"
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/skeeto/w64devkit/releases/download/v$version/w64devkit-x64-$version.7z.exe#/dl.7z"
+      },
+      "32bit": {
+        "url": "https://github.com/skeeto/w64devkit/releases/download/v$version/w64devkit-x86-$version.7z.exe#/dl.7z"
+      }
+    }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\w64devkit.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/w64devkit.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\w64devkit.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

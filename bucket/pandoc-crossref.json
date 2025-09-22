@@ -1,13 +1,13 @@
 {
-  "version": "0.3.15.2a",
+  "version": "0.3.20",
   "description": "Pandoc filter for cross-references",
   "homepage": "https://hackage.haskell.org/package/pandoc-crossref",
   "license": "GPL-2.0-or-later",
   "depends": "pandoc",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.15.2a/pandoc-crossref-Windows.7z",
-      "hash": "47189ca47c947de7eb42564c33c18855895b0598c3b95e5d0f340b5585c0c192"
+      "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.20/pandoc-crossref-Windows-X64.7z",
+      "hash": "351f50d46f66b856055ab44666967b904c2bf7220989c88c6c97c282196915b3"
     }
   },
   "bin": "pandoc-crossref.exe",
@@ -18,12 +18,13 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v$version/pandoc-crossref-Windows.7z"
+        "url": "https://github.com/lierdakil/pandoc-crossref/releases/download/v$version/pandoc-crossref-Windows-X64.7z"
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\pandoc-crossref.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/pandoc-crossref.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\pandoc-crossref.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

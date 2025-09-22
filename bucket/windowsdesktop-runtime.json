@@ -1,21 +1,21 @@
 {
-  "version": "8.0.7",
-  "description": "Microsoft .NET 8.0 Desktop Runtime",
+  "version": "9.0.8",
+  "description": "Microsoft .NET (9.0 latest) Desktop Runtime",
   "homepage": "https://dotnet.microsoft.com/download/dotnet",
   "license": "MIT",
-  "notes": "You can now remove this installer with 'scoop uninstall windowsdesktop-runtime'",
+  "notes": "You can now remove this installer with 'scoop uninstall -p windowsdesktop-runtime'",
   "architecture": {
     "64bit": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/8.0.7/windowsdesktop-runtime-8.0.7-win-x64.exe",
-      "hash": "sha512:391ca05d7540c58f25047ae07b8c5656829f7fd32f6e88a4e34c5337525f574e5714657e1c4f4f4d48e006087f573f8c03f1fc8eab8c9b9dab4d5ca5c8ea1fd4"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.8/windowsdesktop-runtime-9.0.8-win-x64.exe",
+      "hash": "sha512:14eeae9e47137f0d550e4ab73ada9c8e253f9c989ea975789d70d9f605bf946f4e9cddf0d2bc8028ca3ad10d9277f51181db94cb3623798fb876e637d283f93e"
     },
     "32bit": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/8.0.7/windowsdesktop-runtime-8.0.7-win-x86.exe",
-      "hash": "sha512:5adf46498caa1f4ae10ea6327f5c89f424665e1fc471cc8ca18c43779058a37aa5441ce89f82d9b2a5a4b877ab7f448fb5c48193e628eb038956f82d71880942"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.8/windowsdesktop-runtime-9.0.8-win-x86.exe",
+      "hash": "sha512:8a9c1b6de95330dc339b3211c52bb8f75ec73aef6e0361d58090faf2c66e4e831e7de53bce95346091a43a4102e4b480ade7de3625240e7797901d3e3b8ad5cb"
     },
     "arm64": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/8.0.7/windowsdesktop-runtime-8.0.7-win-arm64.exe",
-      "hash": "sha512:bfd5a8bdd87d9c010fc9cbd058f071e832b7d515c2550e0ca43b6da23dc5c108f9d8065ad89fa33bc5fab7c814eee7531e07cb58d09a4e69073a880137affe41"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.8/windowsdesktop-runtime-9.0.8-win-arm64.exe",
+      "hash": "sha512:6ee88e9fb4f139d8ed8214a81d89d7738e54ff7338a3bfa4c887472942472481046002a25ad765e2fb7cfb12e4931cda9b808c04dcbe010c498ca8bdbf0f992c"
     }
   },
   "pre_install": "if (!(is_admin)) { throw 'Admin privileges are required.' }",
@@ -23,8 +23,9 @@
     "script": "Invoke-ExternalCommand \"$dir\\$fname\" -ArgumentList '/install', '/quiet', '/norestart' -RunAs | Out-Null"
   },
   "checkver": {
-    "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/Current/latest.version",
-    "regex": "([\\d.]+)$"
+    "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json",
+    "jsonpath": "$.releases-index[?(@.support-phase == 'active')].latest-runtime",
+    "regex": "([\\d.]+)"
   },
   "autoupdate": {
     "architecture": {
@@ -42,8 +43,9 @@
       "url": "https://dotnetcli.blob.core.windows.net/dotnet/checksums/$version-sha.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsdesktop-runtime.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windowsdesktop-runtime.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsdesktop-runtime.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

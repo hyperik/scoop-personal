@@ -1,5 +1,11 @@
 {
-  "##": "The installer is made with InnoSetup, but encrypted with a password.",
+  "##": [
+    "The installer is made with InnoSetup, but encrypted with a password.",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winaero-tweaker.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winaero-tweaker.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ],
   "version": "1.63.0.0",
   "description": "Tweaks and hidden settings for power-users for Windows 7/8/8.1/10/11",
   "homepage": "https://winaerotweaker.com/",
@@ -32,9 +38,5 @@
   },
   "autoupdate": {
     "url": "https://winaerotweaker.com/download/winaerotweaker.zip"
-  },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winaero-tweaker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winaero-tweaker.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  }
 }

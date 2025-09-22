@@ -21,8 +21,10 @@
       "url": "$baseurl/katana-windows-checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\katana.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/katana.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\katana.json",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/katana.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

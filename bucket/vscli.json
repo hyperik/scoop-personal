@@ -1,17 +1,17 @@
 {
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A CLI/TUI which makes it easy to launch vscode projects, with a focus on dev containers.",
   "homepage": "https://github.com/michidk/vscli/",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/michidk/vscli/releases/download/v0.2.0/vscli-x86_64-pc-windows-msvc.zip",
-      "hash": "7f2f7477766f1333f6726306be0afc7135580f09a536c73058b85703ef532ae8",
+      "url": "https://github.com/michidk/vscli/releases/download/v1.0.0/vscli-x86_64-pc-windows-msvc.zip",
+      "hash": "db9bbd10465b86f146ac12246b0a3fb1758b76b9c1f54bb8836483e7bc3f70e2",
       "extract_dir": "vscli-x86_64-pc-windows-msvc"
     },
     "32bit": {
-      "url": "https://github.com/michidk/vscli/releases/download/v0.2.0/vscli-i686-pc-windows-msvc.zip",
-      "hash": "4d34e715bf24938613de2e4eeb241e14ddd8e3e7b0184f566683af1c64a0d094",
+      "url": "https://github.com/michidk/vscli/releases/download/v1.0.0/vscli-i686-pc-windows-msvc.zip",
+      "hash": "e49e060deeb56d3085508c705978db2c12f0128fc7179f2a540f25c1ab1b37f5",
       "extract_dir": "vscli-i686-pc-windows-msvc"
     }
   },
@@ -20,15 +20,16 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/michidk/vscli/releases/download/v0.2.0/vscli-x86_64-pc-windows-msvc.zip"
+        "url": "https://github.com/michidk/vscli/releases/download/v$version/vscli-x86_64-pc-windows-msvc.zip"
       },
       "32bit": {
-        "url": "https://github.com/michidk/vscli/releases/download/v0.2.0/vscli-i686-pc-windows-msvc.zip"
+        "url": "https://github.com/michidk/vscli/releases/download/v$version/vscli-i686-pc-windows-msvc.zip"
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vscli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/vscli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vscli.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

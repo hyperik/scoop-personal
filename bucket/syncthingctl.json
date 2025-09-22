@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "2.0.1",
   "description": "Command line app to control Syncthing",
   "homepage": "https://github.com/Martchus/syncthingtray",
   "license": {
@@ -8,12 +8,16 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Martchus/syncthingtray/releases/download/v1.6.0/syncthingctl-1.6.0-x86_64-w64-mingw32.exe.zip",
-      "hash": "da75a82cdea4c546047af84ff44bd2d9d5a6e425d8adbbf42b8449c39462fca8"
+      "url": "https://github.com/Martchus/syncthingtray/releases/download/v2.0.1/syncthingctl-2.0.1-x86_64-w64-mingw32.exe.zip",
+      "hash": "ecdd845b51be91eff8e9fda23ce18e07cc2e90ac35abb08d73e31ef129ef3ea8"
     },
     "32bit": {
-      "url": "https://github.com/Martchus/syncthingtray/releases/download/v1.6.0/syncthingctl-qt5-1.6.0-i686-w64-mingw32.exe.zip",
-      "hash": "fde2084fa36f7af9f0d6d09209dad56c7074cf7e2a1c3a22bce4c07931b0a520"
+      "url": "https://github.com/Martchus/syncthingtray/releases/download/v2.0.1/syncthingctl-qt5-2.0.1-i686-w64-mingw32.exe.zip",
+      "hash": "d41f26cc4cdca5ea450cc9a7957a3d11385089208dd75757442a2cb9558e85db"
+    },
+    "arm64": {
+      "url": "https://github.com/Martchus/syncthingtray/releases/download/v2.0.1/syncthingctl-2.0.1-aarch64-w64-mingw32.exe.zip",
+      "hash": "68c1a53523d1b08e4950309d7468535d7083eb07eb4881117d902399bdd68486"
     }
   },
   "pre_install": "Move-Item \"$dir\\syncthingctl-*.exe\" \"$dir\\syncthingctl.exe\"",
@@ -26,11 +30,15 @@
       },
       "32bit": {
         "url": "https://github.com/Martchus/syncthingtray/releases/download/v$version/syncthingctl-qt5-$version-i686-w64-mingw32.exe.zip"
+      },
+      "arm64": {
+        "url": "https://github.com/Martchus/syncthingtray/releases/download/v$version/syncthingctl-$version-aarch64-w64-mingw32.exe.zip"
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\syncthingctl.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/syncthingctl.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\syncthingctl.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

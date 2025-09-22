@@ -1,5 +1,5 @@
 {
-  "version": "0.83.0",
+  "version": "0.94.0",
   "description": "System utilities to maximize productivity.",
   "homepage": "https://github.com/microsoft/PowerToys",
   "license": "MIT",
@@ -8,8 +8,8 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.83.0/PowerToysSetup-0.83.0-x64.exe#/setup.exe",
-      "hash": "7ec435a10849187d21a383e56a69213c1ff110b7feca65900d9319d2f8162f35"
+      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.94.0/PowerToysSetup-0.94.0-x64.exe#/setup.exe",
+      "hash": "55d5b07aec402d504aed8101bf4f3fba79310198f004a4d74326f951fa7bc7a0"
     }
   },
   "installer": {
@@ -42,8 +42,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\powertoys-np.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/powertoys-np.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\powertoys-np.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/powertoys-np.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.21.4.1",
+  "version": "1.27.1.2",
   "description": "Dynamic web platform based on NGINX and LuaJIT.",
   "homepage": "https://openresty.org",
   "license": "BSD-2-Clause",
@@ -13,14 +13,14 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://openresty.org/download/openresty-1.21.4.1-win64.zip",
-      "hash": "6fb021da2518f8ec47089bd35587100529e390970b7d678814a13324a7cfcec4",
-      "extract_dir": "openresty-1.21.4.1-win64"
+      "url": "https://openresty.org/download/openresty-1.27.1.2-win64.zip",
+      "hash": "a110cebf633899faa10d3dacc9effd1a98c5fb82e347ec1ea8092300320df86b",
+      "extract_dir": "openresty-1.27.1.2-win64"
     },
     "32bit": {
-      "url": "https://openresty.org/download/openresty-1.21.4.1-win32.zip",
-      "hash": "2b8c9c246dec503a62fb496a3f651b4a079f81a66bdddacb093fa47bad2d99b7",
-      "extract_dir": "openresty-1.21.4.1-win32"
+      "url": "https://openresty.org/download/openresty-1.27.1.2-win32.zip",
+      "hash": "3fa716b0d8add292977a44a8813f446366a0f219b9ed27f41e31b8da5a48ed89",
+      "extract_dir": "openresty-1.27.1.2-win32"
     }
   },
   "bin": [
@@ -53,8 +53,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\openresty.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/openresty.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\openresty.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

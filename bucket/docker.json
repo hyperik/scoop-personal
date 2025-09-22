@@ -1,12 +1,12 @@
 {
-  "version": "27.1.1",
+  "version": "28.4.0",
   "description": "Docker CLI & Docker Engine for Windows containers. Docker is an open platform for developing, shipping, and running applications.",
   "homepage": "https://docs.docker.com/engine",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://download.docker.com/win/static/stable/x86_64/docker-27.1.1.zip",
-      "hash": "978d3ba0f8440173469580f9c17f44fe28fcef3a59ab87c32d42a2d9a2853c26"
+      "url": "https://download.docker.com/win/static/stable/x86_64/docker-28.4.0.zip",
+      "hash": "fc71eac7e30d5e90e0237713d4da027582271bad75c49eb0b64cd2e69a16af1c"
     }
   },
   "extract_dir": "docker",
@@ -30,8 +30,10 @@
     "To register Docker as a service, run `dockerd --register-service`",
     "Similarly, to unregister, run `dockerd --unregister-service`"
   ],
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

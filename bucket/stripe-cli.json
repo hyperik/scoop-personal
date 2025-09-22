@@ -1,16 +1,16 @@
 {
-  "version": "1.21.2",
+  "version": "1.21.5",
   "description": "A command-line tool for Stripe.",
   "homepage": "https://stripe.com/docs/stripe-cli",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/stripe/stripe-cli/releases/download/v1.8.10/stripe_1.8.10_windows_x86_64.zip",
-      "hash": "0d058f8ce9f8d610bcd048a88421a471488167b9a99c8f621387647978ccf2df"
+      "url": "https://github.com/stripe/stripe-cli/releases/download/v1.21.5/stripe_1.21.5_windows_x86_64.zip",
+      "hash": "2856916dda1fbf752bf54d5d195d2f6de4d65cee516a52abace6278761a0e7b8"
     },
     "32bit": {
-      "url": "https://github.com/stripe/stripe-cli/releases/download/v1.8.10/stripe_1.8.10_windows_i386.zip",
-      "hash": "1c52a8815deedf7e35adac8ef0c56eab464d9a909bff258868e96fc3ccf65633"
+      "url": "https://github.com/stripe/stripe-cli/releases/download/v1.21.5/stripe_1.21.5_windows_i386.zip",
+      "hash": "6afd0021e8a894aaa3fd3023ef86af1f19d189a6e05c089b5eca31dd23822394"
     }
   },
   "bin": "stripe.exe",
@@ -20,18 +20,19 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/stripe/stripe-cli/releases/download/v1.8.10/stripe_1.8.10_windows_x86_64.zip"
+        "url": "https://github.com/stripe/stripe-cli/releases/download/v$version/stripe_$version_windows_x86_64.zip"
       },
       "32bit": {
-        "url": "https://github.com/stripe/stripe-cli/releases/download/v1.8.10/stripe_1.8.10_windows_i386.zip"
+        "url": "https://github.com/stripe/stripe-cli/releases/download/v$version/stripe_$version_windows_i386.zip"
       }
     },
     "hash": {
       "url": "$baseurl/stripe-windows-checksums.txt"
     }
   },
-  "source": "D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\stripe-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/stripe-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\stripe-cli.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

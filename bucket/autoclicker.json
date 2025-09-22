@@ -13,8 +13,10 @@
     ]
   ],
   "persist": "ACLib\\ACA_conf.ini",
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\autoclicker.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/autoclicker.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\autoclicker.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/autoclicker.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

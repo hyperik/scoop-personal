@@ -1,12 +1,12 @@
 {
-  "version": "3.1.2",
+  "version": "3.4.0",
   "homepage": "https://github.com/FlareSolverr/FlareSolverr",
   "description": "A proxy server to bypass Cloudflare and DDoS-GUARD protection.",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/FlareSolverr/FlareSolverr/releases/download/v3.1.2/flaresolverr_windows_x64.zip",
-      "hash": "4e3a915d3b14b11c1ec4e2413beeaf763f03bc21a52e52c7580b0194afb6bddb"
+      "url": "https://github.com/FlareSolverr/FlareSolverr/releases/download/v3.4.0/flaresolverr_windows_x64.zip",
+      "hash": "dad6f80cd3607c149ac9b93b597050d29b764f174847a8dc2fefd110452526d2"
     }
   },
   "extract_dir": "flaresolverr",
@@ -19,8 +19,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\flaresolverr.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/flaresolverr.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\flaresolverr.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/flaresolverr.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }

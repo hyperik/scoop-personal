@@ -24,8 +24,10 @@
     "Invoke-ExternalCommand -FilePath \"$dir\\vcredist_x64.exe\" -ArgumentList '/q' -ContinueExitCodes $ec | Out-Null",
     "Invoke-ExternalCommand -FilePath \"$dir\\vcredist_x86.exe\" -ArgumentList '/q' -ContinueExitCodes $ec | Out-Null"
   ],
-  "source": "D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2005.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist2005.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2005.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist2005.json",
+    "sourceLastUpdated:",
+    "sourceLastChangeFound:"
+  ]
 }

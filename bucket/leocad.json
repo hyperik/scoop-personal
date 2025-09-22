@@ -29,5 +29,7 @@
   "autoupdate": {
     "url": "https://github.com/leozide/leocad/releases/download/v$version/LeoCAD-Windows-$version.exe#/dl.7z"
   },
-  "source": "MANUAL"
+  "##": [
+    "source: MANUAL"
+  ]
 }

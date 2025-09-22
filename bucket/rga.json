@@ -1,17 +1,33 @@
 {
-  "version": "0.9.6",
+  "version": "0.10.9",
   "description": "ripgrep-all: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.",
   "homepage": "https://github.com/phiresky/ripgrep-all",
   "license": "AGPL-3.0-or-later",
+  "depends": [
+    "ffmpeg",
+    "pandoc",
+    "poppler",
+    "ripgrep"
+  ],
+  "suggest": {
+    "fzf": "fzf"
+  },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/phiresky/ripgrep-all/releases/download/v0.9.6/ripgrep_all-v0.9.6-x86_64-pc-windows-msvc.zip",
-      "hash": "1a223e59ba1f6f0e393d24207615d2872a08c3a1b84e48216308cf8e849fe0ce",
-      "extract_dir": "ripgrep_all-v0.9.6-x86_64-pc-windows-msvc"
+      "url": "https://github.com/phiresky/ripgrep-all/releases/download/v0.10.9/ripgrep_all-v0.10.9-x86_64-pc-windows-msvc.zip",
+      "hash": "da03e969ac01839443739c547ca8eb521e648e712251d61a98d34a1521b9f43b",
+      "extract_dir": "ripgrep_all-v0.10.9-x86_64-pc-windows-msvc"
     }
   },
-  "bin": "rga.exe",
-  "checkver": "github",
+  "bin": [
+    "rga.exe",
+    "rga-fzf.exe",
+    "rga-preproc.exe"
+  ],
+  "checkver": {
+    "url": "https://github.com/phiresky/ripgrep-all/releases",
+    "regex": "tag/v([\\d.]+)\""
+  },
   "autoupdate": {
     "architecture": {
       "64bit": {
@@ -20,8 +36,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\rga.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rga.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rga.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

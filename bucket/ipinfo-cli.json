@@ -1,20 +1,20 @@
 {
-  "version": "2.10.1",
+  "version": "3.3.1",
   "description": "This is the official CLI for the IPinfo.io IP address API",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ipinfo/cli",
   "architecture": {
     "32bit": {
-      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-2.10.1/ipinfo_2.10.1_windows_386.zip",
-      "hash": "04996a279baa1fe3dd6b4f9dfbefba84e5b1782569c05695ccde2f5c67d415c0"
+      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-3.3.1/ipinfo_3.3.1_windows_386.zip",
+      "hash": "991954e6881715ba0788478309ad733ae3ec8588701021d38994c23b1fba8c78"
     },
     "64bit": {
-      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-2.10.1/ipinfo_2.10.1_windows_amd64.zip",
-      "hash": "31502fb04f935ae941d1c8c9cecda154c6ba03a60e8afb279a1b41e3ee52bb1e"
+      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-3.3.1/ipinfo_3.3.1_windows_amd64.zip",
+      "hash": "fd72d65840c4f5e15767cf30d4aea8bd584e3e049fb81f0c8227c82c203b810f"
     },
     "arm64": {
-      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-2.10.1/ipinfo_2.10.1_windows_arm.zip",
-      "hash": "a5db375c12965a43a41d49b0c147014ffe8b080c32a78f08c6c146fb9de5be92"
+      "url": "https://github.com/ipinfo/cli/releases/download/ipinfo-3.3.1/ipinfo_3.3.1_windows_arm.zip",
+      "hash": "78032eacecf8364ab7f9064ebe08f2a2f30e261b82cc348bfaa84d7044fa8bae"
     }
   },
   "pre_install": [
@@ -23,7 +23,7 @@
   ],
   "bin": "ipinfo.exe",
   "checkver": {
-    "url": "https://api.github.com/repos/ipinfo/cli/releases/latest",
+    "url": "https://api.github.com/repositories/306538237/releases/latest",
     "jsonpath": "$.name",
     "regex": "ipinfo-(?<version>.*)$"
   },
@@ -40,8 +40,9 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\ipinfo-cli.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ipinfo-cli.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ipinfo-cli.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

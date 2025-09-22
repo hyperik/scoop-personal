@@ -1,36 +1,41 @@
 {
-  "version": "1.22.0",
-  "description": "Powerful duplicate file finder (enhanced fork of fdupes)",
-  "homepage": "https://github.com/jbruchon/jdupes",
+  "version": "1.30.0",
+  "description": "A powerful duplicate file finder",
+  "homepage": "https://codeberg.org/jbruchon/jdupes",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/jbruchon/jdupes/releases/download/v1.22.0/jdupes-1.22.0-win64.zip",
-      "hash": "ecf01b322c98ff1d62be5140524b25b6cac6ef21f389da9d81a915fb38632d4a",
-      "extract_dir": "jdupes-1.22.0-win64"
+      "url": "https://codeberg.org/jbruchon/jdupes/releases/download/v1.30.0/jdupes-1.30.0-win64.zip",
+      "hash": "498a737fc8fb8d46e461077aa759eb2fbf8a4ce8740820ca62cb46980cee9af5",
+      "extract_dir": "jdupes-1.30.0-win64"
     },
     "32bit": {
-      "url": "https://github.com/jbruchon/jdupes/releases/download/v1.22.0/jdupes-1.22.0-win32.zip",
-      "hash": "27f1b22e75f38d647e38a2a1d0ee0c2abc8562895bda54fb730703dfd449415a",
-      "extract_dir": "jdupes-1.22.0-win32"
+      "url": "https://codeberg.org/jbruchon/jdupes/releases/download/v1.30.0/jdupes-1.30.0-win32.zip",
+      "hash": "b743795b68eb94db25f2346b6bbac8d6c4f1e21cb9f7af7a318106a8d343be23",
+      "extract_dir": "jdupes-1.30.0-win32"
     }
   },
   "bin": "jdupes.exe",
-  "checkver": "github",
+  "checkver": {
+    "url": "https://codeberg.org/api/v1/repos/jbruchon/jdupes/releases/latest",
+    "jsonpath": "$.tag_name",
+    "regex": "v([\\d.]+)"
+  },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/jbruchon/jdupes/releases/download/v$version/jdupes-$version-win64.zip",
+        "url": "https://codeberg.org/jbruchon/jdupes/releases/download/v$version/jdupes-$version-win64.zip",
         "extract_dir": "jdupes-$version-win64"
       },
       "32bit": {
-        "url": "https://github.com/jbruchon/jdupes/releases/download/v$version/jdupes-$version-win32.zip",
+        "url": "https://codeberg.org/jbruchon/jdupes/releases/download/v$version/jdupes-$version-win32.zip",
         "extract_dir": "jdupes-$version-win32"
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\jdupes.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jdupes.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jdupes.json",
+    "sourceLastChangeFound: 09/06/2025 15:39:32",
+    "sourceLastUpdated: 09/06/2025 15:39:32"
+  ]
 }

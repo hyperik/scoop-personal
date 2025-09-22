@@ -28,5 +28,7 @@
     },
     "hash": "$url.sha256"
   },
-  "source": "MANUAL"
+  "##": [
+    "source: MANUAL"
+  ]
 }

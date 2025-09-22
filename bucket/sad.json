@@ -1,16 +1,16 @@
 {
-  "version": "0.4.22",
+  "version": "0.4.32",
   "description": "CLI search and replace | Space Age seD",
   "homepage": "https://github.com/ms-jpq/sad",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ms-jpq/sad/releases/download/v0.4.22/x86_64-pc-windows-msvc.zip",
-      "hash": "5b4d0caff937dfab0ba95dbd88ccf949aef3306fd58be13811f41e8a0588bbcf"
+      "url": "https://github.com/ms-jpq/sad/releases/download/v0.4.32/x86_64-pc-windows-msvc.zip",
+      "hash": "69d1545c64c93637e69d1bfbce62c78a8de11c1dd6bf947d4a281fb70bdd64ca"
     },
     "arm64": {
-      "url": "https://github.com/ms-jpq/sad/releases/download/v0.4.22/aarch64-pc-windows-msvc.zip",
-      "hash": "b5f42f91a159ddaba92c776fd69aefb275743918a0c016b70f05e4770bb91ab1"
+      "url": "https://github.com/ms-jpq/sad/releases/download/v0.4.32/aarch64-pc-windows-msvc.zip",
+      "hash": "37290417cd469d8a4d601909685226573732e6a0a05173bcc41621772d43f377"
     }
   },
   "bin": "sad.exe",
@@ -25,8 +25,10 @@
       }
     }
   },
-  "source": "D:\\dev\\src\\third-party\\scoop-main\\bucket\\sad.json",
-  "sourceUrl": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sad.json",
-  "sourceLastUpdated": "",
-  "sourceLastChangeFound": ""
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sad.json",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sad.json",
+    "sourceLastUpdated: 09/06/2025 15:33:27",
+    "sourceLastChangeFound: 09/06/2025 15:33:27"
+  ]
 }
