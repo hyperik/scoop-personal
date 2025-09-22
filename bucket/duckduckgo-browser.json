@@ -1,44 +1,46 @@
 {
-  "version": "0.89.3.0",
-  "description": "Tracker and ad-blocking browser",
-  "homepage": "https://duckduckgo.com/windows",
-  "license": "Freeware",
-  "url": "https://staticcdn.duckduckgo.com/d5c04536-5379-4709-8d19-d13fdd456ff6/0.89.3.0/DuckDuckGo_0.89.3.0.msixbundle#/dl.zip_",
-  "hash": "f03f519d6d4462ff9b1498bad4b9ff20833c87b8754f85076d9a7e2ca7fa1ad8",
-  "architecture": {
-    "64bit": {
-      "pre_install": [
-        "$file = \"DuckDuckGo_$($version)_x64.msix\"",
-        "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Switch \"-i!$file\" -Removal",
-        "Expand-7zipArchive \"$dir\\$file\" \"$dir\" -Removal"
-      ]
+    "version": "0.89.3.0",
+    "description": "Tracker and ad-blocking browser",
+    "homepage": "https://duckduckgo.com/windows",
+    "license": "Freeware",
+    "url": "https://staticcdn.duckduckgo.com/d5c04536-5379-4709-8d19-d13fdd456ff6/0.89.3.0/DuckDuckGo_0.89.3.0.msixbundle#/dl.zip_",
+    "hash": "f03f519d6d4462ff9b1498bad4b9ff20833c87b8754f85076d9a7e2ca7fa1ad8",
+    "architecture": {
+        "64bit": {
+            "pre_install": [
+                "$file = \"DuckDuckGo_$($version)_x64.msix\"",
+                "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Switch \"-i!$file\" -Removal",
+                "Expand-7zipArchive \"$dir\\$file\" \"$dir\" -Removal"
+            ]
+        },
+        "32bit": {
+            "pre_install": [
+                "$file = \"DuckDuckGo_$($version)_x86.msix\"",
+                "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Switch \"-i!$file\" -Removal",
+                "Expand-7zipArchive \"$dir\\$file\" \"$dir\" -Removal"
+            ]
+        }
     },
-    "32bit": {
-      "pre_install": [
-        "$file = \"DuckDuckGo_$($version)_x86.msix\"",
-        "Expand-7zipArchive \"$dir\\$fname\" \"$dir\" -Switch \"-i!$file\" -Removal",
-        "Expand-7zipArchive \"$dir\\$file\" \"$dir\" -Removal"
-      ]
-    }
-  },
-  "shortcuts": [
-    [
-      "WindowsBrowser/DuckDuckGo.exe",
-      "DuckDuckGo Browser"
+    "shortcuts": [
+        [
+            "WindowsBrowser/DuckDuckGo.exe",
+            "DuckDuckGo Browser"
+        ]
+    ],
+    "checkver": {
+        "url": "https://staticcdn.duckduckgo.com/windows-desktop-browser/DuckDuckGo.appinstaller",
+        "regex": "(?<Uuid>[\\w-]+)/([\\d.]+)/DuckDuckGo"
+    },
+    "autoupdate": {
+        "url": "https://staticcdn.duckduckgo.com/$matchUuid/$version/DuckDuckGo_$version.msixbundle#/dl.zip_"
+    },
+    "##": [
+        "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\duckduckgo-browser.json",
+        "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/duckduckgo-browser.json",
+        "sourceState: active",
+        "sourceLastUpdated: 250906 15:45:53",
+        "sourceLastChangeFound: 250922 14:23:50",
+        "sourceDelayDays: 7",
+        "sourceUpdateMinimumDays: 7"
     ]
-  ],
-  "checkver": {
-    "url": "https://staticcdn.duckduckgo.com/windows-desktop-browser/DuckDuckGo.appinstaller",
-    "regex": "(?<Uuid>[\\w-]+)/([\\d.]+)/DuckDuckGo"
-  },
-  "autoupdate": {
-    "url": "https://staticcdn.duckduckgo.com/$matchUuid/$version/DuckDuckGo_$version.msixbundle#/dl.zip_"
-  },
-  "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\duckduckgo-browser.json",
-    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/duckduckgo-browser.json",
-    "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:53",
-    "sourceLastChangeFound: 250922 14:23:50"
-  ]
 }

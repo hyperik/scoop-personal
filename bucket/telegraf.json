@@ -1,47 +1,49 @@
 {
-  "version": "1.36.1",
-  "description": "The plugin-driven server agent for collecting & reporting metrics.",
-  "homepage": "https://www.influxdata.com/time-series-platform/telegraf/",
-  "license": "MIT",
-  "architecture": {
-    "64bit": {
-      "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.36.1_windows_amd64.zip",
-      "hash": "e0a2341040e4d386c636dc1bb479fbc3c695876e9769a2160d4fec7dbee2d7fc"
-    },
-    "32bit": {
-      "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.36.1_windows_i386.zip",
-      "hash": "19d93e93b5b2d918df9974aeeab486c16ffb4578da26273adad322c66209e21b"
-    }
-  },
-  "extract_dir": "telegraf-1.36.1",
-  "bin": "telegraf.exe",
-  "persist": "telegraf.conf",
-  "env_set": {
-    "TELEGRAF_CONFIG_PATH": "$persist_dir/telegraf.conf"
-  },
-  "checkver": {
-    "github": "https://github.com/influxdata/telegraf"
-  },
-  "autoupdate": {
+    "version": "1.36.1",
+    "description": "The plugin-driven server agent for collecting & reporting metrics.",
+    "homepage": "https://www.influxdata.com/time-series-platform/telegraf/",
+    "license": "MIT",
     "architecture": {
-      "64bit": {
-        "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_amd64.zip"
-      },
-      "32bit": {
-        "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_i386.zip"
-      }
+        "64bit": {
+            "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.36.1_windows_amd64.zip",
+            "hash": "e0a2341040e4d386c636dc1bb479fbc3c695876e9769a2160d4fec7dbee2d7fc"
+        },
+        "32bit": {
+            "url": "https://dl.influxdata.com/telegraf/releases/telegraf-1.36.1_windows_i386.zip",
+            "hash": "19d93e93b5b2d918df9974aeeab486c16ffb4578da26273adad322c66209e21b"
+        }
     },
-    "hash": {
-      "url": "https://github.com/influxdata/telegraf/releases/tag/v$version",
-      "regex": "(?s)$basename</.*?<code>$sha256</"
+    "extract_dir": "telegraf-1.36.1",
+    "bin": "telegraf.exe",
+    "persist": "telegraf.conf",
+    "env_set": {
+        "TELEGRAF_CONFIG_PATH": "$persist_dir/telegraf.conf"
     },
-    "extract_dir": "telegraf-$version"
-  },
-  "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\telegraf.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/telegraf.json",
-    "sourceState: active",
-    "sourceLastUpdated: 250922 16:32:00",
-    "sourceLastChangeFound: 250922 16:32:00"
-  ]
+    "checkver": {
+        "github": "https://github.com/influxdata/telegraf"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://dl.influxdata.com/telegraf/releases/telegraf-$version_windows_i386.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/influxdata/telegraf/releases/tag/v$version",
+            "regex": "(?s)$basename</.*?<code>$sha256</"
+        },
+        "extract_dir": "telegraf-$version"
+    },
+    "##": [
+        "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\telegraf.json",
+        "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/telegraf.json",
+        "sourceState: active",
+        "sourceLastUpdated: 250922 16:32:00",
+        "sourceLastChangeFound: 250922 16:32:00",
+        "sourceDelayDays: 7",
+        "sourceUpdateMinimumDays: 21"
+    ]
 }
