@@ -3,7 +3,8 @@
     "Untested copying download location from site verbatim",
     "source: MANUAL",
     "sourceLastChangeFound: 250922 14:06:58",
-    "sourceLastUpdated: "
+    "sourceLastUpdated: ",
+    "sourceState: manual"
   ],
   "version": "0.1",
   "description": "Amazon Games client",

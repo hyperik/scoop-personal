@@ -26,6 +26,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\clonehero.json",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/clonehero.json",
+    "sourceState: active",
     "sourceLastUpdated: 240810 13:06:59",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

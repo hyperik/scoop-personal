@@ -37,6 +37,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\privacy.sexy.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/privacy.sexy.json",
+    "sourceState: active",
     "sourceLastUpdated: 250513 17:11:14",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

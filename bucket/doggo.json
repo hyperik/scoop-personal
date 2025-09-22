@@ -37,6 +37,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\doggo.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/doggo.json",
+    "sourceState: active",
     "sourceLastUpdated: 250211 10:37:55",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

@@ -36,6 +36,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jdupes.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jdupes.json",
+    "sourceState: active",
     "sourceLastUpdated: 250518 13:52:08",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

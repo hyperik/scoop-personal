@@ -35,6 +35,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zettlr.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zettlr.json",
+    "sourceState: active",
     "sourceLastUpdated: 250712 10:36:41",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

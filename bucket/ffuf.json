@@ -38,6 +38,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ffuf.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ffuf.json",
+    "sourceState: active",
     "sourceLastUpdated: 250211 10:37:55",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

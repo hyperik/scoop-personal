@@ -620,7 +620,8 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sysinternals.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sysinternals.json",
+    "sourceState: active",
     "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceLastChangeFound: 250922 16:32:00"
   ]
 }

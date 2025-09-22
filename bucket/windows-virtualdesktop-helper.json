@@ -25,6 +25,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windows-virtualdesktop-helper.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windows-virtualdesktop-helper.json",
+    "sourceState: active",
     "sourceLastUpdated: 250211 10:38:46",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

@@ -1,5 +1,5 @@
 {
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Find duplicates, empty folders, similar images, unnecessary files, etc.",
   "homepage": "https://github.com/qarmin/czkawka",
   "license": {
@@ -8,8 +8,8 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/qarmin/czkawka/releases/download/9.0.0/windows_czkawka_gui_46.zip",
-      "hash": "ba07838fd1ac29a9483bfc8a015d79948b1108fdcdfd0fcd63bb2a112e103689"
+      "url": "https://github.com/qarmin/czkawka/releases/download/10.0.0/windows_czkawka_gui_gtk46.zip",
+      "hash": "6f575b1a553bb13ac3f3e29dc26e3381205d96031d3ab974ccfa40152be2866b"
     }
   },
   "shortcuts": [
@@ -22,14 +22,15 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/qarmin/czkawka/releases/download/$version/windows_czkawka_gui_46.zip"
+        "url": "https://github.com/qarmin/czkawka/releases/download/$version/windows_czkawka_gui_gtk46.zip"
       }
     }
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\czkawka-gui.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/czkawka-gui.json",
-    "sourceLastUpdated: 250513 17:11:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceState: active",
+    "sourceLastUpdated: 250922 16:03:25",
+    "sourceLastChangeFound: 250922 16:03:25"
   ]
 }

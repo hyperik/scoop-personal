@@ -27,6 +27,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\knative.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/knative.json",
+    "sourceState: active",
     "sourceLastUpdated: 250922 15:57:13",
     "sourceLastChangeFound: 250922 15:57:13"
   ]

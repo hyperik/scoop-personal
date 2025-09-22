@@ -88,6 +88,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher.json",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/prismlauncher.json",
+    "sourceState: active",
     "sourceLastUpdated: 250906 15:26:58",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

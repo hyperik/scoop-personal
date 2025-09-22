@@ -27,6 +27,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\simutrans.json",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/simutrans.json",
+    "sourceState: active",
     "sourceLastUpdated: 250906 15:26:58",
     "sourceLastChangeFound: 250922 14:23:50"
   ]

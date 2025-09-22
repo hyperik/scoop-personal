@@ -3,6 +3,7 @@
     "The installer is made with InnoSetup, but encrypted with a password.",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winaero-tweaker.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winaero-tweaker.json",
+    "sourceState: active",
     "sourceLastUpdated: 250211 10:38:46",
     "sourceLastChangeFound: 250922 14:23:50"
   ],

@@ -57,6 +57,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\screentogif.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/screentogif.json",
+    "sourceState: active",
     "sourceLastUpdated: 250729 15:00:35",
     "sourceLastChangeFound: 250922 14:23:50"
   ]
