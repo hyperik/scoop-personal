@@ -1,17 +1,17 @@
 {
-  "version": "1.13.1",
+  "version": "1.13.3",
   "description": "Create and manage infrastructure as code using simple declarative configuration files.",
   "homepage": "https://www.terraform.io",
   "license": "BUSL-1.1",
   "architecture": {
     "64bit": {
-      "url": "https://releases.hashicorp.com/terraform/1.13.1/terraform_1.13.1_windows_amd64.zip",
-      "hash": "380010e403638cf74bdb6b9846410bde5721f6651cd6c713c67201e81e2b3c43",
+      "url": "https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_windows_amd64.zip",
+      "hash": "e75a97238f2dc43ab90fca1af554c18f995b16a4b06a4ec27bcdbab52c1d2dc8",
       "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_amd64\" | Out-Null"
     },
     "32bit": {
-      "url": "https://releases.hashicorp.com/terraform/1.13.1/terraform_1.13.1_windows_386.zip",
-      "hash": "a8444d5a146eeba7370672df325a3634145346749fa91c3ae05bde3eda2ba35d",
+      "url": "https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_windows_386.zip",
+      "hash": "9ea6b7a0e32e1236e13f0f2bfd4263bb1935e8c16b87f1ec6130ea6492580e4d",
       "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_386\" | Out-Null"
     }
   },
@@ -36,7 +36,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terraform.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terraform.json",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceLastUpdated: 250922 15:57:13",
+    "sourceLastChangeFound: 250922 15:57:13"
   ]
 }

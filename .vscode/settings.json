@@ -51,6 +51,7 @@
     "sortJSON.orderOverride": [
         "version",
         "description",
+        "##",
         "homepage",
         "license",
         "notes",
@@ -80,7 +81,6 @@
         "source.fixAll": "explicit",
         "source.fixAll.sortJSON": "explicit"
     },
-
     "sort-json.settings.orderOverride": [
         "version",
         "description",
@@ -111,9 +111,11 @@
     ],
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true,
         "files.insertFinalNewline": true
     },
-    "editor.defaultFormatter": "richie5um2.vscode-sort-json",
+    //"editor.defaultFormatter": "richie5um2.vscode-sort-json",
+    //"editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
     "prettier.enable": false,
     "html.format.enable": false

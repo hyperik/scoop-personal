@@ -1,16 +1,16 @@
 {
-  "version": "0.87.0",
+  "version": "0.87.4",
   "description": "Thin wrapper for Terraform that provides extra tools for keeping Terraform configurations DRY, working with multiple Terraform modules, and managing remote state.",
   "homepage": "https://github.com/gruntwork-io/terragrunt",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/download/v0.87.0/terragrunt_windows_amd64.exe#/terragrunt.exe",
-      "hash": "ef4cc336e81ec642fa7ef1d4fbd7a0bc2aeeb79bd312788346ca57e3d723d894"
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/download/v0.87.4/terragrunt_windows_amd64.exe#/terragrunt.exe",
+      "hash": "ac6980dd6027bc88ab9cbfe59066fe02e05847485bb354c2a1d2164920f9c655"
     },
     "32bit": {
-      "url": "https://github.com/gruntwork-io/terragrunt/releases/download/v0.87.0/terragrunt_windows_386.exe#/terragrunt.exe",
-      "hash": "89a556e193ce8d286ecef4ad86a9ec45cefee1a3709d14bb745bc93a98ca84d6"
+      "url": "https://github.com/gruntwork-io/terragrunt/releases/download/v0.87.4/terragrunt_windows_386.exe#/terragrunt.exe",
+      "hash": "1001e11193bc27a8055d88d9b60115fe8e848aa2d418309e82ff6d7209ede6e8"
     }
   },
   "bin": "terragrunt.exe",
@@ -31,7 +31,7 @@
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terragrunt.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terragrunt.json",
-    "sourceLastUpdated: 250729 15:00:36",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceLastUpdated: 250922 15:57:13",
+    "sourceLastChangeFound: 250922 15:57:13"
   ]
 }
