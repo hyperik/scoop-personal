@@ -5,6 +5,7 @@
 .DESCRIPTION
   This script tracks changes using metadata stored within the schema-conformant "##" property.
   It respects the 'sourceState' metadata field ('active', 'frozen', 'dead', 'manual') to control update behavior.
+  It also supports 'sourceDelayDays' to delay updates, 'sourceUpdateMinimumDays' to throttle update frequency, and a 'sourceComment' field for arbitrary user notes.
 
   The script can run in five modes:
     1. Default (Automatic): Auto-applies simple updates and flags complex changes.
@@ -30,6 +31,9 @@
 
 .PARAMETER ChangesOnly
   In the default automatic mode, only outputs information for manifests that have updates or changes.
+
+.PARAMETER SkipFrozen
+  In the default automatic mode, prevents showing the diff for frozen packages that have updates.
 #>
 [CmdletBinding(DefaultParameterSetName = 'Automatic')]
 param(
@@ -45,11 +49,14 @@ param(
     [Parameter(ParameterSetName = 'Interactive')]
     [switch]$Interactive,
 
-    [Parameter(ParameterSetName = 'ListPending')] # VerboseList is only valid with ListPending
+    [Parameter(ParameterSetName = 'ListPending')]
     [switch]$VerboseList,
 
     [Parameter(ParameterSetName = 'Automatic')]
-    [switch]$ChangesOnly
+    [switch]$ChangesOnly,
+
+    [Parameter(ParameterSetName = 'Automatic')]
+    [switch]$SkipFrozen
 )
 
 # --- Initial Setup ---
@@ -67,7 +74,7 @@ if ([string]::IsNullOrEmpty($PersonalBucketPath)) {
 # =================================================================================
 # Helper Functions
 # =================================================================================
-$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState'
+$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState', 'sourceDelayDays', 'sourceUpdateMinimumDays', 'sourceComment'
 
 function Get-CustomMetadata($JSONObject) {
     $metadata = @{}
@@ -227,28 +234,93 @@ if ($ListPending) {
 
 # --- Mode: Interactive ---
 if ($Interactive) {
-    Write-Host "`n👋 Starting interactive update session for pending changes..." -ForegroundColor Cyan
-    $pendingFiles = $updateableManifests | Where-Object { $_.IsPending }
-    if (-not $pendingFiles) { Write-Host "  ✅ No manifests have pending changes to review."; return }
-    foreach ($data in $pendingFiles) {
-        Write-Host "`n--- Reviewing '$($data.File.Name)' ---"; Write-Host "    Reason: $($data.PendingReason)" -ForegroundColor Cyan
-        try { $remoteJson = Invoke-WebRequest -Uri $data.Metadata.sourceUrl -UseBasicParsing | ConvertFrom-Json } catch { Write-Warning "Could not fetch remote for '$($data.File.Name)'. Skipping."; continue }
-        if (-not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { Write-Host "    Remote version ($($remoteJson.version)) is older than local version ($($data.Local.version)). Skipping." -ForegroundColor Magenta; continue }
+    Write-Host "`n👋 Starting interactive update session..." -ForegroundColor Cyan
+    $updateCandidates = 0
+    foreach ($data in $updateableManifests) {
+        $sourceUrl = $data.Metadata.sourceUrl
+        if (([string]::IsNullOrWhiteSpace($sourceUrl)) -or ($sourceUrl -notlike 'http*')) { continue }
 
-        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
-        $choice = Read-Host "Apply this change? (A)ccept / (S)kip / (Q)uit"
-        switch ($choice.ToLower()) {
-            'a' {
-                $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastUpdated = $runTimestamp; $newMetadata.sourceLastChangeFound = $runTimestamp
-                $newJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
-                Write-Host "    -> Writing accepted changes to '$($data.File.Name)'..." -ForegroundColor DarkGray
-                $newJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
-                Write-Host "  ✅ Accepted. Manifest '$($data.File.Name)' has been updated." -ForegroundColor Green
+        Write-Host "`n- Checking '$($data.File.Name)'..." -ForegroundColor DarkGray
+        $remoteJson = $null
+        try { $remoteJson = Invoke-WebRequest -Uri $sourceUrl -UseBasicParsing | ConvertFrom-Json } catch { continue }
+
+        if ($data.Local.version -eq $remoteJson.version) { continue }
+        if (-not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { continue }
+
+        $updateCandidates++
+        Write-Host "--- Reviewing '$($data.File.Name)' ---" -ForegroundColor Yellow
+
+        $proceedToStandardPrompt = $false
+        if ($data.Metadata.sourceState -eq 'frozen') {
+            Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+            $frozenChoice = Read-Host "-> ❄️ This package is FROZEN. Skip this update? (Y)es / (N)o"
+            if ($frozenChoice.ToLower() -eq 'n') {
+                $proceedToStandardPrompt = $true
             }
-            's' { Write-Host "  ⏩ Skipped '$($data.File.Name)'." }
-            'q' { Write-Host "🛑 Aborting interactive session."; return }
-            default { Write-Host "  ⏩ Invalid choice. Skipping '$($data.File.Name)'." }
+            else {
+                Write-Host "  -> ❄️ Skipping frozen package as requested." -ForegroundColor Cyan
+                continue
+            }
         }
+        else {
+            $proceedToStandardPrompt = $true
+        }
+
+        if ($proceedToStandardPrompt) {
+            if ($data.Metadata.sourceState -ne 'frozen') {
+                Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+            }
+
+            $delayDays = 0; if ($data.Metadata.sourceDelayDays -match '^\d+$') { $delayDays = [int]$data.Metadata.sourceDelayDays }
+            if ($delayDays -gt 0) {
+                try {
+                    $updateDate = [datetime]::ParseExact($data.Metadata.sourceLastUpdated, $timestampFormat, $null)
+                    $updateAge = (Get-Date) - $updateDate
+                    if ($updateAge.TotalDays -lt $delayDays) {
+                        Write-Warning "This source update is only $($updateAge.TotalDays.ToString('F0')) days old, which is within the $($delayDays)-day delay period."
+                    }
+                }
+                catch {}
+            }
+            $minDays = 0; if ($data.Metadata.sourceUpdateMinimumDays -match '^\d+$') { $minDays = [int]$data.Metadata.sourceUpdateMinimumDays }
+            if ($minDays -gt 0) {
+                try {
+                    $changeDate = [datetime]::ParseExact($data.Metadata.sourceLastChangeFound, $timestampFormat, $null)
+                    $lastChangeAge = (Get-Date) - $changeDate
+                    if ($lastChangeAge.TotalDays -lt $minDays) {
+                        Write-Warning "This manifest was last updated only $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))."
+                    }
+                }
+                catch {}
+            }
+
+            $choice = Read-Host "Apply this change? (A)ccept / (F)reeze / (S)kip / (Q)uit"
+            switch ($choice.ToLower()) {
+                'a' {
+                    $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastUpdated = $runTimestamp; $newMetadata.sourceLastChangeFound = $runTimestamp
+                    $newJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
+                    Write-Host "    -> Writing accepted changes to '$($data.File.Name)'..." -ForegroundColor DarkGray
+                    $newJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
+                    Write-Host "  ✅ Accepted. Manifest '$($data.File.Name)' has been updated." -ForegroundColor Green
+                }
+                'f' {
+                    Write-Host "  -> ❄️ Freezing package '$($data.File.Name)' at current version."
+                    $newMetadata = $data.Metadata.Clone()
+                    $newMetadata.sourceState = 'frozen'
+                    $newMetadata.sourceLastUpdated = $runTimestamp
+                    $newMetadata.sourceLastChangeFound = $runTimestamp
+                    $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+                    Write-Host "    -> Writing updated state to manifest..." -ForegroundColor DarkGray
+                    $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
+                }
+                's' { Write-Host "  ⏩ Skipped '$($data.File.Name)'." }
+                'q' { Write-Host "🛑 Aborting interactive session."; return }
+                default { Write-Host "  ⏩ Invalid choice. Skipping '$($data.File.Name)'." }
+            }
+        }
+    }
+    if ($updateCandidates -eq 0) {
+        Write-Host "`n  ✅ No manifests have pending changes to review."
     }
     Write-Host "`n✨ Interactive session complete."; return
 }
@@ -291,7 +363,7 @@ foreach ($data in $updateableManifests) {
     }
 
     if ($data.Local.version -ne $remoteJson.version -and -not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) {
-        Write-Host "    Halted. Remote version ($($remoteJson.version)) is older than local version ($($data.Local.version))." -ForegroundColor Magenta
+        Write-Host "    Halted. Remote version ($($remoteJson.version)) is older than local version ($data.Local.version))." -ForegroundColor Magenta
         continue
     }
 
@@ -299,8 +371,37 @@ foreach ($data in $updateableManifests) {
 
     if ($data.Metadata.sourceState -eq 'frozen') {
         Write-Host "    -> ❄️ Update found for FROZEN package. No action will be taken." -ForegroundColor Cyan
-        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+        if (-not $SkipFrozen) {
+            Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+        }
         continue
+    }
+
+    $minDays = 0; if ($data.Metadata.sourceUpdateMinimumDays -match '^\d+$') { $minDays = [int]$data.Metadata.sourceUpdateMinimumDays }
+    if ($minDays -gt 0) {
+        try {
+            $changeDate = [datetime]::ParseExact($data.Metadata.sourceLastChangeFound, $timestampFormat, $null)
+            $lastChangeAge = (Get-Date) - $changeDate
+            if ($lastChangeAge.TotalDays -lt $minDays) {
+                Write-Host "    -> 🕰️  Update found, but logging only. Manifest was updated $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))." -ForegroundColor Magenta
+                Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+                continue
+            }
+        }
+        catch {}
+    }
+
+    $delayDays = 0; if ($data.Metadata.sourceDelayDays -match '^\d+$') { $delayDays = [int]$data.Metadata.sourceDelayDays }
+    if ($delayDays -gt 0) {
+        try {
+            $updateDate = [datetime]::ParseExact($data.Metadata.sourceLastUpdated, $timestampFormat, $null)
+            $updateAge = (Get-Date) - $updateDate
+            if ($updateAge.TotalDays -lt $delayDays) {
+                Write-Host "    -> 🕰️  Update found, but source change is too recent to apply (within $($delayDays)-day delay period). Skipping." -ForegroundColor Magenta
+                continue
+            }
+        }
+        catch {}
     }
 
     if (Compare-ManifestObjects -ReferenceObject $data.Local -DifferenceObject $remoteJson) {
