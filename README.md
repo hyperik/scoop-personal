@@ -43,6 +43,19 @@ Ideally after running the first time in a repo it's not needed again unless we'r
 
 This is what ought to be run periodically and shouldn't need arugments by default. However if it's the first time running for a while, the `-Interactive` option allows a little more surety in the validity of the changes to make.
 
+### Metadata
+
+I've introduced several new metadata concepts under the over-arching "##" free-range comment, which unfortunately may only be a String or Array of Strings and still conform to the JSON schema for Scoop. To avoid potential future compatibility issues, we stick to this.
+
+- source: where one may find the file locally. This is not very portable but without making shadow structures outside the main repository, which is a lot of additional material for little gain, just serves as a short-cut for locally cloned and maintained repos.
+- sourceUrl: the ultimate web-accessible location for the manifest; typically the raw file on GitHub.
+- sourceLastUpdated: the date of last modification to the manifest.
+- sourceLastChangeFound: when we last ran the script and detected a change to be applied.
+- sourceState: one of a number of states. 'active' means in regular use. 'dead' means ignored. 'manual' means there is no upstream to serve as a reference so all changes must be manually made. 'frozen' means the detected upstream changes have some aspect meaning we don't want to rely on automatic installation and it must be subject to manual update decisions.
+- sourceDelayDays: (optional) how many days to wait after an upstream modification is found before it's applied. {NB: Might need more testing over time especially for high-churn upstreams}.
+- sourceUpdateMinimumDays: (optional) after we have had an update to this script, as defined in 'sourceLastChangeFound', don't apply any updates for at least this many days.
+- sourceComment: (optional) any additional comments, mostly used for explaining unusual provenance of freezing status.
+
 ## License
 
 Files in this repository are licensed under CC0 1.0 Universal, see [LICENSE.md](LICENSE.md) for more information.
