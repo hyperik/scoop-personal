@@ -1,7 +1,9 @@
 {
   "##": [
     "Untested copying download location from site verbatim",
-    "source: MANUAL"
+    "source: MANUAL",
+    "sourceLastChangeFound: 250922 14:06:58",
+    "sourceLastUpdated: "
   ],
   "version": "4.2.1",
   "description": "DiskInternals Linux Reader",

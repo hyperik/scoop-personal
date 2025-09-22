@@ -3,8 +3,8 @@
     "Multiple components under various open source licenses. Included HTTPS Everywhere extension is the strictest.",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tor-browser.json",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tor-browser.json",
-    "sourceLastUpdated: 09/06/2025 15:33:27",
-    "sourceLastChangeFound: 09/06/2025 15:33:27"
+    "sourceLastUpdated: 250906 15:33:27",
+    "sourceLastChangeFound: 250906 15:33:27"
   ],
   "version": "14.5.6",
   "description": "Web browser that connects to the internet via the Tor anonymity network",
