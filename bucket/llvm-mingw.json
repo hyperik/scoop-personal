@@ -31,7 +31,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\llvm-mingw.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/llvm-mingw.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

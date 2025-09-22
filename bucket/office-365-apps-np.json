@@ -51,7 +51,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\office-365-apps-np.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

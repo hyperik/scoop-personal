@@ -19,6 +19,9 @@
 .PARAMETER RecalculateManual
   Recalculates only for manifests currently marked as 'MANUAL'.
 
+.PARAMETER ReprocessIncomplete
+  Re-evaluates and seeds any manifest that is missing the 'source' or 'sourceUrl' key.
+
 .PARAMETER ListManual
   Lists all manifests marked as 'MANUAL' and exits without taking any other action.
 
@@ -40,6 +43,9 @@ param(
 
     [Parameter(Mandatory = $false)]
     [switch]$RecalculateManual,
+
+    [Parameter(Mandatory = $false)]
+    [switch]$ReprocessIncomplete,
 
     [Parameter(Mandatory = $false)]
     [switch]$ListManual,
@@ -115,8 +121,6 @@ if ($CleanComments) {
             $commentsToKeep = @()
 
             foreach ($line in $originalComments) {
-                # Keep the line if it contains a colon, OR if it's not one of our known metadata keys.
-                # This correctly discards standalone keys like "source" but keeps "source: ..." and other comments.
                 if (($line -like '*:*') -or (-not $keySet.Contains($line))) {
                     $commentsToKeep += $line
                 }
@@ -243,16 +247,30 @@ Write-Host "  - Repository configuration is ready."
 Write-Host "`n🌱 Seeding source information for manifests in '$PersonalBucketPath'..."
 if ($Force) { Write-Host "  -Force switch detected. All existing source values will be recalculated." -ForegroundColor Yellow }
 if ($RecalculateManual) { Write-Host "  -RecalculateManual switch detected. Only 'MANUAL' entries will be recalculated." -ForegroundColor Yellow }
+if ($ReprocessIncomplete) { Write-Host "  -ReprocessIncomplete switch detected. Manifests missing 'source' or 'sourceUrl' will be re-evaluated." -ForegroundColor Yellow }
 
 foreach ($manifestFile in $personalManifests) {
     $json = Get-Content -Path $manifestFile.FullName -Raw | ConvertFrom-Json
     $metadata = Get-CustomMetadata -JSONObject $json
-    $sourceExists = $metadata.ContainsKey('source'); $sourceValue = if ($sourceExists) { $metadata.source } else { $null }
-    $shouldProcess = !$sourceExists -or $Force -or ($RecalculateManual -and $sourceValue -eq 'MANUAL')
-    if (-not $shouldProcess) { Write-Host "  - Skipping '$($manifestFile.Name)' (source already exists)."; continue }
+
+    $sourceExists = $metadata.ContainsKey('source')
+    $sourceUrlExists = $metadata.ContainsKey('sourceUrl')
+    $isManual = $sourceExists -and $metadata.source -eq 'MANUAL'
+
+    $shouldProcess = !$sourceExists `
+        -or $Force `
+        -or ($RecalculateManual -and $isManual) `
+        -or ($ReprocessIncomplete -and (-not $sourceExists -or -not $sourceUrlExists))
+
+    if (-not $shouldProcess) {
+        Write-Host "  - Skipping '$($manifestFile.Name)' (source already exists and is complete)." -NoNewline
+        if ($isManual) { Write-Host " [MANUAL]" -ForegroundColor DarkGray } else { Write-Host "" }
+        continue
+    }
 
     Write-Host "  - Processing '$($manifestFile.Name)'..."
-    $sourceFound = $false; $deprecatedFound = $false
+    $sourceFound = $false
+    $deprecatedFound = $false
     $metadataToWrite = $null
 
     # Pass 1: Search in 'bucket' folders

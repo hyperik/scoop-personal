@@ -23,7 +23,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\asciidoctorj.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/asciidoctorj.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

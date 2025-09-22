@@ -28,7 +28,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jdtls.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jdtls.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

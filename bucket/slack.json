@@ -36,7 +36,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\slack.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/slack.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

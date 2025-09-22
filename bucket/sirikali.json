@@ -42,7 +42,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sirikali.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sirikali.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

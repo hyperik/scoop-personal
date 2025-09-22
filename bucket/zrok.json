@@ -25,7 +25,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zrok.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zrok.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }

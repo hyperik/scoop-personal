@@ -42,7 +42,8 @@
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
-    "sourceLastChangeFound: 09/06/2025 15:39:32",
-    "sourceLastUpdated: 09/06/2025 15:39:32"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
+    "sourceLastUpdated: ",
+    "sourceLastChangeFound: "
   ]
 }
