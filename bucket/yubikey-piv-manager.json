@@ -19,10 +19,11 @@
     "url": "https://github.com/Yubico/yubikey-piv-manager/releases/download/yubikey-piv-manager-$version/yubikey-piv-manager-$version-win.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-piv-manager.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0206cd8b58f97dbc9473a9c0944fe44ca95df970",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yubikey-piv-manager.json",
+    "sourceLastUpdated: 201019 18:24:49",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-piv-manager.json"
   ]
 }

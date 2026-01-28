@@ -28,10 +28,11 @@
     "url": "https://github.com/klaussinani/tusk/releases/download/v$version/tusk-$version.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tusk.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 3b4d96c680c1b092a3065c6878b71f9488e9af54",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tusk.json",
+    "sourceLastUpdated: 200829 23:13:24",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tusk.json"
   ]
 }

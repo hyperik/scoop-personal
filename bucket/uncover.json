@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\uncover.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2d29b0d21eb538b14db60b43fd01d69c2d27d223",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/uncover.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\uncover.json"
   ]
 }

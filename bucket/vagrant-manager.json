@@ -28,10 +28,11 @@
     "url": "https://github.com/absalomedia/vagrant-manager/releases/download/$version/vagrant-manager.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vagrant-manager.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d7a0720cd750a63333c71c36820a772b3bdb8e4b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vagrant-manager.json",
+    "sourceLastUpdated: 200829 23:13:24",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vagrant-manager.json"
   ]
 }

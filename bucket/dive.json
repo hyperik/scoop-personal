@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dive.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 12ae4bb5fe6bf654f383fdd8625bd0186fde7b7f",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/dive.json",
+    "sourceLastUpdated: 250416 04:18:34",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dive.json"
   ]
 }

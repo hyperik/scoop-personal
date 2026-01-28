@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\swgp-go.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 058c0bdd60026b2306986427eadc4fc04fbfa3ff",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/swgp-go.json",
+    "sourceLastUpdated: 240128 09:29:22",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\swgp-go.json"
   ]
 }

@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gotify-cli.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 9537ed7af22c64b8d819d56938f86ec2db3c656e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gotify-cli.json",
+    "sourceLastUpdated: 240801 20:30:54",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gotify-cli.json"
   ]
 }

@@ -1,21 +1,21 @@
 {
-  "version": "9.0.9",
+  "version": "10.0.2",
   "description": "Microsoft .NET (9.0 latest) Desktop Runtime",
   "homepage": "https://dotnet.microsoft.com/download/dotnet",
   "license": "MIT",
   "notes": "You can now remove this installer with 'scoop uninstall -p windowsdesktop-runtime'",
   "architecture": {
     "64bit": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.9/windowsdesktop-runtime-9.0.9-win-x64.exe",
-      "hash": "sha512:edd24554a7e91333fd7f558f5d7d49ff2e26e72e07445cf7625352a2d0e91bbac93abfffee84f35887464e4d837ae3c32512363cdd7b80d23dcfa95d4f7efd17"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/10.0.2/windowsdesktop-runtime-10.0.2-win-x64.exe",
+      "hash": "sha512:f4d9da7d5eb6e35022f315bf0bf82cfe95a698c83ef92583d1a3d7a76500f9d0efa093457c74ba64aff606643c3ea7ff352b349ddaf542ff4a76da4fadcc29e4"
     },
     "32bit": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.9/windowsdesktop-runtime-9.0.9-win-x86.exe",
-      "hash": "sha512:73d081dbc402eb8e7f9ea2cf931fbd052dcd8b55e65a42a090e36d5d0f61341e049cc55c393eb1da2b753268de3946dc8fb8169877f295b90a0ef8da582f0af1"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/10.0.2/windowsdesktop-runtime-10.0.2-win-x86.exe",
+      "hash": "sha512:73b2e5c62e0680206c6742cb82e4ed6203833126b255551d7ec6062cc25f63eecd632f7337916c09baf96f3c93a200d465dfe63b33b39c4a39866fafc8ce5f49"
     },
     "arm64": {
-      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/9.0.9/windowsdesktop-runtime-9.0.9-win-arm64.exe",
-      "hash": "sha512:02ab39de28a7d45d5d739b4a6d12b20d6cffd15400b12f19b75265c75c91facfeac3f528e7eca419b1633ea9978afbf5abef39cccd2150051a419b9c25e6f4bf"
+      "url": "https://dotnetcli.blob.core.windows.net/dotnet/WindowsDesktop/10.0.2/windowsdesktop-runtime-10.0.2-win-arm64.exe",
+      "hash": "sha512:2c666c17b1c70637ca5d010a256e15fc7d27f803018bddc646800cd0c0e957ecf17a9413e8fb877bd93be0485468c478cd179770e23be1f51ec42f19a1a3926f"
     }
   },
   "pre_install": "if (!(is_admin)) { throw 'Admin privileges are required.' }",
@@ -44,10 +44,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsdesktop-runtime.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windowsdesktop-runtime.json",
+    "sourceHash: 6dde57b428ccede83d15207a8f69348ad67ff9e5",
+    "sourceLastUpdated: 260121 00:46:54",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windowsdesktop-runtime.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsdesktop-runtime.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

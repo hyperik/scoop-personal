@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\magic-wormhole-rs.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 09c63f8de789737bf60000eba9d40b85a24173e2",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/magic-wormhole-rs.json",
+    "sourceLastUpdated: 250405 12:31:25",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\magic-wormhole-rs.json"
   ]
 }

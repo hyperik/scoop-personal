@@ -1,5 +1,5 @@
 {
-  "version": "1.24.0",
+  "version": "1.24.2",
   "description": "A validating, recursive, caching DNS resolver",
   "homepage": "https://nlnetlabs.nl/projects/unbound/about/",
   "license": "BSD-3-Clause",
@@ -12,12 +12,12 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.24.0.exe#/dl.7z",
-      "hash": "d802fa0b198053dd4f0f99acc7b3f12eee56e092399b796789f868dfe049d39c"
+      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.24.2.exe#/dl.7z",
+      "hash": "fcc5ce7ab71419131aa7335a974651e9a483a7d5141bd74b90006f2bd5dfbd82"
     },
     "32bit": {
-      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.24.0-w32.exe#/dl.7z",
-      "hash": "9bc90a34c9ed75f69ec8c1963d017be838e2ae81c1be53edcbc6a2f2efbc1177"
+      "url": "https://nlnetlabs.nl/downloads/unbound/unbound_setup_1.24.2-w32.exe#/dl.7z",
+      "hash": "803456a3642c7798669191b8c25bb8925d64a3edb796c36a2f6ecea7fb8b1cce"
     }
   },
   "pre_install": [
@@ -73,10 +73,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\unbound.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/unbound.json",
+    "sourceHash: 03d19bae5015546cc10b567973d7d30a9ab938a7",
+    "sourceLastUpdated: 251126 12:32:17",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/unbound.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\unbound.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -14,10 +14,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\OpenJFX.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ef709fae49e3da9e4d95e6084019c4a2cecab5c6",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/OpenJFX.json",
+    "sourceLastUpdated: 230430 10:57:02",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:51",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\OpenJFX.json"
   ]
 }

@@ -44,10 +44,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\simplewall.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0196de321bf2664c79db11ca18133340b6f57aa7",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/simplewall.json",
+    "sourceLastUpdated: 250810 00:43:32",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\simplewall.json"
   ]
 }

@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wezterm.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0a4a2345b139d9f0930741b10a9afad154bc3453",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wezterm.json",
+    "sourceLastUpdated: 250920 16:57:43",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wezterm.json"
   ]
 }

@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waifu2x-snowshell.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 128f0b34fa9015c5f4339b287353d01fbf90cc46",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/waifu2x-snowshell.json",
+    "sourceLastUpdated: 230729 16:42:47",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waifu2x-snowshell.json"
   ]
 }

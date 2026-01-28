@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ddd827a9f4acd676243f3c5df48f819db1551ac5",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yumi.json",
+    "sourceLastUpdated: 240217 03:24:13",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi.json"
   ]
 }

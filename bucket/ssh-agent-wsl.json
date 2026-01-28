@@ -19,10 +19,11 @@
     "url": "https://github.com/rupor-github/ssh-agent-wsl/releases/download/v$version/ssh-agent-wsl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ssh-agent-wsl.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 422ef1f3ad80f6d7add05ab7aa9016856227617d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ssh-agent-wsl.json",
+    "sourceLastUpdated: 201022 15:29:44",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ssh-agent-wsl.json"
   ]
 }

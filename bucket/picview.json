@@ -1,18 +1,18 @@
 {
-  "version": "3.2.0.1",
+  "version": "4.1.1",
   "description": "A fast, free and fully customizable image viewer for Windows 10 and 11",
   "homepage": "https://picview.org",
   "license": "GPL-3.0-only",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Ruben2776/PicView/releases/download/3.2.0.1/PicView-v3.2.0.1-win-x64.zip",
-      "hash": "cca0e9fb7729087db0798ace714c83f58c56bdede95fb931861d4d65b760e1e7",
-      "extract_dir": "PicView-v3.2.0.1-win-x64"
+      "url": "https://github.com/Ruben2776/PicView/releases/download/4.1.1/PicView-v4.1.1-win-x64.zip",
+      "hash": "a284c3f75822016f6bc20910fa2717fbe1b2f0ae3cf058cc5d1f6060955e9382",
+      "extract_dir": "PicView-v4.1.1-win-x64"
     },
     "arm64": {
-      "url": "https://github.com/Ruben2776/PicView/releases/download/3.2.0.1/PicView-v3.2.0.1-win-arm64.zip",
-      "hash": "36ccdc86ccfba8c4ef527971c15898c9da702e0541cf3ab799fcbb8d7ba5c9de",
-      "extract_dir": "PicView-v3.2.0.1-win-arm64"
+      "url": "https://github.com/Ruben2776/PicView/releases/download/4.1.1/PicView-v4.1.1-win-arm64.zip",
+      "hash": "7b5bb7b41b74c23dddc95867b918aa47364e6a8be226535ef92077cb8faf819a",
+      "extract_dir": "PicView-v4.1.1-win-arm64"
     }
   },
   "post_install": [
@@ -43,10 +43,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\picview.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/picview.json",
+    "sourceHash: a1149e00adfb9b6fd677ff64142615f1dc3d4735",
+    "sourceLastUpdated: 260113 00:41:04",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/picview.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\picview.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

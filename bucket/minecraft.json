@@ -27,10 +27,11 @@
     ]
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\minecraft.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: fbf347946a14c7b4868675e418a5cbad395f91fe",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/minecraft.json",
+    "sourceLastUpdated: 220319 22:54:04",
     "sourceState: active",
-    "sourceLastUpdated: 240810 13:06:59",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\minecraft.json"
   ]
 }

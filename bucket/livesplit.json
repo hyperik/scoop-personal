@@ -1,10 +1,10 @@
 {
-  "version": "1.8.33",
+  "version": "1.8.36",
   "description": "A sleek, highly customizable timer for speedrunners",
   "homepage": "https://livesplit.org/",
   "license": "MIT",
-  "url": "https://github.com/LiveSplit/LiveSplit/releases/download/1.8.33/LiveSplit_1.8.33.zip",
-  "hash": "858c5c347aac906ba48d0f6efb5f5db097fa36ac325dcd1e677b259fd14cbbac",
+  "url": "https://github.com/LiveSplit/LiveSplit/releases/download/1.8.36/LiveSplit_1.8.36.zip",
+  "hash": "78cd552085cc43a5ed4a1389336f23baa4dff04d88d9bf0f61c83aad87938f45",
   "extract_dir": "",
   "bin": "LiveSplit.exe",
   "shortcuts": [
@@ -20,10 +20,11 @@
     "url": "https://github.com/LiveSplit/LiveSplit/releases/download/$version/LiveSplit_$version.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\livesplit.json",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/livesplit.json",
+    "sourceHash: 4031811d6e003e0fd98c484e35977afa4176b6c7",
+    "sourceLastUpdated: 250130 08:28:54",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/livesplit.json",
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\livesplit.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

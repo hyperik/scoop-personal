@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winchecksec.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: fe3ec564d4e5369c2c0b3c143273567d900599cd",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winchecksec.json",
+    "sourceLastUpdated: 230711 21:40:02",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winchecksec.json"
   ]
 }

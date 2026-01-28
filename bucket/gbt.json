@@ -34,10 +34,11 @@
     "extract_dir": "gbt-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gbt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 587e4833d7446d56c002b6cf79a1c06ba521a0de",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gbt.json",
+    "sourceLastUpdated: 200914 06:25:13",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gbt.json"
   ]
 }

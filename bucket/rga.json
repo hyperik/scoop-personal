@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rga.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 82e533f5b3631b29599013616f886da1e2d68664",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rga.json",
+    "sourceLastUpdated: 250511 20:27:45",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rga.json"
   ]
 }

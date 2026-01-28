@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pencil.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 851291711f6030760bfd32315a448f7cb1c9bc44",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pencil.json",
+    "sourceLastUpdated: 230411 18:00:00",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pencil.json"
   ]
 }

@@ -22,10 +22,11 @@
   ],
   "persist": "SyncToy.config",
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\synctoy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: bf2648d4f6b21f7fdb98570f2b18b5ccd5b53ca6",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/synctoy.json",
+    "sourceLastUpdated: 220516 20:33:45",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\synctoy.json"
   ]
 }

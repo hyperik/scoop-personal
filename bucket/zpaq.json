@@ -21,10 +21,11 @@
     "url": "http://mattmahoney.net/dc/zpaq$cleanVersion.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\zpaq.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: cb5473adb12327d6c3fd27232729f5bc7114f89c",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/zpaq.json",
+    "sourceLastUpdated: 240315 17:58:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\zpaq.json"
   ]
 }

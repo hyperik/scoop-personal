@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shfmt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 6787a6e3fe5d7d67d02484011b060481214e0a5c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shfmt.json",
+    "sourceLastUpdated: 250707 00:44:38",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shfmt.json"
   ]
 }

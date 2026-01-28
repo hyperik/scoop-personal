@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\t-clock.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ad3d758ecc187dd67180c8c1aa29416555f785da",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/t-clock.json",
+    "sourceLastUpdated: 201103 18:48:52",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\t-clock.json"
   ]
 }

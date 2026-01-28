@@ -33,10 +33,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dufs.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 7ce982545814ad4cf5a1f78ecc0c6f7f94ec6d24",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/dufs.json",
+    "sourceLastUpdated: 250904 12:32:15",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dufs.json"
   ]
 }

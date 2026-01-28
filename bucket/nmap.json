@@ -45,10 +45,11 @@
     "url": "https://nmap.org/dist/nmap-$version-setup.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nmap.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: f13dc882f1dc186f12b4c412268e607dbdc6ae8f",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nmap.json",
+    "sourceLastUpdated: 250822 00:38:39",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nmap.json"
   ]
 }

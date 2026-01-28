@@ -39,10 +39,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winscp.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winscp.json",
+    "sourceHash: cf07091ef908eb6479eb61eebe7ee8764d8e8a9c",
+    "sourceLastUpdated: 260109 14:00:45",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winscp.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winscp.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

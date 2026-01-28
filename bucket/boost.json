@@ -1,16 +1,16 @@
 {
-  "version": "1.89.0",
+  "version": "1.90.0",
   "description": "Boost C++ Libraries",
   "homepage": "https://www.boost.org/",
   "license": "BSL-1.0",
   "architecture": {
     "64bit": {
-      "url": "https://downloads.sourceforge.net/project/boost/boost-binaries/1.89.0/boost_1_89_0-msvc-14.3-64.exe",
-      "hash": "sha1:84c419d2c0215be8532bb35836a795ad19cea987"
+      "url": "https://downloads.sourceforge.net/project/boost/boost-binaries/1.90.0/boost_1_90_0-msvc-14.3-64.exe",
+      "hash": "sha1:9e9c0eaed2d4ede92f9842726383cb9f23232d2a"
     },
     "32bit": {
-      "url": "https://downloads.sourceforge.net/project/boost/boost-binaries/1.89.0/boost_1_89_0-msvc-14.3-32.exe",
-      "hash": "sha1:bd18ae5f921dc8e0ed15ef3dd4b7022ed630c71d"
+      "url": "https://downloads.sourceforge.net/project/boost/boost-binaries/1.90.0/boost_1_90_0-msvc-14.3-32.exe",
+      "hash": "sha1:c4fa6570fff4c41645579b83799363440d9457ca"
     }
   },
   "innosetup": true,
@@ -34,10 +34,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boost.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/boost.json",
+    "sourceHash: 1f1c9764d424de58523e2ae0eb38298a7e5dad19",
+    "sourceLastUpdated: 251211 00:43:01",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/boost.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boost.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

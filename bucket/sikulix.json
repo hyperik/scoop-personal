@@ -18,10 +18,11 @@
     "url": "https://launchpad.net/sikuli/sikulix/$version/+download/sikulixide-$version.jar#/sikulix.jar"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sikulix.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 9add54b5df3f1f17f7250f45a8884402763e4d50",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sikulix.json",
+    "sourceLastUpdated: 230527 18:55:39",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sikulix.json"
   ]
 }

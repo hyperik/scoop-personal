@@ -49,10 +49,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\bluestacks-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a2bb5c89450cb85b0811ae92a79bee74b96028b2",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/bluestacks-np.json",
+    "sourceLastUpdated: 240506 16:37:38",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\bluestacks-np.json"
   ]
 }

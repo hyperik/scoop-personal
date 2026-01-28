@@ -33,10 +33,11 @@
     "extract_dir": "goodbyedpi-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\goodbyedpi.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 39eccb87e48af2e55ceadf25aa0435a683c55a99",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/goodbyedpi.json",
+    "sourceLastUpdated: 230904 12:39:59",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\goodbyedpi.json"
   ]
 }

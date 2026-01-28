@@ -28,10 +28,11 @@
     "url": "https://releases.lmstudio.ai/win32/x64/$version/2/LM-Studio-$version-Setup.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\LMStudio.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 4937c887125cb2cc4f4e3d7b5a6ff2c500567eb3",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/LMStudio.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:51",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\LMStudio.json"
   ]
 }

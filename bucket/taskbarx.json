@@ -34,10 +34,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\taskbarx.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b7709ed6dde0945641b596fb73be850c46e2f8ba",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/taskbarx.json",
+    "sourceLastUpdated: 221004 20:30:54",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\taskbarx.json"
   ]
 }

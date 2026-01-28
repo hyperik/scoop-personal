@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsl-ssh-agent.json",
+    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceHash: d0858dde7689d23d76e733cd62a3368fe3fbad8c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wsl-ssh-agent.json",
+    "sourceLastUpdated: 250920 16:28:32",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsl-ssh-agent.json"
   ]
 }

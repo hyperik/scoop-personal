@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\knative.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/knative.json",
+    "sourceHash: e5661884b3fb91abbcc433deb962955c5ca84e9f",
+    "sourceLastUpdated: 251127 12:12:43",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/knative.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\knative.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

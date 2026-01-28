@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gifsicle.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 9ac81c3c4d98eb77816ebdb85524291fedbb65e9",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gifsicle.json",
+    "sourceLastUpdated: 240311 01:15:58",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gifsicle.json"
   ]
 }

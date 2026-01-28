@@ -1,10 +1,10 @@
 {
-  "version": "2025-09-09",
+  "version": "2025-12-02",
   "description": "CA certificates extracted from the Mozilla CA certificate store, in PEM format",
   "homepage": "https://curl.se/docs/caextract.html",
   "license": "MPL-2.0",
-  "url": "https://curl.se/ca/cacert-2025-09-09.pem#/cacert.pem",
-  "hash": "f290e6acaf904a4121424ca3ebdd70652780707e28e8af999221786b86bb1975",
+  "url": "https://curl.se/ca/cacert-2025-12-02.pem#/cacert.pem",
+  "hash": "f1407d974c5ed87d544bd931a278232e13925177e239fca370619aba63c757b4",
   "post_install": "if (Test-Path \"$(appdir curl $global)\") { Copy-Item \"$dir\\cacert.pem\" \"$(appdir curl $global)\\current\\bin\\curl-ca-bundle.crt\" }",
   "checkver": "cacert-([\\d-]+)\\.pem",
   "autoupdate": {
@@ -15,10 +15,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\cacert.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cacert.json",
+    "sourceHash: 32304225e838b0bdfa26c85ffa03195eec939d32",
+    "sourceLastUpdated: 251202 04:30:50",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cacert.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\cacert.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

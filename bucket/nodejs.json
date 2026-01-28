@@ -1,18 +1,18 @@
 {
-  "version": "24.8.0",
+  "version": "25.5.0",
   "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications.",
   "homepage": "https://nodejs.org",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://nodejs.org/dist/v24.8.0/node-v24.8.0-win-x64.7z",
-      "hash": "3b61856b25be8d688f64a1aa4a725528fcffc472758888bf16e6c9251994e767",
-      "extract_dir": "node-v24.8.0-win-x64"
+      "url": "https://nodejs.org/dist/v25.5.0/node-v25.5.0-win-x64.7z",
+      "hash": "3b8fb60f80b0cc5bf2abd74dd2b7f853e88f39d2dbca269818742ad7ca0713d2",
+      "extract_dir": "node-v25.5.0-win-x64"
     },
     "arm64": {
-      "url": "https://nodejs.org/dist/v24.8.0/node-v24.8.0-win-arm64.7z",
-      "hash": "7ccff15070850300c3e2b0dbec0466e6ea919315d2ec7be0f504c97d0017dd24",
-      "extract_dir": "node-v24.8.0-win-arm64"
+      "url": "https://nodejs.org/dist/v25.5.0/node-v25.5.0-win-arm64.7z",
+      "hash": "06e6ef9670b91f485f733be66dcf173dde50181a644cc2841cbaa732ce8a3adc",
+      "extract_dir": "node-v25.5.0-win-arm64"
     }
   },
   "persist": [
@@ -48,10 +48,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nodejs.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nodejs.json",
+    "sourceHash: 00504ebbe376cdadff59efd13fab42dc08bcbc90",
+    "sourceLastUpdated: 260119 20:30:06",
     "sourceState: active",
-    "sourceLastUpdated: 250922 16:32:00",
-    "sourceLastChangeFound: 250922 16:32:00"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nodejs.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nodejs.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslinternals.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 29c7321f4618c1018424306a586ee63e4f5b281d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wslinternals.json",
+    "sourceLastUpdated: 240124 19:26:02",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wslinternals.json"
   ]
 }

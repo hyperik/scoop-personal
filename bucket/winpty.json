@@ -18,10 +18,11 @@
     "url": "https://github.com/rprichard/winpty/releases/download/$version/winpty-$version-msvc2015.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winpty.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: fe73491e28806ab6a2a3691566abbed9b4659d70",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winpty.json",
+    "sourceLastUpdated: 200829 22:40:23",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winpty.json"
   ]
 }

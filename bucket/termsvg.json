@@ -21,10 +21,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\termsvg.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: df2973dbab0f9884a4572092a5951262f4d09a26",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/termsvg.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\termsvg.json"
   ]
 }

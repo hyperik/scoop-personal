@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wp-cli.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: acd3c3a8107c443f9ffb99933c95cf0a8d286299",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wp-cli.json",
+    "sourceLastUpdated: 250507 04:29:39",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wp-cli.json"
   ]
 }

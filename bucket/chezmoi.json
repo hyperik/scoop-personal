@@ -1,20 +1,20 @@
 {
-  "version": "2.65.1",
+  "version": "2.69.3",
   "description": "Manage your dotfiles across multiple diverse machines, securely.",
   "homepage": "https://chezmoi.io",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.65.1/chezmoi_2.65.1_windows_amd64.zip",
-      "hash": "33bdb6838f4def6b824b4a05957926d6e48ab116d1f1cd6a8ce0ceca96afbfc3"
+      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.69.3/chezmoi_2.69.3_windows_amd64.zip",
+      "hash": "6504c72d9e11c57217a6c62586b588bc506f604618d7660a86b848165584af45"
     },
     "32bit": {
-      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.65.1/chezmoi_2.65.1_windows_i386.zip",
-      "hash": "0b3e23b3afd00a7afd2e5f6011bbe557e94db0fdd1fefe8f1091ba76982b1ad7"
+      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.69.3/chezmoi_2.69.3_windows_i386.zip",
+      "hash": "815a99abdb0792ed3e783344fd1e45eae11b38a0556e46bec3ba65ab60ee90f0"
     },
     "arm64": {
-      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.65.1/chezmoi_2.65.1_windows_arm64.zip",
-      "hash": "5152b7e6f203da5a0a3a343de4394c902c1b3ecd83231423b625eb24dba059e9"
+      "url": "https://github.com/twpayne/chezmoi/releases/download/v2.69.3/chezmoi_2.69.3_windows_arm64.zip",
+      "hash": "b0e89e30b49aefcea785dd777a7175c7f72cabf470fd94b6ef8de9aa5f9fc317"
     }
   },
   "bin": "chezmoi.exe",
@@ -39,10 +39,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\chezmoi.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/chezmoi.json",
+    "sourceHash: dab6692da22272dbe8cc9090565ad428d9a1e49f",
+    "sourceLastUpdated: 260116 04:32:52",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/chezmoi.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\chezmoi.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

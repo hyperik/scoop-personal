@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\zeit.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 60b3999fa8f7681bd9b11337f6fdfd5f52232131",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/zeit.json",
+    "sourceLastUpdated: 240227 04:58:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\zeit.json"
   ]
 }

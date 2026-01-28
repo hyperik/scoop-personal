@@ -31,23 +31,16 @@
       "taskkill /F /IM \"Amazon Music Helper\" /FI 'status eq running'"
     ]
   },
-  "checkver": {
-    "script": [
-      "$dl_url = 'https://d2j9xt6n9dg5d3.cloudfront.net/win/23861115_85d5deb94597adc2d891a921c0bf51c9/AmazonMusicInstaller.exe'",
-      "$dl = cache_path 'AmazonMusic' 'unknown' $dl_url",
-      "do_dl $dl_url $dl",
-      "$version = (Get-Item $dl).VersionInfo.ProductVersion",
-      "return $version"
-    ]
-  },
+  "##": [
+    "No version check possible",
+    "sourceLastChangeFound: 260127 17:01:53",
+    "sourceHash: 7a62117d2fb3656ac9d2af25ebb6d89d9ac695cf",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/AmazonMusic-UserInstall.json",
+    "sourceLastUpdated: 240918 23:57:20",
+    "sourceState: active",
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\AmazonMusic-UserInstall.json"
+  ],
   "autoupdate": {
     "url": "https://d2j9xt6n9dg5d3.cloudfront.net/win/23861115_85d5deb94597adc2d891a921c0bf51c9/AmazonMusicInstaller.exe#/setup.exe"
-  },
-  "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\AmazonMusic-UserInstall.json",
-    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/AmazonMusic-UserInstall.json",
-    "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:51",
-    "sourceLastChangeFound: 250922 14:23:50"
-  ]
+  }
 }

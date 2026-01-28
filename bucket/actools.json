@@ -1,25 +1,26 @@
 {
-  "version": "0.8.2774.39864",
-  "description": "Alternative launcher for Assetto Corsa named Content Manager, and some utils as well",
-  "homepage": "https://github.com/gro-ove/actools",
-  "license": "MS-PL",
-  "url": "https://github.com/gro-ove/actools/releases/download/v0.8.2774.39864/Content.Manager.zip",
-  "hash": "d36df12ed00e9534ce68a665ab0dbd192a4d7f0df161dc1568a2f62a11d8ecbd",
-  "shortcuts": [
-    [
-      "Content Manager.exe",
-      "Assetto Corsa Content Manager"
+    "version": "0.8.2782.39874",
+    "description": "Alternative launcher for Assetto Corsa named Content Manager, and some utils as well",
+    "homepage": "https://github.com/gro-ove/actools",
+    "license": "MS-PL",
+    "url": "https://github.com/gro-ove/actools/releases/download/v0.8.2782.39874/Content.Manager.zip",
+    "hash": "67998c57fc520946f4041152dc3a1f3d5558d4da8062630e9079e31061a21f68",
+    "shortcuts": [
+        [
+            "Content Manager.exe",
+            "Assetto Corsa Content Manager"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/gro-ove/actools/releases/download/v$version/Content.Manager.zip"
+    },
+    "##": [
+        "sourceHash: 21d9bbd961fe8fe4448d3041302c5b4a30ddf058",
+        "sourceLastUpdated: 250824 00:42:49",
+        "sourceState: active",
+        "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/actools.json",
+        "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\actools.json",
+        "sourceLastChangeFound: 260128 15:37:24"
     ]
-  ],
-  "checkver": "github",
-  "autoupdate": {
-    "url": "https://github.com/gro-ove/actools/releases/download/v$version/Content.Manager.zip"
-  },
-  "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\actools.json",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/actools.json",
-    "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
-  ]
 }

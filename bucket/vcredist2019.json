@@ -25,10 +25,11 @@
     "Invoke-ExternalCommand -FilePath \"$dir\\vc_redist.x86.exe\" -ArgumentList '/fo', '/quiet', '/norestart' -ContinueExitCodes $ec -RunAs | Out-Null"
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vcredist2019.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 85cf9846fe7d0c89eaa209ad5cf262c232983a17",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/vcredist2019.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vcredist2019.json"
   ]
 }

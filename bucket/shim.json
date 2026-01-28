@@ -15,10 +15,11 @@
     "url": "https://raw.githubusercontent.com/lukesampson/psutils/$matchSha/shim.ps1"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shim.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2a9f6ccc510891b45eee883f92b719f803aa2e43",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shim.json",
+    "sourceLastUpdated: 230628 20:26:13",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shim.json"
   ]
 }

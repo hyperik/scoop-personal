@@ -48,10 +48,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\openra.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ccc0392bbc19d6a715b01dac232b76ca8e8d4fb9",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/openra.json",
+    "sourceLastUpdated: 250331 07:26:27",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\openra.json"
   ]
 }

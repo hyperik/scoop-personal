@@ -17,10 +17,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\linear-desktop.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a9358b78b9b5dad3ba55a2b02952bc4cd6a1c756",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/linear-desktop.json",
+    "sourceLastUpdated: 240315 16:59:12",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\linear-desktop.json"
   ]
 }

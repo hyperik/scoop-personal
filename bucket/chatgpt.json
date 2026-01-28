@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\chatgpt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b6aadfe9ae430d5a616826db2821057ea7c8405a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/chatgpt.json",
+    "sourceLastUpdated: 230804 12:30:00",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\chatgpt.json"
   ]
 }

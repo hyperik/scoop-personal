@@ -1,10 +1,10 @@
 {
-  "version": "2025.9.0",
+  "version": "2025.12.1",
   "description": "Password management solutions for individuals, teams, and business organizations",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0-or-later",
-  "url": "https://github.com/bitwarden/clients/releases/download/desktop-v2025.9.0/Bitwarden-Portable-2025.9.0.exe",
-  "hash": "b42980bf0c920af7cd25df7d9e1cf2c2cef5eb466ce692451596ce34e0d90c21",
+  "url": "https://github.com/bitwarden/clients/releases/download/desktop-v2025.12.1/Bitwarden-Portable-2025.12.1.exe",
+  "hash": "fecf96fad7f3e3e35429f4fbadacdea05c9aeaa2d1e9c6448e889aaed7cad334",
   "pre_install": [
     "Rename-Item \"$dir\\Bitwarden-Portable-$version.exe\" 'Bitwarden.exe'",
     "# copy config from non-portable version",
@@ -29,10 +29,11 @@
     "url": "https://github.com/bitwarden/clients/releases/download/desktop-v$version/Bitwarden-Portable-$version.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bitwarden.json",
+    "sourceLastChangeFound: 260128 15:32:50",
+    "sourceHash: 8a55111ed3b27930d29947bdb445723d3c397e2d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/bitwarden.json",
+    "sourceLastUpdated: 260113 20:30:03",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bitwarden.json"
   ]
 }

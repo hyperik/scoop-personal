@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi-uefi.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 940eb54bbc1502ac7c887142ef22eac6e4a41401",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yumi-uefi.json",
+    "sourceLastUpdated: 240217 03:24:13",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yumi-uefi.json"
   ]
 }

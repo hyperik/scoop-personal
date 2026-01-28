@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wireproxy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 494fe2532c48a00407a743b8d4b15c6ffa844da8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wireproxy.json",
+    "sourceLastUpdated: 240419 16:30:56",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wireproxy.json"
   ]
 }

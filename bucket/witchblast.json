@@ -24,10 +24,11 @@
   "checkver": "github",
   "##": [
     "Note: No Autoupdate due to inconsistent releases, downloads etc. Also, a new release seems unlikely",
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\witchblast.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 1550c8d63a04033a15c04ed4e70db67109864574",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/witchblast.json",
+    "sourceLastUpdated: 220307 00:45:55",
     "sourceState: active",
-    "sourceLastUpdated: 240810 13:07:00",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\witchblast.json"
   ]
 }

@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wifi-manager.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: dcf5104d8566df5808ee9f60281d46e06b0f2144",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wifi-manager.json",
+    "sourceLastUpdated: 200829 22:40:23",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wifi-manager.json"
   ]
 }

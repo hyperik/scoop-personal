@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\throttlestop.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 356e1734577040082b1fd70e0ecabf2e1d7bc2ef",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/throttlestop.json",
+    "sourceLastUpdated: 250402 16:29:42",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\throttlestop.json"
   ]
 }

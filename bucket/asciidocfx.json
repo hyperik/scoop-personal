@@ -38,10 +38,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\asciidocfx.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ac6f16e592b345c3be7c622a97f9b3c413f8e0d8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/asciidocfx.json",
+    "sourceLastUpdated: 240709 13:05:40",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\asciidocfx.json"
   ]
 }

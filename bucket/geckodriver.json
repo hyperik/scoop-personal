@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\geckodriver.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 1ed9fc0103f3092c5f2b371200e61af95ea6ba6b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/geckodriver.json",
+    "sourceLastUpdated: 250225 12:32:47",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\geckodriver.json"
   ]
 }

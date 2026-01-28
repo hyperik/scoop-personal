@@ -97,10 +97,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\powertoys.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/powertoys.json",
+    "sourceHash: e3a087dab4e9762a10264c6c876e17e7e12ebf62",
+    "sourceLastUpdated: 260120 12:31:39",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/powertoys.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\powertoys.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

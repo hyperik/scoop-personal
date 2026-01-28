@@ -48,10 +48,11 @@
     ]
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c221fd8c589274fddf7e6a66a2c11d89b1c75ef7",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist.json",
+    "sourceLastUpdated: 250708 20:29:27",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist.json"
   ]
 }

@@ -1,13 +1,13 @@
 {
-  "version": "3.101.0.0",
+  "version": "3.105.0.0",
   "description": "A modern dual-pane file manager with tabs, columns view, built-in preview, editable themes, and more.",
   "homepage": "https://onecommander.com/",
   "license": {
     "identifier": "Freeware",
     "url": "https://onecommander.com/license.txt"
   },
-  "url": "https://onecommander.com/OneCommander3.101.0.0.zip",
-  "hash": "5090cfbb58a136a4004457e979793be6454ad2cb45f777541861f5f5a38c5312",
+  "url": "https://onecommander.com/OneCommander3.105.0.0.zip",
+  "hash": "9fe50c22092a2825f7f023a1a5ba2917de602935cd33f11bed3c1c89efe20b68",
   "shortcuts": [
     [
       "OneCommander.exe",
@@ -28,10 +28,11 @@
     "url": "https://onecommander.com/OneCommander$version.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\onecommander.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/onecommander.json",
+    "sourceHash: 1213ffc4bafccda09759a8e3418ba1bf96517d54",
+    "sourceLastUpdated: 260104 00:49:00",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/onecommander.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\onecommander.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

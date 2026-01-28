@@ -24,10 +24,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\clonehero.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2079a567842d759a7806bb5d5f1e18857543d395",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/clonehero.json",
+    "sourceLastUpdated: 230520 10:41:46",
     "sourceState: active",
-    "sourceLastUpdated: 240810 13:06:59",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\clonehero.json"
   ]
 }

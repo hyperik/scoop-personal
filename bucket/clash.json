@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\clash.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2a569b14113e68c395a3c41c6dc525e906bb128b",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/clash.json",
+    "sourceLastUpdated: 230817 15:34:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:52",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\clash.json"
   ]
 }

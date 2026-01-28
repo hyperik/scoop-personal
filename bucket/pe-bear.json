@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pe-bear.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b6b9dc7e9b223478ee2d4800afe1149c93bb1990",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/pe-bear.json",
+    "sourceLastUpdated: 250426 00:37:56",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\pe-bear.json"
   ]
 }

@@ -39,10 +39,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\shadowsocks.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 60356b84a6a8d8d39c953f2e56d580d4f36f5e45",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/shadowsocks.json",
+    "sourceLastUpdated: 220402 04:28:05",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\shadowsocks.json"
   ]
 }

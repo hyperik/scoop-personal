@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rathole.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 50ec7c969fd3e2ff8cd5b949527dc3b4946faa4d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rathole.json",
+    "sourceLastUpdated: 231001 12:30:01",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rathole.json"
   ]
 }

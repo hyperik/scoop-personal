@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\authpass.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a30c96da5f06e12816e1e7ee46989c1f2c73019e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/authpass.json",
+    "sourceLastUpdated: 240204 16:26:03",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\authpass.json"
   ]
 }

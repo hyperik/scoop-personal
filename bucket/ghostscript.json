@@ -69,10 +69,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ghostscript.json",
+    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceHash: 80007b13d8c54cfcb0e1fb0b887bfa98dabfde74",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ghostscript.json",
+    "sourceLastUpdated: 250909 16:30:33",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ghostscript.json"
   ]
 }

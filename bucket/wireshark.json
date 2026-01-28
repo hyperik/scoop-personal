@@ -68,10 +68,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wireshark.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wireshark.json",
+    "sourceHash: d38d02705b9bc0292bc65a01a837cf266cdb224f",
+    "sourceLastUpdated: 260123 12:27:33",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wireshark.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wireshark.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

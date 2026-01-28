@@ -1,37 +1,38 @@
 {
-    "version": "6.58",
-    "description": "A command line tool that allows administrators to manage many aspects of their Google Workspace (formerly G Suite / Google Apps) Account.",
-    "homepage": "https://github.com/GAM-team/GAM",
-    "license": "Apache-2.0",
-    "##": [
-        "sourceComment: TODO - Possibly should change the checkver to be github: https://github.com/GAM-team/GAM,regex: gam-([\\d.]+)-windows-x86_64\\.zip",
-        "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\gam.json",
-        "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/gam.json",
-        "sourceState: active",
-        "sourceLastUpdated: 250906 15:45:53",
-        "sourceLastChangeFound: 250922 14:23:50"
-    ],
+  "version": "6.58",
+  "description": "A command line tool that allows administrators to manage many aspects of their Google Workspace (formerly G Suite / Google Apps) Account.",
+  "homepage": "https://github.com/GAM-team/GAM",
+  "license": "Apache-2.0",
+  "##": [
+    "sourceState: active",
+    "sourceLastUpdated: 240918 23:57:20",
+    "sourceComment: TODO - Possibly should change the checkver to be github: https://github.com/GAM-team/GAM,regex: gam-([\\d.]+)-windows-x86_64\\.zip",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/gam.json",
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\gam.json",
+    "sourceHash: 62b82a4f6c549dd4780333b73e842ab0960e83c4",
+    "sourceLastChangeFound: 250922 14:23:50"
+  ],
+  "architecture": {
+    "32bit": {
+      "hash": "9db37461f62cdb5d77995c232ad79b3c25bce03df8d210bb5356416dd010b822",
+      "url": "https://github.com/GAM-team/GAM/releases/download/v6.58/gam-6.58-windows-x86.zip"
+    },
+    "64bit": {
+      "hash": "c21dd7c0ce35a04720e73e0ee46a34224944bbc5aace1912476dec2cd6a19b3a",
+      "url": "https://github.com/GAM-team/GAM/releases/download/v6.58/gam-6.58-windows-x86_64.zip"
+    }
+  },
+  "autoupdate": {
     "architecture": {
-        "32bit": {
-            "hash": "9db37461f62cdb5d77995c232ad79b3c25bce03df8d210bb5356416dd010b822",
-            "url": "https://github.com/GAM-team/GAM/releases/download/v6.58/gam-6.58-windows-x86.zip"
-        },
-        "64bit": {
-            "hash": "c21dd7c0ce35a04720e73e0ee46a34224944bbc5aace1912476dec2cd6a19b3a",
-            "url": "https://github.com/GAM-team/GAM/releases/download/v6.58/gam-6.58-windows-x86_64.zip"
-        }
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://github.com/GAM-team/GAM/releases/download/v$version/gam-$version-windows-x86.zip"
-            },
-            "64bit": {
-                "url": "https://github.com/GAM-team/GAM/releases/download/v$version/gam-$version-windows-x86_64.zip"
-            }
-        }
-    },
-    "extract_dir": "gam",
-    "bin": "gam.exe",
-    "checkver": "github"
+      "32bit": {
+        "url": "https://github.com/GAM-team/GAM/releases/download/v$version/gam-$version-windows-x86.zip"
+      },
+      "64bit": {
+        "url": "https://github.com/GAM-team/GAM/releases/download/v$version/gam-$version-windows-x86_64.zip"
+      }
+    }
+  },
+  "extract_dir": "gam",
+  "bin": "gam.exe",
+  "checkver": "github"
 }

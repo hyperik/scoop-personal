@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\archive.is.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 062680091906bb55d797947efb2f9b4bdb55af2b",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/archive.is.json",
+    "sourceLastUpdated: 230611 02:22:36",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:52",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\archive.is.json"
   ]
 }

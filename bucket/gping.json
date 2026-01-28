@@ -22,10 +22,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gping.json",
-    "sourceLastUpdated: 250922 17:50:39",
-    "sourceState: active",
+    "sourceLastChangeFound: 250922 17:50:39",
+    "sourceHash: 79da175cfcdbccff74ad00cd4a73765cf1aeb9ca",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gping.json",
-    "sourceLastChangeFound: 250922 17:50:39"
+    "sourceLastUpdated: 250911 17:39:42",
+    "sourceState: active",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gping.json"
   ]
 }

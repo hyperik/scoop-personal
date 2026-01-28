@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sad.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ce881f7c9d0ff0bbb4823506c3ef0f1c5b0f1eaf",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sad.json",
+    "sourceLastUpdated: 250203 20:27:47",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sad.json"
   ]
 }

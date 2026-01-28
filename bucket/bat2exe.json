@@ -1,12 +1,12 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "description": "A simple application which converts any windows batch file to a fully working executable .exe with an icon of your choice.",
   "homepage": "https://bat2exe.net",
   "license": "Freeware",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/islamadel/bat2exe/releases/download/2.2/bat2exe.exe",
-      "hash": "930379bf569d7bb21bc093c81b09c2126eb1c0eec37514d78eb3adb3dae82d26"
+      "url": "https://github.com/islamadel/bat2exe/releases/download/2.3/bat2exe.exe",
+      "hash": "5c33850ef8dc4e91adcd4f3a717d176e4922ac3e7ec9f9a47548c5a946dbcfb2"
     }
   },
   "bin": "bat2exe.exe",
@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bat2exe.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/bat2exe.json",
+    "sourceHash: d0e52bc2ff1ff3f57d928e5e004e16a9df769493",
+    "sourceLastUpdated: 260120 16:31:43",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:13",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/bat2exe.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bat2exe.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

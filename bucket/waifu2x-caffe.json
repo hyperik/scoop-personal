@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waifu2x-caffe.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 3b75a7ac9d29665cbf302627913089b2a917e0ea",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/waifu2x-caffe.json",
+    "sourceLastUpdated: 200905 11:53:23",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\waifu2x-caffe.json"
   ]
 }

@@ -51,10 +51,11 @@
     "url": "https://github.com/JosefNemec/Playnite/releases/download/$version/Playnite$cleanVersion.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\playnite.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/playnite.json",
+    "sourceHash: 56282979345c6d85309cf78037735551a60a5e4c",
+    "sourceLastUpdated: 260126 12:32:07",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/playnite.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\playnite.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-machine.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a6079ab236d321b13a6c722d048d3e9efb0adafd",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker-machine.json",
+    "sourceLastUpdated: 221026 06:54:37",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-machine.json"
   ]
 }

@@ -75,8 +75,7 @@
     "script": "Start-Process \"$dir\\UX\\AutoHotkeyUX.exe\" -ArgumentList @('/script', \"`\"$dir\\UX\\install.ahk`\"\", '/uninstall', '/silent') -Wait"
   },
   "checkver": {
-    "url": "https://www.autohotkey.com/download/2.0/version.txt",
-    "regex": "([\\d.]+)"
+    "github": "https://github.com/AutoHotkey/AutoHotkey"
   },
   "autoupdate": {
     "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v$version/AutoHotkey_$version.zip",
@@ -86,10 +85,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\autohotkey.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/autohotkey.json",
+    "sourceHash: a0fb90b425dc8d4c6c75b9ab0d23b76972d8ece6",
+    "sourceLastUpdated: 251019 16:19:28",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:13",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/autohotkey.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\autohotkey.json",
+    "sourceLastChangeFound: 260128 15:47:47"
   ]
 }

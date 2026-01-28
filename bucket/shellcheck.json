@@ -14,10 +14,11 @@
     "url": "https://github.com/koalaman/shellcheck/releases/download/v$version/shellcheck-v$version.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shellcheck.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 80c5d31db08ad86cfb20a33aa213a23a9f0a9ee4",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/shellcheck.json",
+    "sourceLastUpdated: 250804 00:47:50",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\shellcheck.json"
   ]
 }

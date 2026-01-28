@@ -7,10 +7,11 @@
   "hash": "4b1feea09f35f30943220e8c493a7e590739607a2315559f26b84b3586a5dd54",
   "bin": "fciv.exe",
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fciv.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c6b5cc2cdbe1c186af93ad1c5472e555d2201c71",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fciv.json",
+    "sourceLastUpdated: 220513 12:16:32",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fciv.json"
   ]
 }

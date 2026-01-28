@@ -1,20 +1,20 @@
 {
-  "version": "4.26.0",
+  "version": "4.31.0",
   "description": "Let's Encrypt/ACME client and library written in Go",
   "homepage": "https://github.com/go-acme/lego",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/go-acme/lego/releases/download/v4.26.0/lego_v4.26.0_windows_amd64.zip",
-      "hash": "296fb36853dfb34d62d16fe3e468899abfe46841653aca03b3e72c62678b683a"
+      "url": "https://github.com/go-acme/lego/releases/download/v4.31.0/lego_v4.31.0_windows_amd64.zip",
+      "hash": "f70cc74f322e859bc3098991bca9167dd8365f9380b2eb94144eae5c942473a8"
     },
     "32bit": {
-      "url": "https://github.com/go-acme/lego/releases/download/v4.26.0/lego_v4.26.0_windows_386.zip",
-      "hash": "dab9a1cff4beca8ede1b53b6dab496ebcc0132d197488b8204bb9642712ee6d0"
+      "url": "https://github.com/go-acme/lego/releases/download/v4.31.0/lego_v4.31.0_windows_386.zip",
+      "hash": "cbe2887386949439ee11dfaec80270acc5f2a32100d2856b72a75408aa9fd063"
     },
     "arm64": {
-      "url": "https://github.com/go-acme/lego/releases/download/v4.26.0/lego_v4.26.0_windows_arm64.zip",
-      "hash": "f01013907018b71f5809870c0fb8afb781155fafa82e65d0053e9eeb6cf4c95b"
+      "url": "https://github.com/go-acme/lego/releases/download/v4.31.0/lego_v4.31.0_windows_arm64.zip",
+      "hash": "725f0d32fe0c0e0796aa8a297e85e6f255f1dbc97b0f66df3ede3b04b7975231"
     }
   },
   "bin": "lego.exe",
@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\lego.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/lego.json",
+    "sourceHash: 2cb23c1d0cff152b191e0247708732b3eda0abc2",
+    "sourceLastUpdated: 260108 20:30:18",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/lego.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\lego.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

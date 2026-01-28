@@ -1,16 +1,16 @@
 {
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A cli tool to proxy and analyze TCP connections.",
   "homepage": "https://github.com/kevwan/tproxy",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/kevwan/tproxy/releases/download/v0.9.1/tproxy-v0.9.1-windows-amd64.zip",
-      "hash": "md5:a603a667c43099aa2ee835522fbc4b0a"
+      "url": "https://github.com/kevwan/tproxy/releases/download/v0.9.2/tproxy-v0.9.2-windows-amd64.zip",
+      "hash": "md5:67cb78c5de0f7418b0cef5cdb95c2935"
     },
     "arm64": {
-      "url": "https://github.com/kevwan/tproxy/releases/download/v0.9.1/tproxy-v0.9.1-windows-arm64.zip",
-      "hash": "md5:83ea6bfe801044f5590915a039b9529b"
+      "url": "https://github.com/kevwan/tproxy/releases/download/v0.9.2/tproxy-v0.9.2-windows-arm64.zip",
+      "hash": "md5:28b76a1fb2a386da0a35432e112005f1"
     }
   },
   "bin": "tproxy.exe",
@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\tproxy.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/tproxy.json",
+    "sourceHash: 70b8846255d9b7a4b2ce3b1346d7b74e925e078c",
+    "sourceLastUpdated: 251225 16:30:16",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:36",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/tproxy.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\tproxy.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

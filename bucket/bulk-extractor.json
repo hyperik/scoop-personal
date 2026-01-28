@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\bulk-extractor.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 9f165cb555ad2fe0a1f2647eb8d7dcaa2ab43e86",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/bulk-extractor.json",
+    "sourceLastUpdated: 231105 05:00:58",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:52",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\bulk-extractor.json"
   ]
 }

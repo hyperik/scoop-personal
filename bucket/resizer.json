@@ -22,10 +22,11 @@
     "url": "https://www.den4b.com/download/resizer/portable/$version?token=scoop#/dl.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\resizer.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0e575967bec173af7e77106f44656a3bbea8030c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/resizer.json",
+    "sourceLastUpdated: 240520 12:34:45",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\resizer.json"
   ]
 }

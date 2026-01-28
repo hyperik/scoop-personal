@@ -45,10 +45,11 @@
     "url": "https://downloads.sourceforge.net/project/recaps/0.9.0.3480/ReCaps_V0.9.0.3480.exe#/dl.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recaps.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 4dde27f40b9adc48b5a6d693a1c5d4fb20f58349",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/recaps.json",
+    "sourceLastUpdated: 250410 16:29:33",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recaps.json"
   ]
 }

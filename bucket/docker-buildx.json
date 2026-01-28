@@ -1,16 +1,16 @@
 {
-  "version": "0.28.0",
+  "version": "0.31.0",
   "description": "Docker CLI plugin for extended build capabilities with BuildKit",
   "homepage": "https://github.com/docker/buildx",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/docker/buildx/releases/download/v0.28.0/buildx-v0.28.0.windows-amd64.exe#/docker-buildx.exe",
-      "hash": "0e8d520269cbd3401de6fee5c5fe48d5a9750805aa0a04d5443eba6b33ba63ee"
+      "url": "https://github.com/docker/buildx/releases/download/v0.31.0/buildx-v0.31.0.windows-amd64.exe#/docker-buildx.exe",
+      "hash": "4718e18d07e96b87c21ad7a025d21ac1b5d2caf91448c864623dbd2f778fd192"
     },
     "arm64": {
-      "url": "https://github.com/docker/buildx/releases/download/v0.28.0/buildx-v0.28.0.windows-arm64.exe#/docker-buildx.exe",
-      "hash": "a110ebbf2379bcfbf72d533c283a133a44ffed14090279494ea74290291567d6"
+      "url": "https://github.com/docker/buildx/releases/download/v0.31.0/buildx-v0.31.0.windows-arm64.exe#/docker-buildx.exe",
+      "hash": "a261a1a5c1fedcc937c7db96234bab0ad0e7e0d5578815520b574dcb505e76d3"
     }
   },
   "bin": "docker-buildx.exe",
@@ -48,10 +48,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-buildx.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker-buildx.json",
+    "sourceHash: 90653b292cf6ec2400bb50820b02448c69431c2e",
+    "sourceLastUpdated: 260122 00:44:41",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker-buildx.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker-buildx.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

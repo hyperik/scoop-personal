@@ -1,16 +1,16 @@
 {
-  "version": "14.4.0.40132",
+  "version": "15.2.0.40510",
   "description": "PowerShell cmdlets for developers and administrators to develop, deploy and manage Microsoft Azure applications.",
   "homepage": "https://aka.ms/azpsdocs",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Azure/azure-powershell/releases/download/v14.4.0-September2025/Az-Cmdlets-14.4.0.40132-x64.msi",
-      "hash": "6a8ebafab5633220fe016bb833f39312ffff5e25706c951eec80861267d8b507"
+      "url": "https://github.com/Azure/azure-powershell/releases/download/v15.2.0-January2026/Az-Cmdlets-15.2.0.40510-x64.msi",
+      "hash": "31a081e0ab6868ffa6403017c9a0c612eea34f540ea9af451fc9717001c80d3f"
     },
     "32bit": {
-      "url": "https://github.com/Azure/azure-powershell/releases/download/v14.4.0-September2025/Az-Cmdlets-14.4.0.40132-x86.msi",
-      "hash": "c2a9cea16a6ecd248e6fc0652e93e70d513caaaf5fc07548d8989b2d6d57381a"
+      "url": "https://github.com/Azure/azure-powershell/releases/download/v15.2.0-January2026/Az-Cmdlets-15.2.0.40510-x86.msi",
+      "hash": "2178d9fcf957a53e5cd46bc108d1762d49c63c7ab924728b3d80f454a9385347"
     }
   },
   "extract_dir": "WindowsPowerShell\\Modules",
@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\azure-ps.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/azure-ps.json",
+    "sourceHash: 2e96315d8087f0002eee9ea7b784cd4c6c8a7079",
+    "sourceLastUpdated: 260114 04:38:07",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/azure-ps.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\azure-ps.json",
+    "sourceLastChangeFound: 260128 15:47:47"
   ]
 }

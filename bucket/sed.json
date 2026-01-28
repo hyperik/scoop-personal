@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sed.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ca5089eef64c14702095b7c9c4df1201b65d39ea",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sed.json",
+    "sourceLastUpdated: 250416 04:13:45",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sed.json"
   ]
 }

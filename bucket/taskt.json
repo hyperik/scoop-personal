@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\taskt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2cede42334ef05d15798b685a5fbe78238c60c14",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/taskt.json",
+    "sourceLastUpdated: 230808 12:35:15",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\taskt.json"
   ]
 }

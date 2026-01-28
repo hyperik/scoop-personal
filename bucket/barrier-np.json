@@ -20,10 +20,11 @@
     "url": "https://github.com/debauchee/barrier/releases/download/v$version/BarrierSetup-$version-release.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\barrier-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c15dc039f5a0d8271b1d1e809ce6f846900fa44b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/barrier-np.json",
+    "sourceLastUpdated: 220610 04:47:15",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\barrier-np.json"
   ]
 }

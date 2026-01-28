@@ -1,12 +1,12 @@
 {
-  "version": "5.2.1",
+  "version": "5.4.0",
   "description": "Photography workflow application and raw developer. A virtual lighttable and darkroom for photographers.",
   "homepage": "https://www.darktable.org",
   "license": "GPL-3.0-only",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/darktable-org/darktable/releases/download/release-5.2.1/darktable-5.2.1-win64.exe#/dl.7z",
-      "hash": "c470779d92a08345c6f9b65457484e2fe4406537b0604a6e0df0339c81059158"
+      "url": "https://github.com/darktable-org/darktable/releases/download/release-5.4.0/darktable-5.4.0-win64.exe#/dl.7z",
+      "hash": "655ce83046f27d20e1385bffa1e5471b702033083772f65db1fe1a07445c3eb8"
     }
   },
   "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst*\" -Force -Recurse",
@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\darktable.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/darktable.json",
+    "sourceHash: fecb433ddd205c363327a277f0076c288aeebfef",
+    "sourceLastUpdated: 251221 12:31:09",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/darktable.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\darktable.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

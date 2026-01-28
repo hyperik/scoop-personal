@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\czkawka-gui.json",
+    "sourceLastChangeFound: 250922 16:03:25",
+    "sourceHash: 9f815eebe6569370e91fee288ae46af14432ac7c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/czkawka-gui.json",
+    "sourceLastUpdated: 250910 23:59:32",
     "sourceState: active",
-    "sourceLastUpdated: 250922 16:03:25",
-    "sourceLastChangeFound: 250922 16:03:25"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\czkawka-gui.json"
   ]
 }

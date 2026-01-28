@@ -1,12 +1,12 @@
 {
-  "version": "1.33.0",
+  "version": "1.33.1",
   "description": "Multi pod and container log tailing for Kubernetes",
   "homepage": "https://github.com/stern/stern",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_windows_amd64.tar.gz",
-      "hash": "7755c37202b5bfa318af31787fc52890dad48c1958c5f729b10285b02330408d"
+      "url": "https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_windows_amd64.tar.gz",
+      "hash": "e1451cac9f01dbd9ab9aacde9d8e8d7fa800970f51054d4ffaa04f6d3bf959bd"
     }
   },
   "bin": "stern.exe",
@@ -22,10 +22,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\stern.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/stern.json",
+    "sourceHash: 2164de71c8e9c5d9a4ef1eca49f5813ffcbcb0cb",
+    "sourceLastUpdated: 251104 12:31:57",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/stern.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\stern.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

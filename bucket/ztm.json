@@ -33,10 +33,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\ztm.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 98ce0833e2d816b2718e90ea2a3697def1d0ef6f",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/ztm.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\ztm.json"
   ]
 }

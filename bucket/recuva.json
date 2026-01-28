@@ -46,10 +46,11 @@
     "url": "https://download.ccleaner.com/rcsetup$majorVersion$minorVersion.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recuva.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b45a0684f23d1509a90ef7325c102bc8332dc8bf",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/recuva.json",
+    "sourceLastUpdated: 240626 12:33:44",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\recuva.json"
   ]
 }

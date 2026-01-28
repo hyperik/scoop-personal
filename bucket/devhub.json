@@ -34,10 +34,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\devhub.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: f9df4f72e193c15e3c91b599f6278f71f12b9d25",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/devhub.json",
+    "sourceLastUpdated: 230916 00:32:38",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\devhub.json"
   ]
 }

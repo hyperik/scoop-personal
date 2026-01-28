@@ -43,10 +43,11 @@
     "extract_dir": "processing-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\processing.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 242546e1c2711e71d3d86487a46d6f148758d68a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/processing.json",
+    "sourceLastUpdated: 201114 17:26:08",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\processing.json"
   ]
 }

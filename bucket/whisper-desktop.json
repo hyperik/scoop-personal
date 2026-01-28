@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whisper-desktop.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a74d72aac0ab2cf15de939140c36a44b9bacd706",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/whisper-desktop.json",
+    "sourceLastUpdated: 230722 15:32:56",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whisper-desktop.json"
   ]
 }

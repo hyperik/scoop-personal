@@ -30,10 +30,11 @@
     "url": "https://downloads.scratch.mit.edu/desktop/Scratch%20$version%20Setup.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scratch.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 86ba96b6afe0b56b5a0925b6881b8b79a8b6709b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scratch.json",
+    "sourceLastUpdated: 231027 05:08:08",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scratch.json"
   ]
 }

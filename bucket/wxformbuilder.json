@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wxformbuilder.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 6fad3173706c49494d9b240857218daeb50f5c32",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wxformbuilder.json",
+    "sourceLastUpdated: 240530 04:32:03",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wxformbuilder.json"
   ]
 }

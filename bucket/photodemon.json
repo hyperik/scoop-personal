@@ -1,13 +1,13 @@
 {
-  "version": "2025.4",
+  "version": "2025.12",
   "description": "Photo editor focused on pro-grade features, high performance, and maximum usability.",
   "homepage": "https://photodemon.org",
   "license": {
     "identifier": "BSD-2-Clause,...",
     "url": "https://github.com/tannerhelland/PhotoDemon/blob/master/LICENSE.md"
   },
-  "url": "https://github.com/tannerhelland/PhotoDemon/releases/download/v2025.4/PhotoDemon-2025.4.zip",
-  "hash": "4e2c536e10645261a5dee75434a3198064982f2a2f5c9da31992c2ce1371ae2b",
+  "url": "https://github.com/tannerhelland/PhotoDemon/releases/download/v2025.12/PhotoDemon-2025.12.zip",
+  "hash": "269095087093575a975a66a9588cd8bcc18ff356d20fd4b2851f7e1088df75a1",
   "extract_dir": "PhotoDemon",
   "bin": "PhotoDemon.exe",
   "shortcuts": [
@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\photodemon.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/photodemon.json",
+    "sourceHash: 8d78809a455a7def53c98b249961077e247eda7a",
+    "sourceLastUpdated: 251212 20:29:12",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/photodemon.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\photodemon.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

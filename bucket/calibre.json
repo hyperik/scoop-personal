@@ -79,10 +79,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\calibre.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/calibre.json",
+    "sourceHash: 824bb285614f914921717e26220c4cde61ee82cb",
+    "sourceLastUpdated: 251206 04:28:56",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/calibre.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\calibre.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -1,24 +1,25 @@
 {
   "##": [
     "Multiple components under various open source licenses. Included HTTPS Everywhere extension is the strictest.",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tor-browser.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tor-browser.json",
+    "sourceHash: ac183a97cf3c263f70acead06fa4f0e3066f4a33",
+    "sourceLastUpdated: 260113 12:43:01",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tor-browser.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tor-browser.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ],
-  "version": "14.5.7",
+  "version": "15.0.4",
   "description": "Web browser that connects to the internet via the Tor anonymity network",
   "homepage": "https://www.torproject.org/",
   "license": "GPL-3.0-or-later",
   "architecture": {
     "64bit": {
-      "url": "https://archive.torproject.org/tor-package-archive/torbrowser/14.5.7/tor-browser-windows-x86_64-portable-14.5.7.exe#/dl.7z",
-      "hash": "61cff349bbc25b2f022fd424999bd334b26eebf2246fe2ba95ebba42fc490b2e"
+      "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.4/tor-browser-windows-x86_64-portable-15.0.4.exe#/dl.7z",
+      "hash": "0f363ddf43c8a6e627ec77d54823266eb1c1b35df9a72aa941c94f23dea1cf9f"
     },
     "32bit": {
-      "url": "https://archive.torproject.org/tor-package-archive/torbrowser/14.5.7/tor-browser-windows-i686-portable-14.5.7.exe#/dl.7z",
-      "hash": "ae2693693d3efe7847bfd11d5022ccca814a7819f1b3d1e7b7c0bc34ac878b92"
+      "url": "https://archive.torproject.org/tor-package-archive/torbrowser/15.0.4/tor-browser-windows-i686-portable-15.0.4.exe#/dl.7z",
+      "hash": "48a8c9cd3253f6635af8d480ff1d92cd697fd71425d77ad3a0a858641df4de8a"
     }
   },
   "extract_dir": "Browser",

@@ -1,42 +1,43 @@
 {
-    "version": "28.4.0",
-    "description": "Docker CLI & Docker Engine for Windows containers. Docker is an open platform for developing, shipping, and running applications.",
-    "homepage": "https://docs.docker.com/engine",
-    "license": "Apache-2.0",
+  "version": "28.4.0",
+  "description": "Docker CLI & Docker Engine for Windows containers. Docker is an open platform for developing, shipping, and running applications.",
+  "homepage": "https://docs.docker.com/engine",
+  "license": "Apache-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://download.docker.com/win/static/stable/x86_64/docker-28.4.0.zip",
+      "hash": "fc71eac7e30d5e90e0237713d4da027582271bad75c49eb0b64cd2e69a16af1c"
+    }
+  },
+  "extract_dir": "docker",
+  "bin": [
+    "docker.exe",
+    "dockerd.exe"
+  ],
+  "checkver": {
+    "github": "https://github.com/moby/moby"
+  },
+  "autoupdate": {
     "architecture": {
-        "64bit": {
-            "url": "https://download.docker.com/win/static/stable/x86_64/docker-28.4.0.zip",
-            "hash": "fc71eac7e30d5e90e0237713d4da027582271bad75c49eb0b64cd2e69a16af1c"
-        }
-    },
-    "extract_dir": "docker",
-    "bin": [
-        "docker.exe",
-        "dockerd.exe"
-    ],
-    "checkver": {
-        "github": "https://github.com/moby/moby"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://download.docker.com/win/static/stable/x86_64/docker-$version.zip"
-            }
-        }
-    },
-    "notes": [
-        "The 'dockerd' binary here only supports running Windows containers.",
-        "However it is possible to connect to existing Linux containers using the 'docker' binary",
-        "To register Docker as a service, run `dockerd --register-service`",
-        "Similarly, to unregister, run `dockerd --unregister-service`"
-    ],
-    "##": [
-        "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
-        "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json",
-        "sourceState: active",
-        "sourceLastUpdated: 250729 15:00:35",
-        "sourceLastChangeFound: 250922 14:23:50",
-        "sourceDelayDays: 7",
-        "sourceUpdateMinimumDays: 21"
-    ]
+      "64bit": {
+        "url": "https://download.docker.com/win/static/stable/x86_64/docker-$version.zip"
+      }
+    }
+  },
+  "notes": [
+    "The 'dockerd' binary here only supports running Windows containers.",
+    "However it is possible to connect to existing Linux containers using the 'docker' binary",
+    "To register Docker as a service, run `dockerd --register-service`",
+    "Similarly, to unregister, run `dockerd --unregister-service`"
+  ],
+  "##": [
+    "sourceLastUpdated: 260116 16:30:51",
+    "sourceHash: 5c9db62608216d8d04994bcdb1df222bb0e943b6",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
+    "sourceState: active",
+    "sourceLastChangeFound: 260128 15:51:35",
+    "sourceUpdateMinimumDays: 21",
+    "sourceDelayDays: 7",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json"
+  ]
 }

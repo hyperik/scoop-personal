@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\snoop.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 442ef71c713b02a313897584aa86f39edbfc5f0d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/snoop.json",
+    "sourceLastUpdated: 250524 16:28:52",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\snoop.json"
   ]
 }

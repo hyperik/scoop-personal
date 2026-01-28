@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\lepton.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0bb48f4da06038ee41d6dbdc46e489ef029bfa42",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/lepton.json",
+    "sourceLastUpdated: 210619 08:11:28",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\lepton.json"
   ]
 }

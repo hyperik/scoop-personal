@@ -14,10 +14,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\keycastow.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 64876f7b01498e1c09ccc35e78c6cf01ffd0d9a5",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/keycastow.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\keycastow.json"
   ]
 }

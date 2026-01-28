@@ -13,10 +13,11 @@
     "url": "https://github.com/Mozilla-Ocho/llamafile/releases/download/$version/llamafile-$version#/llamafile.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\llamafile.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2cab2d72e6d6f60d5944350be4db2dec44609262",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/llamafile.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\llamafile.json"
   ]
 }

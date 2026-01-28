@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist-aio.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist-aio.json",
+    "sourceHash: 1010b594e8352e6cc4eb550aca92f6b4e50c7964",
+    "sourceLastUpdated: 251215 20:00:01",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist-aio.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist-aio.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

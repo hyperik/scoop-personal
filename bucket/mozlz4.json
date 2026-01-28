@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\mozlz4.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 144530151e957b67a12486ca6c55b713a5cc32eb",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/mozlz4.json",
+    "sourceLastUpdated: 240315 17:58:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\mozlz4.json"
   ]
 }

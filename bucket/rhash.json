@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rhash.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 25021060053c31c657e1a3348e5019391bc15f7e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rhash.json",
+    "sourceLastUpdated: 250514 00:39:10",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rhash.json"
   ]
 }

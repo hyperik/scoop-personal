@@ -16,10 +16,11 @@
     "url": "https://github.com/slackhq/nebula/releases/download/v$version/nebula-windows-amd64.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\nebula.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a753e8ca80a34fff86490e96b9865858b1cc5ed9",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/nebula.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\nebula.json"
   ]
 }

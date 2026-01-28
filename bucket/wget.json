@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wget.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 15fab4349b2f5c4129621c7cddf3f39598caeafc",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wget.json",
+    "sourceLastUpdated: 230511 16:31:38",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wget.json"
   ]
 }

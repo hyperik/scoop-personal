@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\turtl.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 7c4803269dc6acd5053beeebea48a296fa57e77d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/turtl.json",
+    "sourceLastUpdated: 190807 09:15:05",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\turtl.json"
   ]
 }

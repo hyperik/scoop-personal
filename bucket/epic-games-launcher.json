@@ -33,10 +33,11 @@
     "url": "https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/Installers/Win32/EpicInstaller-$version.msi#/setup.msi_"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\epic-games-launcher.json",
+    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceHash: 61a4ab6b84309c84952617670c570767ba28de80",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/epic-games-launcher.json",
+    "sourceLastUpdated: 250804 16:30:55",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\epic-games-launcher.json"
   ]
 }

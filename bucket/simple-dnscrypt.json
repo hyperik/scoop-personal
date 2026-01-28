@@ -66,10 +66,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\simple-dnscrypt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 57bebe598471012949dad6cd973dae293cb4001c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/simple-dnscrypt.json",
+    "sourceLastUpdated: 240131 00:34:32",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\simple-dnscrypt.json"
   ]
 }

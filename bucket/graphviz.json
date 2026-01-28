@@ -1,16 +1,16 @@
 {
-  "version": "14.0.0",
+  "version": "14.1.2",
   "description": "Open source graph visualization software.",
   "homepage": "https://www.graphviz.org/",
   "license": "EPL-1.0",
   "architecture": {
     "64bit": {
-      "url": "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.0.0/windows_10_cmake_Release_graphviz-install-14.0.0-win64.exe#/dl.7z",
-      "hash": "af6a4a77043d3b39eb8ba54252ff01eb5e70a3676df0fcc1f74a8d979d8ce539"
+      "url": "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.1.2/windows_10_cmake_Release_graphviz-install-14.1.2-win64.exe#/dl.7z",
+      "hash": "811001195cf62aa74146eb10db4055e5a066811cde245b87a18bb7b132ba2dcc"
     },
     "32bit": {
-      "url": "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.0.0/windows_10_cmake_Release_graphviz-install-14.0.0-win32.exe#/dl.7z",
-      "hash": "dd3ab2e017f29427eb8508d612c83cc71f3b4ea9328dc0b01748e2083a36addf"
+      "url": "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/14.1.2/windows_10_cmake_Release_graphviz-install-14.1.2-win32.exe#/dl.7z",
+      "hash": "ce401bd39179d6af50072dad5e54cb8f6454e4d5ff28102b394543486790a396"
     }
   },
   "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall.exe\" -Recurse -Force",
@@ -86,10 +86,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\graphviz.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/graphviz.json",
+    "sourceHash: e28c289179d1d3f9bb01be1a5d5ea3f59520f47c",
+    "sourceLastUpdated: 260124 08:30:07",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/graphviz.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\graphviz.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

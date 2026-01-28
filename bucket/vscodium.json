@@ -1,5 +1,5 @@
 {
-  "version": "1.104.16282",
+  "version": "1.108.10359",
   "description": "A community-driven, freely-licensed binary distribution of Microsoft???s editor VS Code.",
   "homepage": "https://vscodium.com/",
   "license": "MIT",
@@ -9,12 +9,12 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/VSCodium/vscodium/releases/download/1.104.16282/VSCodium-win32-x64-1.104.16282.zip",
-      "hash": "a9e19b58209e9bdbfd7dbf946695b622dbc57f65ab4ec8273fb5aa720ecfd5d5"
+      "url": "https://github.com/VSCodium/vscodium/releases/download/1.108.10359/VSCodium-win32-x64-1.108.10359.zip",
+      "hash": "e89aa1d780c5700183edeece4d603ad8c4ea8f5dcf90434d9f366fdc05acb1b8"
     },
     "arm64": {
-      "url": "https://github.com/VSCodium/vscodium/releases/download/1.104.16282/VSCodium-win32-arm64-1.104.16282.zip",
-      "hash": "3a0b3c0ab6633b8dd4240fa18b80568f167324ff77f0e89d193f9007273b1a9e"
+      "url": "https://github.com/VSCodium/vscodium/releases/download/1.108.10359/VSCodium-win32-arm64-1.108.10359.zip",
+      "hash": "4129e92458f1d8dee148da32053b7799504cbcfc1fa016b1776e32a588c107d5"
     }
   },
   "pre_install": [
@@ -87,10 +87,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vscodium.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vscodium.json",
+    "sourceHash: 869aeebb8486452336371d6de0f4e6d3798374af",
+    "sourceLastUpdated: 260115 04:32:35",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vscodium.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vscodium.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

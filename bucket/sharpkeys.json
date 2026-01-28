@@ -17,10 +17,11 @@
     "url": "https://github.com/randyrants/sharpkeys/releases/download/v$version/sharpkeys$cleanVersion.msi"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sharpkeys.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 27a3bedde03603139d69e7e11cb52640952bfaf8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sharpkeys.json",
+    "sourceLastUpdated: 220404 20:26:48",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sharpkeys.json"
   ]
 }

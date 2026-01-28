@@ -1,12 +1,12 @@
 {
-  "version": "2.1.4",
+  "version": "2.2.1",
   "description": "Docker-compatible CLI for containerd",
   "homepage": "https://github.com/containerd/nerdctl",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/containerd/nerdctl/releases/download/v2.1.4/nerdctl-2.1.4-windows-amd64.tar.gz",
-      "hash": "e93af99585371c1bd8ebc009d9f8388f4209d15a82b8775d8e2c44922e634759"
+      "url": "https://github.com/containerd/nerdctl/releases/download/v2.2.1/nerdctl-2.2.1-windows-amd64.tar.gz",
+      "hash": "243061402791f30f6bc0d90689855d478b7f0f501fa1687c0d7b1abecabedd34"
     }
   },
   "bin": "nerdctl.exe",
@@ -22,10 +22,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nerdctl.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nerdctl.json",
+    "sourceHash: d21ad06e872f4d5c7cb38c6280fbbabf204303c1",
+    "sourceLastUpdated: 251222 12:31:51",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nerdctl.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nerdctl.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

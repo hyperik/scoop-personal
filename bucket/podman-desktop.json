@@ -1,12 +1,12 @@
 {
-  "version": "1.21.0",
+  "version": "1.25.1",
   "description": "Manage Podman and other container engines from a single UI and tray",
   "homepage": "https://github.com/containers/podman-desktop",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/containers/podman-desktop/releases/download/v1.21.0/podman-desktop-1.21.0.exe#/dl.7z",
-      "hash": "4ab715cc8438d298a42f33d7878dcfe5772a605388c173ca616888799ac582a7",
+      "url": "https://github.com/containers/podman-desktop/releases/download/v1.25.1/podman-desktop-1.25.1.exe#/dl.7z",
+      "hash": "e5c4013a6a2d9980cf2958c951a311bf100876c379f8daaa615fef837bfd0111",
       "pre_install": [
         "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
@@ -38,10 +38,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\podman-desktop.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/podman-desktop.json",
+    "sourceHash: 4fca1264bc0f781c14a1624718478556c6f53123",
+    "sourceLastUpdated: 260126 20:30:08",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/podman-desktop.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\podman-desktop.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

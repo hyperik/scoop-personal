@@ -86,10 +86,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: fa42ef3b4e3aabc8868d944c754385ef6b814db2",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/prismlauncher.json",
+    "sourceLastUpdated: 250624 22:23:51",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher.json"
   ]
 }

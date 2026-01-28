@@ -1,12 +1,12 @@
 {
-  "version": "3.6.0",
+  "version": "4.1.1",
   "description": "Powerful markdown editor",
   "homepage": "https://www.zettlr.com",
   "license": "GPL-3.0-or-later",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Zettlr/Zettlr/releases/download/v3.6.0/Zettlr-3.6.0-x64.exe#/dl.7z",
-      "hash": "1db36800f7d96166af19185939b30f9b382db78792eb969e36101ca4f577a677",
+      "url": "https://github.com/Zettlr/Zettlr/releases/download/v4.1.1/Zettlr-4.1.1-x64.exe#/dl.7z",
+      "hash": "d57e84eb10d3bcc38e2c2e5d5aa034f2791326f5a2b95eee5709bdcf80e99855",
       "pre_install": [
         "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse"
@@ -33,10 +33,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zettlr.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zettlr.json",
+    "sourceHash: 610680eec76e53993587fdf58db337534fefbb4f",
+    "sourceLastUpdated: 260113 20:30:08",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zettlr.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zettlr.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -54,10 +54,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\openresty.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 6605c60037c1571211cb6fc6a9fc3a3ae5ad7f85",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/openresty.json",
+    "sourceLastUpdated: 250331 20:28:53",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\openresty.json"
   ]
 }

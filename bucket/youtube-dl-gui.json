@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\youtube-dl-gui.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 40328935028d18ef13b69cef6e9598cb8f93a64b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/youtube-dl-gui.json",
+    "sourceLastUpdated: 231027 05:08:08",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\youtube-dl-gui.json"
   ]
 }

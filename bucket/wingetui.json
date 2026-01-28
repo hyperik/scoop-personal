@@ -23,10 +23,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\wingetui.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 4862133a24cf49a2ce0e6ab539654162e1de2c0a",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/wingetui.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\wingetui.json"
   ]
 }

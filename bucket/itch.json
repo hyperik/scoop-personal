@@ -34,10 +34,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\itch.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 639117200af4b0c48a64ea6d5c2d3ff9daa1e66e",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/itch.json",
+    "sourceLastUpdated: 250528 20:39:33",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\itch.json"
   ]
 }

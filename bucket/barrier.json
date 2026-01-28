@@ -51,10 +51,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\barrier.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ada29295bbe8365d2f5b21f8dd32ff693f6abd90",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/barrier.json",
+    "sourceLastUpdated: 230623 03:33:52",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\barrier.json"
   ]
 }

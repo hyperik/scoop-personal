@@ -11,10 +11,11 @@
     "url": "https://github.com/na-ka-na/ExcelCompare/releases/download/$version/ExcelCompare-$version.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\ExcelCompare.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c4eb501cd0905088a203219949f967e6845b96dc",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/ExcelCompare.json",
+    "sourceLastUpdated: 230430 18:56:58",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:51",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\ExcelCompare.json"
   ]
 }

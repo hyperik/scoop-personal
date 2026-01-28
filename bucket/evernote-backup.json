@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\evernote-backup.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 937e8776b0ba734d45c56aeac17edb82aada632c",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/evernote-backup.json",
+    "sourceLastUpdated: 231027 14:03:23",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:53",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\evernote-backup.json"
   ]
 }

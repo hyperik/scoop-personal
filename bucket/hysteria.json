@@ -1,20 +1,20 @@
 {
-  "version": "2.6.3",
+  "version": "2.7.0",
   "description": "Network utility optimized for networks of poor quality (e.g. satellite connections, congested public Wi-Fi, connecting from China to servers abroad)",
   "homepage": "https://github.com/apernet/hysteria",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.6.3/hysteria-windows-amd64.exe#/hysteria.exe",
-      "hash": "df5b07a893eb8ad61c2dec2f283795746fa6f8d67f35006b86386060aaf10351"
+      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.7.0/hysteria-windows-amd64.exe#/hysteria.exe",
+      "hash": "fb87160f17a598868d5b9613ac191fc06dcf87aec61673f97d3bd121c87de562"
     },
     "32bit": {
-      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.6.3/hysteria-windows-386.exe#/hysteria.exe",
-      "hash": "b803bf8e469b188a29d80ec43da4876c7c3faa2918bdf1ceed10507ea7f9388d"
+      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.7.0/hysteria-windows-386.exe#/hysteria.exe",
+      "hash": "b52bf46c9d8a1624c2a83cc3c3098be5ac5d86a9ff14a0c4a600c900b03ec537"
     },
     "arm64": {
-      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.6.3/hysteria-windows-arm64.exe#/hysteria.exe",
-      "hash": "7c3ee144f5f5dae2d55ef3d102b54d807d620c05a4846713a766554efcf22415"
+      "url": "https://github.com/apernet/hysteria/releases/download/app/v2.7.0/hysteria-windows-arm64.exe#/hysteria.exe",
+      "hash": "2a88ed9417bc69a2e05e1101dc507ff8bc062f5020c23a1cf61afdbcc69bbdfd"
     }
   },
   "bin": "hysteria.exe",
@@ -39,10 +39,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\hysteria.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/hysteria.json",
+    "sourceHash: 748c4aa0390048baf112c1294fbeef0d82843715",
+    "sourceLastUpdated: 260112 04:40:16",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/hysteria.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\hysteria.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

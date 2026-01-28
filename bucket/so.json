@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\so.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: aa94cefe25719c1ddd08ff10bdcb82cfa514243a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/so.json",
+    "sourceLastUpdated: 251220 20:07:10",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\so.json"
   ]
 }

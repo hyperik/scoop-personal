@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\total-registry.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: bc0294d7614d703ae1de9b03eb502619c95bd703",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/total-registry.json",
+    "sourceLastUpdated: 250114 04:31:21",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\total-registry.json"
   ]
 }

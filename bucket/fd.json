@@ -30,10 +30,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 1f777e1f8d8f8fa178d068c8a6acc61f98acdf55",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fd.json",
+    "sourceLastUpdated: 260108 23:27:07",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fd.json"
   ]
 }

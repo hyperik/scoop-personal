@@ -16,10 +16,11 @@
     "url": "https://api.nuget.org/v3-flatcontainer/wix/$version/wix.$version.nupkg"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wixtoolset.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 16fad62c8ee7554dc822db7dfd71446e8c457a82",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wixtoolset.json",
+    "sourceLastUpdated: 250829 00:38:23",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wixtoolset.json"
   ]
 }

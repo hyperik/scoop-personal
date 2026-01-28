@@ -1,13 +1,13 @@
 {
-  "version": "1.64.100",
+  "version": "1.67.100",
   "description": "A modern and open IDE for cloud and desktop. Theia platform based. Formerly ???Theia Blueprint???.",
   "homepage": "https://theia-ide.org/#theiaide",
   "license": "EPL-2.0, GPL-2.0, MIT",
   "notes": "Settings are stored in '%APPDATA%\\Theia IDE', and are not persisted by Scoop.",
   "architecture": {
     "64bit": {
-      "url": "https://www.eclipse.org/downloads/download.php?mirror_id=1&file=/theia/ide/1.64.100/windows/TheiaIDESetup-1.64.100.exe#/dl.7z",
-      "hash": "sha512:b1ba1ab1f1c3d84d753cfef1c3a9435cee073f0fa232e41b13bbd785de59bac8dadfeaafde85c9a110beb06551c3d9a9d279398fa68cd9e8df0c915bd9731cfb"
+      "url": "https://www.eclipse.org/downloads/download.php?mirror_id=1&file=/theia/ide/1.67.100/windows/TheiaIDESetup-1.67.100.exe#/dl.7z",
+      "hash": "sha512:167087b87d61cbd8913a006864290fe74470746542d5ae70f1fe59c7013b01db87efe2c308d3911ad38fdbcbd88c105b488c457b019d2bf21adea5735fe40a98"
     }
   },
   "extract_dir": "$PLUGINSDIR",
@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\theia-ide.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/theia-ide.json",
+    "sourceHash: efe2316b224f0d7c32235621eabc75a3f38ce2d8",
+    "sourceLastUpdated: 251217 16:30:40",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/theia-ide.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\theia-ide.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

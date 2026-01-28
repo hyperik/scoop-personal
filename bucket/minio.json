@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\minio.json",
+    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceHash: b546ecec2ac280b4f2e2a8d9331130958f3d8e38",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/minio.json",
+    "sourceLastUpdated: 250907 20:27:18",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\minio.json"
   ]
 }

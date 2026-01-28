@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\zstd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: e92646cd2b6ee9068bb10e680c3eac2106541271",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/zstd.json",
+    "sourceLastUpdated: 250301 20:55:46",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\zstd.json"
   ]
 }

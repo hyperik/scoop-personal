@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\x264.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: df9ed1c17129d6946b02d9ad4f5e98ec8afaf917",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/x264.json",
+    "sourceLastUpdated: 250608 20:28:47",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\x264.json"
   ]
 }

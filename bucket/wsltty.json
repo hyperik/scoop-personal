@@ -40,10 +40,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsltty.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 156067fc6432433ffaf3eee18a1ebbe3ff38e276",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wsltty.json",
+    "sourceLastUpdated: 250830 16:28:57",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsltty.json"
   ]
 }

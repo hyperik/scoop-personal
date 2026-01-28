@@ -43,10 +43,11 @@
     "url": "https://raw.githubusercontent.com/amd64fox/SpotX/main/Install.ps1"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\spotx-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 8ee90e858ab1ffdc309b46b478eab6dcf305810e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/spotx-np.json",
+    "sourceLastUpdated: 230928 20:29:59",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\spotx-np.json"
   ]
 }

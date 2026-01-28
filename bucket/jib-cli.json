@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\jib-cli.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 07009c3ede930203cc81196dbfc524d1912fa28c",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/jib-cli.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\jib-cli.json"
   ]
 }

@@ -45,10 +45,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\chatall.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 9427a8a266a634a0a2d255d2501e22cdc7b80640",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/chatall.json",
+    "sourceLastUpdated: 250523 15:42:10",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\chatall.json"
   ]
 }

@@ -18,10 +18,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xenu.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b07125e7be0f6c34ddb91ae0fdbffbc97fcf9e04",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/xenu.json",
+    "sourceLastUpdated: 250920 16:57:43",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\xenu.json"
   ]
 }

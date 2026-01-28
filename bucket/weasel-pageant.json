@@ -16,10 +16,11 @@
     "extract_dir": "weasel-pageant-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weasel-pageant.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 47afa451260e4e125cbfddf80e9beff28e1688ef",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/weasel-pageant.json",
+    "sourceLastUpdated: 200829 22:40:23",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weasel-pageant.json"
   ]
 }

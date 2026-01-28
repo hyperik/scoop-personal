@@ -22,10 +22,11 @@
     "extract_dir": "xmlstarlet-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\xmlstarlet.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 088ce858aeaeb420507c59d0c76f07e20f983f11",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/xmlstarlet.json",
+    "sourceLastUpdated: 230309 18:33:29",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\xmlstarlet.json"
   ]
 }

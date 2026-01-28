@@ -20,10 +20,11 @@
     "url": "https://github.com/MattMcManis/Axiom/releases/download/v$version/Axiom.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\axiom.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b905866b0e908e98e120d60e04155829bfd913ed",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/axiom.json",
+    "sourceLastUpdated: 230423 14:24:16",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\axiom.json"
   ]
 }

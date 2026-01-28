@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\duplicacy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 6d3eccb087470b3de9344c92dbc59b06f8751b14",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/duplicacy.json",
+    "sourceLastUpdated: 250503 04:29:27",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\duplicacy.json"
   ]
 }

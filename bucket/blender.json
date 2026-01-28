@@ -43,10 +43,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\blender.json",
-    "sourceLastUpdated: 250922 17:07:00",
+    "sourceHash: a3da16e195f3a5db12fe68c7754c7ade208fc7b8",
+    "sourceLastUpdated: 251216 12:31:30",
     "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/blender.json",
-    "sourceLastChangeFound: 250922 17:07:00"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\blender.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

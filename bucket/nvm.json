@@ -51,10 +51,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nvm.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 640a7e56cd0976c986dcc7b5c864b2209ccbf1a5",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nvm.json",
+    "sourceLastUpdated: 250101 04:29:30",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nvm.json"
   ]
 }

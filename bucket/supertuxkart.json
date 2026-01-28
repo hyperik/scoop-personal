@@ -1,16 +1,16 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "description": "Arcade 3D racer with a variety of characters, tracks and modes",
   "homepage": "https://supertuxkart.net/Main_Page",
   "license": "GPL-3.0-or-later",
   "architecture": {
     "32bit": {
-      "url": "https://github.com/supertuxkart/stk-code/releases/download/1.4/SuperTuxKart-1.4-installer-i686.exe#/dl.7z",
-      "hash": "6048a159e6affb5fd880b14f6523efc19b9e19a3802e53f1226131d15678bde5"
+      "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-i686.exe#/dl.7z",
+      "hash": "9270bb5c5e8e798fdd436567ca3626f88949c54f20eacfd2dfde4daf81d9e899"
     },
     "64bit": {
-      "url": "https://github.com/supertuxkart/stk-code/releases/download/1.4/SuperTuxKart-1.4-installer-x86_64.exe#/dl.7z",
-      "hash": "907a85f34a5355898a9187125affe9b4cdecf8f108c7c3a6a9d9a8ce7950967d"
+      "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-x86_64.exe#/dl.7z",
+      "hash": "a1260ebb73dd9da13ec3e37f526f29e494b3b66c00c05fd70767b30a4497d95e"
     }
   },
   "bin": "supertuxkart.exe",
@@ -34,10 +34,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\supertuxkart.json",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json",
+    "sourceHash: 7748bfda75c3a08b77e1710f16a93084a4911d71",
+    "sourceLastUpdated: 221101 04:52:52",
     "sourceState: active",
-    "sourceLastUpdated: 240810 13:06:59",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json",
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\supertuxkart.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

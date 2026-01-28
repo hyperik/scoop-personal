@@ -15,10 +15,11 @@
     "url": "https://github.com/grisha765/scoop-search-directory/releases/download/$matchPrefixv$version/scoop-sd.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scoop-sd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 5d895484882eaf7adc697b288b0d758b609b915d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scoop-sd.json",
+    "sourceLastUpdated: 221009 21:42:25",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scoop-sd.json"
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "version": "4.5.70",
+  "version": "4.5.72",
   "description": "Duplicate file remover",
   "homepage": "https://www.alldup.info",
   "license": "Freeware",
   "url": "https://www.alldup.info/download/AllDupPortable.zip",
-  "hash": "sha1:0745d85da12e7374971178f67aacff1caf1f15b9",
+  "hash": "sha1:c7c638580321c5cc0bc690875e0e11a64569f0bc",
   "pre_install": "if (!(Test-Path \"$persist_dir\\config4.ini\")) { New-Item \"$dir\\config4.ini\" | Out-Null }",
   "bin": [
     [
@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\alldup.json",
+    "sourceLastChangeFound: 260127 17:01:53",
+    "sourceHash: b83c8995ffb00258cab1c9582f59a5361d8f9dd1",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/alldup.json",
+    "sourceLastUpdated: 251217 11:16:15",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\alldup.json"
   ]
 }

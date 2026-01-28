@@ -19,10 +19,11 @@
     "url": "https://developers.yubico.com/yubikey-personalization-gui/Releases/yubikey-personalization-gui-$version.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-personalization-gui.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 33033da82b29146f455892ebf8915b3962ff19ba",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yubikey-personalization-gui.json",
+    "sourceLastUpdated: 210409 21:07:49",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-personalization-gui.json"
   ]
 }

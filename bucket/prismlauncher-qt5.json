@@ -76,10 +76,11 @@
     "url": "https://github.com/PrismLauncher/PrismLauncher/releases/download/$version/PrismLauncher-Windows-MSVC-Legacy-Portable-$version.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher-qt5.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 5933deb54661da7b27be0899ee0e6e4ed590b8fe",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/prismlauncher-qt5.json",
+    "sourceLastUpdated: 250530 16:53:24",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher-qt5.json"
   ]
 }

@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\switchhosts.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c49f708dfb1db9880a157819dcce32b99c5631c9",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/switchhosts.json",
+    "sourceLastUpdated: 240807 20:29:04",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\switchhosts.json"
   ]
 }

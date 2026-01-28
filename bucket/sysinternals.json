@@ -1,5 +1,5 @@
 {
-  "version": "20250916",
+  "version": "20251216",
   "description": "A set of utilities to manage, diagnose, troubleshoot, and monitor a Windows environment.",
   "homepage": "https://docs.microsoft.com/en-us/sysinternals/",
   "license": {
@@ -7,7 +7,7 @@
     "url": "https://docs.microsoft.com/en-us/sysinternals/license-terms"
   },
   "url": "https://download.sysinternals.com/files/SysinternalsSuite.zip",
-  "hash": "c3f9713a6585240447fa866c36b5dc612d6ad9e5261255433b2696c6dee900b0",
+  "hash": "a0ece4c52ee9c71c3c02038245d3e0b3c6150fff0e26bd7bdf882fc7ee54cf69",
   "checkver": {
     "script": [
       "try {",
@@ -618,10 +618,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sysinternals.json",
-    "sourceLastUpdated: 250922 17:50:39",
+    "sourceHash: 4876643dfb10443bccce3a0e6049799b92cc6a9b",
+    "sourceLastUpdated: 251217 00:41:24",
     "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sysinternals.json",
-    "sourceLastChangeFound: 250922 17:50:39"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sysinternals.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

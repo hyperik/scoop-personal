@@ -23,10 +23,11 @@
     "url": "http://www.codesector.com/files/teracopy.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\teracopy-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 973b01f8d6a10b9868df29d39667d1cc2070438b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/teracopy-np.json",
+    "sourceLastUpdated: 231205 11:21:19",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\teracopy-np.json"
   ]
 }

@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\control-uwp.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 99b288502edcdc1c04a422a9cafd4c4206619423",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/control-uwp.json",
+    "sourceLastUpdated: 240315 17:58:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:52",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\control-uwp.json"
   ]
 }

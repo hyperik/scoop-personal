@@ -1,10 +1,10 @@
 {
-  "version": "4.12.6",
+  "version": "5.0.7",
   "description": "Modern model editor for boxy models and pixel art textures.",
   "homepage": "https://blockbench.net/",
   "license": "GPL-3.0-or-later",
-  "url": "https://github.com/JannisX11/blockbench/releases/download/v4.12.6/Blockbench_4.12.6.exe#/dl.7z",
-  "hash": "sha512:e304b0edbd9b254e98cfc8b5160617f21ace49a6cae11ff8beec138f6ec49f6746fd0ffb0a613d9f2b9b9b49649023ad51bab2d57dab951316b494d9f787a067",
+  "url": "https://github.com/JannisX11/blockbench/releases/download/v5.0.7/Blockbench_5.0.7.exe#/dl.7z",
+  "hash": "sha512:d1083f12e84224205209641d58dbf78d5077e603cb1d605dd68dde63f5a48fc4ece2daa15ee820b2515133d2a2a265eeb16b4dbf99250fa1b265b208891c712c",
   "architecture": {
     "32bit": {
       "installer": {
@@ -40,10 +40,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\blockbench.json",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/blockbench.json",
+    "sourceHash: 16cc3ccc5d6a0d24d12a0c04982a7340c2242c38",
+    "sourceLastUpdated: 250805 20:29:29",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/blockbench.json",
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\blockbench.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

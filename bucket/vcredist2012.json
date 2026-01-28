@@ -25,10 +25,11 @@
     "Invoke-ExternalCommand -FilePath \"$dir\\vcredist_x86.exe\" -ArgumentList '/fo', '/quiet', '/norestart' -ContinueExitCodes $ec -RunAs | Out-Null"
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2012.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: e202b7b84c270c53d5ba6074f57169536f208bfe",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist2012.json",
+    "sourceLastUpdated: 230527 18:47:43",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2012.json"
   ]
 }

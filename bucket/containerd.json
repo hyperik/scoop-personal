@@ -1,12 +1,12 @@
 {
-  "version": "2.1.4",
+  "version": "2.2.1",
   "description": "An open and reliable container runtime",
   "homepage": "https://containerd.io",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/containerd/containerd/releases/download/v2.1.4/containerd-2.1.4-windows-amd64.tar.gz",
-      "hash": "2c50aeb1e6d9ad513e986408ea066919318f14271c5a1b952f118878ecfa6a56"
+      "url": "https://github.com/containerd/containerd/releases/download/v2.2.1/containerd-2.2.1-windows-amd64.tar.gz",
+      "hash": "4c68fd5042c8b594f9d2d479b4eca75ca8164496122d9da1190fabf0c27e4bb3"
     }
   },
   "bin": [
@@ -33,10 +33,11 @@
     "or `sc start containerd` in Cmd."
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\containerd.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/containerd.json",
+    "sourceHash: deac5c4af5534c910c36436a6c8a0ef4266b3e1a",
+    "sourceLastUpdated: 251218 20:29:59",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/containerd.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\containerd.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

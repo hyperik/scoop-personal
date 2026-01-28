@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ttyd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 7dfa1daa7373b2b73692ebcb641a5d2802c103e9",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ttyd.json",
+    "sourceLastUpdated: 240330 05:06:43",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ttyd.json"
   ]
 }

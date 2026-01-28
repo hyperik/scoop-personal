@@ -1,45 +1,46 @@
 {
-    "version": "1.13.3",
-    "description": "Create and manage infrastructure as code using simple declarative configuration files.",
-    "homepage": "https://www.terraform.io",
-    "license": "BUSL-1.1",
+  "version": "1.14.4",
+  "description": "Create and manage infrastructure as code using simple declarative configuration files.",
+  "homepage": "https://www.terraform.io",
+  "license": "BUSL-1.1",
+  "architecture": {
+    "64bit": {
+      "url": "https://releases.hashicorp.com/terraform/1.14.4/terraform_1.14.4_windows_amd64.zip",
+      "hash": "0d20cbf5de662677ecf671d28f4aef95c21ec966a89fd98539b24e457710759f",
+      "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_amd64\" | Out-Null"
+    },
+    "32bit": {
+      "url": "https://releases.hashicorp.com/terraform/1.14.4/terraform_1.14.4_windows_386.zip",
+      "hash": "921b0175af6e345a64921a0ba903ced3904e8567fe21603d67deb533b4906c42",
+      "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_386\" | Out-Null"
+    }
+  },
+  "bin": "terraform.exe",
+  "checkver": {
+    "url": "https://releases.hashicorp.com/terraform/",
+    "regex": "terraform_([\\d.]+)</a>"
+  },
+  "autoupdate": {
     "architecture": {
-        "64bit": {
-            "url": "https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_windows_amd64.zip",
-            "hash": "e75a97238f2dc43ab90fca1af554c18f995b16a4b06a4ec27bcdbab52c1d2dc8",
-            "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_amd64\" | Out-Null"
-        },
-        "32bit": {
-            "url": "https://releases.hashicorp.com/terraform/1.13.3/terraform_1.13.3_windows_386.zip",
-            "hash": "9ea6b7a0e32e1236e13f0f2bfd4263bb1935e8c16b87f1ec6130ea6492580e4d",
-            "pre_install": "ensure \"$env:APPDATA\\terraform.d\\plugins\\windows_386\" | Out-Null"
-        }
+      "64bit": {
+        "url": "https://releases.hashicorp.com/terraform/$version/terraform_$version_windows_amd64.zip"
+      },
+      "32bit": {
+        "url": "https://releases.hashicorp.com/terraform/$version/terraform_$version_windows_386.zip"
+      }
     },
-    "bin": "terraform.exe",
-    "checkver": {
-        "url": "https://releases.hashicorp.com/terraform/",
-        "regex": "terraform_([\\d.]+)</a>"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://releases.hashicorp.com/terraform/$version/terraform_$version_windows_amd64.zip"
-            },
-            "32bit": {
-                "url": "https://releases.hashicorp.com/terraform/$version/terraform_$version_windows_386.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/terraform_$version_SHA256SUMS"
-        }
-    },
-    "##": [
-        "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terraform.json",
-        "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terraform.json",
-        "sourceState: active",
-        "sourceLastUpdated: 250922 15:57:13",
-        "sourceLastChangeFound: 250922 15:57:13",
-        "sourceDelayDays: 7",
-        "sourceUpdateMinimumDays: 7"
-    ]
+    "hash": {
+      "url": "$baseurl/terraform_$version_SHA256SUMS"
+    }
+  },
+  "##": [
+    "sourceLastUpdated: 251217 12:32:02",
+    "sourceHash: edf2279f952ce8b8efdcca48adc76e5611a517b3",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terraform.json",
+    "sourceState: active",
+    "sourceLastChangeFound: 260128 15:51:35",
+    "sourceUpdateMinimumDays: 7",
+    "sourceDelayDays: 7",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terraform.json"
+  ]
 }

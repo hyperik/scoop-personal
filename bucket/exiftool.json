@@ -1,18 +1,18 @@
 {
-  "version": "13.37",
+  "version": "13.47",
   "description": "A command-line application for reading, writing and editing meta information in a wide variety of files.",
   "homepage": "https://exiftool.org",
   "license": "GPL-1.0-or-later|Artistic-1.0-Perl",
   "architecture": {
     "64bit": {
-      "url": "https://exiftool.org/exiftool-13.37_64.zip",
-      "hash": "680c0e49cea05bdea52b0734deac8e8841499f5abc88e93b8c5182d844c4740a",
-      "extract_dir": "exiftool-13.37_64"
+      "url": "https://exiftool.org/exiftool-13.47_64.zip",
+      "hash": "a610a3d1a82c658a29751cb7642da84b35cf175a7c801a6e05f0ce610fdd3021",
+      "extract_dir": "exiftool-13.47_64"
     },
     "32bit": {
-      "url": "https://exiftool.org/exiftool-13.37_32.zip",
-      "hash": "193ae22f310243e4e43567c04a4eccd215823a13642d2918c10fdc28fc7828cd",
-      "extract_dir": "exiftool-13.37_32"
+      "url": "https://exiftool.org/exiftool-13.47_32.zip",
+      "hash": "d0900fea74aacd72fcac8cda6b6445428f67e1814fb5ff3a2994425fa5c859bb",
+      "extract_dir": "exiftool-13.47_32"
     }
   },
   "pre_install": "Copy-Item \"$dir\\exiftool(-k).exe\" \"$dir\\exiftool.exe\"",
@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\exiftool.json",
-    "sourceLastUpdated: 250922 17:50:39",
+    "sourceHash: fb6e0b9db68f5874a0d4fef17eb9b94fd01edc6c",
+    "sourceLastUpdated: 260125 20:29:49",
     "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/exiftool.json",
-    "sourceLastChangeFound: 250922 17:50:39"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\exiftool.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

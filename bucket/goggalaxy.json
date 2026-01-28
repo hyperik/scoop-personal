@@ -1,13 +1,13 @@
 {
-  "version": "2.0.88.15",
+  "version": "2.0.94.27",
   "description": "GOG Galaxy 2.0. Gaming Client designed for a convenient purchasing, playing and updating of mostly DRM-free games",
   "homepage": "https://www.gog.com/galaxy",
   "license": {
     "identifier": "Proprietary",
     "url": "https://support.gog.com/hc/en-us/articles/212632089"
   },
-  "url": "https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_2.0.88.15.exe",
-  "hash": "5602f89a33b1e09aa911c0d795db695f7641501b1a74b8c4740c539aa942dbb8",
+  "url": "https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_2.0.94.27.exe",
+  "hash": "198450252881aff1ef8ab1f0be651a41cf5da843bc472296a66bdb9ffd84ef2c",
   "installer": {
     "args": [
       "/VERYSILENT",
@@ -48,10 +48,11 @@
     "url": "https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_$version.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\goggalaxy.json",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/goggalaxy.json",
+    "sourceHash: 34a1fd3281cd252eb534cc235e3cfbeee5128235",
+    "sourceLastUpdated: 250825 16:30:02",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/goggalaxy.json",
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\goggalaxy.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

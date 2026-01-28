@@ -1,12 +1,12 @@
 {
-  "version": "24.0.1",
+  "version": "25.0.0",
   "description": "A visual, drag n drop, layout tool for designing JavaFX application user interfaces.",
   "homepage": "https://gluonhq.com/products/scene-builder/",
   "license": "BSD-3-Clause",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/gluonhq/scenebuilder/releases/download/24.0.1/SceneBuilder-24.0.1.msi",
-      "hash": "ae6ad965ea5077b2bcc8efa46188e39baa544e637051a12442498775ef2efd13"
+      "url": "https://github.com/gluonhq/scenebuilder/releases/download/25.0.0/SceneBuilder-25.0.0.msi",
+      "hash": "6894520ecf7629b3b38386d41c8bcefbb5748069e8d3594e18663cf4e35d3bbb"
     }
   },
   "extract_dir": "SceneBuilder",
@@ -31,10 +31,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scene-builder.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scene-builder.json",
+    "sourceHash: 0cab486279ecea43b86fd9dec2cfb3533cd447e2",
+    "sourceLastUpdated: 250925 08:30:11",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/scene-builder.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\scene-builder.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

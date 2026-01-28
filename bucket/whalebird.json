@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whalebird.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: f1ced1b8562c03bfef84c9cbdb9bb59cc034c19e",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/whalebird.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whalebird.json"
   ]
 }

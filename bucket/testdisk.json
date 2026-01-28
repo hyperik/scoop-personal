@@ -45,10 +45,11 @@
     "extract_dir": "testdisk-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\testdisk.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 02056b2a3567b1edd8a480b62c767f25b5f43c07",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/testdisk.json",
+    "sourceLastUpdated: 240222 20:27:39",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\testdisk.json"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "version": "3.8",
+  "version": "3.8.3",
   "description": "Universal markup converter",
   "homepage": "https://pandoc.org",
   "license": "GPL-2.0-or-later",
@@ -8,11 +8,11 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/jgm/pandoc/releases/download/3.8/pandoc-3.8-windows-x86_64.zip",
-      "hash": "3c72ee9966d2a35ebb59873967e496f5fe745c15cf9e825947dc745d19b36bad"
+      "url": "https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-windows-x86_64.zip",
+      "hash": "a77c14078a5c4c6e396d5f5c03f4849eff4a858414bb9e69560bb35528cbf57a"
     }
   },
-  "extract_dir": "pandoc-3.8",
+  "extract_dir": "pandoc-3.8.3",
   "bin": "pandoc.exe",
   "checkver": {
     "github": "https://github.com/jgm/pandoc"
@@ -29,10 +29,11 @@
     "extract_dir": "pandoc-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\pandoc.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/pandoc.json",
+    "sourceHash: 721535fc176dabf32f6a807cdcc6803061a23853",
+    "sourceLastUpdated: 251201 12:32:14",
     "sourceState: active",
-    "sourceLastUpdated: 250922 16:32:00",
-    "sourceLastChangeFound: 250922 16:32:00"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/pandoc.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\pandoc.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

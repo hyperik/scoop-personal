@@ -16,10 +16,11 @@
     "url": "http://aezay.dk/aezay/ssdz/$matchName"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ssd-z.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c614d3e41a882554c13165d4c18414e90156caff",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ssd-z.json",
+    "sourceLastUpdated: 201022 15:29:44",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ssd-z.json"
   ]
 }

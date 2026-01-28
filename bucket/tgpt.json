@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\tgpt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 710cb52414435d4642547b9666b63e6aa8ef698d",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/tgpt.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\tgpt.json"
   ]
 }

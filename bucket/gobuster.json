@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gobuster.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: f95418b7a0fefd8102c54858fa70ad6ccdbe566d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gobuster.json",
+    "sourceLastUpdated: 250904 08:29:51",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gobuster.json"
   ]
 }

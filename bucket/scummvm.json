@@ -57,10 +57,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\scummvm.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b272d77661413a7a4ed51cc556f53c1735ebbfbf",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/scummvm.json",
+    "sourceLastUpdated: 250525 16:29:11",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\scummvm.json"
   ]
 }

@@ -26,10 +26,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boringproxy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2f19093eff3b414fd143003293114ca022ce751a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/boringproxy.json",
+    "sourceLastUpdated: 230105 00:33:16",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boringproxy.json"
   ]
 }

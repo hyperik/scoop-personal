@@ -120,10 +120,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tortoisesvn.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 87e9758870c237fc03bc2ee9497074252d57f3b1",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tortoisesvn.json",
+    "sourceLastUpdated: 241209 20:32:27",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tortoisesvn.json"
   ]
 }

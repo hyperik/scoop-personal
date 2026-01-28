@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\erdtree.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 375701a03d28ba9ccb7e53a84420952cc2c26329",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/erdtree.json",
+    "sourceLastUpdated: 230702 08:26:57",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\erdtree.json"
   ]
 }

@@ -1,18 +1,19 @@
 {
   "##": [
     "Duplicate of the gnupg package",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gpg.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gpg.json",
+    "sourceHash: 308b974f2c34bd56b0ef3f24c4a65aafb86648b9",
+    "sourceLastUpdated: 251230 16:30:32",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gpg.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gpg.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ],
-  "version": "2.4.8",
+  "version": "2.5.17",
   "description": "A complete and free implementation of the OpenPGP standard.",
   "homepage": "https://www.gnupg.org/",
   "license": "GPL-3.0-or-later",
-  "url": "https://www.gnupg.org/ftp/gcrypt/binary/gnupg-w32-2.4.8_20250514.exe#/dl.7z",
-  "hash": "sha1:c5b3e12f2cfb8771d4f6e089039d84844f6cba70",
+  "url": "https://www.gnupg.org/ftp/gcrypt/binary/gnupg-w32-2.5.17_20260127.exe#/dl.7z",
+  "hash": "sha1:31ac31fe8f5b4f3e3ae8e5e6a70c967a59f66e63",
   "installer": {
     "script": [
       "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse",

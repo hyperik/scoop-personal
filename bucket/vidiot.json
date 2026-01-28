@@ -38,10 +38,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vidiot.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2c30c60bbff4f5a67d497f0a8e810de140d87633",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vidiot.json",
+    "sourceLastUpdated: 250818 20:29:35",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:14",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vidiot.json"
   ]
 }

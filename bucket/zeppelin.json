@@ -29,10 +29,11 @@
     "extract_dir": "zeppelin-$version-bin-all"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zeppelin.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 41ac1e5a796cdb9b36d3129b55f50ac982f8f49f",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zeppelin.json",
+    "sourceLastUpdated: 250208 16:32:04",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zeppelin.json"
   ]
 }

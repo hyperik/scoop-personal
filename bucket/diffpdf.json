@@ -13,10 +13,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\diffpdf.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 1816f651ce01f064b66fcb6fc9ed0c2b0543c1d8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/diffpdf.json",
+    "sourceLastUpdated: 250713 23:21:07",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\diffpdf.json"
   ]
 }

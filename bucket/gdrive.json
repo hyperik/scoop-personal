@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gdrive.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c77e225adf663448da7036e04cc9a59245dfe51b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gdrive.json",
+    "sourceLastUpdated: 240508 02:18:19",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gdrive.json"
   ]
 }

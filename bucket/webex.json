@@ -1,5 +1,5 @@
 {
-  "version": "45.8.0.32875",
+  "version": "46.1.0.33913",
   "description": "Video and audio conferencing",
   "homepage": "https://www.webex.com/",
   "license": {
@@ -38,10 +38,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\webex.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/webex.json",
+    "sourceHash: b0ce5a62bcbbaa7ff05ce02b076076e0c3f754a2",
+    "sourceLastUpdated: 260107 20:30:47",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/webex.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\webex.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

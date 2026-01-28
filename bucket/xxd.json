@@ -22,10 +22,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\xxd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 404c3b261ec945a4087231ead2793406e13f7a69",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/xxd.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\xxd.json"
   ]
 }

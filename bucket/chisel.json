@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\chisel.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/chisel.json",
+    "sourceHash: 682407bbdbf4fc131768e598be322ec6281aa586",
+    "sourceLastUpdated: 250926 07:48:22",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/chisel.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\chisel.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

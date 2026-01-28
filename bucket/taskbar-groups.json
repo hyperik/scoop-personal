@@ -33,10 +33,11 @@
     "url": "https://github.com/tjackenpacken/taskbar-groups/releases/download/v$version/TaskbarGroups.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\taskbar-groups.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 03b07ccebc56febffb51b0bb26e5c4356f9c43f5",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/taskbar-groups.json",
+    "sourceLastUpdated: 230901 21:30:45",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\taskbar-groups.json"
   ]
 }

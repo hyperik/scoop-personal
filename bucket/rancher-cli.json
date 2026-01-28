@@ -1,19 +1,19 @@
 {
-  "version": "2.12.1",
+  "version": "2.13.1",
   "description": "Unified tool for interacting with Rancher Server",
   "homepage": "https://github.com/rancher/cli",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/rancher/cli/releases/download/v2.12.1/rancher-windows-amd64-v2.12.1.zip",
-      "hash": "664732138ebade28dea4ee2264f2a3fcec2965e18712015b23696d487ec6e6e6"
+      "url": "https://github.com/rancher/cli/releases/download/v2.13.1/rancher-windows-amd64-v2.13.1.zip",
+      "hash": "7b6ccc3d549e839223f91008c7845d7ce63fb088dc3d210973e3e676c942700c"
     },
     "32bit": {
-      "url": "https://github.com/rancher/cli/releases/download/v2.12.1/rancher-windows-386-v2.12.1.zip",
-      "hash": "80a50bd5dc8c59a21d6780f9d7894346f378f99d78a13a77757a39c013b3a2e9"
+      "url": "https://github.com/rancher/cli/releases/download/v2.13.1/rancher-windows-386-v2.13.1.zip",
+      "hash": "5c3a985a51cbe4517a6077d690191207e953bf184fb5d62affb79b6c12f19c1f"
     }
   },
-  "extract_dir": "rancher-v2.12.1",
+  "extract_dir": "rancher-v2.13.1",
   "bin": "rancher.exe",
   "checkver": "github",
   "autoupdate": {
@@ -31,10 +31,11 @@
     "extract_dir": "rancher-v$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rancher-cli.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rancher-cli.json",
+    "sourceHash: 947e83d49df63dddce340a373452d6a8f5a03e64",
+    "sourceLastUpdated: 251219 12:31:46",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:36",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rancher-cli.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rancher-cli.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

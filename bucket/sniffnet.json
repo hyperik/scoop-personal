@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sniffnet.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sniffnet.json",
+    "sourceHash: c703e292453cd4855a8a3e31bc75965798d6780a",
+    "sourceLastUpdated: 251105 03:56:06",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sniffnet.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sniffnet.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

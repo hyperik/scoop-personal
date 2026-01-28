@@ -26,10 +26,11 @@
     "url": "http://download.skype.com/s4l/download/win/Skype-$version.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\skype.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: e6e7a6763dd118c548bc8bfe8ddd4084538959b2",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/skype.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\skype.json"
   ]
 }

@@ -1,18 +1,17 @@
 {
-  "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\amass.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/amass.json",
-    "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
-  ],
+  "version": "4.2.0",
+  "description": "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
+  "homepage": "https://github.com/OWASP/Amass",
+  "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "extract_dir": "amass_windows_amd64",
+      "url": "https://github.com/OWASP/Amass/releases/download/v4.2.0/amass_windows_amd64.zip",
       "hash": "509e9cb4861e4e01742bd96d7a380c47dd4dae47a7a6b18cd474763041c010b1",
-      "url": "https://github.com/OWASP/Amass/releases/download/v4.2.0/amass_windows_amd64.zip"
+      "extract_dir": "amass_windows_amd64"
     }
   },
+  "bin": "amass.exe",
+  "checkver": "github",
   "autoupdate": {
     "architecture": {
       "64bit": {
@@ -23,10 +22,12 @@
       "url": "https://github.com/OWASP/Amass/releases/download/v$version/amass_checksums.txt"
     }
   },
-  "bin": "amass.exe",
-  "checkver": "github",
-  "description": "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
-  "homepage": "https://github.com/OWASP/Amass",
-  "license": "Apache-2.0",
-  "version": "4.2.0"
+  "##": [
+    "sourceLastChangeFound: 260127 17:01:53",
+    "sourceHash: 17f2bc051a851a54ef3806ff3ff70ca190ca2107",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/amass.json",
+    "sourceLastUpdated: 230911 00:32:57",
+    "sourceState: active",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\amass.json"
+  ]
 }

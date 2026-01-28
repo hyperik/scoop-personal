@@ -45,10 +45,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\octave.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/octave.json",
+    "sourceHash: 63721997e44b2b4186ceb96690036d93ea412573",
+    "sourceLastUpdated: 251011 12:29:23",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/octave.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\octave.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

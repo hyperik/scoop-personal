@@ -13,10 +13,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winauth.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 3e302a5ae5420eb88bbf19a15956179083882879",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winauth.json",
+    "sourceLastUpdated: 250616 22:19:16",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winauth.json"
   ]
 }

@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sentinel.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 5e2756d02014427a2a987707120e83448cc7ddb8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sentinel.json",
+    "sourceLastUpdated: 250513 00:40:29",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sentinel.json"
   ]
 }

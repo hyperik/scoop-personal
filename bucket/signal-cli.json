@@ -1,14 +1,14 @@
 {
-  "version": "0.13.19",
+  "version": "0.13.23",
   "description": "A cross-platform encrypted messaging service (command line/dbus version).",
   "homepage": "https://github.com/AsamK/signal-cli",
   "license": "GPL-3.0-only",
   "suggest": {
     "JDK": "java/openjdk"
   },
-  "url": "https://github.com/AsamK/signal-cli/releases/download/v0.13.19/signal-cli-0.13.19.tar.gz",
-  "hash": "faf3bfe9b9f9e35e8776a33dc76b4943abf828ff617315f51b7d6270139c079f",
-  "extract_dir": "signal-cli-0.13.19",
+  "url": "https://github.com/AsamK/signal-cli/releases/download/v0.13.23/signal-cli-0.13.23.tar.gz",
+  "hash": "4f30a3353ca3eaf4e80266ab422776e1d7a38b92b3cb2acb7e11dbb41f917223",
+  "extract_dir": "signal-cli-0.13.23",
   "bin": "bin\\signal-cli.bat",
   "checkver": "github",
   "autoupdate": {
@@ -16,10 +16,11 @@
     "extract_dir": "signal-cli-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\signal-cli.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/signal-cli.json",
+    "sourceHash: 25712a0cce315cf2d57b50928f727d25e904d18e",
+    "sourceLastUpdated: 260124 16:31:22",
     "sourceState: active",
-    "sourceLastUpdated: 250922 16:32:00",
-    "sourceLastChangeFound: 250922 16:32:00"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/signal-cli.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\signal-cli.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

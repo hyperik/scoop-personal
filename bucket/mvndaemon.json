@@ -37,10 +37,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\mvndaemon.json",
+    "sourceLastChangeFound: 250922 16:32:00",
+    "sourceHash: 22e70105bb14eeb8bc344980fe8ab1cad6c8a0d5",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/mvndaemon.json",
+    "sourceLastUpdated: 250921 00:40:50",
     "sourceState: active",
-    "sourceLastUpdated: 250922 16:32:00",
-    "sourceLastChangeFound: 250922 16:32:00"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\mvndaemon.json"
   ]
 }

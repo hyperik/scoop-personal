@@ -1,13 +1,13 @@
 {
-  "version": "8.2.1",
+  "version": "8.4.0",
   "description": "In-memory data structure store, used as a database, cache and message broker",
   "homepage": "https://redis.io",
   "license": "BSD-3-Clause",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/redis-windows/redis-windows/releases/download/8.2.1/Redis-8.2.1-Windows-x64-msys2.zip",
-      "hash": "856c2a44ca8f5d0ee52bd6abeaf844ab4434ad1186cf19793a55e81c8dbc791e",
-      "extract_dir": "Redis-8.2.1-Windows-x64-msys2"
+      "url": "https://github.com/redis-windows/redis-windows/releases/download/8.4.0/Redis-8.4.0-Windows-x64-msys2.zip",
+      "hash": "8a751b5cc12deed06457d35f8e7b9e4bbfa00145ee8474a19fcd480a2fd98cd5",
+      "extract_dir": "Redis-8.4.0-Windows-x64-msys2"
     }
   },
   "bin": [
@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\redis.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/redis.json",
+    "sourceHash: 13d73db66526535bd6cc121c01ec05a7366b8160",
+    "sourceLastUpdated: 251121 08:30:22",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/redis.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\redis.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

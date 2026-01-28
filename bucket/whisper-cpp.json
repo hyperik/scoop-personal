@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
+    "sourceHash: 043a7fdd3914452289403125cb832ab90716db79",
+    "sourceLastUpdated: 260117 14:59:09",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

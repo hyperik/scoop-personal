@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vscli.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b04bbf09ac4ad8cb2a8bbe3e65ac9f1b9d213246",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/vscli.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\vscli.json"
   ]
 }

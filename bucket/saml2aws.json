@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\saml2aws.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 8d8b0f7e203bc78b94332b653a530cc5573a00b6",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/saml2aws.json",
+    "sourceLastUpdated: 250314 00:36:32",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\saml2aws.json"
   ]
 }

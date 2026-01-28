@@ -1,5 +1,5 @@
 {
-  "version": "2024.10-1",
+  "version": "2025.12-2",
   "description": "The most popular Python distribution for data science.",
   "homepage": "https://www.anaconda.com/",
   "license": "BSD-3-Clause",
@@ -12,8 +12,8 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Windows-x86_64.exe",
-      "hash": "c1cb433e23997c84ade4ff7241b61b2f9b10a616c230da34e641e9c96dada49d"
+      "url": "https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe",
+      "hash": "2e0b8e40ec7600793f116250f5c1775c866833bac32d184ad575ecc0d360a88f"
     }
   },
   "pre_install": "if ($dir -match ' ') { error 'The installation directory cannot include a space'; break}",
@@ -43,25 +43,26 @@
     ]
   },
   "checkver": {
-    "url": "https://docs.anaconda.com/free/anaconda/hashes/",
-    "regex": "Anaconda3-([\\d.-]+)-Windows"
+    "url": "https://repo.anaconda.com/archive/",
+    "regex": ">Anaconda3-([\\d.-]+)-Windows"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
         "url": "https://repo.anaconda.com/archive/Anaconda3-$version-Windows-x86_64.exe",
         "hash": {
-          "url": "https://docs.anaconda.com/free/anaconda/hashes/",
-          "regex": "(?sm)$basename.*?$sha256"
+          "url": "https://repo.anaconda.com/archive/",
+          "regex": "(?s)$basename.*?$sha256<"
         }
       }
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\anaconda3.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/anaconda3.json",
+    "sourceHash: 6c245746a825e0bfab8ddf7f02a5076c2a41fb9f",
+    "sourceLastUpdated: 260114 16:30:25",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/anaconda3.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\anaconda3.json",
+    "sourceLastChangeFound: 260128 15:47:47"
   ]
 }

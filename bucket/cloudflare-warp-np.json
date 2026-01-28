@@ -40,10 +40,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\cloudflare-warp-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 29cd7ff3f2f01f8924216518fc31922248b39dd2",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/cloudflare-warp-np.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:52",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\cloudflare-warp-np.json"
   ]
 }

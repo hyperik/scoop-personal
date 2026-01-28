@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\devtunnel.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: c55b6ed4e39ce1c91f6c95d6bf0907a3467da8d2",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/devtunnel.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:53",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\devtunnel.json"
   ]
 }

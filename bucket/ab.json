@@ -31,10 +31,11 @@
     "extract_dir": "Apache$majorVersion$minorVersion"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ab.json",
+    "sourceLastChangeFound: 250922 15:47:27",
+    "sourceHash: 31fe63a3c2a64fea80fbb2d5833e2d00ecbc3779",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ab.json",
+    "sourceLastUpdated: 250711 08:30:01",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:47:27",
-    "sourceLastChangeFound: 250922 15:47:27"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ab.json"
   ]
 }

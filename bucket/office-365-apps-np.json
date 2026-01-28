@@ -1,5 +1,5 @@
 {
-  "version": "16.0.19231.20072",
+  "version": "16.0.19628.20046",
   "description": "Family of client software, server software and services developed by Microsoft.",
   "homepage": "https://www.office.com/",
   "license": {
@@ -7,8 +7,8 @@
     "url": "https://www.microsoft.com/licensing/terms/productoffering/OfficeDesktopApplicationsWindows/MCA"
   },
   "depends": "7zip19.00-helper",
-  "url": "https://download.microsoft.com/download/6c1eeb25-cf8b-41d9-8d0d-cc1dbc032140/officedeploymenttool_19231-20072.exe#/dl.7z_",
-  "hash": "ff4bd2ea4fbf1e1e377758ae5d14dac832124cc80a96cc478b27bad9f94d1523",
+  "url": "https://download.microsoft.com/download/6c1eeb25-cf8b-41d9-8d0d-cc1dbc032140/officedeploymenttool_19628-20046.exe#/dl.7z_",
+  "hash": "5ddd5e6dd7fe266c56d5eb9d543b454dc7af28a5b33caa8c1ac8d6e92c038653",
   "pre_install": [
     "$scriptdir = \"$bucketsdir\\nonportable\\scripts\"",
     "if ($architecture -eq '64bit') {",
@@ -50,10 +50,11 @@
     "url": "https://download.microsoft.com/download/$matchPath$matchFilename#/dl.7z_"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\office-365-apps-np.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json",
+    "sourceHash: 83c28dfe5eac879b182f7ebd6078a9750a581ac7",
+    "sourceLastUpdated: 260126 20:45:48",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json",
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\office-365-apps-np.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

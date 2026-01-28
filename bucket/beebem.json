@@ -17,10 +17,11 @@
     "url": "http://www.mkw.me.uk/beebem/BeebEm$cleanVersion.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\beebem.json",
+    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceHash: 889ee7825798f2b2e822e2681f7d3e7ca50ec4e0",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/beebem.json",
+    "sourceLastUpdated: 250830 16:28:44",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\beebem.json"
   ]
 }

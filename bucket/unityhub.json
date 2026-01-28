@@ -48,10 +48,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\unityhub.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0a21a44feb54e1fbbad29c12efecd132754fc2ae",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/unityhub.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\unityhub.json"
   ]
 }

@@ -20,10 +20,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\nitropy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: e6b97c358b7de12c65abf4884d93032d87befd56",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/nitropy.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\nitropy.json"
   ]
 }

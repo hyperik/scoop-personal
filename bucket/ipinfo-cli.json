@@ -41,10 +41,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ipinfo-cli.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 34031e3e96b4c608769b7ba5b2785e0bae1e3859",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/ipinfo-cli.json",
+    "sourceLastUpdated: 240301 16:26:47",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\ipinfo-cli.json"
   ]
 }

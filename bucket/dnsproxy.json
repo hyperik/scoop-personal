@@ -1,22 +1,22 @@
 {
-  "version": "0.76.1",
+  "version": "0.78.2",
   "description": "Simple DNS proxy with DoH, DoT, DoQ and DNSCrypt support",
   "homepage": "https://github.com/AdguardTeam/dnsproxy",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.76.1/dnsproxy-windows-amd64-v0.76.1.zip",
-      "hash": "2d20903258cfd34d70242364c1667d21cc2f32b06e4204d9403471b3ea9c5fa5",
+      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.78.2/dnsproxy-windows-amd64-v0.78.2.zip",
+      "hash": "ff2691b2eafd4fec5897bb5181482a46688b85f83cd162ffddcfd4ef9556910c",
       "extract_dir": "windows-amd64"
     },
     "32bit": {
-      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.76.1/dnsproxy-windows-386-v0.76.1.zip",
-      "hash": "2806e842b8bd02f5e648234c15778762ea6b86a7cae2aeca77ad5bbb030b0a05",
+      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.78.2/dnsproxy-windows-386-v0.78.2.zip",
+      "hash": "2f4469594b64a680c85284ab42eb9c69ce1a064d8ff362446fc478b75ee0e238",
       "extract_dir": "windows-386"
     },
     "arm64": {
-      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.76.1/dnsproxy-windows-arm64-v0.76.1.zip",
-      "hash": "4cfd29ba3aa986e53909058d502fe7c06e85a257bb198836849ac60751076a57",
+      "url": "https://github.com/AdguardTeam/dnsproxy/releases/download/v0.78.2/dnsproxy-windows-arm64-v0.78.2.zip",
+      "hash": "60a6f0abc9a901c4100dea195e89a73399a54db9a50eacae8f39ac3c3f9ed6bb",
       "extract_dir": "windows-arm64"
     }
   },
@@ -36,10 +36,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dnsproxy.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/dnsproxy.json",
+    "sourceHash: 731d68d124e3a3ef4488f4a63168c5bb9879d91c",
+    "sourceLastUpdated: 251205 16:30:57",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/dnsproxy.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\dnsproxy.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

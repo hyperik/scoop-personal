@@ -23,10 +23,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windows-virtualdesktop-helper.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 6c6679dc34fd3ae33276e350e20832dc34f5eeb5",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windows-virtualdesktop-helper.json",
+    "sourceLastUpdated: 241025 20:31:41",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windows-virtualdesktop-helper.json"
   ]
 }

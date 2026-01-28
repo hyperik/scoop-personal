@@ -39,10 +39,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsl-terminal.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 7592f0917ac3eceec72d8cc08e5c27179f67b449",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wsl-terminal.json",
+    "sourceLastUpdated: 200829 22:40:23",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wsl-terminal.json"
   ]
 }

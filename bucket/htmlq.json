@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\htmlq.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: dc6ca8da579266c3cd2e06eeba4cdb7d07359d8e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/htmlq.json",
+    "sourceLastUpdated: 220104 00:32:14",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\htmlq.json"
   ]
 }

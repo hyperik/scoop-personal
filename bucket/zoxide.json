@@ -27,10 +27,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\zoxide.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 3b9000d4a32487901f4d4d9de1d3ebc9e2230c29",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/zoxide.json",
+    "sourceLastUpdated: 250527 00:39:14",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:42",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\zoxide.json"
   ]
 }

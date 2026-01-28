@@ -1,7 +1,7 @@
 {
   "version": "2.0.7316.34247",
   "description": "Performance benchmark for Solid State Drives (SSDs)",
-  "homepage": "https://www.alex-is.de/PHP/fusion/downloads.php?cat_id=4&download_id=9",
+  "homepage": "https://www.alex-is.de/PHP/fusion/infusions/downloads/downloads.php?cat_id=4&download_id=9",
   "license": "Freeware",
   "url": "https://www.alex-is.de/progs/AS%20SSD%20Benchmark.zip",
   "hash": "56b80a3dde4537a77f9f7fb6bf45372b9b3d0a75e030d5373e5661913d7ef057",
@@ -19,10 +19,11 @@
     "url": "https://www.alex-is.de/progs/AS%20SSD%20Benchmark.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\as-ssd.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/as-ssd.json",
+    "sourceHash: b7628ce515711ed3f4d5e07b001a0237f80374f8",
+    "sourceLastUpdated: 251017 11:13:22",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/as-ssd.json",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\as-ssd.json",
+    "sourceLastChangeFound: 260128 15:47:47"
   ]
 }

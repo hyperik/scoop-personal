@@ -1,12 +1,12 @@
 {
-  "version": "0.23.3",
+  "version": "0.23.4",
   "description": "A modern, maintained replacement for ls, built on exa.",
   "homepage": "https://github.com/eza-community/eza",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/eza-community/eza/releases/download/v0.23.3/eza.exe_x86_64-pc-windows-gnu.zip",
-      "hash": "032963c3d47134d7976f8e17b0201efcff09fdcc7742d8a0db2135b38c8ce1f8"
+      "url": "https://github.com/eza-community/eza/releases/download/v0.23.4/eza.exe_x86_64-pc-windows-gnu.zip",
+      "hash": "05677fd7c2d1b69ce71df53db74c29f6331ea0b2be5aa3a0fce6976200ee06fc"
     }
   },
   "bin": [
@@ -28,10 +28,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\eza.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/eza.json",
+    "sourceHash: a25191991bbfeaa3c5b8b2a5ecfcace23ec81731",
+    "sourceLastUpdated: 251004 00:34:49",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/eza.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\eza.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

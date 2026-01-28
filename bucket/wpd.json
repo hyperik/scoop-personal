@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wpd.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: df1516f3884024177680022ba0c9246b7243489a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wpd.json",
+    "sourceLastUpdated: 221024 22:03:29",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wpd.json"
   ]
 }

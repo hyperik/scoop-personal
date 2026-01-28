@@ -15,10 +15,11 @@
     "extract_dir": "boxes-$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boxes.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d0701497b78a16dbb510fbfef8e1b337c57a8ada",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/boxes.json",
+    "sourceLastUpdated: 241003 16:30:53",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\boxes.json"
   ]
 }

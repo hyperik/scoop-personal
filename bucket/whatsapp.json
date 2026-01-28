@@ -52,10 +52,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whatsapp.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d06481d3f85c6b86260ecc17c7310bb4f0c85eca",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/whatsapp.json",
+    "sourceLastUpdated: 230623 02:15:59",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\whatsapp.json"
   ]
 }

@@ -30,10 +30,11 @@
     "extract_dir": "d2-v$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\d2.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 93fc2afb0a7b0fc5d06c8b4f8cf7684eaf502d24",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/d2.json",
+    "sourceLastUpdated: 250819 16:30:13",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\d2.json"
   ]
 }

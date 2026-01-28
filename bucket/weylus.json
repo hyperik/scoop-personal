@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weylus.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 3858084362e50d182decf8296355a13753d53267",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/weylus.json",
+    "sourceLastUpdated: 220829 07:33:15",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\weylus.json"
   ]
 }

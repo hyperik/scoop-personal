@@ -1,12 +1,12 @@
 {
-  "version": "3.1.6",
+  "version": "3.2.6",
   "description": "CLI for ArgoCD - declarative, GitOps continuous delivery tool for Kubernetes",
   "homepage": "https://github.com/argoproj/argo-cd",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/argoproj/argo-cd/releases/download/v3.1.6/argocd-windows-amd64.exe#/argocd.exe",
-      "hash": "d7aae15621b7b1d3429248c49600c31a77fe02a2c87d94727e9def816acf2f1a"
+      "url": "https://github.com/argoproj/argo-cd/releases/download/v3.2.6/argocd-windows-amd64.exe#/argocd.exe",
+      "hash": "0b8dfb3aa4bd69cec2cddf571df1448402ee35fa0f0fcddd873c846749cef0c5"
     }
   },
   "bin": "argocd.exe",
@@ -19,10 +19,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\argocd.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/argocd.json",
+    "sourceHash: a13518e677eab11414146c8b403d1d0d0cd44d02",
+    "sourceLastUpdated: 260122 20:30:50",
     "sourceState: active",
-    "sourceLastUpdated: 250922 15:57:13",
-    "sourceLastChangeFound: 250922 15:57:13"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/argocd.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\argocd.json",
+    "sourceLastChangeFound: 260128 15:47:47"
   ]
 }

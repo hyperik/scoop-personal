@@ -1,16 +1,16 @@
 {
-  "version": "1.21.4",
+  "version": "1.22.3",
   "description": "Service Discovery and Configuration",
   "homepage": "https://www.consul.io",
   "license": "MPL-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://releases.hashicorp.com/consul/1.21.4/consul_1.21.4_windows_amd64.zip",
-      "hash": "7c4656a1f352f1170b3ad6aad0fefe5176adeda75964d0442b89615b875e7a26"
+      "url": "https://releases.hashicorp.com/consul/1.22.3/consul_1.22.3_windows_amd64.zip",
+      "hash": "137765ef21b78c830ff32863e8f90343d1dab8866544b60c17412cbaaaac7ab8"
     },
     "32bit": {
-      "url": "https://releases.hashicorp.com/consul/1.21.4/consul_1.21.4_windows_386.zip",
-      "hash": "0ccee866dfd957d01ea1294d80727a5277f49a8d9f58813420f5c81425c1481a"
+      "url": "https://releases.hashicorp.com/consul/1.22.3/consul_1.22.3_windows_386.zip",
+      "hash": "7df5b87e294462cedbadfa115f04298e4b1323222a63f7b02881b18d571c6922"
     }
   },
   "bin": "consul.exe",
@@ -32,10 +32,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\consul.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/consul.json",
+    "sourceHash: 952a6266314a97b200b31b03993ef754339b48f4",
+    "sourceLastUpdated: 260123 08:31:17",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:35",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/consul.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\consul.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "version": "1.37.0",
+  "version": "1.38.0",
   "description": "Conversion tool for Docker Compose to container orchestrators such as Kubernetes (or OpenShift).",
   "homepage": "https://kompose.io/",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/kubernetes/kompose/releases/download/v1.37.0/kompose-windows-amd64.exe#/kompose.exe",
-      "hash": "eafee2c48cdb9b56936f80947f195b7663b390571fb3fbe2ead935c99df4c9f2"
+      "url": "https://github.com/kubernetes/kompose/releases/download/v1.38.0/kompose-windows-amd64.exe#/kompose.exe",
+      "hash": "6fb08b4d73590b1467aa60b9af8d4bd308829aba2b147cc184b94738a2a736ed"
     }
   },
   "checkver": {
@@ -25,10 +25,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\kompose.json",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kompose.json",
+    "sourceHash: 1aa48075a920b0cc5f47f69deefb90935e5c4be5",
+    "sourceLastUpdated: 260116 00:44:32",
     "sourceState: active",
-    "sourceLastUpdated: 250518 13:52:08",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/kompose.json",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\kompose.json",
+    "sourceLastChangeFound: 260128 15:51:35"
   ]
 }

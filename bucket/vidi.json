@@ -1,11 +1,12 @@
 {
   "##": [
     "Autoupdate was removed because ver 0.2.5.6 is an experimental version.",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vidi.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 7ae58164b4640d11af0819def2b03bf789664b22",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vidi.json",
+    "sourceLastUpdated: 220409 14:43:15",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vidi.json"
   ],
   "version": "0.2.5.5",
   "description": "A tool for static analysis of PE files, based on bearparser & capstone",

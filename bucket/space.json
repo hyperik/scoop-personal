@@ -22,10 +22,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\space.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 482f89a91e7baa8845155c9ab6b0fa935becb88c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/space.json",
+    "sourceLastUpdated: 250813 00:42:36",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\space.json"
   ]
 }

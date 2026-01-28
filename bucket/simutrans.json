@@ -25,10 +25,11 @@
     "url": "https://downloads.sourceforge.net/project/simutrans/simutrans/$dashVersion/simuwin-sdl-$dashVersion.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\simutrans.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d0ce0401c0cb400496c9238396cb9ad82a562a0b",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/simutrans.json",
+    "sourceLastUpdated: 250406 20:28:16",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\simutrans.json"
   ]
 }

@@ -41,10 +41,11 @@
     "extract_dir": "EcMenu_v$version"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0c2fbf5ab037777410677e0021588fed11452993",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/easy-context-menu.json",
+    "sourceLastUpdated: 251211 12:20:57",
     "sourceState: active",
-    "sourceLastUpdated: 250712 10:36:41",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json"
   ]
 }

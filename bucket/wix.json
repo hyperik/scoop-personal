@@ -15,10 +15,11 @@
     "url": "https://www.nuget.org/api/v2/package/wix/$version#/wix.$version.nupkg1"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\wix.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 4bc4f4524461f593de5d78cbb73ac43db9b14cb3",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/wix.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:56",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\wix.json"
   ]
 }

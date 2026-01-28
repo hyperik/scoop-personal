@@ -23,10 +23,11 @@
     "url": "https://github.com/freeorion/freeorion/releases/download/v$version/FreeOrion_v$version_Win32_Setup.exe#/dl.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\freeorion.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2f391a21bb1f5924028103418ee9b3d055c0e546",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/freeorion.json",
+    "sourceLastUpdated: 250622 12:31:17",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\freeorion.json"
   ]
 }

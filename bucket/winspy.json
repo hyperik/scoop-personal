@@ -37,10 +37,11 @@
     "url": "https://downloads.sourceforge.net/project/winspyex/$version/WinSpy-$version.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winspy.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 0a96b6fcb18dd79d14c0863a8db01d0be842d98a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/winspy.json",
+    "sourceLastUpdated: 220401 07:45:07",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\winspy.json"
   ]
 }

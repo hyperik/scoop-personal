@@ -17,10 +17,11 @@
     "url": "https://github.com/CnCNet/cnc-ddraw/releases/download/v$version/cnc-ddraw.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\cnc-ddraw.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 640eb4f8f0c8e73b49649d4db4cf12817cdb3849",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/cnc-ddraw.json",
+    "sourceLastUpdated: 241228 08:28:25",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:26:58",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\cnc-ddraw.json"
   ]
 }

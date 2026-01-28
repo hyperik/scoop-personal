@@ -19,10 +19,11 @@
     "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/$version/WindowsSpyBlocker.exe"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsspyblocker.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: b86694c0ddbad725c58a9eb5ad28b05881300d7a",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/windowsspyblocker.json",
+    "sourceLastUpdated: 220516 12:31:02",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\windowsspyblocker.json"
   ]
 }

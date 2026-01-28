@@ -25,10 +25,11 @@
     "Start-Process \"$dir\\vcredist_x86.exe\" -ArgumentList '/fo', '/q', '/norestart' -Wait"
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2010.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2dab44c92236c4a3b1219d4541db9a2da9abaf6e",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/vcredist2010.json",
+    "sourceLastUpdated: 230815 07:37:45",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\vcredist2010.json"
   ]
 }

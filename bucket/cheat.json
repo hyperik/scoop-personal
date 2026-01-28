@@ -44,10 +44,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\cheat.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: a59c2dbac7d95211ab5a91496b504adeb65c19ed",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cheat.json",
+    "sourceLastUpdated: 231216 00:33:39",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:37:55",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\cheat.json"
   ]
 }

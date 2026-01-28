@@ -53,10 +53,11 @@
     "url": "https://sourceforge.net/projects/crystaldiskinfo/files/$version/CrystalDiskInfo$underscoreVersion.zip"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\crystaldiskinfo.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d54f4c94b4faf04278f2b7472b8304bbc1582d8c",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/crystaldiskinfo.json",
+    "sourceLastUpdated: 250915 21:35:59",
     "sourceState: active",
-    "sourceLastUpdated: 250729 15:00:34",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\crystaldiskinfo.json"
   ]
 }

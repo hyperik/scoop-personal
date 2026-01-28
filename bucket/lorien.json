@@ -29,10 +29,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\lorien.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 94cadde611dc7c6c21e8401e87416b64faaf2f0b",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/lorien.json",
+    "sourceLastUpdated: 240110 15:59:55",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:45",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\lorien.json"
   ]
 }

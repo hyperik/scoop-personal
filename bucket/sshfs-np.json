@@ -35,10 +35,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\sshfs-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: d458b165884cff64e43bed10c94143deb72cd1a9",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/sshfs-np.json",
+    "sourceLastUpdated: 220810 14:12:05",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\sshfs-np.json"
   ]
 }

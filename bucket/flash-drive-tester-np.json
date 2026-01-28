@@ -25,10 +25,11 @@
     ]
   ],
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\flash-drive-tester-np.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 33f858e717da835c54d192411b45c14c0fa62430",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/flash-drive-tester-np.json",
+    "sourceLastUpdated: 220824 14:51:50",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:39:44",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\flash-drive-tester-np.json"
   ]
 }

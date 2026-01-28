@@ -40,10 +40,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\android-messages.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 2123cb95f2043b1dcbaf769d1e870b737c7d454d",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/android-messages.json",
+    "sourceLastUpdated: 250508 11:45:19",
     "sourceState: active",
-    "sourceLastUpdated: 250513 17:11:13",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\android-messages.json"
   ]
 }

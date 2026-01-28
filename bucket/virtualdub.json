@@ -35,10 +35,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\virtualdub.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ac87dbc498d5ceee8d0e4aca5f0337e1037637f9",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/virtualdub.json",
+    "sourceLastUpdated: 200823 21:38:14",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\virtualdub.json"
   ]
 }

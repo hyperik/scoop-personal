@@ -20,10 +20,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\odiff.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ac4cd22a10b311d16b65069b9d68815566923112",
     "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/odiff.json",
+    "sourceLastUpdated: 240918 23:57:20",
     "sourceState: active",
-    "sourceLastUpdated: 250906 15:45:54",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\odiff.json"
   ]
 }

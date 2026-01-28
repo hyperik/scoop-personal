@@ -35,10 +35,11 @@
     }
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-manager-qt.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: 1d99dc0102e87435715a764e31199c83ad4f4cd8",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/yubikey-manager-qt.json",
+    "sourceLastUpdated: 240404 16:30:00",
     "sourceState: active",
-    "sourceLastUpdated: 250211 10:38:46",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\yubikey-manager-qt.json"
   ]
 }

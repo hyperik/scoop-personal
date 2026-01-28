@@ -31,10 +31,11 @@
     "url": "https://github.com/stuntrally/stuntrally/releases/download/$version/StuntRally-$version-installer.exe#/dl.7z"
   },
   "##": [
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\stuntrally.json",
+    "sourceLastChangeFound: 250922 14:23:50",
+    "sourceHash: ba2d49575e8c223b196f26c01bc8709e799157e8",
     "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/stuntrally.json",
+    "sourceLastUpdated: 230515 22:46:17",
     "sourceState: active",
-    "sourceLastUpdated: 240810 13:06:59",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\stuntrally.json"
   ]
 }
