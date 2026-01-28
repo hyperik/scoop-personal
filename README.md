@@ -21,7 +21,9 @@ scoop install freeorion
 
 ## Updating applications in this bucket
 
-For manifests that contain an `autoupdate` section, there's a GitHub Actions workflow that runs every day and commits updated manifests to the repository.
+For manifests that contain an `autoupdate` section, there may be a GitHub Actions workflow that runs every day and commits updated manifests to the repository.
+
+NOTE: this is dependent on repo configuration.
 
 For manifests that don't contain an `autoupdate` section, you can also [add an `autoupdate` section to the manifest](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifest-Autoupdate) to ensure the application always remains up-to-date in the future.
 
@@ -33,28 +35,58 @@ These are supported by two scripts `Seed-ManifestSources.ps1` which we can use t
 
 These should provide a simplified surface to allow regular automated invocation if we desire.
 
-### Using Seed-ManifestSources
+### Initialising Repository Using Seed-ManifestSources
 
 This script builds up the initial data structures from local repos. It has several helper features as the exact schema extension I added went through a few evolutions and I used this with AI assistance to the script to keep it maintained. It can also be used to cleanup certain problems like duplicate empty nodes under comments.
 
 Ideally after running the first time in a repo it's not needed again unless we're changing format.
 
-### Using Update-PersonalBucket.ps1
+### Maintaining A Repository Using Update-PersonalBucket.ps1
 
-This is what ought to be run periodically and shouldn't need arugments by default. However if it's the first time running for a while, the `-Interactive` option allows a little more surety in the validity of the changes to make.
+Once an repository has been initialised, this script  is what ought to be run periodically and shouldn't need arguments by default. However if it's the first time running for a while, the `-Interactive` option allows a little more surety in the validity of the changes to make.
+
+Standard usage:
+
+```powershell
+# Runs all updates automatically
+.\Update-PersonalBucket.ps1
+```
+
+Interactive usage for checking behaviour:
+
+```powershell
+# Runs with interactive prompts
+.\Update-PersonalBucket.ps1 -Interactive
+```
 
 ### Metadata
 
-I've introduced several new metadata concepts under the over-arching "##" free-range comment, which unfortunately may only be a String or Array of Strings and still conform to the JSON schema for Scoop. To avoid potential future compatibility issues, we stick to this.
+We've introduced several new metadata concepts under the over-arching "##" free-range comment, which unfortunately may only be a String or Array of Strings and still conform to the JSON schema for Scoop. To avoid potential future compatibility issues, we stick to this.
 
 - source: where one may find the file locally. This is not very portable but without making shadow structures outside the main repository, which is a lot of additional material for little gain, just serves as a short-cut for locally cloned and maintained repos.
 - sourceUrl: the ultimate web-accessible location for the manifest; typically the raw file on GitHub.
 - sourceLastUpdated: the date of last modification to the manifest.
 - sourceLastChangeFound: when we last ran the script and detected a change to be applied.
 - sourceState: one of a number of states. 'active' means in regular use. 'dead' means ignored. 'manual' means there is no upstream to serve as a reference so all changes must be manually made. 'frozen' means the detected upstream changes have some aspect meaning we don't want to rely on automatic installation and it must be subject to manual update decisions.
+- sourceHash: a hash of the upstream manifest file at the time of last update, to detect changes. This is particularly needed as Git can be wildly inefficient, and the Git log can take an inordinately long time for large repositories with many commits and manifests that haven't changed in a long time (for example, `vagrant-manager.json` in Scoop Main takes me 53s to find the last commit date on the file, locally).
 - sourceDelayDays: (optional) how many days to wait after an upstream modification is found before it's applied. {NB: Might need more testing over time especially for high-churn upstreams}.
 - sourceUpdateMinimumDays: (optional) after we have had an update to this script, as defined in 'sourceLastChangeFound', don't apply any updates for at least this many days.
 - sourceComment: (optional) any additional comments, mostly used for explaining unusual provenance of freezing status.
+
+#### Example Metadata
+
+As an example of how these fully materialised metadata entries look, here is the `bitwarden.json` manifest from the [Scoop Extras](https://github.com/ScoopInstaller/Extras) repository.
+
+```json
+  "##": [
+    "sourceLastChangeFound: 260128 15:32:50",
+    "sourceHash: 8a55111ed3b27930d29947bdb445723d3c397e2d",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/bitwarden.json",
+    "sourceLastUpdated: 260113 20:30:03",
+    "sourceState: active",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\bitwarden.json"
+  ]
+```
 
 ## License
 
@@ -66,9 +98,13 @@ There are many, many scoop buckets out there - some with thousands of applicatio
 
 This is a good way to have periodic tool discovery since the software space changes regularly.
 
-NOTE: a lot of buckets are for purposes like Chinese proxy evasion or translated or non-commercial safe licences so please be careful in what is used and always inspect the base .json file and source of executables.
+NOTE: a lot of buckets are for purposes like Chinese proxy evasion or translated or non-commercial safe licences so please be careful in what is used and always inspect the base `.json` file and source of executables.
 
 ### Buckets to review
 
 - <https://scoop.sh/#/apps?q=%22https%3A%2F%2Fgithub.com%2Fzzhaq%2Fscoop-av%22&o=false> - lots of .exe and decompilation resources
 - <https://scoop.sh/#/apps?q=%22https%3A%2F%2Fgithub.com%2Frizwan-r-r%2Fredesigned-fiesta%22&o=false> - development tools
+
+## Disclaimer
+
+No warranty or guarantee of any nature is provided or implied. No liability will be incurred for use of any material in this repository. Use at your own risk. Scoop inherently trusts the sources of the manifests and their contents; ensure you validate these before use. Be aware that versions may change and software may become unsupported or insecure over time, both maliciously and accidentally.

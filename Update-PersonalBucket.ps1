@@ -191,25 +191,29 @@ Function Get-GitCommitDate {
         $repoDir = $parent
     }
     if ($repoDir) {
-        # Resolve path relative to repo root for git commands
         $repoRelativePath = $FilePath.Replace($repoDir, "").TrimStart("\").Replace("\", "/")
 
-        # 1. Get current blob hash (Instant)
+        # Resolve the current blob hash (instant metadata lookup)
         $currentHash = git -C $repoDir rev-parse "HEAD:$repoRelativePath" 2>$null
 
-        # 2. If hash is found and matches stored, skip slow log
-        if ($currentHash -And $currentHash -eq $StoredHash -And $StoredDate) {
-            Log-Trace "      -> Hash $currentHash matches stored metadata. Skipping history walk."
-            return [pscustomobject]@{ Date = $StoredDate; Hash = $currentHash }
+        # If we have a hash and it matches the stored one, skip the slow history walk
+        if ($currentHash -And $StoredHash -And ($currentHash -eq $StoredHash) -And $StoredDate) {
+            Log-Trace "      -> Hash matches stored value ($currentHash). Skipping slow git walk."
+            return [pscustomobject]@{ Date = $StoredDate; Hash = $currentHash; Match = $true }
         }
 
-        # 3. Otherwise, get the authentic commit date
-        Log-Trace "      -> Hash changed or missing. Walking history for '$repoRelativePath'..."
-        $gitDate = git -C $repoDir --no-pager log -1 --format=%cI -- "$repoRelativePath" 2>$null
-        $finalDate = if ($gitDate) { ([datetime]$gitDate).ToUniversalTime().ToString($timestampFormat) } else { (Get-Item $FilePath).LastWriteTime.ToUniversalTime().ToString($timestampFormat) }
-        return [pscustomobject]@{ Date = $finalDate; Hash = $currentHash }
+        Log-Trace "      -> Hash changed or missing. Getting last commit date for '$FilePath'"
+        $gitDate = git -C $repoDir --no-pager log -1 --format=%cI -- $FilePath 2>$null
+        Log-Trace "      -> Git last commit date for file '$FilePath' is '$gitDate'"
+        $finalDate = if ($gitDate) {
+            ([datetime]$gitDate).ToUniversalTime().ToString($timestampFormat)
+        }
+        else {
+            (Get-Item $FilePath).LastWriteTime.ToUniversalTime().ToString($timestampFormat)
+        }
+        return [pscustomobject]@{ Date = $finalDate; Hash = $currentHash; Match = $false }
     }
-    return [pscustomobject]@{ Date = (Get-Item $FilePath).LastWriteTime.ToUniversalTime().ToString($timestampFormat); Hash = "LWT" }
+    return [pscustomobject]@{ Date = (Get-Item $FilePath).LastWriteTime.ToUniversalTime().ToString($timestampFormat); Hash = "LWT"; Match = $false }
 }
 
 Function Get-CustomMetadata($JSONObject) {
@@ -322,7 +326,7 @@ foreach ($localManifestFile in $manifests) {
     # Scope filter
     if ($localManifestFile.BaseName -Notmatch $Scope) {
         if ($VerboseProcessing -And -Not $HideSkipped) {
-            Log-It "  -> Skipping '$($localManifestFile.Name)' (does not match scope pattern '$ScopeNamePattern')" "DarkGray"
+            Log-It "  -> Skipping '$($localManifestFile.Name)' (does not match scope pattern '$Scope')"
         }
         continue
     }
@@ -330,18 +334,35 @@ foreach ($localManifestFile in $manifests) {
     $metadata = Get-CustomMetadata -JSONObject $localJson
     $data = [pscustomobject]@{ File = $localManifestFile; Local = $localJson; Metadata = $metadata; IsPending = $false; PendingReason = ''; CurrentHash = '' }
 
+    #$lastChangeStr = $data.Metadata.sourceLastChangeFound
     $lastUpdateStr = $data.Metadata.sourceLastUpdated
     $storedHash = $data.Metadata.sourceHash
 
     $sourcePath = $data.Metadata.source
     if ($sourcePath -And $sourcePath -ne 'MANUAL' -And $sourcePath -ne 'DEPRECATED' -And (Test-Path $sourcePath)) {
         try {
-            Log-Trace "    -> Checking source status for '$($localManifestFile.Name)'"
+            Log-Trace "    -> Checking source date for '$($localManifestFile.Name)' at source path '$sourcePath'"
             $sourceInfo = Get-GitCommitDate -FilePath $sourcePath -StoredHash $storedHash -StoredDate $lastUpdateStr
             $fileUpdateStr = $sourceInfo.Date
             $data.CurrentHash = $sourceInfo.Hash
 
-            if ($fileUpdateStr -gt $lastUpdateStr) {
+            # If hash is missing, normalize it now to save future time
+            if ([string]::IsNullOrEmpty($storedHash)) {
+                Log-Verbose "  -> Uninitialized hash for '$($localManifestFile.Name)'. Performing one-off sync..."
+                $newMetadata = $data.Metadata.Clone()
+                $newMetadata.sourceLastUpdated = $fileUpdateStr
+                $newMetadata.sourceHash = $data.CurrentHash
+                $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+                $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $localManifestFile.FullName -Encoding UTF8
+                $data.Metadata = $newMetadata # Keep object current in memory
+            }
+
+            if ($sourceInfo.Match) {
+                if ($VerboseProcessing) {
+                    Log-It "  -> Source check for '$($localManifestFile.Name)' shows no update needed (blob hash is unchanged)"
+                }
+            }
+            elseif ($fileUpdateStr -gt $lastUpdateStr) {
                 $data.IsPending = $true
                 $data.PendingReason = "upstream source updated to $fileUpdateStr after last recorded update on $lastUpdateStr"
                 if ($VerboseProcessing) {
@@ -350,16 +371,16 @@ foreach ($localManifestFile in $manifests) {
             }
             else {
                 if ($VerboseProcessing) {
-                    Log-It "  -> Source check for '$($localManifestFile.Name)' shows no update needed (source date $fileUpdateStr is not after last recorded update on $lastUpdateStr)"
+                    Log-It "  -> Source date check for '$($localManifestFile.Name)' shows no update needed (source date $fileUpdateStr is not after last recorded update on $lastUpdateStr)"
                 }
             }
         }
         catch {
-            Log-Verbose "  -> Warning: Failed to check source status for '$($localManifestFile.Name)'. Error: $($_.Exception.Message)"
+            Log-Verbose "  -> Warning: Failed to check source date for '$($localManifestFile.Name)'. Error: $($_.Exception.Message)"
         }
     }
     else {
-        Log-Verbose "  -> Skipping source check for '$($localManifestFile.Name)' (source path is missing or non-standard or it's a manual or deprecated source)." -ForegroundColor DarkGray
+        Log-Verbose "  -> Skipping source date check for '$($localManifestFile.Name)' (source path is missing or non-standard or it's a manual or deprecated source)."
     }
 
     $allManifestData += $data
@@ -466,9 +487,10 @@ if ($Interactive) {
             $choice = Read-Host "Apply this change? (A)ccept / (F)reeze / (S)kip / (Q)uit"
             switch ($choice.ToLower()) {
                 'a' {
+                    $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
                     $newMetadata = $data.Metadata.Clone()
-                    $newMetadata.sourceLastUpdated = $data.IsPending ? (Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated).Date : $data.Metadata.sourceLastUpdated
-                    $newMetadata.sourceHash = $data.CurrentHash
+                    $newMetadata.sourceLastUpdated = $sourceInfo.Date
+                    $newMetadata.sourceHash = $sourceInfo.Hash
                     $newMetadata.sourceLastChangeFound = $runTimestamp
                     $newJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
                     Log-It "    -> Writing accepted changes to '$($data.File.Name)'..."
@@ -477,10 +499,11 @@ if ($Interactive) {
                 }
                 'f' {
                     Log-It "  -> ❄️ Freezing package '$($data.File.Name)' at current version"
+                    $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
                     $newMetadata = $data.Metadata.Clone()
                     $newMetadata.sourceState = 'frozen'
-                    $newMetadata.sourceLastUpdated = $data.IsPending ? (Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated).Date : $data.Metadata.sourceLastUpdated
-                    $newMetadata.sourceHash = $data.CurrentHash
+                    $newMetadata.sourceLastUpdated = $sourceInfo.Date
+                    $newMetadata.sourceHash = $sourceInfo.Hash
                     $newMetadata.sourceLastChangeFound = $runTimestamp
                     $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
                     Log-It "    -> Writing updated state to manifest..."
@@ -508,6 +531,11 @@ foreach ($data in $updateableManifests) {
     $sourceUrl = $data.Metadata.sourceUrl
     if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
 
+    # CHURN GUARD: Determine the authentic status of the source file BEFORE doing anything else
+    $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
+    $authenticSourceDate = $sourceInfo.Date
+    $currentHash = $sourceInfo.Hash
+
     $remoteJson = $null
     try { $remoteJson = Invoke-WebRequest -Uri $sourceUrl -UseBasicParsing | ConvertFrom-Json } catch {
         if (-Not $ChangesOnly) {
@@ -519,7 +547,7 @@ foreach ($data in $updateableManifests) {
     }
 
     $hasUpdate = ($data.Local.version -ne $remoteJson.version) -And (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)
-    $sourceFileChanged = ($data.IsPending)
+    $sourceFileChanged = ($authenticSourceDate -gt $data.Metadata.sourceLastUpdated)
 
     # FINAL CHURN GUARD: If no version jump AND the source file is exactly where we last left it, skip the manifest.
     if (-Not $hasUpdate -And -Not $sourceFileChanged) {
@@ -537,10 +565,10 @@ foreach ($data in $updateableManifests) {
     if (-Not $hasUpdate -And $sourceFileChanged) {
         Log-It "    👍 Already up to date (version $($data.Local.version))"
         $newMetadata = $data.Metadata.Clone();
-        $newMetadata.sourceLastUpdated = (Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated).Date
-        $newMetadata.sourceHash = $data.CurrentHash
+        $newMetadata.sourceLastUpdated = $authenticSourceDate
+        $newMetadata.sourceHash = $currentHash
         $newMetadata.sourceLastChangeFound = $runTimestamp
-        Log-It "      -> Syncing timestamps: authentic date is $($newMetadata.sourceLastUpdated)"
+        Log-It "      -> Syncing timestamps: authentic date is $authenticSourceDate"
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
         $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
         continue
@@ -598,8 +626,8 @@ foreach ($data in $updateableManifests) {
         if ($remoteJson.PSObject.Properties['autoupdate']) { $data.Local.autoupdate = $remoteJson.autoupdate } elseif ($data.Local.PSObject.Properties['autoupdate']) { $data.Local.PSObject.Properties.Remove('autoupdate') }
 
         $newMetadata = $data.Metadata.Clone();
-        $newMetadata.sourceLastUpdated = (Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated).Date
-        $newMetadata.sourceHash = $data.CurrentHash
+        $newMetadata.sourceLastUpdated = $authenticSourceDate
+        $newMetadata.sourceHash = $currentHash
         $newMetadata.sourceLastChangeFound = $runTimestamp
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
 
@@ -613,8 +641,7 @@ foreach ($data in $updateableManifests) {
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
             $newMetadata = $data.Metadata.Clone()
             $newMetadata.sourceLastChangeFound = $runTimestamp
-            # We also update the hash here so the detection remains correct on the next run
-            $newMetadata.sourceHash = $data.CurrentHash
+            $newMetadata.sourceHash = $currentHash
             $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
             Log-It "      -> Updating 'sourceLastChangeFound' and hash in '$($data.File.Name)'"
             $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
