@@ -29,11 +29,40 @@
 .PARAMETER VerboseList
   When used with -ListPending, outputs status for all non-pending manifests as well.
 
+.PARAMETER VerboseProcessing
+  More detailed output during processing in all modes including the pre-processing steps common to all.
+
+.PARAMETER Trace
+  Trace mode, the maximum level of logged output detail.
+
 .PARAMETER ChangesOnly
   In the default automatic mode, only outputs information for manifests that have updates or changes.
 
+.PARAMETER Scope
+  Restricts the scope of the manifests to only those matching the provided regex name pattern
+
+.PARAMETER HideSkipped
+    Under verbose processing, will nevertheless hide manifests that are skipped due to scope filtering.
+
 .PARAMETER SkipFrozen
   In the default automatic mode, prevents showing the diff for frozen packages that have updates.
+
+.EXAMPLE
+  # Runs automatically to check for and apply updates in the default bucket path without user interaction.
+  .\Update-PersonalBucket.ps1
+
+.EXAMPLE
+  # Lists all the pending changes to be made and verbosely outputs the status of all manifests assessed.
+  .\Update-PersonalBucket.ps1 -ListPending -VerboseProcessing
+
+.EXAMPLE
+  # Interactively processes only the manifests beginning with characters 'ag' or 'bi'; all others have processing skipped.
+  .\Update-PersonalBucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Scope '^(ag|bi).*'
+
+.EXAMPLE
+  # Trace mode with extra timing detail on interactively processing only the manifests beginning with characters 'ag' or 'bi'; all others have processing skipped.
+  .\Update-PersonalBucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Trace -Scope '^(ag|bi).*'
+
 #>
 [CmdletBinding(DefaultParameterSetName = 'Automatic')]
 param(
@@ -55,6 +84,18 @@ param(
     [Parameter(ParameterSetName = 'Automatic')]
     [switch]$ChangesOnly,
 
+    [Parameter()]
+    [switch]$VerboseProcessing,
+
+    [Parameter()]
+    [switch]$Trace,
+
+    [Parameter()]
+    [string]$Scope = '.*',
+
+    [Parameter()]
+    [switch]$HideSkipped,
+
     [Parameter(ParameterSetName = 'Automatic')]
     [switch]$SkipFrozen
 )
@@ -72,11 +113,95 @@ if ([string]::IsNullOrEmpty($PersonalBucketPath)) {
 }
 
 # =================================================================================
+# Global Defaults
+# =================================================================================
+
+$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState', 'sourceDelayDays', 'sourceUpdateMinimumDays', 'sourceComment'
+$timestampFormat = "yyMMdd HH:mm:ss"
+$logTimestamp = $true
+
+# =================================================================================
 # Helper Functions
 # =================================================================================
-$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState', 'sourceDelayDays', 'sourceUpdateMinimumDays', 'sourceComment'
 
-function Get-CustomMetadata($JSONObject) {
+Function Log-It {
+    param(
+        [string]$Message,
+        [String]$Colour = "DarkGray"
+    )
+    if ($logTimestamp) {
+        Write-Host "$(Get-Date -Format $timestampFormat) - $Message" -ForegroundColor $Colour
+    }
+    else {
+        Write-Host "$Message" -ForegroundColor $Colour
+    }
+}
+
+Function Log-Warning {
+    param(
+        [string]$Message,
+        [String]$Colour = "DarkRed"
+    )
+    if ($logTimestamp) {
+        Write-Warning "$(Get-Date -format o) - $Message" -ForegroundColor $Colour
+    }
+    else {
+        Write-Warning "$Message" -ForegroundColor $Colour
+    }
+}
+
+Function Log-Highlight {
+    param([string]$Message)
+    Log-It -Message $Message -Colour Yellow
+}
+
+Function Log-Verbose {
+    param([string]$Message)
+    if ($VerboseProcessing) {
+        Log-It -Message $Message -Colour DarkYellow
+    }
+}
+
+Function Log-Trace {
+    param([string]$Message)
+    if ($Trace) {
+        Log-It -Message $Message -Colour Blue
+    }
+}
+
+# Returns the formatted date in our default global format. Takes an input DateTime otherwise defaults to `now` in UTC
+Function Get-FormattedDate {
+    param([datetime]$DateTime = ([datetime]::UtcNow))
+    return $DateTime.ToString($timestampFormat)
+}
+
+# A helper to get 'now' in the context of operation. Currently in UTC but provides a shim to change this in the future if needed.
+Function Get-Now {
+    return [datetime]::UtcNow
+}
+
+Function Get-GitCommitDate {
+    param([string]$FilePath)
+    if (-Not (Test-Path $FilePath)) { return $null }
+    $dir = Split-Path $FilePath
+    $repoDir = $dir
+    while ($repoDir -And !(Test-Path (Join-Path $repoDir ".git"))) {
+        $parent = Split-Path $repoDir
+        if ($parent -eq $repoDir) { $repoDir = $null; break }
+        $repoDir = $parent
+    }
+    if ($repoDir) {
+        Log-Trace "      -> Found git repository at '$repoDir' for file '$FilePath' about to get last commit date"
+        $gitDate = git -C $repoDir --no-pager log -1 --format=%cI -- $FilePath 2>$null
+        Log-Trace "      -> Git last commit date for file '$FilePath' is '$gitDate'"
+        if ($gitDate) {
+            return ([datetime]$gitDate).ToUniversalTime().ToString($timestampFormat)
+        }
+    }
+    return (Get-Item $FilePath).LastWriteTime.ToUniversalTime().ToString($timestampFormat)
+}
+
+Function Get-CustomMetadata($JSONObject) {
     $metadata = @{}
     if ($JSONObject.PSObject.Properties['##']) {
         foreach ($line in $JSONObject.'##') {
@@ -89,14 +214,17 @@ function Get-CustomMetadata($JSONObject) {
     return $metadata
 }
 
-function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
-    if (-not $JSONObject.PSObject.Properties['##']) {
+# Sets the custom metadata fields in the '##' property of the given JSON object.
+# This is the only safe place we can modify in the manifest without breaking schema compliance.
+# A little at risk of change by Scoop in the future but have to live with it.
+Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
+    if (-Not $JSONObject.PSObject.Properties['##']) {
         $JSONObject | Add-Member -MemberType NoteProperty -Name '##' -Value @()
     }
     elseif ($JSONObject.'##' -isnot [array]) {
         $JSONObject.'##' = @($JSONObject.'##')
     }
-    $newComments = @($JSONObject.'##' | Where-Object { $_ -notmatch "^($($MetadataKeys -join '|'))\s*:" })
+    $newComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
     foreach ($entry in $MetadataToWrite.GetEnumerator()) {
         $newComments += "$($entry.Key): $($entry.Value)"
     }
@@ -104,13 +232,14 @@ function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     return $JSONObject
 }
 
-function Test-IsNewerVersion { param ($RemoteVersion, $LocalVersion); try { return [version]$RemoteVersion -ge [version]$LocalVersion } catch { return $true } }
+# Version comparison test using [version] type casting to check for ordering. Relies on versions being castable to [version].
+Function Test-IsNewerVersion { param ($RemoteVersion, $LocalVersion); try { return [version]$RemoteVersion -ge [version]$LocalVersion } catch { return $true } }
 
-function Compare-ManifestObjects {
+Function Compare-ManifestObjects {
     param([PsCustomObject]$ReferenceObject, [PsCustomObject]$DifferenceObject)
 
     $githubProjectRegex = '^https://github\.com/[^/]+/[^/]+/'
-    function Get-Urls($Object) {
+    Function Get-Urls($Object) {
         $urls = @()
         if ($Object.PSObject.Properties['url']) { $urls += $Object.url }
         if ($Object.PSObject.Properties['architecture']) {
@@ -122,11 +251,11 @@ function Compare-ManifestObjects {
     }
     $localUrls = Get-Urls -Object $ReferenceObject
     $remoteUrls = Get-Urls -Object $DifferenceObject
-    if ($localUrls.Count -gt 0 -and $remoteUrls.Count -gt 0) {
+    if ($localUrls.Count -gt 0 -And $remoteUrls.Count -gt 0) {
         $localBase = ($localUrls[0] | Select-String -Pattern $githubProjectRegex).Matches.Value
         $remoteBase = ($remoteUrls[0] | Select-String -Pattern $githubProjectRegex).Matches.Value
-        if ($localBase -and $remoteBase -and $localBase -ne $remoteBase) {
-            Write-Host "    -> Complex change detected: URL project changed from '$localBase' to '$remoteBase'." -ForegroundColor Yellow
+        if ($localBase -And $remoteBase -And $localBase -ne $remoteBase) {
+            Log-Highlight "    -> Complex change detected: URL project changed from '$localBase' to '$remoteBase'."
             return $false
         }
     }
@@ -152,103 +281,130 @@ function Compare-ManifestObjects {
     return $localString -eq $remoteString
 }
 
-function Show-ManifestDiff {
+Function Show-ManifestDiff {
     param([PsCustomObject]$LocalJson, [PsCustomObject]$RemoteJson)
     $localCopy = $LocalJson | ConvertTo-Json -Depth 10 | ConvertFrom-Json; $remoteCopy = $RemoteJson | ConvertTo-Json -Depth 10 | ConvertFrom-Json
     $localCopy = Set-CustomMetadata -JSONObject $localCopy -MetadataToWrite @{}
     $localString = $localCopy | ConvertTo-Json -Depth 10; $remoteString = $remoteCopy | ConvertTo-Json -Depth 10
     $diff = Compare-Object -ReferenceObject ($localString -split '\r?\n') -DifferenceObject ($remoteString -split '\r?\n')
-    if ($null -eq $diff) { return }; Write-Host "`n    --- Diff ---"
+    if ($null -eq $diff) { return }
+    Write-Host
+    Log-It "    --- Diff ---"
     foreach ($change in $diff) {
-        if ($change.SideIndicator -eq '<=') { Write-Host ("- " + $change.InputObject) -ForegroundColor Red }
-        elseif ($change.SideIndicator -eq '=>') { Write-Host ("+ " + $change.InputObject) -ForegroundColor Green }
+        if ($change.SideIndicator -eq '<=') { Log-It ("- " + $change.InputObject) "Red" }
+        elseif ($change.SideIndicator -eq '=>') { Log-It ("+ " + $change.InputObject) "Green" }
     }
-    Write-Host "    --- End Diff ---`n"
+    Log-It "    --- End Diff ---`n"
 }
 
-# =================================================================================
+# =================================================================================================
 # Main Script Logic
-# =================================================================================
-$runTimestamp = (Get-Date).ToString("yyMMdd HH:mm:ss")
-$timestampFormat = "yyMMdd HH:mm:ss"
+# =================================================================================================
+
+$runTimestamp = Get-FormattedDate
 $manifests = Get-ChildItem -Path $PersonalBucketPath -Filter *.json
 $allManifestData = @()
 
-Write-Host "🔍 Gathering manifest data from '$PersonalBucketPath'..."
+# This iterates through all the manifests and gathers their metadata and pending status.
+Log-It "🔍 Gathering manifest data from '$PersonalBucketPath'..."
 foreach ($localManifestFile in $manifests) {
+    # Scope filter
+    if ($localManifestFile.BaseName -Notmatch $Scope) {
+        if ($VerboseProcessing -And -Not $HideSkipped) {
+            Log-It "  -> Skipping '$($localManifestFile.Name)' (does not match scope pattern '$ScopeNamePattern')" "DarkGray"
+        }
+        continue
+    }
     $localJson = Get-Content -Path $localManifestFile.FullName -Raw | ConvertFrom-Json
     $metadata = Get-CustomMetadata -JSONObject $localJson
     $data = [pscustomobject]@{ File = $localManifestFile; Local = $localJson; Metadata = $metadata; IsPending = $false; PendingReason = '' }
 
-    $lastChangeStr = $data.Metadata.sourceLastChangeFound
+    #$lastChangeStr = $data.Metadata.sourceLastChangeFound
     $lastUpdateStr = $data.Metadata.sourceLastUpdated
 
-    if ((-not [string]::IsNullOrEmpty($lastChangeStr)) -and (-not [string]::IsNullOrEmpty($lastUpdateStr))) {
+    $sourcePath = $data.Metadata.source
+    if ($sourcePath -And $sourcePath -ne 'MANUAL' -And $sourcePath -ne 'DEPRECATED' -And (Test-Path $sourcePath)) {
         try {
-            $updateDate = [datetime]::ParseExact($lastUpdateStr, $timestampFormat, $null)
-            $changeDate = [datetime]::ParseExact($lastChangeStr, $timestampFormat, $null)
-            if ($updateDate -gt $changeDate) { $data.IsPending = $true; $data.PendingReason = "source updated on $lastUpdateStr after last check on $lastChangeStr" }
+            Log-Trace "    -> Checking source date for '$($localManifestFile.Name)' at source path '$sourcePath'"
+            $fileUpdateStr = Get-GitCommitDate -FilePath $sourcePath
+            Log-Trace "    -> Source file '$($localManifestFile.Name)' last commit date is $fileUpdateStr"
+            if ($fileUpdateStr -gt $lastUpdateStr) {
+                $data.IsPending = $true
+                $data.PendingReason = "upstream source updated to $fileUpdateStr after last recorded update on $lastUpdateStr"
+                if ($VerboseProcessing) {
+                    Log-Highlight "  -> Marking '$($localManifestFile.Name)' as pending because the upstream source was updated to $fileUpdateStr which is after the last recorded update on $lastUpdateStr"
+                }
+            }
+            else {
+                if ($VerboseProcessing) {
+                    Log-It "  -> Source date check for '$($localManifestFile.Name)' shows no update needed (source date $fileUpdateStr is not after last recorded update on $lastUpdateStr)"
+                }
+            }
         }
-        catch {}
+        catch {
+            Log-Verbose "  -> Warning: Failed to check source date for '$($localManifestFile.Name)'. Error: $($_.Exception.Message)"
+        }
+    }
+    else {
+        Log-Verbose "  -> Skipping source date check for '$($localManifestFile.Name)' (source path is missing or non-standard or it's a manual or deprecated source)." -ForegroundColor DarkGray
     }
 
-    if (-not $data.IsPending) {
-        $sourcePath = $data.Metadata.source
-        if ($sourcePath -and $sourcePath -ne 'MANUAL' -and $sourcePath -ne 'DEPRECATED' -and (Test-Path $sourcePath)) {
-            try {
-                $fileUpdateStr = (Get-Item $sourcePath).LastWriteTime.ToString($timestampFormat)
-                if ($fileUpdateStr -gt $lastUpdateStr) { $data.IsPending = $true; $data.PendingReason = "source file modified on $fileUpdateStr after last recorded update on $lastUpdateStr" }
-            }
-            catch {}
-        }
-    }
     $allManifestData += $data
 }
 
-$updateableManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -ne 'dead' -and $_.Metadata.sourceState -ne 'manual' }
+$updateableManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -ne 'dead' -And $_.Metadata.sourceState -ne 'manual' }
 
 # --- Mode: List Manual ---
 if ($ListManual) {
-    Write-Host "`n📜 Listing manifests marked as MANUAL..." -ForegroundColor Cyan
-    $manualFiles = $allManifestData | Where-Object { $_.Metadata.sourceState -eq 'manual' -or $_.Metadata.source -eq 'MANUAL' }
-    if ($manualFiles) { $manualFiles | ForEach-Object { Write-Host "  - $($_.File.Name)" } } else { Write-Host "  ✅ No manifests are marked as MANUAL." }
+    Write-Host
+    Log-It "📜 Listing manifests marked as MANUAL..." Cyan
+    $manualFiles = $allManifestData | Where-Object { $_.Metadata.sourceState -eq 'manual' -Or $_.Metadata.source -eq 'MANUAL' }
+    if ($manualFiles) {
+        $manualFiles | ForEach-Object { Log-It "  - $($_.File.Name)" }
+    }
+    else {
+        Log-It "  ✅ No manifests are marked as MANUAL"
+    }
     return
 }
 
 # --- Mode: List Pending ---
 if ($ListPending) {
-    Write-Host "`n📜 Listing manifests with pending changes..." -ForegroundColor Cyan
+    Write-Host
+    Log-It "📜 Listing manifests with pending changes..." Cyan
     $pendingCount = 0
     foreach ($data in $updateableManifests) {
         if ($data.IsPending) {
-            $pendingCount++; Write-Host "  - $($data.File.Name) ($($data.PendingReason))" -ForegroundColor Yellow
+            $pendingCount++
+            Log-Highglight "  - $($data.File.Name) ($($data.PendingReason))"
         }
         elseif ($VerboseList) {
-            $changeDate = $data.Metadata.sourceLastChangeFound; $updateDate = $data.Metadata.sourceLastUpdated
-            Write-Host "  - $($data.File.Name) (source last changed on $updateDate before last manifest update on $changeDate, so skipping)" -ForegroundColor DarkGray
+            $updateDate = $data.Metadata.sourceLastUpdated
+            Log-It "  - $($data.File.Name) (authentic source date is $updateDate, skipping)"
         }
     }
-    if ($pendingCount -eq 0) { Write-Host "  ✅ No non-manual manifests have pending changes." }
+    if ($pendingCount -eq 0) { Log-It "  ✅ No non-manual manifests have pending changes" }
     return
 }
 
 # --- Mode: Interactive ---
 if ($Interactive) {
-    Write-Host "`n👋 Starting interactive update session..." -ForegroundColor Cyan
+    Write-Host
+    Log-It "👋 Starting interactive update session..." Cyan
     $updateCandidates = 0
     foreach ($data in $updateableManifests) {
         $sourceUrl = $data.Metadata.sourceUrl
-        if (([string]::IsNullOrWhiteSpace($sourceUrl)) -or ($sourceUrl -notlike 'http*')) { continue }
-
-        Write-Host "`n- Checking '$($data.File.Name)'..." -ForegroundColor DarkGray
+        if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
+        Write-Host
+        Log-It "- Checking '$($data.File.Name)'..."
         $remoteJson = $null
         try { $remoteJson = Invoke-WebRequest -Uri $sourceUrl -UseBasicParsing | ConvertFrom-Json } catch { continue }
 
-        if ($data.Local.version -eq $remoteJson.version) { continue }
-        if (-not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { continue }
+        if ($data.Local.version -eq $remoteJson.version -And -Not $data.IsPending) { continue }
+        if ($data.Local.version -ne $remoteJson.version -And -Not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { continue }
 
         $updateCandidates++
-        Write-Host "--- Reviewing '$($data.File.Name)' ---" -ForegroundColor Yellow
+        Log-Highlight "--- Reviewing '$($data.File.Name)' ---"
 
         $proceedToStandardPrompt = $false
         if ($data.Metadata.sourceState -eq 'frozen') {
@@ -258,7 +414,7 @@ if ($Interactive) {
                 $proceedToStandardPrompt = $true
             }
             else {
-                Write-Host "  -> ❄️ Skipping frozen package as requested." -ForegroundColor Cyan
+                Log-It "  -> ❄️ Skipping frozen package as requested" Cyan
                 continue
             }
         }
@@ -275,9 +431,9 @@ if ($Interactive) {
             if ($delayDays -gt 0) {
                 try {
                     $updateDate = [datetime]::ParseExact($data.Metadata.sourceLastUpdated, $timestampFormat, $null)
-                    $updateAge = (Get-Date) - $updateDate
+                    $updateAge = (Get-Now) - $updateDate
                     if ($updateAge.TotalDays -lt $delayDays) {
-                        Write-Warning "This source update is only $($updateAge.TotalDays.ToString('F0')) days old, which is within the $($delayDays)-day delay period."
+                        Log-Warning "This source update is only $($updateAge.TotalDays.ToString('F0')) days old, which is within the $($delayDays)-day delay period"
                     }
                 }
                 catch {}
@@ -286,9 +442,9 @@ if ($Interactive) {
             if ($minDays -gt 0) {
                 try {
                     $changeDate = [datetime]::ParseExact($data.Metadata.sourceLastChangeFound, $timestampFormat, $null)
-                    $lastChangeAge = (Get-Date) - $changeDate
+                    $lastChangeAge = (Get-Now) - $changeDate
                     if ($lastChangeAge.TotalDays -lt $minDays) {
-                        Write-Warning "This manifest was last updated only $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))."
+                        Log-Warning "This manifest was last updated only $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))"
                     }
                 }
                 catch {}
@@ -297,81 +453,97 @@ if ($Interactive) {
             $choice = Read-Host "Apply this change? (A)ccept / (F)reeze / (S)kip / (Q)uit"
             switch ($choice.ToLower()) {
                 'a' {
-                    $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastUpdated = $runTimestamp; $newMetadata.sourceLastChangeFound = $runTimestamp
+                    $authenticDate = Get-GitCommitDate -FilePath $data.Metadata.source
+                    $newMetadata = $data.Metadata.Clone()
+                    $newMetadata.sourceLastUpdated = $authenticDate
+                    $newMetadata.sourceLastChangeFound = $runTimestamp
                     $newJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
-                    Write-Host "    -> Writing accepted changes to '$($data.File.Name)'..." -ForegroundColor DarkGray
+                    Log-It "    -> Writing accepted changes to '$($data.File.Name)'..."
                     $newJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
-                    Write-Host "  ✅ Accepted. Manifest '$($data.File.Name)' has been updated." -ForegroundColor Green
+                    Log-It "  ✅ Accepted. Manifest '$($data.File.Name)' has been updated" Green
                 }
                 'f' {
-                    Write-Host "  -> ❄️ Freezing package '$($data.File.Name)' at current version."
+                    Log-It "  -> ❄️ Freezing package '$($data.File.Name)' at current version"
                     $newMetadata = $data.Metadata.Clone()
                     $newMetadata.sourceState = 'frozen'
-                    $newMetadata.sourceLastUpdated = $runTimestamp
+                    $newMetadata.sourceLastUpdated = Get-GitCommitDate -FilePath $data.Metadata.source
                     $newMetadata.sourceLastChangeFound = $runTimestamp
                     $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
-                    Write-Host "    -> Writing updated state to manifest..." -ForegroundColor DarkGray
+                    Log-It "    -> Writing updated state to manifest..."
                     $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
                 }
-                's' { Write-Host "  ⏩ Skipped '$($data.File.Name)'." }
-                'q' { Write-Host "🛑 Aborting interactive session."; return }
-                default { Write-Host "  ⏩ Invalid choice. Skipping '$($data.File.Name)'." }
+                's' { Log-It "  ⏩ Skipped '$($data.File.Name)'." }
+                'q' { Log-It "🛑 Aborting interactive session."; return }
+                default { Log-It "  ⏩ Invalid choice. Skipping '$($data.File.Name)'" }
             }
         }
     }
     if ($updateCandidates -eq 0) {
-        Write-Host "`n  ✅ No manifests have pending changes to review."
+        Write-Host
+        Log-It "  ✅ No manifests have pending changes to review"
     }
-    Write-Host "`n✨ Interactive session complete."; return
+    Write-Host
+    Log-It "✨ Interactive session complete"
+    return
 }
 
 # --- Mode: Default Automatic Update ---
-Write-Host "`n🔄 Checking for updates in '$PersonalBucketPath'..."
+Write-Host
+Log-It "🔄 Checking for updates in '$PersonalBucketPath'..."
 foreach ($data in $updateableManifests) {
     $sourceUrl = $data.Metadata.sourceUrl
-    if (([string]::IsNullOrWhiteSpace($sourceUrl)) -or ($sourceUrl -notlike 'http*')) { continue }
+    if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
+
+    # CHURN GUARD: Determine the authentic date of the source file BEFORE doing anything else
+    $authenticSourceDate = Get-GitCommitDate -FilePath $data.Metadata.source
 
     $remoteJson = $null
     try { $remoteJson = Invoke-WebRequest -Uri $sourceUrl -UseBasicParsing | ConvertFrom-Json } catch {
-        if (-not $ChangesOnly) {
-            Write-Host "`n  - Checking '$($data.File.Name)'..."
-            Write-Warning "    ⚠️ Failed to download source. Error: $($_.Exception.Message)"
+        if (-Not $ChangesOnly) {
+            Write-Host
+            Log-It "  - Checking '$($data.File.Name)'..."
+            Log-Warning "    ⚠️ Failed to download source. Error: $($_.Exception.Message)"
         }
         continue
     }
 
-    $hasUpdate = ($data.Local.version -ne $remoteJson.version) -and (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)
-    $hasStaleTimestamp = $data.IsPending
+    $hasUpdate = ($data.Local.version -ne $remoteJson.version) -And (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)
+    $sourceFileChanged = ($authenticSourceDate -gt $data.Metadata.sourceLastUpdated)
 
-    if (-not $hasUpdate -and -not $hasStaleTimestamp) {
-        if (-not $ChangesOnly) {
-            Write-Host "`n  - Checking '$($data.File.Name)'..."
-            Write-Host "    👍 Already up to date (version $($data.Local.version))."
+    # FINAL CHURN GUARD: If no version jump AND the source file is exactly where we last left it, skip the manifest.
+    if (-Not $hasUpdate -And -Not $sourceFileChanged) {
+        if (-Not $ChangesOnly) {
+            Write-Host
+            Log-It "  - Checking '$($data.File.Name)'..."
+            Log-It "    👍 Already up to date (version $($data.Local.version))"
         }
         continue
     }
 
-    Write-Host "`n  - Checking '$($data.File.Name)'..."
+    Write-Host
+    Log-It "  - Checking '$($data.File.Name)'..."
 
-    if (-not $hasUpdate -and $hasStaleTimestamp) {
-        Write-Host "    👍 Already up to date (version $($data.Local.version))."
-        $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastUpdated = $runTimestamp
-        Write-Host "      -> Correcting source timestamp due to file change: $($data.PendingReason)" -ForegroundColor DarkGray
+    if (-Not $hasUpdate -And $sourceFileChanged) {
+        Log-It "    👍 Already up to date (version $($data.Local.version))"
+        $newMetadata = $data.Metadata.Clone();
+        $newMetadata.sourceLastUpdated = $authenticSourceDate
+        $newMetadata.sourceLastChangeFound = $runTimestamp
+        Log-It "      -> Syncing timestamps: authentic date is $authenticSourceDate"
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
         $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
         continue
     }
 
-    if ($data.Local.version -ne $remoteJson.version -and -not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) {
-        Write-Host "    Halted. Remote version ($($remoteJson.version)) is older than local version ($data.Local.version))." -ForegroundColor Magenta
+    if ($data.Local.version -ne $remoteJson.version -And -Not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) {
+        Log-It "    Halted; remote version ($($remoteJson.version)) is older than local version ($($data.Local.version))" Magenta
         continue
     }
 
-    Write-Host "    - Local version: $($data.Local.version), Remote version: $($remoteJson.version)."
+    Log-It "    - Local version: $($data.Local.version), Remote version: $($remoteJson.version)"
 
     if ($data.Metadata.sourceState -eq 'frozen') {
-        Write-Host "    -> ❄️ Update found for FROZEN package. No action will be taken." -ForegroundColor Cyan
-        if (-not $SkipFrozen) {
+        Log-It "    -> ❄️ Update found for FROZEN package; no action will be taken" Cyan
+        if (-Not $SkipFrozen) {
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
         }
         continue
@@ -381,9 +553,9 @@ foreach ($data in $updateableManifests) {
     if ($minDays -gt 0) {
         try {
             $changeDate = [datetime]::ParseExact($data.Metadata.sourceLastChangeFound, $timestampFormat, $null)
-            $lastChangeAge = (Get-Date) - $changeDate
+            $lastChangeAge = (Get-Now) - $changeDate
             if ($lastChangeAge.TotalDays -lt $minDays) {
-                Write-Host "    -> 🕰️  Update found, but logging only. Manifest was updated $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))." -ForegroundColor Magenta
+                Log-It "    -> 🕰️  Update found, but logging only; manifest was updated $($lastChangeAge.TotalDays.ToString('F0')) days ago (minimum is $($minDays))" Magenta
                 Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
                 continue
             }
@@ -395,9 +567,9 @@ foreach ($data in $updateableManifests) {
     if ($delayDays -gt 0) {
         try {
             $updateDate = [datetime]::ParseExact($data.Metadata.sourceLastUpdated, $timestampFormat, $null)
-            $updateAge = (Get-Date) - $updateDate
+            $updateAge = (Get-Now) - $updateDate
             if ($updateAge.TotalDays -lt $delayDays) {
-                Write-Host "    -> 🕰️  Update found, but source change is too recent to apply (within $($delayDays)-day delay period). Skipping." -ForegroundColor Magenta
+                Log-It "    -> 🕰️  Update found, but source change is too recent to apply (within $($delayDays)-day delay period); skipping..." Magenta
                 continue
             }
         }
@@ -405,7 +577,7 @@ foreach ($data in $updateableManifests) {
     }
 
     if (Compare-ManifestObjects -ReferenceObject $data.Local -DifferenceObject $remoteJson) {
-        Write-Host "    ✅ Simple version change detected. Auto-updating..."
+        Log-It "    ✅ Simple version change detected. Auto-updating..."
         $data.Local.version = $remoteJson.version
         if ($remoteJson.PSObject.Properties['url']) { $data.Local.url = $remoteJson.url } elseif ($data.Local.PSObject.Properties['url']) { $data.Local.PSObject.Properties.Remove('url') }
         if ($remoteJson.PSObject.Properties['hash']) { $data.Local.hash = $remoteJson.hash } elseif ($data.Local.PSObject.Properties['hash']) { $data.Local.PSObject.Properties.Remove('hash') }
@@ -413,21 +585,26 @@ foreach ($data in $updateableManifests) {
         if ($remoteJson.PSObject.Properties['architecture']) { $data.Local.architecture = $remoteJson.architecture } elseif ($data.Local.PSObject.Properties['architecture']) { $data.Local.PSObject.Properties.Remove('architecture') }
         if ($remoteJson.PSObject.Properties['autoupdate']) { $data.Local.autoupdate = $remoteJson.autoupdate } elseif ($data.Local.PSObject.Properties['autoupdate']) { $data.Local.PSObject.Properties.Remove('autoupdate') }
 
-        $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastUpdated = $runTimestamp; $newMetadata.sourceLastChangeFound = $runTimestamp
+        $newMetadata = $data.Metadata.Clone();
+        $newMetadata.sourceLastUpdated = $authenticSourceDate
+        $newMetadata.sourceLastChangeFound = $runTimestamp
         $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
 
-        Write-Host "      -> Writing updated version and timestamps to '$($data.File.Name)'." -ForegroundColor DarkGray
+        Log-It "      -> Writing updated version and timestamps to '$($data.File.Name)'"
         $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
     }
     else {
-        Write-Warning "    ⚠️ Manifest has complex changes. Flagging for manual review."
-        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
-
-        $newMetadata = $data.Metadata.Clone(); $newMetadata.sourceLastChangeFound = $runTimestamp
-        $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
-
-        Write-Host "      -> Updating 'sourceLastChangeFound' timestamp in '$($data.File.Name)'." -ForegroundColor DarkGray
-        $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
+        # IMPORTANT: Flag only if we haven't already flagged it.
+        if ($data.Metadata.sourceLastChangeFound -le $data.Metadata.sourceLastUpdated) {
+            Log-Warning "    ⚠️ Manifest has complex changes. Flagging for manual review"
+            Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+            $newMetadata = $data.Metadata.Clone()
+            $newMetadata.sourceLastChangeFound = $runTimestamp
+            $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+            Log-It "      -> Updating 'sourceLastChangeFound' timestamp in '$($data.File.Name)'"
+            $updatedJson | ConvertTo-Json -Depth 10 | Set-Content -Path $data.File.FullName -Encoding UTF8
+        }
     }
 }
-Write-Host "`n✨ Update check complete."
+Write-Host
+Log-It "✨ Update check complete"
