@@ -86,8 +86,8 @@ Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     $baseComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
     $metadataLines = @(
         $MetadataToWrite.GetEnumerator() |
-            Sort-Object -Property Key |
-            ForEach-Object { "$($_.Key): $($_.Value)" }
+        Sort-Object -Property Key |
+        ForEach-Object { "$($_.Key): $($_.Value)" }
     )
     $JSONObject.'##' = @($baseComments + $metadataLines)
     return $JSONObject
@@ -164,11 +164,11 @@ Function New-SourceUrl {
     if (-Not $normalized) { return $null }
 
     $uri = [Uri]$normalized
-    $host = $uri.Host.ToLower()
+    $hostname = $uri.Host.ToLower()
     $path = $uri.AbsolutePath.Trim('/').TrimEnd('/')
     $relative = $RelativePath.TrimStart('/').Replace("\", "/")
 
-    if ($host -eq 'github.com') {
+    if ($hostname -eq 'github.com') {
         return "https://raw.githubusercontent.com/$path/$Branch/$relative"
     }
 
@@ -300,7 +300,7 @@ if (Test-Path $sourceScriptsPath) {
     }
 }
 else {
-    Write-Log "No scripts directory found at '$sourceScriptsPath'."
+    Write-Log "No scripts directory found at '$sourceScriptsPath'"
 }
 
 Write-Log "Done." "Green"
