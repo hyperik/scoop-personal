@@ -884,8 +884,6 @@ foreach ($localManifestFile in $manifests) {
     $allManifestData += $data
 }
 
-$updateableManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -ne 'dead' -And $_.Metadata.sourceState -ne 'manual' }
-
 # --- Mode: List Manual ---
 if ($ListManual) {
     Write-Host
@@ -913,6 +911,8 @@ if ($ListLocks) {
     }
     return
 }
+
+$updateableManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -ne 'dead' -And $_.Metadata.sourceState -ne 'manual' }
 
 # --- Mode: List Pending ---
 if ($ListPending) {
@@ -1231,6 +1231,15 @@ Write-Log "🔄 Checking for updates in '$BucketPath'..."
 foreach ($data in $updateableManifests) {
     $sourceUrl = $data.Metadata.sourceUrl
     if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
+
+    if ($data.Metadata.sourceState -eq 'frozen') {
+        if (-Not $ChangesOnly) {
+            Write-Host
+            Write-Log "  - Checking '$($data.File.Name)'..."
+            Write-LogAttention "    -> ❄️ Package is frozen; skipping all processing"
+        }
+        continue
+    }
 
     # CHURN GUARD: Determine the authentic status of the source file BEFORE doing anything else
     $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
