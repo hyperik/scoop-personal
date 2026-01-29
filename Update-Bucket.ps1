@@ -4,7 +4,7 @@
 
 .DESCRIPTION
   This script tracks changes using metadata stored within the schema-conformant "##" property.
-  It respects the 'sourceState' metadata field ('active', 'frozen', 'dead', 'manual') to control update behavior.
+    It respects the 'sourceState' metadata field ('active', 'frozen', 'dead', 'manual', and explicit lock states) to control update behavior.
   It also supports 'sourceDelayDays' to delay updates, 'sourceUpdateMinimumDays' to throttle update frequency,
   a 'sourceDeferredUpdateFound' field to track deferred updates, and a 'sourceComment' field for arbitrary user notes.
 
@@ -13,7 +13,7 @@
     2. Interactive Mode: Prompts the user to accept or skip complex changes.
     3. List Pending Mode: Lists manifests with pending changes and their relevant timestamps.
     4. List Manual Mode: Lists all manifests configured as MANUAL.
-    5. List Locks Mode: Lists manifests that are frozen or domain-change-lock.
+    5. List Locks Mode: Lists manifests that are frozen or in a lock state (domain-change-lock, license-change-lock, version-check-lock).
     6. Process Locks Mode: Interactively reviews locked manifests and allows unlocking with updates.
     7. Verbose List Mode: When used with -ListPending, shows all non-manual files and explains their status.
 
@@ -27,7 +27,7 @@
   Lists all manifests that are configured with a source of 'MANUAL' or a state of 'manual'.
 
 .PARAMETER ListLocks
-  Lists all manifests that are configured with a state of 'frozen' or 'domain-change-lock'.
+  Lists all manifests that are configured with a lock state such as 'frozen', 'domain-change-lock', 'license-change-lock', or 'version-check-lock'.
 
 .PARAMETER ProcessLocks
   Interactively processes locked manifests (frozen or explicit lock states) and allows unlocking with updates.
@@ -79,7 +79,7 @@
   and enables deep comparison to detect any JSON changes (excluding the '##' comment node).
 
 .PARAMETER PullSources
-    Pulls each repository listed in local-repos.cfg before processing any manifests.
+  Pulls each repository listed in local-repos.cfg before processing any manifests.
 
 .EXAMPLE
   # Runs automatically to check for and apply updates in the default bucket path without user interaction.
@@ -222,12 +222,17 @@ Function Write-LogWarning {
     }
 }
 
-Function Write-Highlight {
+Function Write-LogHighlight {
     param([string]$Message)
     Write-Log -Message $Message -Colour Yellow
 }
 
-Function Write-Concern {
+Function Write-LogAttention {
+    param([string]$Message)
+    Write-Log -Message $Message -Colour Cyan
+}
+
+Function Write-LogConcern {
     param([string]$Message)
     Write-Log -Message $Message -Colour Magenta
 }
@@ -240,7 +245,7 @@ Function Write-LogVerbose {
     }
 }
 
-Function Write-Trace {
+Function Write-LogTrace {
     param([string]$Message)
     if ($Trace) {
         Write-Log -Message $Message -Colour Blue
@@ -254,13 +259,13 @@ Function Invoke-PullSourceRepos {
     )
 
     if (-Not (Test-Path $ConfigPath)) {
-        Write-LogWarning "local-repos.cfg not found at '$ConfigPath'. Skipping source pulls."
+        Write-LogWarning "local-repos.cfg not found at '$ConfigPath'. Skipping source pulls"
         return
     }
 
     $entries = Get-Content -Path $ConfigPath | Where-Object { $_ -match ';' }
     if (-Not $entries -or $entries.Count -eq 0) {
-        Write-LogWarning "No repository entries found in '$ConfigPath'. Skipping source pulls."
+        Write-LogWarning "No repository entries found in '$ConfigPath'. Skipping source pulls"
         return
     }
 
@@ -286,7 +291,7 @@ Function Invoke-PullSourceRepos {
             }
             git -C $repoPath pull | Out-Null
             if ($LASTEXITCODE -ne 0) {
-                Write-LogWarning "Pull failed for '$repoPath' (exit code $LASTEXITCODE)."
+                Write-LogWarning "Pull failed for '$repoPath' (exit code $LASTEXITCODE)"
             }
             elseif ($VerboseOutput) {
                 Write-Log "  ✅ Pulled '$repoPath'" "Green"
@@ -354,14 +359,14 @@ Function Invoke-ChangeDecision {
             return $true
         }
         's' {
-            Write-Log "  ⏩ Skipped '$($Data.File.Name)'."
+            Write-Log "  ⏩ Skipped '$($Data.File.Name)'"
             if ($RecordDeferredOnSkipOrFreeze) {
                 Set-DeferredUpdateFound -Data $Data -RunTimestamp $RunTimestamp | Out-Null
             }
             return $true
         }
         'q' {
-            Write-Log "🛑 Aborting update run."
+            Write-Log "🛑 Aborting update run"
             return $false
         }
         default {
@@ -427,13 +432,13 @@ Function Get-GitCommitDate {
 
         # If we have a hash and it matches the stored one, skip the slow history walk
         if ($currentHash -And $StoredHash -And ($currentHash -eq $StoredHash) -And $StoredDate) {
-            Write-Trace "      -> Hash matches stored value ($currentHash). Skipping slow git walk."
+            Write-LogTrace "      -> Hash matches stored value ($currentHash); skipping slow git walk"
             return [pscustomobject]@{ Date = $StoredDate; Hash = $currentHash; Match = $true }
         }
 
-        Write-Trace "      -> Hash changed or missing. Getting last commit date for '$FilePath'"
+        Write-LogTrace "      -> Hash changed or missing. Getting last commit date for '$FilePath'"
         $gitDate = git -C $repoDir --no-pager log -1 --format=%cI -- $FilePath 2>$null
-        Write-Trace "      -> Git last commit date for file '$FilePath' is '$gitDate'"
+        Write-LogTrace "      -> Git last commit date for file '$FilePath' is '$gitDate'"
         if ($gitDate) {
             $finalDate = ([datetime]$gitDate).ToUniversalTime().ToString($timestampFormat)
         }
@@ -577,6 +582,26 @@ Function Test-DeepManifestChange {
 # Version comparison test using [version] type casting to check for ordering. Relies on versions being castable to [version].
 Function Test-IsNewerVersion { param ($RemoteVersion, $LocalVersion); try { return [version]$RemoteVersion -ge [version]$LocalVersion } catch { return $true } }
 
+# Version check lock: lexicographic regression or pre-release marker introduced.
+Function Test-VersionCheckLock {
+    param (
+        [string]$LocalVersion,
+        [string]$RemoteVersion
+    )
+
+    if ([string]::IsNullOrWhiteSpace($LocalVersion) -or [string]::IsNullOrWhiteSpace($RemoteVersion)) { return $false }
+    if ($LocalVersion -eq $RemoteVersion) { return $false }
+
+    $lexCompare = [string]::Compare($RemoteVersion, $LocalVersion, $true)
+    $remoteHasPrerelease = $RemoteVersion -match '(?i)(alpha|beta)'
+    $localHasPrerelease = $LocalVersion -match '(?i)(alpha|beta)'
+
+    if ($lexCompare -lt 0) { return $true }
+    if ($remoteHasPrerelease -and -not $localHasPrerelease) { return $true }
+
+    return $false
+}
+
 # Compares two manifest objects for significant differences, ignoring version, URL, hash, and extract_dir fields.
 Function Compare-ManifestObjects {
     param([PsCustomObject]$ReferenceObject, [PsCustomObject]$DifferenceObject)
@@ -598,7 +623,7 @@ Function Compare-ManifestObjects {
         $localBase = ($localUrls[0] | Select-String -Pattern $githubProjectRegex).Matches.Value
         $remoteBase = ($remoteUrls[0] | Select-String -Pattern $githubProjectRegex).Matches.Value
         if ($localBase -And $remoteBase -And $localBase -ne $remoteBase) {
-            Write-Highlight "    -> Complex change detected: URL project changed from '$localBase' to '$remoteBase'"
+            Write-LogHighlight "    -> Complex change detected: URL project changed from '$localBase' to '$remoteBase'"
             return $false
         }
     }
@@ -643,7 +668,7 @@ Function Show-ManifestDiff {
 # Writes the in-memory data structure to the given file path.
 Function Write-Manifest {
     param([PsCustomObject]$MetadataToWrite, [String]$FilePath)
-    Write-Trace "Writing updated metadata to manifest at '$FilePath'"
+    Write-LogTrace "Writing updated metadata to manifest at '$FilePath'"
     $MetadataToWrite | ConvertTo-Json -Depth 10 | Set-Content -Path $FilePath -Encoding UTF8
 }
 
@@ -691,7 +716,7 @@ foreach ($localManifestFile in $manifests) {
     $sourcePath = $data.Metadata.source
     if ($sourcePath -And $sourcePath -ne 'MANUAL' -And $sourcePath -ne 'DEPRECATED' -And (Test-Path $sourcePath)) {
         try {
-            Write-Trace "    -> Checking source date for '$($localManifestFile.Name)' at source path '$sourcePath'"
+            Write-LogTrace "    -> Checking source date for '$($localManifestFile.Name)' at source path '$sourcePath'"
             $sourceInfo = Get-GitCommitDate -FilePath $sourcePath -StoredHash $storedHash -StoredDate $lastUpdateStr
             $fileUpdateStr = $sourceInfo.Date
             $data.CurrentHash = $sourceInfo.Hash
@@ -716,7 +741,7 @@ foreach ($localManifestFile in $manifests) {
                 $data.IsPending = $true
                 $data.PendingReason = "upstream source updated to $fileUpdateStr after last recorded update on $lastUpdateStr"
                 if ($VerboseProcessing) {
-                    Write-Highlight "  -> Marking '$($localManifestFile.Name)' as pending because the upstream source was updated to $fileUpdateStr which is after the last recorded update on $lastUpdateStr"
+                    Write-LogHighlight "  -> Marking '$($localManifestFile.Name)' as pending because the upstream source was updated to $fileUpdateStr which is after the last recorded update on $lastUpdateStr"
                 }
             }
             else {
@@ -730,7 +755,7 @@ foreach ($localManifestFile in $manifests) {
         }
     }
     else {
-        Write-LogVerbose "  -> Skipping source date check for '$($localManifestFile.Name)' (source path is missing or non-standard or it's a manual or deprecated source)."
+        Write-LogVerbose "  -> Skipping source date check for '$($localManifestFile.Name)' (source path is missing or non-standard or it's a manual or deprecated source)"
     }
 
     $allManifestData += $data
@@ -741,7 +766,7 @@ $updateableManifests = $allManifestData | Where-Object { $_.Metadata.sourceState
 # --- Mode: List Manual ---
 if ($ListManual) {
     Write-Host
-    Write-Log "📜 Listing manifests marked as MANUAL..." Cyan
+    Write-LogAttention "📜 Listing manifests marked as MANUAL..."
     $manualFiles = $allManifestData | Where-Object { $_.Metadata.sourceState -eq 'manual' -Or $_.Metadata.source -eq 'MANUAL' }
     if ($manualFiles) {
         $manualFiles | ForEach-Object { Write-Log "  - $($_.File.Name)" }
@@ -755,8 +780,8 @@ if ($ListManual) {
 # --- Mode: List Locks ---
 if ($ListLocks) {
     Write-Host
-    Write-Log "📜 Listing manifests marked as locks (frozen or domain-change-lock)..." Cyan
-    $lockFiles = $allManifestData | Where-Object { $_.Metadata.sourceState -in @('frozen', 'domain-change-lock', 'license-change-lock') }
+    Write-LogAttention "📜 Listing manifests marked as locks (frozen or explicit lock states)..."
+    $lockFiles = $allManifestData | Where-Object { $_.Metadata.sourceState -in @('frozen', 'domain-change-lock', 'license-change-lock', 'version-check-lock') }
     if ($lockFiles) {
         $lockFiles | ForEach-Object { Write-Log "  - $($_.File.Name) [$($_.Metadata.sourceState)]" }
     }
@@ -769,12 +794,12 @@ if ($ListLocks) {
 # --- Mode: List Pending ---
 if ($ListPending) {
     Write-Host
-    Write-Log "📜 Listing manifests with pending changes..." Cyan
+    Write-LogAttention "📜 Listing manifests with pending changes..."
     $pendingCount = 0
     foreach ($data in $updateableManifests) {
         if ($data.IsPending) {
             $pendingCount++
-            Write-Highlight "  - $($data.File.Name) ($($data.PendingReason))"
+            Write-LogHighlight "  - $($data.File.Name) ($($data.PendingReason))"
         }
         elseif ($VerboseList) {
             $updateDate = $data.Metadata.sourceLastUpdated
@@ -788,9 +813,9 @@ if ($ListPending) {
 # --- Mode: Process Locks ---
 if ($ProcessLocks) {
     Write-Host
-    Write-Log "🔒 Starting locked manifest processing..." Cyan
+    Write-LogAttention "🔒 Starting locked manifest processing..."
 
-    $lockedStates = @('frozen', 'domain-change-lock', 'license-change-lock')
+    $lockedStates = @('frozen', 'domain-change-lock', 'license-change-lock', 'version-check-lock')
     $lockedManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -in $lockedStates }
     if ($ExcludeFrozen) {
         $lockedManifests = $lockedManifests | Where-Object { $_.Metadata.sourceState -ne 'frozen' }
@@ -863,12 +888,12 @@ if ($ProcessLocks) {
 # --- Mode: Interactive ---
 if ($Interactive) {
     Write-Host
-    Write-Log "👋 Starting interactive update session..." Cyan
+    Write-LogAttention "👋 Starting interactive update session..."
     $updateCandidates = 0
     foreach ($data in $updateableManifests) {
         # Exclude frozen if requested
         if ($ExcludeFrozen -and $data.Metadata.sourceState -eq 'frozen') {
-            Write-Log "  -> Skipping frozen package '$($data.File.Name)' due to -ExcludeFrozen flag" Cyan
+            Write-LogAttention "  -> Skipping frozen package '$($data.File.Name)' due to -ExcludeFrozen flag"
             continue
         }
         $sourceUrl = $data.Metadata.sourceUrl
@@ -883,19 +908,37 @@ if ($Interactive) {
             $deepChanged = Test-DeepManifestChange -LocalJson $data.Local -RemoteJson $remoteJson
         }
 
+        if (Test-VersionCheckLock -LocalVersion $data.Local.version -RemoteVersion $remoteJson.version) {
+            Write-LogConcern "    🔒 Version change requires manual review; locking package (version-check-lock)"
+            $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
+            $newMetadata = $data.Metadata.Clone()
+            $newMetadata.sourceState = 'version-check-lock'
+            $newMetadata.sourceLastUpdated = $sourceInfo.Date
+            $newMetadata.sourceHash = $sourceInfo.Hash
+            $newMetadata.sourceLastChangeFound = $runTimestamp
+            $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+            Write-Log "    -> Writing updated state to manifest..."
+            Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
+            continue
+        }
+
         if (-Not $deepChanged -And $data.Local.version -eq $remoteJson.version -And -Not $data.IsPending) { continue }
         if (-Not $deepChanged -And $data.Local.version -ne $remoteJson.version -And -Not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { continue }
 
         $updateCandidates++
-        Write-Highlight "--- Reviewing '$($data.File.Name)' ---"
+        Write-LogHighlight "--- Reviewing '$($data.File.Name)' ---"
 
         $proceedToStandardPrompt = $false
         if ($data.Metadata.sourceState -eq 'domain-change-lock') {
-            Write-Log "  -> 🔒 Skipping package due to domain-change-lock" Cyan
+            Write-LogAttention "  -> 🔒 Skipping package due to domain-change-lock"
             continue
         }
         if ($data.Metadata.sourceState -eq 'license-change-lock') {
-            Write-Log "  -> 🔒 Skipping package due to license-change-lock" Cyan
+            Write-LogAttention "  -> 🔒 Skipping package due to license-change-lock"
+            continue
+        }
+        if ($data.Metadata.sourceState -eq 'version-check-lock') {
+            Write-LogAttention "  -> 🔒 Skipping package due to version-check-lock"
             continue
         }
         if ($data.Metadata.sourceState -eq 'frozen') {
@@ -905,7 +948,7 @@ if ($Interactive) {
                 $proceedToStandardPrompt = $true
             }
             else {
-                Write-Log "  -> ❄️ Skipping frozen package as requested" Cyan
+                Write-LogAttention "  -> ❄️ Skipping frozen package as requested"
                 Set-DeferredUpdateFound -Data $data -RunTimestamp $runTimestamp | Out-Null
                 continue
             }
@@ -920,7 +963,7 @@ if ($Interactive) {
             }
 
             if (Test-LicenseChange -LocalJson $data.Local -RemoteJson $remoteJson) {
-                Write-Concern "    🔒 License change detected. Locking package for manual review (license-change-lock)."
+                Write-LogConcern "    🔒 License change detected. Locking package for manual review (license-change-lock)"
                 $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
                 $newMetadata = $data.Metadata.Clone()
                 $newMetadata.sourceState = 'license-change-lock'
@@ -934,7 +977,7 @@ if ($Interactive) {
             }
 
             if (Test-UrlDomainChange -LocalJson $data.Local -RemoteJson $remoteJson) {
-                Write-Concern "    🔒 URL domain change detected. Locking package for manual review (domain-change-lock)."
+                Write-LogConcern "    🔒 URL domain change detected. Locking package for manual review (domain-change-lock)"
                 $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
                 $newMetadata = $data.Metadata.Clone()
                 $newMetadata.sourceState = 'domain-change-lock'
@@ -1018,6 +1061,19 @@ foreach ($data in $updateableManifests) {
         $deepChanged = Test-DeepManifestChange -LocalJson $data.Local -RemoteJson $remoteJson
     }
 
+    if (Test-VersionCheckLock -LocalVersion $data.Local.version -RemoteVersion $remoteJson.version) {
+        Write-LogConcern "    🔒 Version change requires manual review; locking package (version-check-lock)"
+        $newMetadata = $data.Metadata.Clone()
+        $newMetadata.sourceState = 'version-check-lock'
+        $newMetadata.sourceLastUpdated = $authenticSourceDate
+        $newMetadata.sourceHash = $currentHash
+        $newMetadata.sourceLastChangeFound = $runTimestamp
+        $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+        Write-Log "      -> Writing updated state to manifest..."
+        Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
+        continue
+    }
+
     $hasUpdate = $deepChanged -or (($data.Local.version -ne $remoteJson.version) -And (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version))
     $sourceFileChanged = ($authenticSourceDate -gt $data.Metadata.sourceLastUpdated)
 
@@ -1047,15 +1103,15 @@ foreach ($data in $updateableManifests) {
     }
 
     if (-Not $deepChanged -And $data.Local.version -ne $remoteJson.version -And -Not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) {
-        Write-Concern "    Halted; remote version ($($remoteJson.version)) is older than local version ($($data.Local.version))"
+        Write-LogConcern "    Halted; remote version ($($remoteJson.version)) is older than local version ($($data.Local.version))"
         continue
     }
 
     Write-Log "    - Local version: $($data.Local.version), Remote version: $($remoteJson.version); update available"
 
-    if ($data.Metadata.sourceState -in @('frozen', 'domain-change-lock', 'license-change-lock')) {
+    if ($data.Metadata.sourceState -in @('frozen', 'domain-change-lock', 'license-change-lock', 'version-check-lock')) {
         $stateLabel = $data.Metadata.sourceState
-        Write-Log "    -> ❄️ Update found for locked package (${stateLabel}); no action will be taken" Cyan
+        Write-LogAttention "    -> ❄️ Update found for locked package (${stateLabel}); no action will be taken"
         if (-Not $SkipFrozen) {
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
         }
@@ -1071,7 +1127,7 @@ foreach ($data in $updateableManifests) {
             $changeDate = [datetime]::ParseExact($data.Metadata.sourceLastChangeFound, $timestampFormat, $null)
             $lastChangeAge = (Get-Now) - $changeDate
             if ($lastChangeAge.TotalDays -lt $minDays) {
-                Write-Concern "    -> 🕰️  Update found, but logging only; manifest was updated $($lastChangeAge.TotalDays.ToString('F0')) day(s) ago (minimum is $($minDays))"
+                Write-LogConcern "    -> 🕰️  Update found, but logging only; manifest was updated $($lastChangeAge.TotalDays.ToString('F0')) day(s) ago (minimum is $($minDays))"
                 Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
                 continue
             }
@@ -1089,10 +1145,10 @@ foreach ($data in $updateableManifests) {
                 $deferredAge = $null
                 if ($deferredDate) { $deferredAge = (Get-Now) - $deferredDate }
                 if ($deferredAge -And $deferredAge.TotalDays -ge $delayDays) {
-                    Write-LogVerbose "    -> Deferred update exceeds delay window; proceeding with update."
+                    Write-LogVerbose "    -> Deferred update exceeds delay window; proceeding with update"
                 }
                 else {
-                    Write-Concern "    -> 🕰️  Update found, but source change is too recent to apply (within $($delayDays)-day delay period); skipping..."
+                    Write-LogConcern "    -> 🕰️  Update found, but source change is too recent to apply (within $($delayDays)-day delay period); skipping..."
                     Set-DeferredUpdateFound -Data $data -RunTimestamp $runTimestamp | Out-Null
                     continue
                 }
@@ -1102,7 +1158,7 @@ foreach ($data in $updateableManifests) {
     }
 
     if (Test-LicenseChange -LocalJson $data.Local -RemoteJson $remoteJson) {
-        Write-Concern "    🔒 License change detected. Locking package for manual review (license-change-lock)"
+        Write-LogConcern "    🔒 License change detected. Locking package for manual review (license-change-lock)"
         $newMetadata = $data.Metadata.Clone()
         $newMetadata.sourceState = 'license-change-lock'
         $newMetadata.sourceLastUpdated = $authenticSourceDate
@@ -1115,7 +1171,7 @@ foreach ($data in $updateableManifests) {
     }
 
     if (Test-UrlDomainChange -LocalJson $data.Local -RemoteJson $remoteJson) {
-        Write-Concern "    🔒 URL domain change detected. Locking package for manual review (domain-change-lock)"
+        Write-LogConcern "    🔒 URL domain change detected. Locking package for manual review (domain-change-lock)"
         $newMetadata = $data.Metadata.Clone()
         $newMetadata.sourceState = 'domain-change-lock'
         $newMetadata.sourceLastUpdated = $authenticSourceDate
@@ -1152,7 +1208,7 @@ foreach ($data in $updateableManifests) {
     else {
 
         if ($InteractiveComplex) {
-            Write-Concern "    ⚠️ Manifest $($data.File.Name) has complex changes; interactive review enabled"
+            Write-LogConcern "    ⚠️ Manifest $($data.File.Name) has complex changes; interactive review enabled"
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
             $choice = Get-ChangeDecision
             $sourceInfo = [pscustomobject]@{ Date = $authenticSourceDate; Hash = $currentHash }
@@ -1161,7 +1217,7 @@ foreach ($data in $updateableManifests) {
             }
         }
         elseif ($effectiveAutoComplex) {
-            Write-Concern "    ⚠️ Manifest $($data.File.Name) has complex changes. AutoComplex enabled; applying changes"
+            Write-LogConcern "    ⚠️ Manifest $($data.File.Name) has complex changes. AutoComplex enabled; applying changes"
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
             $newMetadata = $data.Metadata.Clone()
             $newMetadata.sourceLastUpdated = $authenticSourceDate
@@ -1175,7 +1231,7 @@ foreach ($data in $updateableManifests) {
             Write-Manifest -MetadataToWrite $newJson -FilePath $data.File.FullName
         }
         else {
-            Write-Concern "    ⚠️ Manifest $($data.File.Name) has complex changes; manual review required"
+            Write-LogConcern "    ⚠️ Manifest $($data.File.Name) has complex changes; manual review required"
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
         }
     }
