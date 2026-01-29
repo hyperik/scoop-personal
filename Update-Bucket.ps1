@@ -483,17 +483,116 @@ Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     return $JSONObject
 }
 
-Function Get-ManifestUrlDomains {
+Function Get-RawManifestUrls {
     param([PsCustomObject]$Object)
 
-    $urls = @()
-    if ($Object.PSObject.Properties['url']) { $urls += $Object.url }
-    if ($Object.PSObject.Properties['architecture']) {
-        foreach ($arch in $Object.architecture.PSObject.Properties) {
-            if ($arch.Value.PSObject.Properties['url']) { $urls += $arch.Value.url }
+    $urls = [System.Collections.Generic.List[string]]::new()
+    $visited = [System.Collections.Generic.HashSet[int]]::new()
+
+    $addUrlsFromString = {
+        param([string]$Text)
+        if ([string]::IsNullOrWhiteSpace($Text)) { return }
+        $pattern = '(?i)\b[a-z][a-z0-9+.-]*://[^\s"''<>`]+'
+        foreach ($match in [regex]::Matches($Text, $pattern)) {
+            if ($match.Value) { $urls.Add($match.Value) }
         }
     }
 
+    $walk = {
+        param($value)
+        if ($null -eq $value) { return }
+        if ($value -is [string]) {
+            & $addUrlsFromString $value
+            return
+        }
+        if ($value -is [array]) {
+            foreach ($item in $value) { & $walk $item }
+            return
+        }
+        if ($value -is [hashtable] -or $value -is [psobject]) {
+            $hash = [System.Runtime.CompilerServices.RuntimeHelpers]::GetHashCode($value)
+            if (-not $visited.Add($hash)) { return }
+            foreach ($prop in $value.PSObject.Properties) {
+                & $walk $prop.Value
+            }
+        }
+    }
+
+    & $walk $Object
+
+    return $urls | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Sort-Object -Unique
+}
+
+Function Get-BaseUrlFromUrl {
+    param([string]$Url)
+
+    try {
+        $uri = [Uri]::new($Url)
+        $path = $uri.AbsolutePath
+        $dir = Split-Path -Path $path -Parent
+        if ([string]::IsNullOrWhiteSpace($dir) -or $dir -eq '.') { $dir = '/' }
+        $dir = $dir.Replace('\', '/')
+        if (-not $dir.StartsWith('/')) { $dir = '/' + $dir }
+        return "{0}://{1}{2}" -f $uri.Scheme, $uri.Host, $dir.TrimEnd('/')
+    }
+    catch {
+        return $null
+    }
+}
+
+Function Get-ManifestBaseUrl {
+    param([PsCustomObject]$Object)
+
+    $candidateUrls = Get-RawManifestUrls -Object $Object
+    foreach ($candidate in $candidateUrls) {
+        if ([string]::IsNullOrWhiteSpace($candidate)) { continue }
+        if ($candidate -match '\$') { continue }
+        $baseUrl = Get-BaseUrlFromUrl -Url $candidate
+        if ($baseUrl) { return $baseUrl }
+    }
+    return $null
+}
+
+Function Resolve-ManifestUrl {
+    param(
+        [string]$Url,
+        [PsCustomObject]$Object
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Url)) { return $Url }
+
+    $resolvedUrl = $Url
+    if ($Url -match '(\$\{?baseurl\}?|\$\{?url\}?)') {
+        $baseUrl = Get-ManifestBaseUrl -Object $Object
+        if ($baseUrl) {
+            $resolvedUrl = $resolvedUrl.Replace('$baseurl', $baseUrl)
+            $resolvedUrl = $resolvedUrl.Replace('${baseurl}', $baseUrl)
+            $resolvedUrl = $resolvedUrl.Replace('$url', $baseUrl)
+            $resolvedUrl = $resolvedUrl.Replace('${url}', $baseUrl)
+        }
+    }
+
+    return $resolvedUrl
+}
+
+Function Get-ManifestUrls {
+    param([PsCustomObject]$Object)
+
+    $urls = Get-RawManifestUrls -Object $Object
+    $resolvedUrls = @()
+    foreach ($url in $urls) {
+        $resolved = Resolve-ManifestUrl -Url $url -Object $Object
+        if ($resolved) { $resolvedUrls += $resolved }
+        if ($resolved -ne $url) { $resolvedUrls += $url }
+    }
+
+    return $resolvedUrls | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Sort-Object -Unique
+}
+
+Function Get-ManifestUrlDomains {
+    param([PsCustomObject]$Object)
+
+    $urls = Get-ManifestUrls -Object $Object
     $domains = @()
     foreach ($url in $urls) {
         try {
@@ -510,19 +609,43 @@ Function Get-ManifestUrlDomains {
 Function Test-UrlDomainChange {
     param([PsCustomObject]$LocalJson, [PsCustomObject]$RemoteJson)
 
-    $localUrls = @()
-    $remoteUrls = @()
-    if ($LocalJson.PSObject.Properties['url']) { $localUrls += $LocalJson.url }
-    if ($RemoteJson.PSObject.Properties['url']) { $remoteUrls += $RemoteJson.url }
-    if ($LocalJson.PSObject.Properties['homepage']) { $localUrls += $LocalJson.homepage }
-    if ($RemoteJson.PSObject.Properties['homepage']) { $remoteUrls += $RemoteJson.homepage }
+    $localUrls = Get-ManifestUrls -Object $LocalJson
+    $remoteUrls = Get-ManifestUrls -Object $RemoteJson
 
-    $localDomains = $localUrls | ForEach-Object { try { ([uri]$_).Host } catch { $null } } | Where-Object { $_ }
-    $remoteDomains = $remoteUrls | ForEach-Object { try { ([uri]$_).Host } catch { $null } } | Where-Object { $_ }
+    $getHost = {
+        param($value)
+        if ([string]::IsNullOrWhiteSpace($value)) { return $null }
+        try {
+            $hostName = ([uri]$value).Host
+            if (-not [string]::IsNullOrWhiteSpace($hostName)) { return $hostName.ToLower() }
+        }
+        catch { }
+        if ($value -Match '^[a-zA-Z][a-zA-Z0-9+.-]*://([^/]+)') { return $matches[1].ToLower() }
+        return $null
+    }
+
+    $localDomains = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ($url in $localUrls) {
+        $hostName = & $getHost $url
+        if ($hostName) {
+            [void]$localDomains.Add($hostName)
+        }
+    }
+
+    $remoteDomains = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ($url in $remoteUrls) {
+        $hostName = & $getHost $url
+        if ($hostName) { [void]$remoteDomains.Add($hostName) }
+    }
 
     # Check for domain changes
-    $domainDiff = Compare-Object -ReferenceObject $localDomains -DifferenceObject $remoteDomains
-    if ($null -ne $domainDiff) { return $true }
+    if ($localDomains.Count -eq 0 -And $remoteDomains.Count -eq 0) {
+        return $false
+    }
+    if (-Not $localDomains.SetEquals($remoteDomains)) {
+        Write-LogTrace "      -> Domain sets differ: Local=($($localDomains -join ', ')) Remote=($($remoteDomains -join ', '))"
+        return $true
+    }
 
     # Special handling for github.com: check first two path segments (account/repo)
     $githubUrlsLocal = $localUrls | Where-Object { $_ -match 'github' }
@@ -925,7 +1048,6 @@ if ($Interactive) {
         if (-Not $deepChanged -And $data.Local.version -eq $remoteJson.version -And -Not $data.IsPending) { continue }
         if (-Not $deepChanged -And $data.Local.version -ne $remoteJson.version -And -Not (Test-IsNewerVersion -RemoteVersion $remoteJson.version -LocalVersion $data.Local.version)) { continue }
 
-        $updateCandidates++
         Write-LogHighlight "--- Reviewing '$($data.File.Name)' ---"
 
         $proceedToStandardPrompt = $false
@@ -958,12 +1080,13 @@ if ($Interactive) {
         }
 
         if ($proceedToStandardPrompt) {
+            $updateCandidates++
             if ($data.Metadata.sourceState -ne 'frozen') {
                 Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
             }
 
             if (Test-LicenseChange -LocalJson $data.Local -RemoteJson $remoteJson) {
-                Write-LogConcern "    🔒 License change detected. Locking package for manual review (license-change-lock)"
+                Write-LogConcern "    🔒 License change concern detected. Locking package for manual review (license-change-lock)"
                 $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
                 $newMetadata = $data.Metadata.Clone()
                 $newMetadata.sourceState = 'license-change-lock'
@@ -974,6 +1097,9 @@ if ($Interactive) {
                 Write-Log "    -> Writing updated state to manifest..."
                 Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
                 continue
+            }
+            else {
+                Write-LogTrace "    -> No license change concern detected"
             }
 
             if (Test-UrlDomainChange -LocalJson $data.Local -RemoteJson $remoteJson) {
@@ -988,6 +1114,9 @@ if ($Interactive) {
                 Write-Log "    -> Writing updated state to manifest..."
                 Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
                 continue
+            }
+            else {
+                Write-LogTrace "    -> No URL domain change detected"
             }
 
             $delayDays = $effectiveDefaultDelayDays

@@ -101,7 +101,8 @@ if ($null -eq $personalManifests) { Write-Warning "No manifest files found in '$
 # =================================================================================
 $MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState'
 
-function Sort-ManifestComments {
+Function Get-SortedManifestComments {
+
     param(
         [array]$Comments
     )
@@ -122,7 +123,7 @@ function Sort-ManifestComments {
     return @($nonMetadata + $sortedMetadata)
 }
 
-function Get-CustomMetadata($JSONObject) {
+Function Get-CustomMetadata($JSONObject) {
     $metadata = @{}
     if ($JSONObject.PSObject.Properties['##']) {
         foreach ($line in $JSONObject.'##') {
@@ -135,7 +136,7 @@ function Get-CustomMetadata($JSONObject) {
     return $metadata
 }
 
-function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
+Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     if (-not $JSONObject.PSObject.Properties['##']) {
         $JSONObject | Add-Member -MemberType NoteProperty -Name '##' -Value @()
     }
@@ -146,7 +147,7 @@ function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     foreach ($entry in ($MetadataToWrite.GetEnumerator() | Sort-Object Key)) {
         $newComments += "$($entry.Key): $($entry.Value)"
     }
-    $JSONObject.'##' = Sort-ManifestComments -Comments $newComments
+    $JSONObject.'##' = Get-SortedManifestComments -Comments $newComments
     return $JSONObject
 }
 
@@ -220,7 +221,7 @@ if ($CleanComments) {
             $originalComments = $json.'##'; $commentsToKeep = @()
             foreach ($line in $originalComments) { if (($line -like '*:*') -or (-not $keySet.Contains($line))) { $commentsToKeep += $line } }
             if ($commentsToKeep.Count -lt $originalComments.Count) {
-                Write-Host "  - Cleaning '$($manifestFile.Name)'..."; $json.'##' = Sort-ManifestComments -Comments $commentsToKeep
+                Write-Host "  - Cleaning '$($manifestFile.Name)'..."; $json.'##' = Get-SortedManifestComments -Comments $commentsToKeep
                 $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $cleanedCount++
             }
         }
@@ -235,7 +236,7 @@ if ($FixUnsplitComments) {
         if ($json.PSObject.Properties['##'] -and $json.'##' -is [string]) {
             $commentString = $json.'##'; $repairedArray = $commentString -split "(?=($splitKeys)\s*:)" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
             if ($repairedArray.Count -gt 1) {
-                Write-Host "  - Repairing '$($manifestFile.Name)'..."; $json.'##' = Sort-ManifestComments -Comments $repairedArray
+                Write-Host "  - Repairing '$($manifestFile.Name)'..."; $json.'##' = Get-SortedManifestComments -Comments $repairedArray
                 $json | ConvertTo-Json -Depth 10 | Set-Content -Path $manifestFile.FullName -Encoding UTF8; $repairedCount++
             }
             else { Write-Warning "    - Could not parse '$($manifestFile.Name)'. Skipping." }
@@ -361,4 +362,4 @@ foreach ($manifestFile in $personalManifests) {
         $modifiedFileCount++
     }
 }
-Write-Host "`n✨ Seeding process complete. Modified $modifiedFileCount file(s)."
+Write-Host "`n✨ Seeding process complete. Modified $modifiedFileCount file(s)"
