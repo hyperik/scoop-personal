@@ -56,12 +56,13 @@
   },
   "##": [
     "sourceLastUpdated: 260125 00:49:46",
-    "sourceHash: 2e0bb8eee5126cfe106038716f7eb86d12500530",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ungoogled-chromium.json",
-    "sourceState: active",
     "sourceLastChangeFound: 250922 16:32:00",
     "sourceUpdateMinimumDays: 10",
+    "sourceDeferredUpdateFound: 260129 10:40:17",
     "sourceDelayDays: 7",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\ungoogled-chromium.json",
+    "sourceHash: 2e0bb8eee5126cfe106038716f7eb86d12500530",
+    "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/ungoogled-chromium.json"
   ]
 }

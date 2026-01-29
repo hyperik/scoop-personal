@@ -1,5 +1,5 @@
 {
-  "version": "1.82.170",
+  "version": "1.86.146",
   "description": "Secure, Fast & Private Web Browser with Adblocker",
   "homepage": "https://brave.com",
   "license": {
@@ -8,16 +8,16 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.170/brave-v1.82.170-win32-x64.zip",
-      "hash": "a44c7de34a28ec4a2da17c4df45f4d91a4aa7c810f486b1d998dc5dbffa8df4b"
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.86.146/brave-v1.86.146-win32-x64.zip",
+      "hash": "62eaeb8654d115044db79d4a05912b5b789b57fc116e9b40da82e79b7d1994bc"
     },
     "32bit": {
-      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.170/brave-v1.82.170-win32-ia32.zip",
-      "hash": "a90f45e1b530ddb52d391b60d31aaa3bebda90fb36650caa0f19e60e00528f04"
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.86.146/brave-v1.86.146-win32-ia32.zip",
+      "hash": "9bf7b0bd64057fa4c55627bb79b9f7caa208b7f20623c8934123445f63cf2bd4"
     },
     "arm64": {
-      "url": "https://github.com/brave/brave-browser/releases/download/v1.82.170/brave-v1.82.170-win32-arm64.zip",
-      "hash": "2fff1f0cffec6629f9cbc3b6e1c1f01d5301356e289a147f1182b253c66ec94b"
+      "url": "https://github.com/brave/brave-browser/releases/download/v1.86.146/brave-v1.86.146-win32-arm64.zip",
+      "hash": "6c1e5c4b95842209f8e2a401179f0f9e0dde0a667ff054aa2f34bef0e487ee18"
     }
   },
   "bin": [
@@ -67,12 +67,12 @@
   },
   "##": [
     "sourceLastUpdated: 260121 20:31:15",
-    "sourceHash: 0d41c64c31895207d1ef1f2a407dcb4968c15e40",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\brave.json",
-    "sourceState: active",
-    "sourceLastChangeFound: 250922 15:57:13",
+    "sourceLastChangeFound: 260129 10:40:17",
     "sourceUpdateMinimumDays: 14",
     "sourceDelayDays: 7",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\brave.json",
+    "sourceHash: 0d41c64c31895207d1ef1f2a407dcb4968c15e40",
+    "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/brave.json"
   ]
 }

@@ -50,12 +50,13 @@
   },
   "##": [
     "sourceLastUpdated: 260122 16:31:49",
-    "sourceHash: 969fee433b4d1918d6481fb801280c38c98c2cfe",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rust.json",
-    "sourceState: active",
     "sourceLastChangeFound: 250922 15:57:13",
     "sourceUpdateMinimumDays: 7",
+    "sourceDeferredUpdateFound: 260129 10:40:17",
     "sourceDelayDays: 7",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rust.json",
+    "sourceHash: 969fee433b4d1918d6481fb801280c38c98c2cfe",
+    "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rust.json"
   ]
 }
