@@ -866,6 +866,11 @@ if ($Interactive) {
     Write-Log "👋 Starting interactive update session..." Cyan
     $updateCandidates = 0
     foreach ($data in $updateableManifests) {
+        # Exclude frozen if requested
+        if ($ExcludeFrozen -and $data.Metadata.sourceState -eq 'frozen') {
+            Write-Log "  -> Skipping frozen package '$($data.File.Name)' due to -ExcludeFrozen flag" Cyan
+            continue
+        }
         $sourceUrl = $data.Metadata.sourceUrl
         if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
         Write-Host

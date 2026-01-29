@@ -23,14 +23,19 @@
 
 .EXAMPLE
   .\Add-Manifest.ps1 -SourceBucket third-party\scoop-main -TargetManifestName ffmpeg-shared
+
+.EXAMPLE
+  # Will scan all local buckets defined in local-repos.cfg to find the manifest and add it if a single unique match is found.
+  .\Add-Manifest.ps1 anythingllm
+
 #>
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [string]$SourceBucket,
-
-    [Parameter(Mandatory = $true)]
     [string]$TargetManifestName,
+
+    [Parameter()]
+    [string]$SourceBucket,
 
     [Parameter()]
     [string]$NewManifestName
@@ -218,6 +223,7 @@ Function Set-FirstMatch {
     return $regex.Replace($Text, $Replacement, 1)
 }
 
+
 # --- Resolve Inputs ---
 $destinationName = if ([string]::IsNullOrWhiteSpace($NewManifestName)) { $TargetManifestName } else { $NewManifestName }
 
@@ -225,17 +231,47 @@ if (-Not (Test-Path $localBucketPath)) {
     throw "Local bucket path not found at '$localBucketPath'."
 }
 
-$sourceRepo = Resolve-SourceRepo -SourceBucketPattern $SourceBucket -ReposConfigPath $localReposPath
-$sourceRepoPath = $sourceRepo.Path
-$sourceRepoUrl = $sourceRepo.Url
-
-if (-Not (Test-Path $sourceRepoPath)) {
-    throw "Source repo path not found at '$sourceRepoPath'."
+# If SourceBucket is not provided, search all repos in local-repos.cfg for the manifest
+if ([string]::IsNullOrWhiteSpace($SourceBucket)) {
+    if (-Not (Test-Path $localReposPath)) {
+        throw "local-repos.cfg not found at '$localReposPath'."
+    }
+    $entries = Get-Content -Path $localReposPath | Where-Object { $_ -match ';' }
+    $found = @()
+    foreach ($entry in $entries) {
+        $parts = $entry -split ';', 2
+        $repoPath = $parts[0].Trim()
+        $repoUrl = $parts[1].Trim()
+        $manifestPath = Join-Path -Path $repoPath -ChildPath (Join-Path -Path 'bucket' -ChildPath "$TargetManifestName.json")
+        if (Test-Path $manifestPath) {
+            $found += [pscustomobject]@{ Path = $repoPath; Url = $repoUrl; Manifest = $manifestPath }
+        }
+    }
+    if ($found.Count -eq 0) {
+        throw "Manifest '$TargetManifestName.json' not found in any repo listed in local-repos.cfg."
+    }
+    elseif ($found.Count -eq 1) {
+        $sourceRepoPath = $found[0].Path
+        $sourceRepoUrl = $found[0].Url
+        $sourceManifestPath = $found[0].Manifest
+    }
+    else {
+        Write-LogWarning "Manifest '$TargetManifestName.json' found in multiple buckets:"
+        foreach ($f in $found) { Write-Host "  - $($f.Path)" }
+        throw "Ambiguous manifest: found in multiple buckets. Please specify -SourceBucket."
+    }
 }
-
-$sourceManifestPath = Join-Path -Path $sourceRepoPath -ChildPath (Join-Path -Path 'bucket' -ChildPath "$TargetManifestName.json")
-if (-Not (Test-Path $sourceManifestPath)) {
-    throw "Source manifest not found at '$sourceManifestPath'."
+else {
+    $sourceRepo = Resolve-SourceRepo -SourceBucketPattern $SourceBucket -ReposConfigPath $localReposPath
+    $sourceRepoPath = $sourceRepo.Path
+    $sourceRepoUrl = $sourceRepo.Url
+    if (-Not (Test-Path $sourceRepoPath)) {
+        throw "Source repo path not found at '$sourceRepoPath'."
+    }
+    $sourceManifestPath = Join-Path -Path $sourceRepoPath -ChildPath (Join-Path -Path 'bucket' -ChildPath "$TargetManifestName.json")
+    if (-Not (Test-Path $sourceManifestPath)) {
+        throw "Source manifest not found at '$sourceManifestPath'."
+    }
 }
 
 $destinationManifestPath = Join-Path -Path $localBucketPath -ChildPath "$destinationName.json"

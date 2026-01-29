@@ -1,43 +1,43 @@
 {
-  "version": "4.3.4",
-  "description": "View USB devices in a tree-like structure",
+  "version": "4.4.1",
+  "description": "USB device tree viewer",
   "homepage": "https://www.uwe-sieber.de/usbtreeview_e.html",
   "license": "Freeware",
   "architecture": {
-    "64bit": {
-      "url": "https://www.uwe-sieber.de/files/UsbTreeView_x64.zip",
-      "hash": "1f18cf5bc3e49a0c9a2555cc353f7988534c6b3d834f5d0233912fcd35b117cb"
-    },
     "32bit": {
       "url": "https://www.uwe-sieber.de/files/UsbTreeView_Win32.zip",
-      "hash": "8b2b3b5db531540bf2977d1cb87e6647a6f48deecb5dccfdcfbe686e8dbf8b29"
+      "hash": "f435ec47471411af40ed7e4a84c06d33e512fdb314f23df36e2bdc1c2445bc3e"
+    },
+    "64bit": {
+      "url": "https://www.uwe-sieber.de/files/UsbTreeView_x64.zip",
+      "hash": "90c59e7ca1c837adc8ef0a5236ada16977750d6c49785d80753688f5a039f171"
     }
   },
   "bin": "UsbTreeView.exe",
   "shortcuts": [
     [
       "UsbTreeView.exe",
-      "USB Device Tree Viewer"
+      "UsbTreeView - USB Device Tree Viewer"
     ]
   ],
   "checkver": "USB Device Tree Viewer V([\\d.]+)",
   "autoupdate": {
     "architecture": {
-      "64bit": {
-        "url": "https://www.uwe-sieber.de/files/UsbTreeView_x64.zip"
-      },
       "32bit": {
         "url": "https://www.uwe-sieber.de/files/UsbTreeView_Win32.zip"
+      },
+      "64bit": {
+        "url": "https://www.uwe-sieber.de/files/UsbTreeView_x64.zip"
       }
     }
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 250906 14:45:52",
+    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\UsbTreeView.json",
     "sourceComment: URL now 404s so freezing",
-    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/usbtreeview.json",
-    "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\usbtreeview.json",
-    "sourceHash: HEAD:bucket/usbtreeview.json",
-    "sourceLastChangeFound: 250922 14:23:50"
+    "sourceHash: b0f20ae10e37cfdeebf0c4e838436dba44e1841f",
+    "sourceLastChangeFound: 260129 13:20:42",
+    "sourceLastUpdated: 240918 23:57:20",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/UsbTreeView.json"
   ]
 }
