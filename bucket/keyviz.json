@@ -30,12 +30,13 @@
     }
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 230423 16:43:04",
-    "sourceComment: Default version checking attempting to revert to v1.6 so keeping on this version",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/keyviz.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\keyviz.json",
+    "sourceComment: Default version checking attempting to revert to v1.6 so keeping on this version",
+    "sourceDeferredUpdateFound: 260129 12:24:02",
     "sourceHash: 981ab4713ddcdf466bc655d5615ca2b55fd4f5d5",
-    "sourceLastChangeFound: 250922 16:51:19"
+    "sourceLastChangeFound: 250922 16:51:19",
+    "sourceLastUpdated: 230423 16:43:04",
+    "sourceState: frozen",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/keyviz.json"
   ]
 }

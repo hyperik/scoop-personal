@@ -22,12 +22,13 @@
     "Viper.ini"
   ],
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 240918 23:57:20",
-    "sourceComment: Detected version of viper seems to be confusing a Windows Service manager with TitanFall2 launcher. Freezing until resolved",
-    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/viper.json",
     "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\viper.json",
+    "sourceComment: Detected version of viper seems to be confusing a Windows Service manager with TitanFall2 launcher. Freezing until resolved",
+    "sourceDeferredUpdateFound: 260129 12:24:02",
     "sourceHash: 4f448f7da5eedd9d1fe57864f90b982c8e56aa19",
-    "sourceLastChangeFound: 250922 17:01:22"
+    "sourceLastChangeFound: 250922 17:01:22",
+    "sourceLastUpdated: 240918 23:57:20",
+    "sourceState: frozen",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/viper.json"
   ]
 }

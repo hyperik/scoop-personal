@@ -36,12 +36,12 @@
     "extract_dir": "sonarqube-$version"
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 260107 00:43:08",
-    "sourceComment: Frozen as seems SonarQube seems to be moving away from open-source availability",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sonarqube.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\sonarqube.json",
+    "sourceComment: Frozen as seems SonarQube seems to be moving away from open-source availability",
     "sourceHash: f9f764348be16127287daceb17ec68dcb0050a3d",
-    "sourceLastChangeFound: 250922 16:51:19"
+    "sourceLastChangeFound: 260129 12:24:02",
+    "sourceLastUpdated: 260107 00:43:08",
+    "sourceState: domain-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/sonarqube.json"
   ]
 }

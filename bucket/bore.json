@@ -26,12 +26,13 @@
     }
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 240918 23:57:20",
-    "sourceComment: Some minor changes but use of GHProxy just raises questions so freezing",
-    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/bore.json",
     "source: D:\\dev\\src\\third-party\\ScoopMaster\\bucket\\bore.json",
+    "sourceComment: Some minor changes but use of GHProxy just raises questions so freezing",
+    "sourceDeferredUpdateFound: 260129 12:24:02",
     "sourceHash: 41909b13a27b8f2b3f5551780bc3136d1bf1d7d6",
-    "sourceLastChangeFound: 250922 16:51:19"
+    "sourceLastChangeFound: 250922 16:51:19",
+    "sourceLastUpdated: 240918 23:57:20",
+    "sourceState: frozen",
+    "sourceUrl: https://raw.githubusercontent.com/okibcn/ScoopMaster/master/bucket/bore.json"
   ]
 }

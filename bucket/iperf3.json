@@ -36,12 +36,13 @@
     }
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 251115 10:10:32",
-    "sourceComment: Somewhat questionable new domain of files.budman.pw so freezing",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/iperf3.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\iperf3.json",
+    "sourceComment: Somewhat questionable new domain of files.budman.pw so freezing",
+    "sourceDeferredUpdateFound: 260129 12:24:02",
     "sourceHash: d9123de3e85792422c235ac4baa0f12094c4ad8d",
-    "sourceLastChangeFound: 250922 16:51:19"
+    "sourceLastChangeFound: 250922 16:51:19",
+    "sourceLastUpdated: 251115 10:10:32",
+    "sourceState: frozen",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/iperf3.json"
   ]
 }

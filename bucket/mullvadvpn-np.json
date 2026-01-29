@@ -1,45 +1,44 @@
 {
-  "version": "2024.4",
+  "version": "2025.14",
   "homepage": "https://mullvad.net/en/",
   "description": "The official desktop client for Mullvad VPN, a privacy-respecting VPN service.",
   "license": "GPL-3.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/mullvad/mullvadvpn-app/releases/download/2024.4/MullvadVPN-2024.4.exe#/setup.exe",
-      "hash": "40b6c1d8cb9259d944c737d9e3cdb483bf425335069fd2685cf13629334cc938"
+      "url": "https://github.com/mullvad/mullvadvpn-app/releases/download/2025.14/MullvadVPN-2025.14_x64.exe",
+      "hash": "332a1f05bc367a199f0a17fb1e19d3ffcbf79a5024bced619c9e771d31281830"
     }
   },
-  "pre_install": [
-    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-    "Start-Process \"$dir\\setup.exe\" -Verb 'RunAs' -Args @('/allusers', '/S')",
-    "while (!(Get-Process -Name 'mullvad-daemon' -ErrorAction 'SilentlyContinue')) { Start-Sleep -Seconds 5 }",
-    "Remove-Item \"$dir\\setup.exe\""
-  ],
-  "post_install": "Remove-Item \"$Env:Public\\Desktop\\Mullvad VPN.lnk\"",
-  "pre_uninstall": [
-    "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-    "Stop-Service -Name 'MullvadVPN' -ErrorAction 'SilentlyContinue' -Force; Stop-Process -Name 'Mullvad VPN' -ErrorAction 'SilentlyContinue' -Force",
-    "Start-Process \"$env:ProgramFiles\\Mullvad VPN\\Uninstall Mullvad VPN.exe\" -Wait -Verb 'RunAs' -Args @('/allusers', '/S')",
-    "Start-Sleep -Seconds 2"
-  ],
+  "installer": {
+    "script": [
+      "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+      "Invoke-ExternalCommand \"$dir\\$fname\" -ArgumentList @('/S')",
+      "Remove-Item \"$dir\\$fname\""
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
+      "if ($cmd -ne 'update') { Invoke-ExternalCommand \"$env:ProgramFiles\\Mullvad VPN\\Uninstall Mullvad VPN.exe\" -ArgumentList @('/allusers', '/S') }"
+    ]
+  },
   "checkver": {
-    "url": "https://api.github.com/repos/mullvad/mullvadvpn-app/releases",
-    "regex": "MullvadVPN-([\\d.]+(-beta[\\d]+)?)\\.exe"
+    "github": "https://github.com/mullvad/mullvadvpn-app"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/mullvad/mullvadvpn-app/releases/download/$version/MullvadVPN-$version.exe#/setup.exe"
+        "url": "https://github.com/mullvad/mullvadvpn-app/releases/download/$version/MullvadVPN-$version_x64.exe"
       }
     }
   },
   "##": [
-    "sourceState: frozen",
-    "sourceLastUpdated: 260114 15:49:48",
-    "sourceComment: Domain changed to mullvad.net from GitHub so unsure on provenance of binaries; one to check",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/mullvadvpn-np.json",
     "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\mullvadvpn-np.json",
+    "sourceComment: Domain changed to mullvad.net from GitHub so unsure on provenance of binaries; one to check",
     "sourceHash: cc43fef15a3e286df748e421784f21f80ca05134",
-    "sourceLastChangeFound: 250922 16:51:19"
+    "sourceLastChangeFound: 260129 12:24:02",
+    "sourceLastUpdated: 260114 15:49:48",
+    "sourceState: frozen",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/mullvadvpn-np.json"
   ]
 }
