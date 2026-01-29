@@ -1,13 +1,13 @@
 {
-  "version": "1.11.440",
+  "version": "1.12.440",
   "description": "A PowerShell Module for the Windows Package Manager Client.",
   "homepage": "https://github.com/microsoft/winget-cli/tree/master/src/PowerShell/Microsoft.WinGet.Client",
   "license": "MIT",
   "suggest": {
     "WinGet": "winget"
   },
-  "url": "https://psg-prod-eastus.azureedge.net/packages/microsoft.winget.client.1.11.440.nupkg",
-  "hash": "b48dacc2f787f1e0c8966dc8a20456e78d996bae4b5520bd4baa9000b1b8654c",
+  "url": "https://cdn.powershellgallery.com/packages/microsoft.winget.client.1.12.440.nupkg",
+  "hash": "5ad4d9b6f4e125d979bb6988218201cd2e8ca486201a4e1a086f3b74fe982f2d",
   "pre_install": "Remove-Item \"$dir\\_rels\", \"$dir\\package\", \"$dir\\*Content*.xml\" -Recurse",
   "psmodule": {
     "name": "Microsoft.WinGet.Client"
@@ -17,14 +17,14 @@
     "regex": "<h2>([\\d.]+)</h2>"
   },
   "autoupdate": {
-    "url": "https://psg-prod-eastus.azureedge.net/packages/microsoft.winget.client.$version.nupkg"
+    "url": "https://cdn.powershellgallery.com/packages/microsoft.winget.client.$version.nupkg"
   },
   "##": [
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\winget-ps.json",
     "sourceHash: 26ba30cf92fe93058743815f13b88aee2e6a27df",
-    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastChangeFound: 260129 12:34:52",
     "sourceLastUpdated: 260106 20:29:52",
-    "sourceState: domain-change-lock",
+    "sourceState: active",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/winget-ps.json"
   ]
 }
