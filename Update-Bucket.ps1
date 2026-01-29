@@ -8,13 +8,14 @@
   It also supports 'sourceDelayDays' to delay updates, 'sourceUpdateMinimumDays' to throttle update frequency,
   a 'sourceDeferredUpdateFound' field to track deferred updates, and a 'sourceComment' field for arbitrary user notes.
 
-  The script can run in six modes:
+    The script can run in seven modes:
     1. Default (Automatic): Auto-applies simple updates and flags complex changes.
     2. Interactive Mode: Prompts the user to accept or skip complex changes.
     3. List Pending Mode: Lists manifests with pending changes and their relevant timestamps.
     4. List Manual Mode: Lists all manifests configured as MANUAL.
     5. List Locks Mode: Lists manifests that are frozen or domain-change-lock.
-    6. Verbose List Mode: When used with -ListPending, shows all non-manual files and explains their status.
+    6. Process Locks Mode: Interactively reviews locked manifests and allows unlocking with updates.
+    7. Verbose List Mode: When used with -ListPending, shows all non-manual files and explains their status.
 
 .PARAMETER BucketPath
   The full path to the 'bucket' directory of your personal Scoop repository. Overrides the default behavior.
@@ -27,6 +28,12 @@
 
 .PARAMETER ListLocks
   Lists all manifests that are configured with a state of 'frozen' or 'domain-change-lock'.
+
+.PARAMETER ProcessLocks
+  Interactively processes locked manifests (frozen or explicit lock states) and allows unlocking with updates.
+
+.PARAMETER ExcludeFrozen
+  When used with -ProcessLocks, ignores manifests with a 'frozen' state.
 
 .PARAMETER Interactive
   Starts an interactive session to review and apply pending complex changes one by one.
@@ -91,8 +98,12 @@
   .\Update-Bucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Trace -Scope '^(ag|bi).*'
 
 .EXAMPLE
-  # Fully updates all non-locked active manifests, including re-pulling all local source repositories
+  # Fully updates all non-locked active manifests, including re-pulling all local source repositories.
   .\Update-Bucket.ps1 -FullUpdate
+
+.EXAMPLE
+  # Interactively processes all locked manifests, excluding those that are frozen.
+  .\Update-Bucket.ps1 -ProcessLocks -ExcludeFrozen
 
 #>
 [CmdletBinding(DefaultParameterSetName = 'Automatic')]
@@ -108,6 +119,9 @@ param(
 
     [Parameter(ParameterSetName = 'ListLocks')]
     [switch]$ListLocks,
+
+    [Parameter(ParameterSetName = 'ProcessLocks')]
+    [switch]$ProcessLocks,
 
     [Parameter(ParameterSetName = 'Interactive')]
     [switch]$Interactive,
@@ -152,7 +166,10 @@ param(
     [switch]$FullUpdate,
 
     [Parameter()]
-    [switch]$PullSources
+    [switch]$PullSources,
+
+    [Parameter(ParameterSetName = 'ProcessLocks')]
+    [switch]$ExcludeFrozen
 )
 
 # --- Initial Setup ---
@@ -765,6 +782,81 @@ if ($ListPending) {
         }
     }
     if ($pendingCount -eq 0) { Write-Log "  ✅ No non-manual manifests have pending changes" }
+    return
+}
+
+# --- Mode: Process Locks ---
+if ($ProcessLocks) {
+    Write-Host
+    Write-Log "🔒 Starting locked manifest processing..." Cyan
+
+    $lockedStates = @('frozen', 'domain-change-lock', 'license-change-lock')
+    $lockedManifests = $allManifestData | Where-Object { $_.Metadata.sourceState -in $lockedStates }
+    if ($ExcludeFrozen) {
+        $lockedManifests = $lockedManifests | Where-Object { $_.Metadata.sourceState -ne 'frozen' }
+    }
+
+    if (-Not $lockedManifests -or $lockedManifests.Count -eq 0) {
+        Write-Log "  ✅ No locked manifests found to process"
+        return
+    }
+
+    foreach ($data in $lockedManifests) {
+        $sourceUrl = $data.Metadata.sourceUrl
+        if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) {
+            Write-Log "  -> Skipping '$($data.File.Name)' (no valid source URL)" DarkYellow
+            continue
+        }
+
+        Write-Host
+        Write-Log "- Checking locked manifest '$($data.File.Name)' [$($data.Metadata.sourceState)]..."
+        $remoteJson = $null
+        try { $remoteJson = Invoke-WebRequest -Uri $sourceUrl -UseBasicParsing | ConvertFrom-Json } catch {
+            Write-LogWarning "  ⚠️ Failed to download source for '$($data.File.Name)': $($_.Exception.Message)"
+            continue
+        }
+
+        $deepChanged = $false
+        if ($effectiveDeepComparison) {
+            $deepChanged = Test-DeepManifestChange -LocalJson $data.Local -RemoteJson $remoteJson
+        }
+
+        $hasUpdate = $deepChanged -or ($data.Local.version -ne $remoteJson.version)
+        if (-Not $hasUpdate -And -Not $data.IsPending) {
+            Write-Log "  ✅ No update found for '$($data.File.Name)'; keeping lock state" DarkYellow
+            continue
+        }
+
+        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+        $choice = Read-Host "-> 🔒 This package is locked ($($data.Metadata.sourceState)). Process and unlock? (A)ccept / (S)kip / (Q)uit"
+        switch ($choice.ToLower()) {
+            'a' {
+                $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
+                $newMetadata = $data.Metadata.Clone()
+                $newMetadata.sourceState = 'active'
+                $newMetadata.sourceLastUpdated = $sourceInfo.Date
+                $newMetadata.sourceHash = $sourceInfo.Hash
+                $newMetadata.sourceLastChangeFound = $runTimestamp
+                if ($newMetadata.ContainsKey('sourceDeferredUpdateFound')) {
+                    $newMetadata.Remove('sourceDeferredUpdateFound')
+                }
+                $updatedJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
+                Write-Log "    -> Writing updated state to manifest..."
+                Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
+                Write-Log "  ✅ Accepted and unlocked '$($data.File.Name)'" Green
+            }
+            'q' {
+                Write-Log "🛑 Aborting lock processing session"
+                return
+            }
+            default {
+                Write-LogWarning "  ⏩ Skipped '$($data.File.Name)'; keeping lock state"
+            }
+        }
+    }
+
+    Write-Host
+    Write-Log "✨ Locked manifest processing complete"
     return
 }
 
