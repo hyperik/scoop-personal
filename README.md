@@ -19,6 +19,14 @@ For instance, use the following command:
 scoop install freeorion
 ```
 
+## Adding applications in this bucket
+
+To add an application to this bucket, create a manifest file in JSON format and place it in the `bucket` directory. You can refer to the [Scoop Wiki](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests) for detailed information on the manifest schema and guidelines.
+
+Additionally, add in the customised metadata under the "##" comment section to allow for future maintenance and updating. This can be done manually, or by using the `Seed-ManifestSources.ps1` script provided in this repository.
+
+The `Add-Manifest.ps1` script provides a convenient way to add new manifests to the bucket. It handles tasks such as validating the manifest, adding the necessary metadata, and committing the changes to the repository. It requires a source Scoop repository to contain the original manifest locally to be able to reference.
+
 ## Updating applications in this bucket
 
 For manifests that contain an `autoupdate` section, there may be a GitHub Actions workflow that runs every day and commits updated manifests to the repository.
@@ -31,7 +39,11 @@ For manifests that don't contain an `autoupdate` section, you can also [add an `
 
 Since we don't want these to become very out of date, but don't want to actively manage this, we have a need to create a self-defined meta-structure in the manifests which we will use to maintain these effectively.
 
-These are supported by two scripts `Seed-ManifestSources.ps1` which we can use to initially seed the enriched manifests from the local locations where they may be found. And `Update-PersonalBucket.ps1` which uses this structure and keeps them up to date to ensure we can periodically update all references en masse, keeping it usable.
+These are supported by two scripts:
+
+- `Seed-ManifestSources.ps1` which we can use to initially seed the enriched manifests from the local locations where they may be found.
+
+- `Update-PersonalBucket.ps1` which uses this structure and keeps them up to date to ensure we can periodically update all references en masse, keeping it usable.
 
 These should provide a simplified surface to allow regular automated invocation if we desire.
 
@@ -40,6 +52,14 @@ These should provide a simplified surface to allow regular automated invocation 
 This script builds up the initial data structures from local repos. It has several helper features as the exact schema extension I added went through a few evolutions and I used this with AI assistance to the script to keep it maintained. It can also be used to cleanup certain problems like duplicate empty nodes under comments.
 
 Ideally after running the first time in a repo it's not needed again unless we're changing format.
+
+This utilised the local file `local-repos.cfg` which has a special format of lines with:
+
+```propertieshell
+<local-path>;<url-to-raw-manifest-base>
+```
+
+This essentially allows us to map local paths to the web locations of the manifests for future reference. This is the extent of the expected source information to be contained in all manifests in this bucket.
 
 ### Maintaining A Repository Using Update-PersonalBucket.ps1
 
@@ -57,6 +77,12 @@ Interactive usage for checking behaviour:
 ```powershell
 # Runs with interactive prompts
 .\Update-PersonalBucket.ps1 -Interactive
+```
+
+Full forced updates of everything with limited checks (but still showing diffs and excluding "locked" and "manual" manifests):
+
+```powershell
+.\Update-PersonalBucket.ps1 -FullUpdate
 ```
 
 ### Metadata
