@@ -188,7 +188,7 @@ if ([string]::IsNullOrEmpty($BucketPath)) {
 # Global Defaults
 # =================================================================================
 
-$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState', 'sourceDelayDays', 'sourceUpdateMinimumDays', 'sourceDeferredUpdateFound', 'sourceComment', 'sourceHash'
+$MetadataKeys = 'source', 'sourceUrl', 'sourceLastUpdated', 'sourceLastChangeFound', 'sourceState', 'sourceDelayDays', 'sourceUpdateMinimumDays', 'sourceDeferredUpdateFound', 'sourceComment', 'sourceNotes', 'sourceHash'
 $timestampFormat = "yyMMdd HH:mm:ss"
 $logTimestamp = $true
 
@@ -976,7 +976,22 @@ if ($ProcessLocks) {
         }
 
         Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
-        $choice = Read-Host "-> 🔒 This package is locked ($($data.Metadata.sourceState)). Process and unlock? (A)ccept / (S)kip / (Q)uit"
+        $lockState = $data.Metadata.sourceState
+        $defaultFreezeComment = "Freezing due to checked '$lockState'"
+        $freezeCommentPattern = "^Freezing due to checked '([^']+)'$"
+        $stripFreezeComment = {
+            param([string]$Comment)
+            if ([string]::IsNullOrWhiteSpace($Comment)) { return $null }
+            $parts = $Comment -split '\s*;\s*' | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+            $filtered = @()
+            foreach ($part in $parts) {
+                if ($part -notmatch $freezeCommentPattern) { $filtered += $part }
+            }
+            if ($filtered.Count -eq 0) { return $null }
+            return ($filtered -join '; ')
+        }
+
+        $choice = Read-Host "-> 🔒 This package is locked ($lockState). Process and unlock? (A)ccept / (F)reeze / (S)kip / (Q)uit"
         switch ($choice.ToLower()) {
             'a' {
                 $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
@@ -988,10 +1003,52 @@ if ($ProcessLocks) {
                 if ($newMetadata.ContainsKey('sourceDeferredUpdateFound')) {
                     $newMetadata.Remove('sourceDeferredUpdateFound')
                 }
+                if ($newMetadata.ContainsKey('sourceComment')) {
+                    $cleanedComment = & $stripFreezeComment $newMetadata.sourceComment
+                    if ([string]::IsNullOrWhiteSpace($cleanedComment)) {
+                        $newMetadata.Remove('sourceComment')
+                    }
+                    else {
+                        $newMetadata.sourceComment = $cleanedComment
+                    }
+                    if (-not $newMetadata.ContainsKey('sourceNotes')) {
+                        $newMetadata.sourceNotes = ''
+                    }
+                }
                 $updatedJson = Set-CustomMetadata -JSONObject $remoteJson -MetadataToWrite $newMetadata
                 Write-Log "    -> Writing updated state to manifest..."
                 Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
                 Write-Log "  ✅ Accepted and unlocked '$($data.File.Name)'" Green
+            }
+            'f' {
+                $commentInput = Read-Host "-> ❄️ Enter freeze comment (default: $defaultFreezeComment)"
+                if ([string]::IsNullOrWhiteSpace($commentInput)) {
+                    $commentInput = $defaultFreezeComment
+                }
+
+                $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
+                $newMetadata = $data.Metadata.Clone()
+                $newMetadata.sourceState = 'frozen'
+                $newMetadata.sourceLastUpdated = $sourceInfo.Date
+                $newMetadata.sourceHash = $sourceInfo.Hash
+                $newMetadata.sourceLastChangeFound = $runTimestamp
+
+                $existingComment = $newMetadata.sourceComment
+                if ([string]::IsNullOrWhiteSpace($existingComment)) {
+                    $newMetadata.sourceComment = $commentInput
+                }
+                elseif ($existingComment -notmatch [regex]::Escape($commentInput)) {
+                    $newMetadata.sourceComment = "$existingComment; $commentInput"
+                }
+
+                if (-not $newMetadata.ContainsKey('sourceNotes')) {
+                    $newMetadata.sourceNotes = ''
+                }
+
+                $updatedJson = Set-CustomMetadata -JSONObject $data.Local -MetadataToWrite $newMetadata
+                Write-Log "    -> Writing updated freeze state to manifest..."
+                Write-Manifest -MetadataToWrite $updatedJson -FilePath $data.File.FullName
+                Write-Log "  ❄️ Frozen '$($data.File.Name)'" Yellow
             }
             'q' {
                 Write-Log "🛑 Aborting lock processing session"
