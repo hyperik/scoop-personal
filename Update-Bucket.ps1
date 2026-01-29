@@ -975,8 +975,11 @@ if ($ProcessLocks) {
             continue
         }
 
-        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
         $lockState = $data.Metadata.sourceState
+        Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
+        if ($lockState -eq 'frozen' -and -not [string]::IsNullOrWhiteSpace($data.Metadata.sourceComment)) {
+            Write-LogAttention "    -> sourceComment: $($data.Metadata.sourceComment)"
+        }
         $defaultFreezeComment = "Freezing due to checked '$lockState'"
         $freezeCommentPattern = "^Freezing due to checked '([^']+)'$"
         $stripFreezeComment = {
@@ -992,6 +995,7 @@ if ($ProcessLocks) {
         }
 
         $choice = Read-Host "-> 🔒 This package is locked ($lockState). Process and unlock? (A)ccept / (F)reeze / (S)kip / (Q)uit"
+        if ([string]::IsNullOrWhiteSpace($choice)) { $choice = 's' }
         switch ($choice.ToLower()) {
             'a' {
                 $sourceInfo = Get-GitCommitDate -FilePath $data.Metadata.source -StoredHash $data.Metadata.sourceHash -StoredDate $data.Metadata.sourceLastUpdated
@@ -1123,6 +1127,7 @@ if ($Interactive) {
         if ($data.Metadata.sourceState -eq 'frozen') {
             Show-ManifestDiff -LocalJson $data.Local -RemoteJson $remoteJson
             $frozenChoice = Read-Host "-> ❄️ This package is FROZEN. Skip this update? (Y)es / (N)o"
+            if ([string]::IsNullOrWhiteSpace($frozenChoice)) { $frozenChoice = 'y' }
             if ($frozenChoice.ToLower() -eq 'n') {
                 $proceedToStandardPrompt = $true
             }
