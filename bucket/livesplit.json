@@ -20,11 +20,11 @@
     "url": "https://github.com/LiveSplit/LiveSplit/releases/download/$version/LiveSplit_$version.zip"
   },
   "##": [
-    "sourceHash: 4031811d6e003e0fd98c484e35977afa4176b6c7",
-    "sourceLastUpdated: 250130 08:28:54",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/livesplit.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\livesplit.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: e83ee2607f3e84618fc812e01f45cd53f33881cb",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 251106 20:29:10",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/livesplit.json"
   ]
 }

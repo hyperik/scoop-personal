@@ -17,11 +17,11 @@
     "url": "https://psg-prod-eastus.azureedge.net/packages/posh-git.$version.nupkg"
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\posh-git.json",
     "sourceHash: 4bd4fbcea6555c2c8b95b47b70e13ce3b9a368e9",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/posh-git.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 250920 18:19:12",
-    "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\posh-git.json"
+    "sourceState: domain-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/posh-git.json"
   ]
 }

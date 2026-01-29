@@ -26,11 +26,11 @@
     }
   },
   "##": [
-    "sourceHash: 912d67d99b306822f28335b9d74f6d5d32c3e083",
-    "sourceLastUpdated: 260120 12:33:08",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cloudflared.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\cloudflared.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 1619148822c78e5e669376a5539c29c93ad71970",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 12:32:21",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/cloudflared.json"
   ]
 }

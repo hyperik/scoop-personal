@@ -48,11 +48,11 @@
     "url": "https://content-system.gog.com/open_link/download?path=/open/galaxy/client/setup_galaxy_$version.exe"
   },
   "##": [
-    "sourceHash: 34a1fd3281cd252eb534cc235e3cfbeee5128235",
-    "sourceLastUpdated: 250825 16:30:02",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/goggalaxy.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\goggalaxy.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 35afb57ae798ce0dd4bca5ded46b9009947b0d9b",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 12:32:47",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/goggalaxy.json"
   ]
 }

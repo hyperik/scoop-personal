@@ -34,11 +34,11 @@
     }
   },
   "##": [
-    "sourceHash: 7748bfda75c3a08b77e1710f16a93084a4911d71",
-    "sourceLastUpdated: 221101 04:52:52",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\supertuxkart.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 9a8329c791cf8757423ca8b69abddfd2f9749aca",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 251022 16:41:59",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/supertuxkart.json"
   ]
 }

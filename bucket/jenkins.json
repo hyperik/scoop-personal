@@ -22,13 +22,13 @@
     }
   },
   "##": [
-    "sourceLastUpdated: 260120 16:32:35",
-    "sourceHash: 449293f03b2e2791fcab3a123d35d87631b988d7",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\jenkins.json",
-    "sourceState: active",
-    "sourceLastChangeFound: 260128 15:51:35",
-    "sourceUpdateMinimumDays: 21",
     "sourceDelayDays: 7",
+    "sourceHash: 59adebb46a174ee24a1bfe4ed77423e30640660e",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 12:32:23",
+    "sourceState: active",
+    "sourceUpdateMinimumDays: 21",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/jenkins.json"
   ]
 }

@@ -25,11 +25,11 @@
     }
   },
   "##": [
-    "sourceHash: cae04fbff21b9faa2371dcaa83b72bbd47f4c41b",
-    "sourceLastUpdated: 260121 16:32:13",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/teleport.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\teleport.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: cae04fbff21b9faa2371dcaa83b72bbd47f4c41b",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260121 16:32:13",
+    "sourceState: license-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/teleport.json"
   ]
 }

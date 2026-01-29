@@ -1,5 +1,5 @@
 {
-  "version": "1.90.0",
+  "version": "1.93.0",
   "description": "A language empowering everyone to build reliable and efficient software. (MSVC toolchain)",
   "homepage": "https://www.rust-lang.org",
   "license": "MIT|Apache-2.0",
@@ -13,16 +13,16 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://static.rust-lang.org/dist/rust-1.90.0-x86_64-pc-windows-msvc.msi",
-      "hash": "cbeff9896d8a068f09c6b776450e113540f50b10a78d3fb144c7d64fbb77fe6a"
+      "url": "https://static.rust-lang.org/dist/rust-1.93.0-x86_64-pc-windows-msvc.msi",
+      "hash": "8ffffeaf68ebf3e659b3cc0c61e2c160b49b9781e79b0bf015c00fdef88c6d1a"
     },
     "32bit": {
-      "url": "https://static.rust-lang.org/dist/rust-1.90.0-i686-pc-windows-msvc.msi",
-      "hash": "c471da9ba4e083938a061e779257246c759c06e80a944b0f229090dea26df4a4"
+      "url": "https://static.rust-lang.org/dist/rust-1.93.0-i686-pc-windows-msvc.msi",
+      "hash": "b199a1ea498b763f2c18e0cec571203d8f378ceb14e03ff3aaacee834bee7a2e"
     },
     "arm64": {
-      "url": "https://static.rust-lang.org/dist/rust-1.90.0-aarch64-pc-windows-msvc.msi",
-      "hash": "58aafc998f78f23c2550d6bbe61c12d116ca29dc44270eed13f875b0c02e3f87"
+      "url": "https://static.rust-lang.org/dist/rust-1.93.0-aarch64-pc-windows-msvc.msi",
+      "hash": "19d54b86ad1eebe3b030a713b1abb694a21a294a86a02a8674f602e66fdb24f4"
     }
   },
   "extract_dir": "Rust",
@@ -49,14 +49,13 @@
     }
   },
   "##": [
-    "sourceLastUpdated: 260122 16:31:49",
-    "sourceLastChangeFound: 250922 15:57:13",
-    "sourceUpdateMinimumDays: 7",
-    "sourceDeferredUpdateFound: 260129 10:40:17",
-    "sourceDelayDays: 7",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\rust.json",
+    "sourceDelayDays: 7",
     "sourceHash: 969fee433b4d1918d6481fb801280c38c98c2cfe",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260122 16:31:49",
     "sourceState: active",
+    "sourceUpdateMinimumDays: 7",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/rust.json"
   ]
 }

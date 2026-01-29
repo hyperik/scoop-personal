@@ -33,11 +33,11 @@
     }
   },
   "##": [
-    "sourceHash: 610680eec76e53993587fdf58db337534fefbb4f",
-    "sourceLastUpdated: 260113 20:30:08",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zettlr.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\zettlr.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 78bd8b8c4d492893fedb79030948fa392ec163a2",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 08:30:45",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/zettlr.json"
   ]
 }

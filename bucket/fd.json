@@ -13,6 +13,11 @@
       "url": "https://github.com/sharkdp/fd/releases/download/v10.3.0/fd-v10.3.0-i686-pc-windows-msvc.zip",
       "hash": "1e1c1c677d01c1df9e54095d727f61649401ac54a5946cecb3fbe3d002615fd8",
       "extract_dir": "fd-v10.3.0-i686-pc-windows-msvc"
+    },
+    "arm64": {
+      "url": "https://github.com/sharkdp/fd/releases/download/v10.3.0/fd-v10.3.0-aarch64-pc-windows-msvc.zip",
+      "hash": "bf9b1e31bcac71c1e95d49c56f0d872f525b95d03854e94b1d4dd6786f825cc5",
+      "extract_dir": "fd-v10.3.0-aarch64-pc-windows-msvc"
     }
   },
   "bin": "fd.exe",
@@ -26,15 +31,19 @@
       "32bit": {
         "url": "https://github.com/sharkdp/fd/releases/download/v$version/fd-v$version-i686-pc-windows-msvc.zip",
         "extract_dir": "fd-v$version-i686-pc-windows-msvc"
+      },
+      "arm64": {
+        "url": "https://github.com/sharkdp/fd/releases/download/v$version/fd-v$version-aarch64-pc-windows-msvc.zip",
+        "extract_dir": "fd-v$version-aarch64-pc-windows-msvc"
       }
     }
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fd.json",
     "sourceHash: 1f777e1f8d8f8fa178d068c8a6acc61f98acdf55",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fd.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 260108 23:27:07",
     "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\fd.json"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/fd.json"
   ]
 }

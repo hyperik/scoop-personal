@@ -7,7 +7,7 @@
     "url": "https://www.sordum.org/eula/"
   },
   "url": "https://www.sordum.org/files/easy-context-menu/ec_menu.zip",
-  "hash": "ddf592571cb9a484b2bfae75a8bae157ec52beabc0cdc71f76a3b3de9ea933c0",
+  "hash": "0a1fdf8b57e9863628f9b204f991150cac800f926600a75fbe95313d5477a795",
   "extract_dir": "EcMenu_v1.6",
   "pre_install": "New-Item \"$dir\\Files\\EcMenu.ini\" -ItemType 'File' | Out-Null",
   "architecture": {
@@ -41,11 +41,11 @@
     "extract_dir": "EcMenu_v$version"
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json",
     "sourceHash: 0c2fbf5ab037777410677e0021588fed11452993",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/easy-context-menu.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 251211 12:20:57",
     "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\easy-context-menu.json"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/easy-context-menu.json"
   ]
 }

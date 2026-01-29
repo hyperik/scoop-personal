@@ -29,11 +29,11 @@
     }
   },
   "##": [
-    "sourceHash: 954c68d5ac0d9d2aff7ec520631c6b8758a55dfd",
-    "sourceLastUpdated: 260120 16:32:38",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terragrunt.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terragrunt.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 238083d7f041f013502332b3e16c44c0d36ac6d6",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 00:46:31",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terragrunt.json"
   ]
 }

@@ -40,11 +40,11 @@
     }
   },
   "##": [
-    "sourceHash: 16cc3ccc5d6a0d24d12a0c04982a7340c2242c38",
-    "sourceLastUpdated: 250805 20:29:29",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/blockbench.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\blockbench.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: bb34bc76c6bdab9a6c1f880cc1c9e2dd6e664347",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 251224 00:42:36",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/blockbench.json"
   ]
 }

@@ -41,11 +41,11 @@
     }
   },
   "##": [
-    "sourceHash: fb6e0b9db68f5874a0d4fef17eb9b94fd01edc6c",
-    "sourceLastUpdated: 260125 20:29:49",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/exiftool.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\exiftool.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: d47463043eb468704a127f00a4c4e3191ab02298",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 20:30:22",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/exiftool.json"
   ]
 }

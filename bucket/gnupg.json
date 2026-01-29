@@ -1,12 +1,12 @@
 {
   "##": [
     "Duplicate of the gpg package",
-    "sourceHash: 668ebbc0f6c527763819307cbf1cd2edba443c35",
-    "sourceLastUpdated: 251230 16:30:32",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gnupg.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\gnupg.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: a234faab5c1cc0f1a0313191f5ce37e40042236e",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 16:30:54",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/gnupg.json"
   ],
   "version": "2.5.17",
   "description": "A complete and free implementation of the OpenPGP standard.",

@@ -45,11 +45,11 @@
     }
   },
   "##": [
-    "sourceHash: 57fbf0df260dc24a1ea390043baf57d5c21ec783",
-    "sourceLastUpdated: 240904 16:28:43",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/tabletop-club.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\tabletop-club.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 8fc87a5eaac6d2ffe44f2e6acecf364728a06d2b",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 251013 00:40:05",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/tabletop-club.json"
   ]
 }

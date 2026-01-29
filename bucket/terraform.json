@@ -34,13 +34,13 @@
     }
   },
   "##": [
-    "sourceLastUpdated: 251217 12:32:02",
-    "sourceHash: edf2279f952ce8b8efdcca48adc76e5611a517b3",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\terraform.json",
-    "sourceState: active",
-    "sourceLastChangeFound: 260128 15:51:35",
-    "sourceUpdateMinimumDays: 7",
     "sourceDelayDays: 7",
+    "sourceHash: 69eed3f13207847b0289b8c82d12d0091e7340f1",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 12:32:29",
+    "sourceState: active",
+    "sourceUpdateMinimumDays: 7",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/terraform.json"
   ]
 }

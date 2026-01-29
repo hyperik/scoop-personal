@@ -4,7 +4,8 @@
   "homepage": "https://prismlauncher.org/",
   "license": "GPL-3.0-only",
   "notes": [
-    "To add Prism Launcher file association options for .ZIPs and .MRPACKS, run this: \"$dir\\install-associations.reg\"",
+    "To add Prism Launcher file association options for .ZIPs and .MRPACKS, run this:",
+    "reg import \"$dir\\install-associations.reg\"",
     "",
     "This package is now using the portable version of Prism Launcher, and data should have been migrated automatically.",
     "If you are using a global install on a system with more than one user, you will need to copy a user's data from %appdata% to the new Scoop PrismLauncher persist directory"
@@ -37,9 +38,9 @@
   ],
   "post_install": [
     "'install-associations', 'uninstall-associations' | ForEach-Object {",
-    "    if (Test-Path \"$bucketsdir\\$bucket\\scripts\\prismlauncher-qt5\\$_.reg\") {",
+    "    if (Test-Path \"$bucketsdir\\games\\scripts\\prismlauncher-qt5\\$_.reg\") {",
     "        $exePath = \"$dir\\prismlauncher.exe\".Replace('\\', '\\\\')",
-    "        $content = (Get-Content \"$bucketsdir\\$bucket\\scripts\\prismlauncher-qt5\\$_.reg\").Replace('$EXEPATH', $exePath)",
+    "        $content = (Get-Content \"$bucketsdir\\games\\scripts\\prismlauncher-qt5\\$_.reg\").Replace('$EXEPATH', $exePath)",
     "        if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
     "        Set-Content \"$dir\\$_.reg\" $content -Encoding Ascii -Force",
     "    }",
@@ -69,18 +70,20 @@
     "metacache",
     "prismlauncher.cfg"
   ],
+  "pre_uninstall": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\" }",
   "checkver": {
-    "github": "https://github.com/PrismLauncher/PrismLauncher"
+    "url": "https://api.github.com/repos/PrismLauncher/PrismLauncher/releases",
+    "regex": "Windows-MSVC-Legacy-Portable-([\\d.]+)\\.zip"
   },
   "autoupdate": {
     "url": "https://github.com/PrismLauncher/PrismLauncher/releases/download/$version/PrismLauncher-Windows-MSVC-Legacy-Portable-$version.zip"
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
-    "sourceHash: 5933deb54661da7b27be0899ee0e6e4ed590b8fe",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/prismlauncher-qt5.json",
-    "sourceLastUpdated: 250530 16:53:24",
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher-qt5.json",
+    "sourceHash: 707c6243c6eaf1bb141b140c3b9517cc92b7baaf",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 250908 16:35:55",
     "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\prismlauncher-qt5.json"
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/prismlauncher-qt5.json"
   ]
 }

@@ -56,11 +56,11 @@
     }
   },
   "##": [
-    "sourceHash: bd7b1ea3f24d2b85af440118859fd518c662c3fb",
-    "sourceLastUpdated: 260113 04:33:00",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/bun.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\bun.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 95ab827adb3215a9c2d91bdbe9532a388463b1f1",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 08:31:29",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/bun.json"
   ]
 }

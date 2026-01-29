@@ -3,6 +3,10 @@
   "description": "GPU-accelerated terminal emulator",
   "homepage": "https://github.com/wez/wezterm",
   "license": "Apache-2.0",
+  "notes": [
+    "Add Open with Wezterm as a context menu option by running:",
+    "reg import \"$dir\\install-context.reg\""
+  ],
   "architecture": {
     "64bit": {
       "url": "https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/WezTerm-windows-20240203-110809-5046fc22.zip",
@@ -10,6 +14,17 @@
     }
   },
   "extract_dir": "WezTerm-windows-20240203-110809-5046fc22",
+  "post_install": [
+    "$weztermPath = \"$dir\\wezterm-gui.exe\".Replace('\\', '\\\\')",
+    "'install-context', 'uninstall-context' | ForEach-Object {",
+    "    if (Test-Path \"$bucketsdir\\extras\\scripts\\$app\\$_.reg\") {",
+    "        $content = Get-Content \"$bucketsdir\\extras\\scripts\\$app\\$_.reg\"",
+    "        $content = $content.Replace('$weztermPath', $weztermPath)",
+    "        if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
+    "        Set-Content \"$dir\\$_.reg\" $content -Encoding Ascii -Force",
+    "    }",
+    "}"
+  ],
   "bin": [
     "wezterm.exe",
     "wezterm-gui.exe"
@@ -36,11 +51,11 @@
     }
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wezterm.json",
     "sourceHash: 0a4a2345b139d9f0930741b10a9afad154bc3453",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wezterm.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 250920 16:57:43",
     "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\wezterm.json"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/wezterm.json"
   ]
 }

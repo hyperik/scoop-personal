@@ -32,11 +32,11 @@
     "url": "https://github.com/yairm210/Unciv/releases/download/$version/Unciv-Windows64.zip"
   },
   "##": [
-    "sourceHash: 9f8632c4a186573ab5657ef742fa65d9b16b0b50",
-    "sourceLastUpdated: 250904 12:31:01",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/unciv.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\unciv.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 36111ab7c603df80941a08474a4d6ae6968f739e",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260122 12:32:16",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/unciv.json"
   ]
 }

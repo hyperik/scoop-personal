@@ -1,26 +1,26 @@
 {
-    "version": "0.8.2782.39874",
-    "description": "Alternative launcher for Assetto Corsa named Content Manager, and some utils as well",
-    "homepage": "https://github.com/gro-ove/actools",
-    "license": "MS-PL",
-    "url": "https://github.com/gro-ove/actools/releases/download/v0.8.2782.39874/Content.Manager.zip",
-    "hash": "67998c57fc520946f4041152dc3a1f3d5558d4da8062630e9079e31061a21f68",
-    "shortcuts": [
-        [
-            "Content Manager.exe",
-            "Assetto Corsa Content Manager"
-        ]
-    ],
-    "checkver": "github",
-    "autoupdate": {
-        "url": "https://github.com/gro-ove/actools/releases/download/v$version/Content.Manager.zip"
-    },
-    "##": [
-        "sourceHash: 21d9bbd961fe8fe4448d3041302c5b4a30ddf058",
-        "sourceLastUpdated: 250824 00:42:49",
-        "sourceState: active",
-        "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/actools.json",
-        "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\actools.json",
-        "sourceLastChangeFound: 260128 15:37:24"
+  "version": "0.8.2782.39874",
+  "description": "Alternative launcher for Assetto Corsa named Content Manager, and some utils as well",
+  "homepage": "https://github.com/gro-ove/actools",
+  "license": "MS-PL",
+  "url": "https://github.com/gro-ove/actools/releases/download/v0.8.2782.39874/Content.Manager.zip",
+  "hash": "67998c57fc520946f4041152dc3a1f3d5558d4da8062630e9079e31061a21f68",
+  "shortcuts": [
+    [
+      "Content Manager.exe",
+      "Assetto Corsa Content Manager"
     ]
+  ],
+  "checkver": "github",
+  "autoupdate": {
+    "url": "https://github.com/gro-ove/actools/releases/download/v$version/Content.Manager.zip"
+  },
+  "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\actools.json",
+    "sourceHash: 0fd2d20c6132babc728e5384868eafe043063be2",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 251023 20:29:09",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/actools.json"
+  ]
 }

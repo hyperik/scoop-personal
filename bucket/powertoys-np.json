@@ -1,15 +1,16 @@
 {
-  "version": "0.94.1",
+  "version": "0.97.1",
   "description": "System utilities to maximize productivity.",
   "homepage": "https://github.com/microsoft/PowerToys",
   "license": "MIT",
-  "suggest": {
-    ".NET Desktop Runtime": "extras/windowsdesktop-runtime-lts"
-  },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.94.1/PowerToysSetup-0.94.1-x64.exe#/setup.exe",
-      "hash": "e83ff71f951c32218f4f271cd3c01f8b354fddca16cae74d36025d2d41296c8a"
+      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.97.1/PowerToysSetup-0.97.1-x64.exe#/setup.exe",
+      "hash": "9d1e3337b79fd6c30463eb6ee5d58d1de63018bc99516b982ef4423a75fc9686"
+    },
+    "arm64": {
+      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.97.1/PowerToysSetup-0.97.1-arm64.exe#/setup.exe",
+      "hash": "c5445fe4d5b157ee9605b58036e75c9b63064b2ea0132d0c4719ec7c63f65d66"
     }
   },
   "installer": {
@@ -27,27 +28,30 @@
     ]
   },
   "checkver": {
-    "url": "https://api.github.com/repos/microsoft/PowerToys/releases",
-    "jsonpath": "$[0].assets[*].browser_download_url",
-    "regex": "/releases/download/(?<tag>[\\w.]+)/PowerToysSetup-([\\d.]+)-x64\\.exe"
+    "url": "https://api.github.com/repositories/184456251/releases/latest",
+    "jsonpath": "$.tag_name",
+    "regex": "(?:v|V)?([\\d.]+)"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/microsoft/PowerToys/releases/download/$matchTag/PowerToysSetup-$version-x64.exe#/setup.exe",
-        "hash": {
-          "url": "https://github.com/microsoft/PowerToys/releases/tag/$matchTag",
-          "regex": ">$sha256<"
-        }
+        "url": "https://github.com/microsoft/PowerToys/releases/download/v$version/PowerToysSetup-$version-x64.exe#/setup.exe"
+      },
+      "arm64": {
+        "url": "https://github.com/microsoft/PowerToys/releases/download/v$version/PowerToysSetup-$version-arm64.exe#/setup.exe"
       }
+    },
+    "hash": {
+      "url": "https://github.com/microsoft/PowerToys/releases/tag/v$version",
+      "regex": "(?s)$basename.*?$sha256<"
     }
   },
   "##": [
-    "sourceHash: d0492457fb9bfc4f96805f11a48ab9aeeb7fdc2b",
-    "sourceLastUpdated: 260120 13:15:25",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/powertoys-np.json",
     "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\powertoys-np.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: a9f8d0f49010bb78f0c75833f9dc662aa8c71fe8",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 13:16:04",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/powertoys-np.json"
   ]
 }

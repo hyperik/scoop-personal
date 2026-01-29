@@ -19,7 +19,8 @@
     "wkhtmltopdf.exe"
   ],
   "checkver": {
-    "url": "https://github.com/wkhtmltopdf/packaging/releases",
+    "url": "https://api.github.com/repositories/131323182/releases",
+    "jsonpath": "$..browser_download_url",
     "regex": "/wkhtmltox-([\\d.-]+)\\.mxe-cross-"
   },
   "autoupdate": {
@@ -30,17 +31,14 @@
       "32bit": {
         "url": "https://github.com/wkhtmltopdf/packaging/releases/download/$version/wkhtmltox-$version.mxe-cross-win32.7z"
       }
-    },
-    "hash": {
-      "url": "$baseurl/SHA256SUMS"
     }
   },
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wkhtmltopdf.json",
     "sourceHash: 546f6eed059144aa863b8898f22543757c512801",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wkhtmltopdf.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 231026 05:43:34",
     "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\wkhtmltopdf.json"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/wkhtmltopdf.json"
   ]
 }

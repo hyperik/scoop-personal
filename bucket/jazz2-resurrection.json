@@ -62,11 +62,11 @@
     "url": "https://github.com/deathkiller/jazz2/releases/download/$version/Jazz2_$version_Windows.zip"
   },
   "##": [
-    "sourceHash: c63b59e49bb29bda53647f4b2563de8031c719ef",
-    "sourceLastUpdated: 250823 14:18:42",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/jazz2-resurrection.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\jazz2-resurrection.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: f537ac5e5fcb7d3376f64935e621bf9874ec1157",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260108 20:30:06",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/jazz2-resurrection.json"
   ]
 }

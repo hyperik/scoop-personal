@@ -21,11 +21,11 @@
     "url": "https://thecrewchief.org/downloads/CrewChiefV4.msi"
   },
   "##": [
-    "sourceHash: 6f49ed560235c19f5ff474821c44bc0b1eb2e041",
-    "sourceLastUpdated: 250803 12:31:12",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/crewchief.json",
     "source: D:\\dev\\src\\third-party\\scoop-games\\bucket\\crewchief.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: a690b31bcb8fa6a45249ffabc446566e6d93db9d",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 12:32:47",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/Calinou/scoop-games/master/bucket/crewchief.json"
   ]
 }

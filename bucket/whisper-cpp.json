@@ -1,5 +1,5 @@
 {
-  "version": "1.7.6",
+  "version": "1.8.3",
   "description": "High-performance inference of OpenAI's Whisper automatic speech recognition (ASR) model",
   "homepage": "https://github.com/ggerganov/whisper.cpp",
   "license": "MIT",
@@ -9,21 +9,23 @@
   ],
   "bin": [
     "whisper-bench.exe",
-    "whisper-command.exe",
     "whisper-cli.exe",
+    "whisper-command.exe",
+    "whisper-lsp.exe",
+    "whisper-quantize.exe",
     "whisper-server.exe",
     "whisper-stream.exe",
     "whisper-talk-llama.exe",
-    "quantize.exe"
+    "whisper-vad-speech-segments.exe"
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.7.6/whisper-bin-x64.zip",
-      "hash": "0d2eca299c248f965bd0341bcb219db4b433c7f0c0ce2200d4df85765e8156a9"
+      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.8.3/whisper-bin-x64.zip",
+      "hash": "d824b1e37599f882b396e73f1ee0bfd5d0529f700314c48311dcbd00b803321d"
     },
     "32bit": {
-      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.7.6/whisper-bin-Win32.zip",
-      "hash": "49b0ed3416303d0e786e78ea80ae6b678e4db988356e419812ebc9b5dab7d76f"
+      "url": "https://github.com/ggerganov/whisper.cpp/releases/download/v1.8.3/whisper-bin-Win32.zip",
+      "hash": "219dd423cd910b72e7794b9a17f578367ba815010afcff26e3d7b527b3c111fa"
     }
   },
   "extract_dir": "Release",
@@ -41,11 +43,11 @@
     }
   },
   "##": [
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
     "sourceHash: 043a7fdd3914452289403125cb832ab90716db79",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 260117 14:59:09",
     "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\whisper-cpp.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/whisper-cpp.json"
   ]
 }

@@ -66,13 +66,13 @@
     }
   },
   "##": [
-    "sourceLastUpdated: 260121 20:31:15",
-    "sourceLastChangeFound: 260129 10:40:17",
-    "sourceUpdateMinimumDays: 14",
-    "sourceDelayDays: 7",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\brave.json",
-    "sourceHash: 0d41c64c31895207d1ef1f2a407dcb4968c15e40",
+    "sourceDelayDays: 7",
+    "sourceHash: c76be593a5bea50d727fc9648e91a112742d1796",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 20:31:30",
     "sourceState: active",
+    "sourceUpdateMinimumDays: 14",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/brave.json"
   ]
 }

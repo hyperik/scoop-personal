@@ -1,13 +1,13 @@
 {
-  "version": "4.1+211-9e551a9",
+  "version": "4.1+222-afa0028",
   "description": "Encodes video or images into an H.265 / HEVC bitstream.",
   "homepage": "https://www.x265.org/",
   "license": {
     "identifier": "GPL-2.0 or Commercial",
     "url": "http://x265.org/x265-licensing-faq/"
   },
-  "url": "http://msystem.waw.pl/x265/x265-4.1+211-9e551a9_vs2022-AVX2.7z",
-  "hash": "ce1c819f315504f6acdb454c5f098bca136fb8e02d18e5e1047cb7d8a34cecb1",
+  "url": "http://msystem.waw.pl/x265/x265-4.1+222-afa0028_vs2022-AVX2.7z",
+  "hash": "880311105c19f1d289608116414db082f7ad8310d771711e05007d3b5edc1065",
   "architecture": {
     "64bit": {
       "bin": [
@@ -34,11 +34,11 @@
     "url": "http://msystem.waw.pl/x265/x265-$version_vs2022-AVX2.7z"
   },
   "##": [
-    "sourceHash: c0e1ead232a162c56eb15f577b0769d9cb331c91",
-    "sourceLastUpdated: 251213 16:30:07",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/x265.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\x265.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 30c6692a46c950eedc460ce90d1302f80252278b",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 23:30:35",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/x265.json"
   ]
 }

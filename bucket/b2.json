@@ -21,11 +21,11 @@
     }
   },
   "##": [
-    "sourceHash: 6b934fc8f9d04bfa4a737f237862690e2dd1c517",
-    "sourceLastUpdated: 260108 20:30:15",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/b2.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\b2.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: e8794c30dd3f363c9e0847923476fac3fa5d9d75",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 00:46:28",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/b2.json"
   ]
 }

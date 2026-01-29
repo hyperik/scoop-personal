@@ -42,11 +42,11 @@
     }
   },
   "##": [
-    "sourceHash: 1472b72bb7445c961a4690554937e44a115c43e0",
-    "sourceLastUpdated: 251217 16:31:13",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nats-server.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nats-server.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: aa63084aa9b97cf93895a8e353895d49c59e09e7",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 16:30:57",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nats-server.json"
   ]
 }

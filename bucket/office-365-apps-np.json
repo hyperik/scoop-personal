@@ -50,11 +50,11 @@
     "url": "https://download.microsoft.com/download/$matchPath$matchFilename#/dl.7z_"
   },
   "##": [
-    "sourceHash: 83c28dfe5eac879b182f7ebd6078a9750a581ac7",
-    "sourceLastUpdated: 260126 20:45:48",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json",
     "source: D:\\dev\\src\\third-party\\scoop-nonportable\\bucket\\office-365-apps-np.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 734ddb244ca9a9381272078a54a9c1ee73325e79",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 02:38:00",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Nonportable/master/bucket/office-365-apps-np.json"
   ]
 }

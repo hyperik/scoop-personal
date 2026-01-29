@@ -1,12 +1,12 @@
 {
-  "version": "28.4.0",
+  "version": "29.2.0",
   "description": "Docker CLI & Docker Engine for Windows containers. Docker is an open platform for developing, shipping, and running applications.",
   "homepage": "https://docs.docker.com/engine",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://download.docker.com/win/static/stable/x86_64/docker-28.4.0.zip",
-      "hash": "fc71eac7e30d5e90e0237713d4da027582271bad75c49eb0b64cd2e69a16af1c"
+      "url": "https://download.docker.com/win/static/stable/x86_64/docker-29.2.0.zip",
+      "hash": "6d8f2e8d8ff9bbe15dfc41ffd2f1c6a95721c5e178de8619ada9084f72ee363e"
     }
   },
   "extract_dir": "docker",
@@ -15,7 +15,8 @@
     "dockerd.exe"
   ],
   "checkver": {
-    "github": "https://github.com/moby/moby"
+    "github": "https://github.com/moby/moby",
+    "regex": "docker-v([\\d.]+)"
   },
   "autoupdate": {
     "architecture": {
@@ -31,13 +32,13 @@
     "Similarly, to unregister, run `dockerd --unregister-service`"
   ],
   "##": [
-    "sourceLastUpdated: 260116 16:30:51",
-    "sourceHash: 5c9db62608216d8d04994bcdb1df222bb0e943b6",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\docker.json",
-    "sourceState: active",
-    "sourceLastChangeFound: 260128 15:51:35",
-    "sourceUpdateMinimumDays: 21",
     "sourceDelayDays: 7",
+    "sourceHash: b70f9661d0809c813b56b67f84f76ef08e20d2c0",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 00:46:28",
+    "sourceState: active",
+    "sourceUpdateMinimumDays: 21",
     "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/docker.json"
   ]
 }

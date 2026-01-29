@@ -52,11 +52,11 @@
     }
   },
   "##": [
-    "sourceHash: aee7435e34f1fc0e32963fd9ec10e9d3bff6c396",
-    "sourceLastUpdated: 260110 14:17:52",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tftpd.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\tftpd.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: aee7435e34f1fc0e32963fd9ec10e9d3bff6c396",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260110 14:17:52",
+    "sourceState: license-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/tftpd.json"
   ]
 }

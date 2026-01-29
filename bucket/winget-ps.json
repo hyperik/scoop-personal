@@ -20,11 +20,11 @@
     "url": "https://psg-prod-eastus.azureedge.net/packages/microsoft.winget.client.$version.nupkg"
   },
   "##": [
-    "sourceHash: 26ba30cf92fe93058743815f13b88aee2e6a27df",
-    "sourceLastUpdated: 260106 20:29:52",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/winget-ps.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\winget-ps.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 26ba30cf92fe93058743815f13b88aee2e6a27df",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260106 20:29:52",
+    "sourceState: domain-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/winget-ps.json"
   ]
 }

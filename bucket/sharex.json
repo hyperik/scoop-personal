@@ -24,11 +24,11 @@
     "url": "https://github.com/ShareX/ShareX/releases/download/v$version/ShareX-$version-portable.zip"
   },
   "##": [
-    "sourceHash: 8f0b3b94da13a8106e4345273b6cddd891647f53",
-    "sourceLastUpdated: 250819 16:31:02",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sharex.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sharex.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 7712f8588922c5c354cd756b2e176e0325a9467d",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 04:40:31",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sharex.json"
   ]
 }

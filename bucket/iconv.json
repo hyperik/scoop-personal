@@ -23,11 +23,11 @@
   ],
   "bin": "bin\\iconv.exe",
   "##": [
-    "sourceLastChangeFound: 250922 14:23:50",
+    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\iconv.json",
     "sourceHash: 54ce9fdfc07201149be168308ee9dc6874cd7d5c",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/iconv.json",
+    "sourceLastChangeFound: 260129 12:12:00",
     "sourceLastUpdated: 250721 21:33:33",
-    "sourceState: active",
-    "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\iconv.json"
+    "sourceState: domain-change-lock",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/iconv.json"
   ]
 }

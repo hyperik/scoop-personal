@@ -27,11 +27,11 @@
     }
   },
   "##": [
-    "sourceHash: 1cec65a39ef6054de46874a3866c61afdbc6b72a",
-    "sourceLastUpdated: 260112 12:31:55",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/appflowy.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\appflowy.json",
-    "sourceLastChangeFound: 260128 15:47:47"
+    "sourceHash: ce75edaab6cbae780b0c2c1718b192c14c421a18",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260128 12:34:02",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/appflowy.json"
   ]
 }

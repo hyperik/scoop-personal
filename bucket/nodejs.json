@@ -48,11 +48,11 @@
     }
   },
   "##": [
-    "sourceHash: 00504ebbe376cdadff59efd13fab42dc08bcbc90",
-    "sourceLastUpdated: 260119 20:30:06",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nodejs.json",
     "source: D:\\dev\\src\\third-party\\scoop-main\\bucket\\nodejs.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: eec51c9946b61a37b9b81108040dc8184cf80763",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 00:46:29",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/nodejs.json"
   ]
 }

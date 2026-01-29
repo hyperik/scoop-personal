@@ -41,11 +41,11 @@
     }
   },
   "##": [
-    "sourceHash: d90836102cf292911cf506e804a8ba8763971042",
-    "sourceLastUpdated: 251010 08:30:09",
-    "sourceState: active",
-    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sirikali.json",
     "source: D:\\dev\\src\\third-party\\scoop-extras\\bucket\\sirikali.json",
-    "sourceLastChangeFound: 260128 15:51:35"
+    "sourceHash: 8c645f09a6bbfd6aabe83a10a096b72df1a26e38",
+    "sourceLastChangeFound: 260129 12:12:00",
+    "sourceLastUpdated: 260127 20:31:02",
+    "sourceState: active",
+    "sourceUrl: https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/sirikali.json"
   ]
 }
