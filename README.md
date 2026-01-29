@@ -43,7 +43,7 @@ These are supported by two scripts:
 
 - `Seed-ManifestSources.ps1` which we can use to initially seed the enriched manifests from the local locations where they may be found.
 
-- `Update-PersonalBucket.ps1` which uses this structure and keeps them up to date to ensure we can periodically update all references en masse, keeping it usable.
+- `Update-Bucket.ps1` which uses this structure and keeps them up to date to ensure we can periodically update all references en masse, keeping it usable.
 
 These should provide a simplified surface to allow regular automated invocation if we desire.
 
@@ -61,7 +61,7 @@ This utilised the local file `local-repos.cfg` which has a special format of lin
 
 This essentially allows us to map local paths to the web locations of the manifests for future reference. This is the extent of the expected source information to be contained in all manifests in this bucket.
 
-### Maintaining A Repository Using Update-PersonalBucket.ps1
+### Maintaining A Repository Using Update-Bucket.ps1
 
 Once an repository has been initialised, this script  is what ought to be run periodically and shouldn't need arguments by default. However if it's the first time running for a while, the `-Interactive` option allows a little more surety in the validity of the changes to make.
 
@@ -69,20 +69,20 @@ Standard usage:
 
 ```powershell
 # Runs all updates automatically
-.\Update-PersonalBucket.ps1
+.\Update-Bucket.ps1
 ```
 
 Interactive usage for checking behaviour:
 
 ```powershell
 # Runs with interactive prompts
-.\Update-PersonalBucket.ps1 -Interactive
+.\Update-Bucket.ps1 -Interactive
 ```
 
 Full forced updates of everything with limited checks (but still showing diffs and excluding "locked" and "manual" manifests):
 
 ```powershell
-.\Update-PersonalBucket.ps1 -FullUpdate
+.\Update-Bucket.ps1 -FullUpdate
 ```
 
 ### Metadata

@@ -16,7 +16,7 @@
     5. List Locks Mode: Lists manifests that are frozen or domain-change-lock.
     6. Verbose List Mode: When used with -ListPending, shows all non-manual files and explains their status.
 
-.PARAMETER PersonalBucketPath
+.PARAMETER BucketPath
   The full path to the 'bucket' directory of your personal Scoop repository. Overrides the default behavior.
 
 .PARAMETER ListPending
@@ -76,29 +76,29 @@
 
 .EXAMPLE
   # Runs automatically to check for and apply updates in the default bucket path without user interaction.
-  .\Update-PersonalBucket.ps1
+  .\Update-Bucket.ps1
 
 .EXAMPLE
   # Lists all the pending changes to be made and verbosely outputs the status of all manifests assessed.
-  .\Update-PersonalBucket.ps1 -ListPending -VerboseProcessing
+  .\Update-Bucket.ps1 -ListPending -VerboseProcessing
 
 .EXAMPLE
   # Interactively processes only the manifests beginning with characters 'ag' or 'bi'; all others have processing skipped.
-  .\Update-PersonalBucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Scope '^(ag|bi).*'
+  .\Update-Bucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Scope '^(ag|bi).*'
 
 .EXAMPLE
   # Trace mode with extra timing detail on interactively processing only the manifests beginning with characters 'ag' or 'bi'; all others have processing skipped.
-  .\Update-PersonalBucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Trace -Scope '^(ag|bi).*'
+  .\Update-Bucket.ps1 -Interactive -VerboseProcessing -HideSkipped -Trace -Scope '^(ag|bi).*'
 
 .EXAMPLE
   # Fully updates all non-locked active manifests, including re-pulling all local source repositories
-  .\Update-PersonalBucket.ps1 -FullUpdate
+  .\Update-Bucket.ps1 -FullUpdate
 
 #>
 [CmdletBinding(DefaultParameterSetName = 'Automatic')]
 param(
     [Parameter(ParameterSetName = 'Automatic')]
-    [string]$PersonalBucketPath = $null,
+    [string]$BucketPath = $null,
 
     [Parameter(ParameterSetName = 'ListPending')]
     [switch]$ListPending,
@@ -157,13 +157,13 @@ param(
 
 # --- Initial Setup ---
 $scriptDir = $PSScriptRoot
-if ([string]::IsNullOrEmpty($PersonalBucketPath)) {
+if ([string]::IsNullOrEmpty($BucketPath)) {
     $localBucketPath = Join-Path -Path $scriptDir -ChildPath 'bucket'
     if (Test-Path -Path $localBucketPath) {
-        $PersonalBucketPath = $localBucketPath
+        $BucketPath = $localBucketPath
     }
     else {
-        $PersonalBucketPath = 'D:\dev\src\hyperik\scoop-personal\bucket' # Fallback default
+        $BucketPath = 'D:\dev\src\hyperik\scoop-personal\bucket' # Fallback default
     }
 }
 
@@ -633,7 +633,7 @@ Function Write-Manifest {
 # =================================================================================================
 
 $runTimestamp = Get-FormattedDate
-$manifests = Get-ChildItem -Path $PersonalBucketPath -Filter *.json
+$manifests = Get-ChildItem -Path $BucketPath -Filter *.json
 $allManifestData = @()
 
 $effectiveDeepComparison = $DeepComparison -or $FullUpdate
@@ -652,7 +652,7 @@ if ($effectivePullSources) {
 }
 
 # This iterates through all the manifests and gathers their metadata and pending status.
-Write-Log "🔍 Gathering manifest data from '$PersonalBucketPath'..."
+Write-Log "🔍 Gathering manifest data from '$BucketPath'..."
 foreach ($localManifestFile in $manifests) {
     # Scope filter
     if ($localManifestFile.BaseName -Notmatch $Scope) {
@@ -894,7 +894,7 @@ if ($Interactive) {
 
 # --- Mode: Default Automatic Update ---
 Write-Host
-Write-Log "🔄 Checking for updates in '$PersonalBucketPath'..."
+Write-Log "🔄 Checking for updates in '$BucketPath'..."
 foreach ($data in $updateableManifests) {
     $sourceUrl = $data.Metadata.sourceUrl
     if (([string]::IsNullOrWhiteSpace($sourceUrl)) -Or ($sourceUrl -Notlike 'http*')) { continue }
