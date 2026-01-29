@@ -33,7 +33,7 @@
   Interactively processes locked manifests (frozen or explicit lock states) and allows unlocking with updates.
 
 .PARAMETER ExcludeFrozen
-  When used with -ProcessLocks, ignores manifests with a 'frozen' state.
+  When used with -ProcessLocks or -Interactive, ignores manifests with a 'frozen' state.
 
 .PARAMETER Interactive
   Starts an interactive session to review and apply pending complex changes one by one.
@@ -168,7 +168,7 @@ param(
     [Parameter()]
     [switch]$PullSources,
 
-    [Parameter(ParameterSetName = 'ProcessLocks')]
+    [Parameter()]
     [switch]$ExcludeFrozen
 )
 
