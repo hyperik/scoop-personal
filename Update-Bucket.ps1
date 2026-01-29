@@ -451,11 +451,13 @@ Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     elseif ($JSONObject.'##' -isnot [array]) {
         $JSONObject.'##' = @($JSONObject.'##')
     }
-    $newComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
-    foreach ($entry in $MetadataToWrite.GetEnumerator()) {
-        $newComments += "$($entry.Key): $($entry.Value)"
-    }
-    $JSONObject.'##' = $newComments
+    $baseComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
+    $metadataLines = @(
+        $MetadataToWrite.GetEnumerator() |
+        Sort-Object -Property Key |
+        ForEach-Object { "$($_.Key): $($_.Value)" }
+    )
+    $JSONObject.'##' = @($baseComments + $metadataLines)
     return $JSONObject
 }
 

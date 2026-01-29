@@ -83,11 +83,13 @@ Function Set-CustomMetadata($JSONObject, $MetadataToWrite) {
     elseif ($JSONObject.'##' -isnot [array]) {
         $JSONObject.'##' = @($JSONObject.'##')
     }
-    $newComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
-    foreach ($entry in $MetadataToWrite.GetEnumerator()) {
-        $newComments += "$($entry.Key): $($entry.Value)"
-    }
-    $JSONObject.'##' = $newComments
+    $baseComments = @($JSONObject.'##' | Where-Object { $_ -Notmatch "^($($MetadataKeys -join '|'))\s*:" })
+    $metadataLines = @(
+        $MetadataToWrite.GetEnumerator() |
+            Sort-Object -Property Key |
+            ForEach-Object { "$($_.Key): $($_.Value)" }
+    )
+    $JSONObject.'##' = @($baseComments + $metadataLines)
     return $JSONObject
 }
 
@@ -132,7 +134,7 @@ Function Get-RepoBranch {
     return $branch.Trim()
 }
 
-Function Normalize-RepoUrl {
+Function Convert-RepoUrl {
     param([string]$RepoUrl)
     if ([string]::IsNullOrWhiteSpace($RepoUrl)) { return $null }
     $url = $RepoUrl.Trim()
@@ -152,13 +154,13 @@ Function Normalize-RepoUrl {
     return $url
 }
 
-Function Build-SourceUrl {
+Function New-SourceUrl {
     param(
         [string]$RepoUrl,
         [string]$Branch,
         [string]$RelativePath
     )
-    $normalized = Normalize-RepoUrl -RepoUrl $RepoUrl
+    $normalized = Convert-RepoUrl -RepoUrl $RepoUrl
     if (-Not $normalized) { return $null }
 
     $uri = [Uri]$normalized
@@ -184,36 +186,36 @@ Function Resolve-SourceRepo {
 
     $pattern = [Regex]::Escape($SourceBucketPattern.Trim())
     $entries = Get-Content -Path $ReposConfigPath | Where-Object { $_ -match ';' }
-    $matches = @()
+    $repoMatches = @()
 
     foreach ($entry in $entries) {
         $parts = $entry -split ';', 2
         $repoPath = $parts[0].Trim()
         $repoUrl = $parts[1].Trim()
         if ($repoPath -match "(?i)$pattern") {
-            $matches += [pscustomobject]@{ Path = $repoPath; Url = $repoUrl }
+            $repoMatches += [pscustomobject]@{ Path = $repoPath; Url = $repoUrl }
         }
     }
 
-    if ($matches.Count -eq 0) {
+    if ($repoMatches.Count -eq 0) {
         throw "No local-repos.cfg entries matched '$SourceBucketPattern'."
     }
-    if ($matches.Count -gt 1) {
-        $matchList = ($matches | ForEach-Object { $_.Path }) -join '; '
+    if ($repoMatches.Count -gt 1) {
+        $matchList = ($repoMatches | ForEach-Object { $_.Path }) -join '; '
         throw "Source bucket match is ambiguous for '$SourceBucketPattern'. Matches: $matchList"
     }
 
-    return $matches[0]
+    return $repoMatches[0]
 }
 
-Function Replace-First {
+Function Set-FirstMatch {
     param(
-        [string]$Input,
+        [string]$Text,
         [string]$Pattern,
         [string]$Replacement
     )
     $regex = [Regex]::new([Regex]::Escape($Pattern), [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
-    return $regex.Replace($Input, $Replacement, 1)
+    return $regex.Replace($Text, $Replacement, 1)
 }
 
 # --- Resolve Inputs ---
@@ -247,7 +249,7 @@ if ([string]::IsNullOrWhiteSpace($branch)) {
 }
 
 $sourceRelativePath = "bucket/$TargetManifestName.json"
-$sourceUrl = Build-SourceUrl -RepoUrl $sourceRepoUrl -Branch $branch -RelativePath $sourceRelativePath
+$sourceUrl = New-SourceUrl -RepoUrl $sourceRepoUrl -Branch $branch -RelativePath $sourceRelativePath
 if ([string]::IsNullOrWhiteSpace($sourceUrl)) {
     throw "Unable to build sourceUrl for repo '$sourceRepoUrl'."
 }
@@ -284,7 +286,7 @@ if (Test-Path $sourceScriptsPath) {
         }
 
         foreach ($scriptFile in $scriptsToCopy) {
-            $destName = Replace-First -Input $scriptFile.Name -Pattern $TargetManifestName -Replacement $destinationName
+            $destName = Set-FirstMatch -Text $scriptFile.Name -Pattern $TargetManifestName -Replacement $destinationName
             $destPath = Join-Path -Path $localScriptsPath -ChildPath $destName
             if (Test-Path $destPath) {
                 throw "Destination script already exists at '$destPath'."
